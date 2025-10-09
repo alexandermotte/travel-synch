@@ -12,6 +12,7 @@ import { useSearchParams } from "react-router-dom";
 import mobileCheckinImage from "@/assets/mobile-checkin.jpg";
 import museumImage from "@/assets/museum-interior.jpg";
 import serviceConciergeImage from "@/assets/service-concierge.jpg";
+import loungePremiumImage from "@/assets/lounge-premium.jpg";
 
 const Services = () => {
   const { formatPrice } = useCurrency();
@@ -369,6 +370,14 @@ const Services = () => {
                 <p className="font-medium text-foreground">
                   Travel Synch is your one-stop solution for enhancing your travel with efficiency and style.
                 </p>
+              </div>
+              
+              <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-elegant">
+                <img 
+                  src={loungePremiumImage} 
+                  alt="Premium travel assistance lounge" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
