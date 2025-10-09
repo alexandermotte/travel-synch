@@ -26,7 +26,7 @@ All colors MUST be HSL.
     --muted: 220 15% 96%;
     --muted-foreground: 220 15% 50%;
 
-    --accent: 14 90% 60%;
+    --accent: 0 85% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -42,9 +42,9 @@ All colors MUST be HSL.
     --ocean: 220 70% 25%;
     --ocean-light: 220 60% 45%;
     --ocean-dark: 220 80% 20%;
-    --sky: 210 60% 95%;
-    --gold: 14 90% 60%;
-    --sand: 35 35% 95%;
+    --sky: 210 40% 98%;
+    --gold: 0 85% 55%;
+    --sand: 35 25% 94%;
     
     /* Shadows & Effects */
     --shadow-sm: 0 2px 8px -2px hsl(215 25% 15% / 0.08);
@@ -92,7 +92,7 @@ All colors MUST be HSL.
     --muted: 220 20% 18%;
     --muted-foreground: 220 10% 60%;
 
-    --accent: 14 85% 65%;
+    --accent: 0 80% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72.8% 50.6%;
@@ -106,7 +106,7 @@ All colors MUST be HSL.
     --ocean-light: 220 50% 60%;
     --ocean-dark: 220 70% 30%;
     --sky: 210 30% 20%;
-    --gold: 14 85% 65%;
+    --gold: 0 80% 60%;
     --sand: 35 20% 18%;
   }
 }

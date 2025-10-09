@@ -28,7 +28,7 @@ export const siteConfig = {
     primary: "220 70% 25%",      // Deep navy
     primaryLight: "220 60% 45%",
     primaryDark: "220 80% 20%",
-    accent: "14 90% 60%",         // Coral orange
+    accent: "0 85% 55%",          // Red
     secondary: "220 15% 96%",
   },
 

@@ -37,7 +37,7 @@ export const Pricing = () => {
   const { formatPrice } = useCurrency();
 
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-sky/40 to-sand/40">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold">Pricing</h2>
@@ -72,7 +72,7 @@ export const Pricing = () => {
               </ul>
 
               <Button
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
                 size="lg"
                 onClick={() => window.location.href = `/pre-checkout?plan=${plan.id}`}
               >

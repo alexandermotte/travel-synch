@@ -36,7 +36,7 @@ const services = [
 
 export const Services = () => {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-background to-sand/30">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((service, index) => (
@@ -44,7 +44,7 @@ export const Services = () => {
               key={index}
               className="p-6 md:p-8 bg-card border-border hover:shadow-elegant transition-smooth group"
             >
-              <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-smooth">
+              <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-accent group-hover:text-accent-foreground transition-smooth">
                 <service.icon className="h-6 w-6" />
               </div>
               <h3 className="text-xl font-semibold mb-3">{service.title}</h3>

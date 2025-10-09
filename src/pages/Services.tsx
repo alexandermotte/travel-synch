@@ -9,6 +9,8 @@ import { Check, Sparkles, Zap, Ticket, BookOpen, Heart, Clock, Plane, Shield, Us
 import { useCurrency } from "@/contexts/CurrencyContext";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import mobileCheckinImage from "@/assets/mobile-checkin.jpg";
+import museumImage from "@/assets/museum-interior.jpg";
 
 const Services = () => {
   const { formatPrice } = useCurrency();
@@ -97,7 +99,7 @@ const Services = () => {
 
       <main>
         {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-br from-sky via-background to-sand">
+        <section className="py-16 md:py-24 bg-gradient-to-br from-sand/50 via-sky/30 to-secondary/20">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
@@ -106,7 +108,7 @@ const Services = () => {
               </p>
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg shadow-elegant transition-smooth"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg shadow-elegant transition-smooth"
                 onClick={() => window.location.href = '/pre-checkout'}
               >
                 Start Now
@@ -116,7 +118,7 @@ const Services = () => {
         </section>
 
         {/* What we can do for you - Tabs */}
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What we can do for you</h2>
             
@@ -177,34 +179,43 @@ const Services = () => {
               </TabsContent>
 
               <TabsContent value="ticketline" className="mt-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <Card className="p-6 bg-card border-border text-center">
-                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
-                      <CheckCircle className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3">Stress-Free Access</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Skip the queues and guarantee your entry. We help you pre-book popular sites, museums, and local events.
-                    </p>
-                  </Card>
-                  <Card className="p-6 bg-card border-border text-center">
-                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
-                      <Star className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3">Tailored Experiences</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Discover curated recommendations that match your interests. Whether it's art, history, or thrill, we've got the tickets lined up.
-                    </p>
-                  </Card>
-                  <Card className="p-6 bg-card border-border text-center">
-                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
-                      <Ticket className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3">Exclusive Deals</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Get access to special offers and bundled passes that save you money while unlocking more experiences.
-                    </p>
-                  </Card>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                  <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-elegant">
+                    <img 
+                      src={museumImage} 
+                      alt="Museum interior with art galleries" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="space-y-6">
+                    <Card className="p-6 bg-card border-border">
+                      <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
+                        <CheckCircle className="h-6 w-6" />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-3">Stress-Free Access</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Skip the queues and guarantee your entry. We help you pre-book popular sites, museums, and local events.
+                      </p>
+                    </Card>
+                    <Card className="p-6 bg-card border-border">
+                      <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
+                        <Star className="h-6 w-6" />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-3">Tailored Experiences</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Discover curated recommendations that match your interests. Whether it's art, history, or thrill, we've got the tickets lined up.
+                      </p>
+                    </Card>
+                    <Card className="p-6 bg-card border-border">
+                      <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
+                        <Ticket className="h-6 w-6" />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-3">Exclusive Deals</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Get access to special offers and bundled passes that save you money while unlocking more experiences.
+                      </p>
+                    </Card>
+                  </div>
                 </div>
               </TabsContent>
 
@@ -273,25 +284,34 @@ const Services = () => {
               </TabsContent>
 
               <TabsContent value="checkin" className="mt-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Card className="p-6 bg-card border-border text-center">
-                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
-                      <CheckCircle className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3">Smooth Check-In</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Our automated check-in system streamlines your travel process, ensuring you can skip the lines.
-                    </p>
-                  </Card>
-                  <Card className="p-6 bg-card border-border text-center">
-                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
-                      <Calendar className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3">Be the First to Check-In</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Enjoy the privilege of being among the first to check in, setting the tone for a relaxed travel experience.
-                    </p>
-                  </Card>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                  <div className="space-y-6">
+                    <Card className="p-6 bg-card border-border">
+                      <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
+                        <CheckCircle className="h-6 w-6" />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-3">Smooth Check-In</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Our automated check-in system streamlines your travel process, ensuring you can skip the lines.
+                      </p>
+                    </Card>
+                    <Card className="p-6 bg-card border-border">
+                      <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
+                        <Calendar className="h-6 w-6" />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-3">Be the First to Check-In</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Enjoy the privilege of being among the first to check in, setting the tone for a relaxed travel experience.
+                      </p>
+                    </Card>
+                  </div>
+                  <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-elegant">
+                    <img 
+                      src={mobileCheckinImage} 
+                      alt="Mobile check-in at airport" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
               </TabsContent>
             </Tabs>
@@ -299,7 +319,7 @@ const Services = () => {
         </section>
 
         {/* Concierge Services */}
-        <section className="py-16 md:py-24 bg-secondary/30">
+        <section className="py-16 md:py-24 bg-gradient-to-r from-sand/40 to-sky/40">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Concierge Services</h2>
@@ -322,7 +342,7 @@ const Services = () => {
         </section>
 
         {/* Travel Assistance Hub */}
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Travel Assistance Hub</h2>
@@ -400,7 +420,7 @@ const Services = () => {
                   <Button
                     className={`w-full ${
                       plan.highlighted
-                        ? "bg-primary hover:bg-primary/90 text-primary-foreground"
+                        ? "bg-accent hover:bg-accent/90 text-accent-foreground"
                         : "bg-secondary hover:bg-secondary/80 text-secondary-foreground"
                     }`}
                     size="lg"
@@ -415,7 +435,7 @@ const Services = () => {
         </section>
 
         {/* Contact Form */}
-        <section className="py-16 md:py-24 bg-secondary/30">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-sand/30 to-sky/30">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Got questions</h2>
