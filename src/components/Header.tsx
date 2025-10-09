@@ -6,11 +6,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Phone, Menu, X } from "lucide-react";
+import { Phone, Menu, X, Shield } from "lucide-react";
 import { useCurrency, currencies } from "@/contexts/CurrencyContext";
+import { useAuth } from "@/contexts/AuthContext";
 
 export const Header = () => {
   const { currency, setCurrency } = useCurrency();
+  const { user, isAdmin, signOut } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -67,14 +69,37 @@ export const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button
-              variant="default"
-              size="sm"
-              className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground"
-              onClick={() => window.location.href = 'https://member.travel-synch.com/'}
-            >
-              Login
-            </Button>
+            {isAdmin && (
+              <Button
+                variant="outline"
+                size="sm"
+                className="hidden md:flex"
+                onClick={() => window.location.href = '/admin'}
+              >
+                <Shield className="h-4 w-4 mr-2" />
+                Admin
+              </Button>
+            )}
+
+            {user ? (
+              <Button
+                variant="default"
+                size="sm"
+                className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground"
+                onClick={signOut}
+              >
+                Déconnexion
+              </Button>
+            ) : (
+              <Button
+                variant="default"
+                size="sm"
+                className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground"
+                onClick={() => window.location.href = '/auth'}
+              >
+                Login
+              </Button>
+            )}
 
             {/* Mobile Menu Button */}
             <Button
@@ -128,14 +153,37 @@ export const Header = () => {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-            <Button
-              variant="default"
-              size="sm"
-              className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
-              onClick={() => window.location.href = 'https://member.travel-synch.com/'}
-            >
-              Login
-            </Button>
+            {isAdmin && (
+              <Button
+                variant="outline"
+                size="sm"
+                className="w-full"
+                onClick={() => window.location.href = '/admin'}
+              >
+                <Shield className="h-4 w-4 mr-2" />
+                Admin
+              </Button>
+            )}
+
+            {user ? (
+              <Button
+                variant="default"
+                size="sm"
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+                onClick={signOut}
+              >
+                Déconnexion
+              </Button>
+            ) : (
+              <Button
+                variant="default"
+                size="sm"
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+                onClick={() => window.location.href = '/auth'}
+              >
+                Login
+              </Button>
+            )}
           </div>
         )}
       </div>
