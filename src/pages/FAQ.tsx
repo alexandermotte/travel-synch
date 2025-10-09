@@ -8,12 +8,12 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "How does My Trip Online work?",
-      answer: `My Trip Online is a subscription-based service that gives you access to fast track, flight check-in, lounge entry, attraction discounts, concierge support, and travel eBooks—all for just ${formatPrice(79)}. We don't charge hidden fees. Instead, we provide premium travel perks and personal assistance to help you enjoy smoother, faster, and more enjoyable trips.`,
+      question: "How does Travel Synch work?",
+      answer: `Travel Synch is a subscription-based service that gives you access to fast track, flight check-in, lounge entry, attraction discounts, concierge support, and travel eBooks—all for just ${formatPrice(79)}. We don't charge hidden fees. Instead, we provide premium travel perks and personal assistance to help you enjoy smoother, faster, and more enjoyable trips.`,
     },
     {
-      question: "When can I start enjoying my My Trip Online benefits?",
-      answer: "Right after subscribing to My Trip Online, log in to your member zone using the email and password you used at sign-up. Once logged in, you'll get immediate access to fast track services, flight check-in support, lounge access, attraction discounts, concierge support, travel eBooks, and more.",
+      question: "When can I start enjoying my Travel Synch benefits?",
+      answer: "Right after subscribing to Travel Synch, log in to your member zone using the email and password you used at sign-up. Once logged in, you'll get immediate access to fast track services, flight check-in support, lounge access, attraction discounts, concierge support, travel eBooks, and more.",
     },
     {
       question: "Will my subscription be renewed automatically?",
@@ -25,7 +25,7 @@ const FAQ = () => {
     },
     {
       question: "Do I get unlimited discounts with my subscription?",
-      answer: "Absolutely. You can use My Trip Online services as often as you like during your subscription. From airport fast track to lounge access and concierge support, everything is available whenever you travel. Plus, our attraction discounts can be shared with your group. The more you use it, the more value you get!",
+      answer: "Absolutely. You can use Travel Synch services as often as you like during your subscription. From airport fast track to lounge access and concierge support, everything is available whenever you travel. Plus, our attraction discounts can be shared with your group. The more you use it, the more value you get!",
     },
   ];
 
@@ -61,10 +61,10 @@ const FAQ = () => {
                 </a>
                 <span className="hidden sm:inline text-muted-foreground">|</span>
                 <a
-                  href="mailto:contact@my-trip-online.com"
+                  href="mailto:contact@travel-synch.com"
                   className="text-primary hover:underline font-medium"
                 >
-                  contact@my-trip-online.com
+                  contact@travel-synch.com
                 </a>
               </div>
             </Card>

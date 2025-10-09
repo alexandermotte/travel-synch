@@ -13,7 +13,7 @@ export const Hero = () => {
             Plan Your Next Holiday!
           </h1>
           <p className="mb-8 text-lg md:text-xl text-muted-foreground leading-relaxed">
-            You can tailor your perfect holiday with My Trip Online. We assist you in making smarter travel choices by providing the lowest fares from {formatPrice(49)} every three months.
+            You can tailor your perfect holiday with Travel Synch. We assist you in making smarter travel choices by providing the lowest fares from {formatPrice(49)} every three months.
           </p>
           <Button 
             size="lg" 

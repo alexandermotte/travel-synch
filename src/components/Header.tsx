@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Phone, Menu, X } from "lucide-react";
 import { useCurrency, currencies } from "@/contexts/CurrencyContext";
-import logo from "@/assets/header-logo.svg";
+import logo from "@/assets/header-logo.png";
 
 export const Header = () => {
   const { currency, setCurrency } = useCurrency();
@@ -20,7 +20,7 @@ export const Header = () => {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center">
-            <img src={logo} alt="My Trip Online" className="h-10" />
+            <img src={logo} alt="Travel Synch" className="h-10" />
           </a>
 
           {/* Desktop Navigation */}
@@ -72,7 +72,7 @@ export const Header = () => {
               variant="default"
               size="sm"
               className="hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground"
-              onClick={() => window.location.href = 'https://member.my-trip-online.com/'}
+              onClick={() => window.location.href = 'https://member.travel-synch.com/'}
             >
               Login
             </Button>
@@ -133,7 +133,7 @@ export const Header = () => {
               variant="default"
               size="sm"
               className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-              onClick={() => window.location.href = 'https://member.my-trip-online.com/'}
+              onClick={() => window.location.href = 'https://member.travel-synch.com/'}
             >
               Login
             </Button>

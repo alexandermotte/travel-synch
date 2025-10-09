@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useCurrency, currencies } from "@/contexts/CurrencyContext";
-import logo from "@/assets/header-logo.svg";
+import logo from "@/assets/header-logo.png";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -98,13 +98,13 @@ export const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Contact Us</h3>
             <div className="space-y-3 text-sm text-muted-foreground">
-              <p className="font-medium text-foreground">Eudialyte Limited</p>
-              <p>Vladimirou Kafkaridi 2A<br />Nicosia, 2202<br />Cyprus</p>
+              <p className="font-medium text-foreground">BLOOMBACK LIMITED</p>
+              <p>Office 6, Suite A 13 Reeves Way<br />South Woodham Ferrers<br />Chelmsford, Essex, CM3 5XF<br />United Kingdom</p>
               <a
-                href="mailto:contact@my-trip-online.com"
+                href="mailto:contact@travel-synch.com"
                 className="block hover:text-primary transition-smooth"
               >
-                contact@my-trip-online.com
+                contact@travel-synch.com
               </a>
             </div>
           </div>
@@ -114,9 +114,9 @@ export const Footer = () => {
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-muted-foreground">
-              © 2025 My Trip Online. All rights reserved.
+              © 2025 Travel Synch. All rights reserved.
             </p>
-            <img src={logo} alt="My Trip Online" className="h-8" />
+            <img src={logo} alt="Travel Synch" className="h-8" />
           </div>
         </div>
       </div>

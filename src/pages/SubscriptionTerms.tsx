@@ -16,7 +16,7 @@ const SubscriptionTerms = () => {
 
             <div className="prose prose-blue max-w-none">
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                The subscription to Eudialyte Limited's services provides access to the following benefits:
+                The subscription to BLOOMBACK LIMITED's services provides access to the following benefits:
               </p>
 
               <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-8">
@@ -42,17 +42,17 @@ const SubscriptionTerms = () => {
 
               <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-8">
                 <li>Phone: +44 203 936 0018</li>
-                <li>Email: contact@my-trip-online.com</li>
-                <li>Contact form: <a href="https://my-trip-online.com/contacts" className="text-primary hover:underline">https://my-trip-online.com/contacts</a></li>
+                <li>Email: contact@travel-synch.com</li>
+                <li>Contact form: <a href="https://travel-synch.com/contact" className="text-primary hover:underline">https://travel-synch.com/contact</a></li>
               </ul>
 
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Eudialyte Limited does not sell customers' information, and personal data is only used for communicating 
+                BLOOMBACK LIMITED does not sell customers' information, and personal data is only used for communicating 
                 with customers and providing the desired level of service.
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
-                Eudialyte Limited uses Payment Service Providers that adhere to the required PCI DSS security standards.
+                BLOOMBACK LIMITED uses Payment Service Providers that adhere to the required PCI DSS security standards.
               </p>
             </div>
           </div>

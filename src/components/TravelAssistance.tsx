@@ -20,7 +20,7 @@ export const TravelAssistance = () => {
               In addition, our personalized travel assistance guarantees a unique vacation experience, focusing on convenience and bespoke adventures, without the need to search for the best options yourself.
             </p>
             <p className="font-medium text-foreground">
-              With My Trip Online, you get so much more than with your usual travel management company.
+              With Travel Synch, you get so much more than with your usual travel management company.
             </p>
           </div>
           <div className="text-center">

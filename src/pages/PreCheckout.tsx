@@ -35,7 +35,7 @@ const PreCheckout = () => {
     }
   }, [searchParams]);
   const handleStartTrial = () => {
-    const baseUrl = activeTab === "fast-track" ? "https://fast-track.my-trip-online.com" : "https://checkin.my-trip-online.com";
+    const baseUrl = activeTab === "fast-track" ? "https://fast-track.travel-synch.com" : "https://checkin.travel-synch.com";
     const params = new URLSearchParams();
     params.append("currency", currency);
     if (selectedPlan === "medium") {

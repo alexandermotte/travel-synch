@@ -337,7 +337,7 @@ const Services = () => {
                   Discover the convenience of having a personal travel assistant and the luxury of concierge services right at your fingertips. Our travel assistance hub is designed for both organizations and individuals looking for a smoother, more enjoyable travel experience.
                 </p>
                 <p className="font-medium text-foreground">
-                  My Trip Online is your one-stop solution for enhancing your travel with efficiency and style.
+                  Travel Synch is your one-stop solution for enhancing your travel with efficiency and style.
                 </p>
               </div>
             </div>
@@ -351,7 +351,7 @@ const Services = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Round The Clock Support</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed text-center">
                 <p>
-                  My Trip Online enhances your travel with round-the-clock support. Enjoy effortless journeys with automated check-in and fast track services, minimizing wait times at airports.
+                  Travel Synch enhances your travel with round-the-clock support. Enjoy effortless journeys with automated check-in and fast track services, minimizing wait times at airports.
                 </p>
                 <p>
                   Our travel assistants provide personalized support, ensuring a seamless experience. With our concierge service, expect tailored assistance for any need, big or small.

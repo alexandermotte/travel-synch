@@ -13,10 +13,10 @@ const Privacy = () => {
 
             <section className="mb-8">
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Welcome to the privacy policy for the my-trip-online.com website ("we", "us" or "our").
+                Welcome to the privacy policy for the travel-synch.com website ("we", "us" or "our").
               </p>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website (regardless of where you visit it from) and tell you about your privacy rights and how the law protects you. If you have any question regarding our data policy, please contact us by email at contact@my-trip-online.com.
+                We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website (regardless of where you visit it from) and tell you about your privacy rights and how the law protects you. If you have any question regarding our data policy, please contact us by email at contact@travel-synch.com.
               </p>
             </section>
 
@@ -41,7 +41,7 @@ const Privacy = () => {
 
               <h3 className="text-xl font-semibold mb-3">Contact details</h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                If you have any questions about this privacy policy or our privacy practices, please contact our data privacy manager by emailing contact@my-trip-online.com or writing to Eudialyte Limited - Vladimirou Kafkaridi 2A, Nicosia, 2202
+                If you have any questions about this privacy policy or our privacy practices, please contact our data privacy manager by emailing contact@travel-synch.com or writing to BLOOMBACK LIMITED, Office 6, Suite A 13 Reeves Way, South Woodham Ferrers, Chelmsford, Essex, CM3 5XF, United Kingdom
               </p>
 
               <h3 className="text-xl font-semibold mb-3">Changes to the privacy policy and your duty to inform us of changes</h3>
@@ -194,7 +194,7 @@ const Privacy = () => {
                 <li><strong>Withdraw consent</strong> at any time when we are relying on consent to process your personal data</li>
               </ul>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                If you wish to exercise any of the rights set out above, please contact us by email at contact@my-trip-online.com
+                If you wish to exercise any of the rights set out above, please contact us by email at contact@travel-synch.com
               </p>
 
               <h3 className="text-xl font-semibold mb-3">No fee usually required</h3>

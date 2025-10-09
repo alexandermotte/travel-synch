@@ -27,11 +27,11 @@ const Terms = () => {
               <h2 className="text-2xl font-semibold mb-4">2. INFORMATION ABOUT US AND HOW TO CONTACT US</h2>
               <h3 className="text-xl font-semibold mb-3">2.1 Who we are</h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                We are my-trip-online.com, a website operated by Eudialyte Limited, a company registered in Cyprus under company registration number HE 416378 and our registered office is Eudialyte Limited - Vladimirou Kafkaridi 2A, Nicosia, 2202
+                We are travel-synch.com, a website operated by BLOOMBACK LIMITED, a company registered in the United Kingdom and our registered office is Office 6, Suite A 13 Reeves Way, South Woodham Ferrers, Chelmsford, Essex, CM3 5XF, United Kingdom
               </p>
               <h3 className="text-xl font-semibold mb-3">2.2 How to contact us</h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                You can contact us by emailing our customer service team at contact@my-trip-online.com or by writing to us at our trading address Eudialyte Limited Vladimirou Kafkaridi 2A, Nicosia, 2202
+                You can contact us by emailing our customer service team at contact@travel-synch.com or by writing to us at our trading address BLOOMBACK LIMITED, Office 6, Suite A 13 Reeves Way, South Woodham Ferrers, Chelmsford, Essex, CM3 5XF, United Kingdom
               </p>
               <h3 className="text-xl font-semibold mb-3">2.3 How we may contact you</h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
@@ -154,7 +154,7 @@ const Terms = () => {
               <h3 className="text-xl font-semibold mb-3">8.1 Tell us you want to end the contract</h3>
               <p className="text-muted-foreground leading-relaxed mb-4">To end the contract with us, please let us know by doing one of the following:</p>
               <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                <li>Email. Email customer services at contact@my-trip-online.com. Please provide your name, home address, details of the order and, where available, your phone number and email address.</li>
+                <li>Email. Email customer services at contact@travel-synch.com. Please provide your name, home address, details of the order and, where available, your phone number and email address.</li>
                 <li>Online Chat. Contact us directly via your member zone by chat.</li>
               </ul>
               <h3 className="text-xl font-semibold mb-3">8.2 How we will refund you</h3>
@@ -187,7 +187,7 @@ const Terms = () => {
               <h2 className="text-2xl font-semibold mb-4">10. IF THERE IS A PROBLEM WITH THE SERVICE</h2>
               <h3 className="text-xl font-semibold mb-3">10.1 How to tell us about problems</h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                If you have any questions or complaints about the service, please contact us. You can email us at contact@my-trip-online.com or via your member zone.
+                If you have any questions or complaints about the service, please contact us. You can email us at contact@travel-synch.com or via your member zone.
               </p>
               <h3 className="text-xl font-semibold mb-3">10.2 Summary of your legal rights</h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
@@ -333,7 +333,7 @@ const Terms = () => {
                 (Complete and return this form only if you wish to withdraw from the contract)
               </p>
               <div className="space-y-4 text-muted-foreground">
-                <p>To: my-trip-online.com, contact@my-trip-online.com</p>
+                <p>To: travel-synch.com, contact@travel-synch.com</p>
                 <p>I hereby give notice that I cancel my contract for the Services ordered on the following date…………</p>
                 <p>Name of consumer(s):……………………………………………………………………………………………………….</p>
                 <p>Address of consumer(s):……………………………………………………………………………………………….</p>

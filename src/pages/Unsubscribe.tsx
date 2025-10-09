@@ -111,11 +111,11 @@ const Unsubscribe = () => {
                         Email us at
                       </h3>
                       <a
-                        href="mailto:contact@my-trip-online.com"
+                        href="mailto:contact@travel-synch.com"
                         className="flex items-center space-x-3 text-lg font-medium text-primary hover:text-primary/80 transition-smooth"
                       >
                         <Mail className="h-5 w-5" />
-                        <span>contact@my-trip-online.com</span>
+                        <span>contact@travel-synch.com</span>
                       </a>
                     </div>
                   </div>
