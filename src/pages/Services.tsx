@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Check, Sparkles, Zap, Ticket, BookOpen, Heart, Clock } from "lucide-react";
+import { Check, Sparkles, Zap, Ticket, BookOpen, Heart, Clock, Plane, Shield, Users, Map, RefreshCw, Star, CheckCircle, Calendar, TrendingUp } from "lucide-react";
 import { useCurrency } from "@/contexts/CurrencyContext";
 import { useState } from "react";
 
@@ -133,19 +133,28 @@ const Services = () => {
 
               <TabsContent value="fast-track" className="mt-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <Card className="p-6 bg-card border-border">
+                  <Card className="p-6 bg-card border-border text-center">
+                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
+                      <Zap className="h-6 w-6" />
+                    </div>
                     <h3 className="text-xl font-semibold mb-3">Ultimate Fast Track Service</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       Navigate through the airport with ease by accessing fast track lanes at hundreds of the world's leading airports.
                     </p>
                   </Card>
-                  <Card className="p-6 bg-card border-border">
+                  <Card className="p-6 bg-card border-border text-center">
+                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
+                      <TrendingUp className="h-6 w-6" />
+                    </div>
                     <h3 className="text-xl font-semibold mb-3">Best Access</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       We ensure priority access, offering the fastest route to your gate.
                     </p>
                   </Card>
-                  <Card className="p-6 bg-card border-border">
+                  <Card className="p-6 bg-card border-border text-center">
+                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
+                      <Users className="h-6 w-6" />
+                    </div>
                     <h3 className="text-xl font-semibold mb-3">Dedicated Support</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       Our customer service is available 24/7 to assist with all your fast track needs.
@@ -156,19 +165,28 @@ const Services = () => {
 
               <TabsContent value="ticketline" className="mt-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <Card className="p-6 bg-card border-border">
+                  <Card className="p-6 bg-card border-border text-center">
+                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
+                      <CheckCircle className="h-6 w-6" />
+                    </div>
                     <h3 className="text-xl font-semibold mb-3">Stress-Free Access</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       Skip the queues and guarantee your entry. We help you pre-book popular sites, museums, and local events.
                     </p>
                   </Card>
-                  <Card className="p-6 bg-card border-border">
+                  <Card className="p-6 bg-card border-border text-center">
+                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
+                      <Star className="h-6 w-6" />
+                    </div>
                     <h3 className="text-xl font-semibold mb-3">Tailored Experiences</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       Discover curated recommendations that match your interests. Whether it's art, history, or thrill, we've got the tickets lined up.
                     </p>
                   </Card>
-                  <Card className="p-6 bg-card border-border">
+                  <Card className="p-6 bg-card border-border text-center">
+                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
+                      <Ticket className="h-6 w-6" />
+                    </div>
                     <h3 className="text-xl font-semibold mb-3">Exclusive Deals</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       Get access to special offers and bundled passes that save you money while unlocking more experiences.
@@ -179,19 +197,28 @@ const Services = () => {
 
               <TabsContent value="ebooks" className="mt-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <Card className="p-6 bg-card border-border">
+                  <Card className="p-6 bg-card border-border text-center">
+                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
+                      <BookOpen className="h-6 w-6" />
+                    </div>
                     <h3 className="text-xl font-semibold mb-3">Knowledge On-the-Go</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       Packed with tips, maps, and local secrets — our e-books are perfect companions for spontaneous adventures.
                     </p>
                   </Card>
-                  <Card className="p-6 bg-card border-border">
+                  <Card className="p-6 bg-card border-border text-center">
+                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
+                      <Map className="h-6 w-6" />
+                    </div>
                     <h3 className="text-xl font-semibold mb-3">Inspiration Anytime</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       Browse destination guides and cultural reads wherever you are. No Wi-Fi? No problem — they're always available offline.
                     </p>
                   </Card>
-                  <Card className="p-6 bg-card border-border">
+                  <Card className="p-6 bg-card border-border text-center">
+                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
+                      <RefreshCw className="h-6 w-6" />
+                    </div>
                     <h3 className="text-xl font-semibold mb-3">Regular Updates</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       Our content stays fresh with frequent updates, so you'll always have the latest insights and travel trends.
@@ -202,19 +229,28 @@ const Services = () => {
 
               <TabsContent value="concierge" className="mt-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <Card className="p-6 bg-card border-border">
+                  <Card className="p-6 bg-card border-border text-center">
+                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
+                      <Plane className="h-6 w-6" />
+                    </div>
                     <h3 className="text-xl font-semibold mb-3">Great Network</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       Our partners ensure we can handle any concierge request in any location.
                     </p>
                   </Card>
-                  <Card className="p-6 bg-card border-border">
+                  <Card className="p-6 bg-card border-border text-center">
+                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
+                      <RefreshCw className="h-6 w-6" />
+                    </div>
                     <h3 className="text-xl font-semibold mb-3">Flexibility</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       You are able to change your reservation at any time.
                     </p>
                   </Card>
-                  <Card className="p-6 bg-card border-border">
+                  <Card className="p-6 bg-card border-border text-center">
+                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
+                      <Shield className="h-6 w-6" />
+                    </div>
                     <h3 className="text-xl font-semibold mb-3">Travel Experts</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       We work in this field for many years and build an expertise you can rely on.
@@ -225,13 +261,19 @@ const Services = () => {
 
               <TabsContent value="checkin" className="mt-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Card className="p-6 bg-card border-border">
+                  <Card className="p-6 bg-card border-border text-center">
+                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
+                      <CheckCircle className="h-6 w-6" />
+                    </div>
                     <h3 className="text-xl font-semibold mb-3">Smooth Check-In</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       Our automated check-in system streamlines your travel process, ensuring you can skip the lines.
                     </p>
                   </Card>
-                  <Card className="p-6 bg-card border-border">
+                  <Card className="p-6 bg-card border-border text-center">
+                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
+                      <Calendar className="h-6 w-6" />
+                    </div>
                     <h3 className="text-xl font-semibold mb-3">Be the First to Check-In</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       Enjoy the privilege of being among the first to check in, setting the tone for a relaxed travel experience.
@@ -252,7 +294,12 @@ const Services = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
               {conciergeFeatures.map((feature, index) => (
-                <Card key={index} className="p-6 bg-card border-border">
+                <Card key={index} className="p-6 bg-card border-border text-center">
+                  <div className="mb-4 inline-flex p-3 rounded-xl bg-accent/10 text-accent">
+                    {index === 0 && <Heart className="h-6 w-6" />}
+                    {index === 1 && <Clock className="h-6 w-6" />}
+                    {index === 2 && <Users className="h-6 w-6" />}
+                  </div>
                   <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
                 </Card>
