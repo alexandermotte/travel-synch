@@ -67,6 +67,15 @@ export const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
+            <Button
+              variant="default"
+              size="sm"
+              className="hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground"
+              onClick={() => window.location.href = 'https://member.my-trip-online.com/'}
+            >
+              Login
+            </Button>
+
             {/* Mobile Menu Button */}
             <Button
               variant="ghost"
@@ -119,6 +128,14 @@ export const Header = () => {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
+            <Button
+              variant="default"
+              size="sm"
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+              onClick={() => window.location.href = 'https://member.my-trip-online.com/'}
+            >
+              Login
+            </Button>
           </div>
         )}
       </div>
