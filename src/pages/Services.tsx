@@ -11,6 +11,7 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import mobileCheckinImage from "@/assets/mobile-checkin.jpg";
 import museumImage from "@/assets/museum-interior.jpg";
+import serviceConciergeImage from "@/assets/service-concierge.jpg";
 
 const Services = () => {
   const { formatPrice } = useCurrency();
@@ -325,6 +326,15 @@ const Services = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Concierge Services</h2>
               <p className="text-xl text-muted-foreground">Don't have time? We can help!</p>
             </div>
+            
+            <div className="mb-12 relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-elegant max-w-5xl mx-auto">
+              <img 
+                src={serviceConciergeImage} 
+                alt="Professional concierge service" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
               {conciergeFeatures.map((feature, index) => (
                 <Card key={index} className="p-6 bg-card border-border text-center">
