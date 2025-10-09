@@ -1,6 +1,9 @@
 import { Card } from "@/components/ui/card";
 import { Sparkles, Zap, CheckCircle, Coffee, Ticket, BookOpen } from "lucide-react";
 import travelFamily from "@/assets/travel-family.jpg";
+import airportInterior from "@/assets/airport-interior.jpg";
+import museumInterior from "@/assets/museum-interior.jpg";
+import mobileCheckin from "@/assets/mobile-checkin.jpg";
 
 const services = [
   {
@@ -42,15 +45,16 @@ export const Services = () => {
         <div className="mb-12 relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-elegant max-w-5xl mx-auto">
           <img 
             src={travelFamily} 
-            alt="Voyageurs heureux à l'aéroport" 
+            alt="Happy travelers at the airport" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end justify-center pb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-white">Premium Services</h2>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {services.map((service, index) => (
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+          {services.slice(0, 3).map((service, index) => (
             <Card
               key={index}
               className="p-6 md:p-8 bg-card border-border hover:shadow-elegant transition-smooth group"
@@ -62,6 +66,46 @@ export const Services = () => {
               <p className="text-muted-foreground leading-relaxed">{service.description}</p>
             </Card>
           ))}
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-5xl mx-auto">
+          <div className="relative h-[300px] rounded-xl overflow-hidden shadow-elegant">
+            <img 
+              src={airportInterior} 
+              alt="Modern airport with fast track access" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="relative h-[300px] rounded-xl overflow-hidden shadow-elegant">
+            <img 
+              src={mobileCheckin} 
+              alt="Mobile check-in service at airport" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+          {services.slice(3).map((service, index) => (
+            <Card
+              key={index + 3}
+              className="p-6 md:p-8 bg-card border-border hover:shadow-elegant transition-smooth group"
+            >
+              <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-accent group-hover:text-accent-foreground transition-smooth">
+                <service.icon className="h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+            </Card>
+          ))}
+        </div>
+
+        <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-elegant max-w-5xl mx-auto">
+          <img 
+            src={museumInterior} 
+            alt="Museum interior with skip-the-line access" 
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </section>
