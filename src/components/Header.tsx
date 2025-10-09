@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Phone, Menu, X } from "lucide-react";
 import { useCurrency, currencies } from "@/contexts/CurrencyContext";
+import logo from "@/assets/header-logo.svg";
 
 export const Header = () => {
   const { currency, setCurrency } = useCurrency();
@@ -18,8 +19,8 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold text-primary">My Trip Online</div>
+          <a href="/" className="flex items-center">
+            <img src={logo} alt="My Trip Online" className="h-10" />
           </a>
 
           {/* Desktop Navigation */}
