@@ -13,6 +13,7 @@ import Terms from "./pages/Terms";
 import SubscriptionTerms from "./pages/SubscriptionTerms";
 import Privacy from "./pages/Privacy";
 import FAQ from "./pages/FAQ";
+import ConfigGenerator from "./pages/ConfigGenerator";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const App = () => (
             <Route path="/subscription-terms" element={<SubscriptionTerms />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/faq" element={<FAQ />} />
+            <Route path="/config-generator" element={<ConfigGenerator />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
