@@ -70,10 +70,10 @@ export const Header = () => {
             <Button
               variant="default"
               size="sm"
-              className="hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground"
               onClick={() => window.location.href = 'https://member.travel-synch.com/'}
             >
-              Login
+              Connexion
             </Button>
 
             {/* Mobile Menu Button */}
@@ -131,10 +131,10 @@ export const Header = () => {
             <Button
               variant="default"
               size="sm"
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
               onClick={() => window.location.href = 'https://member.travel-synch.com/'}
             >
-              Login
+              Connexion
             </Button>
           </div>
         )}

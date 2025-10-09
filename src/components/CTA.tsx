@@ -7,17 +7,17 @@ export const CTA = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to save on your travel?
+            Prêt à Économiser sur Vos Voyages ?
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            We make special travel arrangements with round the clock support by our travel specialists. Lowest price guaranteed.
+            Bénéficiez d'arrangements exclusifs et d'un support continu par nos spécialistes voyage. Meilleurs prix garantis.
           </p>
           <Button 
             size="lg" 
             className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg shadow-elegant transition-smooth"
             onClick={() => window.location.href = '/pre-checkout'}
           >
-            Start Now
+            Commencer Maintenant
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>

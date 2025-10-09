@@ -12,17 +12,17 @@ export const Hero = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              Plan Your Next Holiday!
+              Voyagez Plus, Dépensez Moins !
             </h1>
             <p className="mb-8 text-lg md:text-xl text-muted-foreground leading-relaxed">
-              You can tailor your perfect holiday with Travel Synch. We assist you in making smarter travel choices by providing the lowest fares from {formatPrice(49)} every three months.
+              Avec Travel Synch, transformez votre manière de voyager. Bénéficiez d'un accès privilégié aux meilleurs tarifs et services premium dès {formatPrice(49)} tous les trois mois.
             </p>
             <Button 
               size="lg" 
               className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg shadow-elegant transition-smooth"
               onClick={() => window.location.href = '/pre-checkout'}
             >
-              Start Now
+              Commencer Maintenant
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>

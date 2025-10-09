@@ -6,14 +6,14 @@ import { useCurrency } from "@/contexts/CurrencyContext";
 const plans = [
   {
     id: "medium",
-    name: "Medium",
+    name: "Essentiel",
     price: 49,
-    period: "Every 3 months",
-    description: "Smart travel, frequent and hassle-free",
+    period: "Tous les 3 mois",
+    description: "Voyagez malin, souvent et sans contrainte",
     features: [
-      "Up to 2 free Fast-Track accesses per month",
-      "Automated check-in included",
-      "Priority entry to selected museums",
+      "Jusqu'à 2 accès Fast-Track offerts par mois",
+      "Enregistrement automatique inclus",
+      "Entrée prioritaire dans une sélection de musées",
     ],
     highlighted: false,
   },
@@ -21,13 +21,13 @@ const plans = [
     id: "premium",
     name: "Premium",
     price: 79,
-    period: "Every 3 months",
-    description: "",
+    period: "Tous les 3 mois",
+    description: "L'excellence voyage sans limites",
     features: [
-      "Up to 5 free Fast-Track accesses per month",
-      "Unlimited automated check-ins",
-      "Unlimited skip-the-line museum entries",
-      "Exclusive discounts on airport lounges",
+      "Jusqu'à 5 accès Fast-Track offerts par mois",
+      "Enregistrements automatiques illimités",
+      "Accès coupe-file illimité aux musées",
+      "Réductions exclusives sur les salons aéroport",
     ],
     highlighted: true,
   },
@@ -40,7 +40,8 @@ export const Pricing = () => {
     <section className="py-16 md:py-24 bg-gradient-to-b from-sky/40 to-sand/40">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold">Pricing</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">Nos Formules</h2>
+          <p className="text-lg text-muted-foreground mt-2">Choisissez l'abonnement qui correspond à votre rythme de voyage</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
@@ -76,7 +77,7 @@ export const Pricing = () => {
                 size="lg"
                 onClick={() => window.location.href = `/pre-checkout?plan=${plan.id}`}
               >
-                Try Now
+                Essayer Maintenant
               </Button>
             </Card>
           ))}

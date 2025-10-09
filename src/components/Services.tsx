@@ -1,36 +1,37 @@
 import { Card } from "@/components/ui/card";
 import { Sparkles, Zap, CheckCircle, Coffee, Ticket, BookOpen } from "lucide-react";
+import travelFamily from "@/assets/travel-family.jpg";
 
 const services = [
   {
     icon: Sparkles,
-    title: "Concierge Service",
-    description: "Our bespoke concierge service caters to your every need, from making essential reservations to arranging seamless transportation, ensuring a worry-free journey.",
+    title: "Service Conciergerie",
+    description: "Notre service de conciergerie sur mesure répond à tous vos besoins : réservations stratégiques, transport sans faille, assistance personnalisée pour un voyage sans souci.",
   },
   {
     icon: Zap,
-    title: "Fast Track",
-    description: "Skip the lines with our fast track service. We expedite your airport formalities, making your travel experience smoother and more enjoyable.",
+    title: "Accès Fast Track",
+    description: "Évitez les files d'attente interminables. Notre service Fast Track accélère toutes vos formalités aéroportuaires pour une expérience fluide et agréable.",
   },
   {
     icon: CheckCircle,
-    title: "Automated Check-In",
-    description: "Forget the hassle of manual check-ins. Our automated system ensures you're checked in quickly and efficiently, giving you more time to relax and prepare for your journey.",
+    title: "Enregistrement Automatique",
+    description: "Oubliez les tracas des enregistrements manuels. Notre système intelligent vous enregistre automatiquement, vous offrant plus de temps pour vous détendre.",
   },
   {
     icon: Coffee,
-    title: "Airport Lounges",
-    description: "Enjoy comfort away from crowds. Our lounges offer a serene escape with snacks, Wi-Fi, and more for a relaxing travel experience.",
+    title: "Salons Aéroport Premium",
+    description: "Échappez à l'agitation des terminaux. Profitez de nos salons exclusifs avec collations, Wi-Fi haut débit et espaces confortables pour vous relaxer.",
   },
   {
     icon: Ticket,
-    title: "Ticketline to Attractions",
-    description: "Secure your spot at top attractions and museums with ease. From iconic landmarks to hidden gems, we make sure you don't miss out on unforgettable experiences.",
+    title: "Accès Prioritaire Attractions",
+    description: "Réservez votre place dans les attractions et musées les plus prisés. Des monuments emblématiques aux trésors cachés, ne manquez aucune expérience inoubliable.",
   },
   {
     icon: BookOpen,
-    title: "Travel E-books",
-    description: "Access curated travel e-books filled with insider tips, destination guides and local insights. Perfect for planning ahead or exploring on the go.",
+    title: "Guides de Voyage Numériques",
+    description: "Accédez à une collection de guides exclusifs remplis de conseils d'initiés, itinéraires détaillés et secrets locaux. Parfait pour préparer ou explorer en temps réel.",
   },
 ];
 
@@ -38,6 +39,16 @@ export const Services = () => {
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-background to-sand/30">
       <div className="container mx-auto px-4">
+        <div className="mb-12 relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-elegant max-w-5xl mx-auto">
+          <img 
+            src={travelFamily} 
+            alt="Voyageurs heureux à l'aéroport" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end justify-center pb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Nos Services Premium</h2>
+          </div>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((service, index) => (
             <Card
