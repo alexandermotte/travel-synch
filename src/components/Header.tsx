@@ -7,15 +7,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Phone, Menu, X } from "lucide-react";
-
-const currencies = [
-  { code: "USD", label: "United States Dollars" },
-  { code: "EUR", label: "Euros" },
-  { code: "GBP", label: "Great Britain Pounds" },
-];
+import { useCurrency, currencies } from "@/contexts/CurrencyContext";
 
 export const Header = () => {
-  const [selectedCurrency, setSelectedCurrency] = useState("USD");
+  const { currency, setCurrency } = useCurrency();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -56,19 +51,19 @@ export const Header = () => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm" className="hidden md:flex">
-                  {selectedCurrency}
+                  {currency}
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-64 bg-popover">
-                {currencies.map((currency) => (
+                {currencies.map((curr) => (
                   <DropdownMenuItem
-                    key={currency.code}
-                    onClick={() => setSelectedCurrency(currency.code)}
+                    key={curr.code}
+                    onClick={() => setCurrency(curr.code)}
                     className="cursor-pointer"
                   >
                     <div>
-                      <div className="font-medium">{currency.code}</div>
-                      <div className="text-xs text-muted-foreground">{currency.label}</div>
+                      <div className="font-medium">{curr.code}</div>
+                      <div className="text-xs text-muted-foreground">{curr.label}</div>
                     </div>
                   </DropdownMenuItem>
                 ))}
@@ -112,19 +107,19 @@ export const Header = () => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm" className="w-full">
-                  {selectedCurrency}
+                  {currency}
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-full bg-popover">
-                {currencies.map((currency) => (
+                {currencies.map((curr) => (
                   <DropdownMenuItem
-                    key={currency.code}
-                    onClick={() => setSelectedCurrency(currency.code)}
+                    key={curr.code}
+                    onClick={() => setCurrency(curr.code)}
                     className="cursor-pointer"
                   >
                     <div>
-                      <div className="font-medium">{currency.code}</div>
-                      <div className="text-xs text-muted-foreground">{currency.label}</div>
+                      <div className="font-medium">{curr.code}</div>
+                      <div className="text-xs text-muted-foreground">{curr.label}</div>
                     </div>
                   </DropdownMenuItem>
                 ))}

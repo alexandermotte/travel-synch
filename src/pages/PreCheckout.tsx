@@ -4,34 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, Zap, CheckCircle, Clock, Globe, TrendingUp } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
-const plans = [
-  {
-    name: "Medium",
-    price: "$49",
-    period: "every 3 months",
-    trial: "3 days free trial",
-    cancel: "Cancel anytime",
-    description: "Smart travel, frequent and hassle-free",
-    features: [
-      "Up to 2 free Fast-Track accesses per month",
-      "Automated check-in included",
-    ],
-  },
-  {
-    name: "Premium",
-    price: "$79",
-    period: "every 3 months",
-    trial: "3 free days",
-    cancel: "Cancel anytime",
-    description: "",
-    features: [
-      "Up to 5 free Fast-Track accesses per month",
-      "Unlimited automated check-ins",
-      "Exclusive discounts on airport lounges",
-    ],
-  },
-];
+import { useCurrency } from "@/contexts/CurrencyContext";
 
 const fastTrackFeatures = [
   {
@@ -52,6 +25,36 @@ const fastTrackFeatures = [
 ];
 
 const PreCheckout = () => {
+  const { formatPrice } = useCurrency();
+
+  const plans = [
+    {
+      name: "Medium",
+      priceUSD: 49,
+      period: "every 3 months",
+      trial: "3 days free trial",
+      cancel: "Cancel anytime",
+      description: "Smart travel, frequent and hassle-free",
+      features: [
+        "Up to 2 free Fast-Track accesses per month",
+        "Automated check-in included",
+      ],
+    },
+    {
+      name: "Premium",
+      priceUSD: 79,
+      period: "every 3 months",
+      trial: "3 free days",
+      cancel: "Cancel anytime",
+      description: "",
+      features: [
+        "Up to 5 free Fast-Track accesses per month",
+        "Unlimited automated check-ins",
+        "Exclusive discounts on airport lounges",
+      ],
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -83,7 +86,7 @@ const PreCheckout = () => {
                         <h3 className="text-2xl font-bold mb-3">{plan.name}</h3>
                         <div className="mb-4">
                           <div className="flex items-baseline mb-1">
-                            <span className="text-3xl font-bold text-primary">{plan.price}</span>
+                            <span className="text-3xl font-bold text-primary">{formatPrice(plan.priceUSD)}</span>
                             <span className="text-sm text-muted-foreground ml-2">{plan.period}</span>
                           </div>
                           <p className="text-sm text-accent font-medium">{plan.trial}</p>
@@ -141,7 +144,7 @@ const PreCheckout = () => {
                         <h3 className="text-2xl font-bold mb-3">{plan.name}</h3>
                         <div className="mb-4">
                           <div className="flex items-baseline mb-1">
-                            <span className="text-3xl font-bold text-primary">{plan.price}</span>
+                            <span className="text-3xl font-bold text-primary">{formatPrice(plan.priceUSD)}</span>
                             <span className="text-sm text-muted-foreground ml-2">{plan.period}</span>
                           </div>
                           <p className="text-sm text-accent font-medium">{plan.trial}</p>

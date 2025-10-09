@@ -6,12 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
-const currencies = [
-  { code: "USD", label: "United States Dollars" },
-  { code: "EUR", label: "Euros" },
-  { code: "GBP", label: "Great Britain Pounds" },
-];
+import { useCurrency, currencies } from "@/contexts/CurrencyContext";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -32,7 +27,7 @@ const moreLinks = [
 ];
 
 export const Footer = () => {
-  const [selectedCurrency, setSelectedCurrency] = useState("USD");
+  const { currency, setCurrency } = useCurrency();
 
   return (
     <footer className="bg-secondary/50 border-t">
@@ -44,19 +39,19 @@ export const Footer = () => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" className="w-full justify-start">
-                  {selectedCurrency}
+                  {currency}
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-64 bg-popover">
-                {currencies.map((currency) => (
+                {currencies.map((curr) => (
                   <DropdownMenuItem
-                    key={currency.code}
-                    onClick={() => setSelectedCurrency(currency.code)}
+                    key={curr.code}
+                    onClick={() => setCurrency(curr.code)}
                     className="cursor-pointer"
                   >
                     <div>
-                      <div className="font-medium">{currency.code}</div>
-                      <div className="text-xs text-muted-foreground">{currency.label}</div>
+                      <div className="font-medium">{curr.code}</div>
+                      <div className="text-xs text-muted-foreground">{curr.label}</div>
                     </div>
                   </DropdownMenuItem>
                 ))}
