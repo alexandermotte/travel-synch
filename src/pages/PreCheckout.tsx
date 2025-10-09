@@ -8,6 +8,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const plans = [
   {
     name: "Medium",
+    price: "$49",
+    period: "every 3 months",
+    trial: "3 days free trial",
+    cancel: "Cancel anytime",
     description: "Smart travel, frequent and hassle-free",
     features: [
       "Up to 2 free Fast-Track accesses per month",
@@ -16,6 +20,10 @@ const plans = [
   },
   {
     name: "Premium",
+    price: "$79",
+    period: "every 3 months",
+    trial: "3 free days",
+    cancel: "Cancel anytime",
     description: "",
     features: [
       "Up to 5 free Fast-Track accesses per month",
@@ -72,9 +80,17 @@ const PreCheckout = () => {
                       className="p-8 bg-card border-border hover:shadow-elegant transition-smooth"
                     >
                       <div className="mb-6">
-                        <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                        <h3 className="text-2xl font-bold mb-3">{plan.name}</h3>
+                        <div className="mb-4">
+                          <div className="flex items-baseline mb-1">
+                            <span className="text-3xl font-bold text-primary">{plan.price}</span>
+                            <span className="text-sm text-muted-foreground ml-2">{plan.period}</span>
+                          </div>
+                          <p className="text-sm text-accent font-medium">{plan.trial}</p>
+                          <p className="text-xs text-muted-foreground">{plan.cancel}</p>
+                        </div>
                         {plan.description && (
-                          <p className="text-muted-foreground">{plan.description}</p>
+                          <p className="text-muted-foreground mb-4">{plan.description}</p>
                         )}
                       </div>
                       <ul className="space-y-3">
@@ -122,9 +138,17 @@ const PreCheckout = () => {
                       className="p-8 bg-card border-border hover:shadow-elegant transition-smooth"
                     >
                       <div className="mb-6">
-                        <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                        <h3 className="text-2xl font-bold mb-3">{plan.name}</h3>
+                        <div className="mb-4">
+                          <div className="flex items-baseline mb-1">
+                            <span className="text-3xl font-bold text-primary">{plan.price}</span>
+                            <span className="text-sm text-muted-foreground ml-2">{plan.period}</span>
+                          </div>
+                          <p className="text-sm text-accent font-medium">{plan.trial}</p>
+                          <p className="text-xs text-muted-foreground">{plan.cancel}</p>
+                        </div>
                         {plan.description && (
-                          <p className="text-muted-foreground">{plan.description}</p>
+                          <p className="text-muted-foreground mb-4">{plan.description}</p>
                         )}
                       </div>
                       <ul className="space-y-3">
