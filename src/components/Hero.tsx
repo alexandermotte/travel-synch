@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useCurrency } from "@/contexts/CurrencyContext";
 
 export const Hero = () => {
+  const { formatPrice } = useCurrency();
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-sky via-background to-sand py-24 md:py-32">
       <div className="container mx-auto px-4">
@@ -10,7 +13,7 @@ export const Hero = () => {
             Plan Your Next Holiday!
           </h1>
           <p className="mb-8 text-lg md:text-xl text-muted-foreground leading-relaxed">
-            You can tailor your perfect holiday with My Trip Online. We assist you in making smarter travel choices by providing the lowest fares for only 79$ every three months.
+            You can tailor your perfect holiday with My Trip Online. We assist you in making smarter travel choices by providing the lowest fares from {formatPrice(49)} every three months.
           </p>
           <Button 
             size="lg" 
