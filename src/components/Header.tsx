@@ -30,9 +30,6 @@ export const Header = () => {
             <a href="/services" className="text-sm font-medium transition-smooth hover:text-primary">
               Services
             </a>
-            <a href="/fast-track" className="text-sm font-medium transition-smooth hover:text-primary">
-              Fast Track
-            </a>
             <a href="/contact" className="text-sm font-medium transition-smooth hover:text-primary">
               Contact
             </a>
@@ -90,9 +87,6 @@ export const Header = () => {
             </a>
             <a href="/services" className="block py-2 text-sm font-medium hover:text-primary transition-smooth">
               Services
-            </a>
-            <a href="/fast-track" className="block py-2 text-sm font-medium hover:text-primary transition-smooth">
-              Fast Track
             </a>
             <a href="/contact" className="block py-2 text-sm font-medium hover:text-primary transition-smooth">
               Contact
