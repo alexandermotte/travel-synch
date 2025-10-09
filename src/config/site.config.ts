@@ -25,11 +25,11 @@ export const siteConfig = {
 
   // Brand Colors (HSL format)
   colors: {
-    primary: "210 85% 50%",      // Professional blue
-    primaryLight: "210 75% 65%",
-    primaryDark: "210 85% 40%",
-    accent: "25 100% 50%",        // Vibrant orange
-    secondary: "210 15% 96%",
+    primary: "220 70% 25%",      // Deep navy
+    primaryLight: "220 60% 45%",
+    primaryDark: "220 80% 20%",
+    accent: "14 90% 60%",         // Coral orange
+    secondary: "220 15% 96%",
   },
 
   // Pricing Plans

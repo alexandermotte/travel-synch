@@ -17,16 +17,16 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 15%;
 
-    --primary: 210 85% 50%;
+    --primary: 220 70% 25%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 15% 96%;
-    --secondary-foreground: 215 25% 15%;
+    --secondary: 220 15% 96%;
+    --secondary-foreground: 220 25% 15%;
 
-    --muted: 210 15% 96%;
-    --muted-foreground: 215 15% 50%;
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 15% 50%;
 
-    --accent: 25 100% 50%;
+    --accent: 14 90% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -39,12 +39,12 @@ All colors MUST be HSL.
     --radius: 0.75rem;
     
     /* Travel-themed colors */
-    --ocean: 210 85% 50%;
-    --ocean-light: 210 75% 65%;
-    --ocean-dark: 210 85% 40%;
-    --sky: 200 70% 92%;
-    --gold: 25 100% 50%;
-    --sand: 42 40% 95%;
+    --ocean: 220 70% 25%;
+    --ocean-light: 220 60% 45%;
+    --ocean-dark: 220 80% 20%;
+    --sky: 210 60% 95%;
+    --gold: 14 90% 60%;
+    --sand: 35 35% 95%;
     
     /* Shadows & Effects */
     --shadow-sm: 0 2px 8px -2px hsl(215 25% 15% / 0.08);
@@ -83,16 +83,16 @@ All colors MUST be HSL.
     --popover: 215 25% 12%;
     --popover-foreground: 210 15% 96%;
 
-    --primary: 210 75% 55%;
+    --primary: 220 60% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 20% 18%;
-    --secondary-foreground: 210 15% 96%;
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 220 15% 96%;
 
-    --muted: 215 20% 18%;
-    --muted-foreground: 215 10% 60%;
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 10% 60%;
 
-    --accent: 25 100% 55%;
+    --accent: 14 85% 65%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72.8% 50.6%;
@@ -102,12 +102,12 @@ All colors MUST be HSL.
     --input: 215 20% 20%;
     --ring: 205 75% 55%;
     
-    --ocean: 210 75% 55%;
-    --ocean-light: 210 65% 70%;
-    --ocean-dark: 210 85% 40%;
-    --sky: 200 40% 20%;
-    --gold: 25 100% 55%;
-    --sand: 42 20% 18%;
+    --ocean: 220 60% 45%;
+    --ocean-light: 220 50% 60%;
+    --ocean-dark: 220 70% 30%;
+    --sky: 210 30% 20%;
+    --gold: 14 85% 65%;
+    --sand: 35 20% 18%;
   }
 }
 
