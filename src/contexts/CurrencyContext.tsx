@@ -12,17 +12,16 @@ const CurrencyContext = createContext<CurrencyContextType | undefined>(undefined
 
 const currencyRates = {
   USD: { rate: 1, symbol: "$", label: "United States Dollars" },
-  EUR: { rate: 0.92, symbol: "€", label: "Euros" },
-  GBP: { rate: 0.79, symbol: "£", label: "Great Britain Pounds" },
+  EUR: { rate: 1, symbol: "€", label: "Euros" },
+  GBP: { rate: 1, symbol: "£", label: "Great Britain Pounds" },
 };
 
 export const CurrencyProvider = ({ children }: { children: ReactNode }) => {
   const [currency, setCurrency] = useState<Currency>("USD");
 
-  const formatPrice = (usdPrice: number): string => {
-    const { rate, symbol } = currencyRates[currency];
-    const convertedPrice = Math.round(usdPrice * rate);
-    return `${symbol}${convertedPrice}`;
+  const formatPrice = (price: number): string => {
+    const { symbol } = currencyRates[currency];
+    return `${symbol}${price}`;
   };
 
   return (

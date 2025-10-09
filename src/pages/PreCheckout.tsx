@@ -30,7 +30,7 @@ const PreCheckout = () => {
   const plans = [
     {
       name: "Medium",
-      priceUSD: 49,
+      price: 49,
       period: "every 3 months",
       trial: "3 days free trial",
       cancel: "Cancel anytime",
@@ -42,7 +42,7 @@ const PreCheckout = () => {
     },
     {
       name: "Premium",
-      priceUSD: 79,
+      price: 79,
       period: "every 3 months",
       trial: "3 free days",
       cancel: "Cancel anytime",
@@ -86,7 +86,7 @@ const PreCheckout = () => {
                         <h3 className="text-2xl font-bold mb-3">{plan.name}</h3>
                         <div className="mb-4">
                           <div className="flex items-baseline mb-1">
-                            <span className="text-3xl font-bold text-primary">{formatPrice(plan.priceUSD)}</span>
+                            <span className="text-3xl font-bold text-primary">{formatPrice(plan.price)}</span>
                             <span className="text-sm text-muted-foreground ml-2">{plan.period}</span>
                           </div>
                           <p className="text-sm text-accent font-medium">{plan.trial}</p>
@@ -144,7 +144,7 @@ const PreCheckout = () => {
                         <h3 className="text-2xl font-bold mb-3">{plan.name}</h3>
                         <div className="mb-4">
                           <div className="flex items-baseline mb-1">
-                            <span className="text-3xl font-bold text-primary">{formatPrice(plan.priceUSD)}</span>
+                            <span className="text-3xl font-bold text-primary">{formatPrice(plan.price)}</span>
                             <span className="text-sm text-muted-foreground ml-2">{plan.period}</span>
                           </div>
                           <p className="text-sm text-accent font-medium">{plan.trial}</p>

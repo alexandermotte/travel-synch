@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import { useCurrency } from "@/contexts/CurrencyContext";
 
 const plans = [
   {
     name: "Medium",
-    price: "$49",
+    price: 49,
     period: "Every 3 months",
     description: "Smart travel, frequent and hassle-free",
     features: [
@@ -17,7 +18,7 @@ const plans = [
   },
   {
     name: "Premium",
-    price: "$79",
+    price: 79,
     period: "Every 3 months",
     description: "",
     features: [
@@ -31,6 +32,8 @@ const plans = [
 ];
 
 export const Pricing = () => {
+  const { formatPrice } = useCurrency();
+
   return (
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-4">
@@ -53,7 +56,7 @@ export const Pricing = () => {
                   {plan.name}
                 </h3>
                 <div className="flex items-baseline justify-center mb-1">
-                  <span className="text-4xl md:text-5xl font-bold">{plan.price}</span>
+                  <span className="text-4xl md:text-5xl font-bold">{formatPrice(plan.price)}</span>
                 </div>
                 <p className="text-sm text-muted-foreground mb-2">{plan.period}</p>
                 {plan.description && (
