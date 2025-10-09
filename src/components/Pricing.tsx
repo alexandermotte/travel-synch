@@ -6,14 +6,14 @@ import { useCurrency } from "@/contexts/CurrencyContext";
 const plans = [
   {
     id: "medium",
-    name: "Essentiel",
+    name: "Essential",
     price: 49,
-    period: "Tous les 3 mois",
-    description: "Voyagez malin, souvent et sans contrainte",
+    period: "Every 3 months",
+    description: "Smart travel made simple and stress-free",
     features: [
-      "Jusqu'à 2 accès Fast-Track offerts par mois",
-      "Enregistrement automatique inclus",
-      "Entrée prioritaire dans une sélection de musées",
+      "Up to 2 complimentary Fast-Track passes monthly",
+      "Automatic check-in service included",
+      "Priority access to select museums",
     ],
     highlighted: false,
   },
@@ -21,13 +21,13 @@ const plans = [
     id: "premium",
     name: "Premium",
     price: 79,
-    period: "Tous les 3 mois",
-    description: "L'excellence voyage sans limites",
+    period: "Every 3 months",
+    description: "Unlimited luxury travel experiences",
     features: [
-      "Jusqu'à 5 accès Fast-Track offerts par mois",
-      "Enregistrements automatiques illimités",
-      "Accès coupe-file illimité aux musées",
-      "Réductions exclusives sur les salons aéroport",
+      "Up to 5 complimentary Fast-Track passes monthly",
+      "Unlimited automatic check-ins",
+      "Unlimited skip-the-line museum access",
+      "Exclusive lounge discounts at airports",
     ],
     highlighted: true,
   },
@@ -40,8 +40,8 @@ export const Pricing = () => {
     <section className="py-16 md:py-24 bg-gradient-to-b from-sky/40 to-sand/40">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold">Nos Formules</h2>
-          <p className="text-lg text-muted-foreground mt-2">Choisissez l'abonnement qui correspond à votre rythme de voyage</p>
+          <h2 className="text-3xl md:text-4xl font-bold">Choose Your Plan</h2>
+          <p className="text-lg text-muted-foreground mt-2">Select the membership that matches your travel lifestyle</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
@@ -77,7 +77,7 @@ export const Pricing = () => {
                 size="lg"
                 onClick={() => window.location.href = `/pre-checkout?plan=${plan.id}`}
               >
-                Essayer Maintenant
+                Start Your Journey
               </Button>
             </Card>
           ))}

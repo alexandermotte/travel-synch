@@ -73,7 +73,7 @@ export const Header = () => {
               className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground"
               onClick={() => window.location.href = 'https://member.travel-synch.com/'}
             >
-              Connexion
+              Login
             </Button>
 
             {/* Mobile Menu Button */}
@@ -134,7 +134,7 @@ export const Header = () => {
               className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
               onClick={() => window.location.href = 'https://member.travel-synch.com/'}
             >
-              Connexion
+              Login
             </Button>
           </div>
         )}

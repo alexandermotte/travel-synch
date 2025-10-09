@@ -14,10 +14,10 @@ export const TravelManagement = () => {
           </div>
           <div className="text-center md:text-left order-1 md:order-2">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Gérez Vos Voyages en Toute Simplicité
+              Effortless Travel Management
             </h2>
             <p className="text-lg text-muted-foreground">
-              Un contrôle total et une transparence absolue à portée de main.
+              Complete visibility and control at your fingertips.
             </p>
           </div>
         </div>

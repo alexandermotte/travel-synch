@@ -5,23 +5,23 @@ import loungePremium from "@/assets/lounge-premium.jpg";
 const features = [
   {
     icon: Headphones,
-    title: "Support Humain 24/7",
-    description: "Nos experts voyage sont disponibles en permanence pour vous accompagner. Aucun robot, uniquement de vrais spécialistes à votre écoute.",
+    title: "Expert Support 24/7",
+    description: "Real travel specialists available around the clock to assist you. No automated responses—just genuine expertise whenever you need it.",
   },
   {
     icon: DollarSign,
-    title: "Meilleur Rapport Qualité-Prix",
-    description: "Grâce à nos partenaires triés sur le volet, profitez des tarifs les plus compétitifs sans compromis sur la qualité. Zéro frais cachés, transparence totale.",
+    title: "Unbeatable Value",
+    description: "Through our carefully selected partners, enjoy the most competitive rates with premium quality. Complete transparency with zero hidden charges.",
   },
   {
     icon: Shield,
-    title: "Tranquillité d'Esprit Garantie",
-    description: "Réservez sans stress avec une flexibilité maximale et une plateforme intuitive conçue pour vous simplifier la vie.",
+    title: "Complete Peace of Mind",
+    description: "Book with confidence using our flexible platform designed for a stress-free experience from start to finish.",
   },
   {
     icon: Smartphone,
-    title: "Technologie de Pointe",
-    description: "Ne restez pas à la traîne. Notre plateforme innovante révolutionne la façon dont vous réservez et gérez vos voyages.",
+    title: "Cutting-Edge Platform",
+    description: "Stay ahead with our innovative technology that transforms how you book and manage your travel experiences.",
   },
 ];
 
@@ -30,8 +30,8 @@ export const WhyChooseUs = () => {
     <section className="py-16 md:py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Pourquoi Nous Choisir ?</h2>
-          <p className="text-lg text-muted-foreground">Des offres irrésistibles et un service d'exception</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">What Sets Us Apart</h2>
+          <p className="text-lg text-muted-foreground">Exceptional offers with world-class service</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto mb-12">
