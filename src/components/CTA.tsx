@@ -12,7 +12,11 @@ export const CTA = () => {
           <p className="text-lg text-muted-foreground mb-8">
             We make special travel arrangements with round the clock support by our travel specialists. Lowest price guaranteed.
           </p>
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg shadow-elegant transition-smooth">
+          <Button 
+            size="lg" 
+            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg shadow-elegant transition-smooth"
+            onClick={() => window.location.href = '/pre-checkout'}
+          >
             Start Now
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>

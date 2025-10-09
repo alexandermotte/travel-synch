@@ -77,6 +77,7 @@ export const Pricing = () => {
                     : "bg-secondary hover:bg-secondary/80 text-secondary-foreground"
                 }`}
                 size="lg"
+                onClick={() => window.location.href = '/pre-checkout'}
               >
                 Try Now
               </Button>
