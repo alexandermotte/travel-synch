@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Currency context provides global currency state
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <CurrencyProvider>
