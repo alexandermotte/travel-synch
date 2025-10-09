@@ -13,7 +13,16 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
       colors: {
+        ocean: 'hsl(var(--ocean))',
+        'ocean-light': 'hsl(var(--ocean-light))',
+        'ocean-dark': 'hsl(var(--ocean-dark))',
+        sky: 'hsl(var(--sky))',
+        gold: 'hsl(var(--gold))',
+        sand: 'hsl(var(--sand))',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
