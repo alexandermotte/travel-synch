@@ -27,9 +27,10 @@ const fastTrackFeatures = [
 ];
 
 const PreCheckout = () => {
-  const { formatPrice } = useCurrency();
+  const { formatPrice, currency } = useCurrency();
   const [searchParams] = useSearchParams();
   const [selectedPlan, setSelectedPlan] = useState<string>("premium");
+  const [activeTab, setActiveTab] = useState<string>("fast-track");
 
   useEffect(() => {
     const planParam = searchParams.get("plan");
@@ -37,6 +38,21 @@ const PreCheckout = () => {
       setSelectedPlan(planParam);
     }
   }, [searchParams]);
+
+  const handleStartTrial = () => {
+    const baseUrl = activeTab === "fast-track" 
+      ? "https://fast-track.my-trip-online.com"
+      : "https://checkin.my-trip-online.com";
+    
+    const params = new URLSearchParams();
+    params.append("currency", currency);
+    
+    if (selectedPlan === "medium") {
+      params.append("product", "_3m_49");
+    }
+    
+    window.location.href = `${baseUrl}/?${params.toString()}`;
+  };
 
   const plans = [
     {
@@ -82,7 +98,7 @@ const PreCheckout = () => {
               </h1>
             </div>
 
-            <Tabs defaultValue="fast-track" className="max-w-5xl mx-auto">
+            <Tabs defaultValue="fast-track" className="max-w-5xl mx-auto" onValueChange={setActiveTab}>
               <TabsList className="grid w-full grid-cols-2 mb-8">
                 <TabsTrigger value="fast-track" className="text-base">Fast Track</TabsTrigger>
                 <TabsTrigger value="check-in" className="text-base">Automated Check-In</TabsTrigger>
@@ -160,6 +176,7 @@ const PreCheckout = () => {
                   <Button 
                     size="lg" 
                     className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg shadow-elegant transition-smooth"
+                    onClick={handleStartTrial}
                   >
                     Start Free Trial
                   </Button>
@@ -254,6 +271,7 @@ const PreCheckout = () => {
                   <Button 
                     size="lg" 
                     className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg shadow-elegant transition-smooth"
+                    onClick={handleStartTrial}
                   >
                     Start Free Trial
                   </Button>
@@ -276,6 +294,7 @@ const PreCheckout = () => {
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg shadow-elegant transition-smooth"
+                onClick={handleStartTrial}
               >
                 Start Now
               </Button>
