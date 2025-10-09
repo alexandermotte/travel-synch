@@ -5,6 +5,8 @@ import { Card } from "@/components/ui/card";
 import { Check, Zap, CheckCircle, Clock, Globe, TrendingUp } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useCurrency } from "@/contexts/CurrencyContext";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const fastTrackFeatures = [
   {
@@ -26,9 +28,19 @@ const fastTrackFeatures = [
 
 const PreCheckout = () => {
   const { formatPrice } = useCurrency();
+  const [searchParams] = useSearchParams();
+  const [selectedPlan, setSelectedPlan] = useState<string>("premium");
+
+  useEffect(() => {
+    const planParam = searchParams.get("plan");
+    if (planParam === "medium" || planParam === "premium") {
+      setSelectedPlan(planParam);
+    }
+  }, [searchParams]);
 
   const plans = [
     {
+      id: "medium",
       name: "Medium",
       price: 49,
       period: "every 3 months",
@@ -41,6 +53,7 @@ const PreCheckout = () => {
       ],
     },
     {
+      id: "premium",
       name: "Premium",
       price: 79,
       period: "every 3 months",
@@ -77,24 +90,44 @@ const PreCheckout = () => {
 
               <TabsContent value="fast-track" className="space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                  {plans.map((plan, index) => (
+                  {plans.map((plan) => (
                     <Card
-                      key={index}
-                      className="p-8 bg-card border-border hover:shadow-elegant transition-smooth"
+                      key={plan.id}
+                      className={`p-8 bg-card border-2 transition-all cursor-pointer ${
+                        selectedPlan === plan.id
+                          ? "border-primary bg-primary/5"
+                          : "border-border hover:border-primary/50"
+                      }`}
+                      onClick={() => setSelectedPlan(plan.id)}
                     >
-                      <div className="mb-6">
-                        <h3 className="text-2xl font-bold mb-3">{plan.name}</h3>
-                        <div className="mb-4">
-                          <div className="flex items-baseline mb-1">
-                            <span className="text-3xl font-bold text-primary">{formatPrice(plan.price)}</span>
-                            <span className="text-sm text-muted-foreground ml-2">{plan.period}</span>
+                      <div className="flex items-start justify-between mb-6">
+                        <div className="flex-1">
+                          <h3 className="text-2xl font-bold mb-3">{plan.name}</h3>
+                          <div className="mb-4">
+                            <div className="flex items-baseline mb-1">
+                              <span className="text-3xl font-bold text-primary">{formatPrice(plan.price)}</span>
+                              <span className="text-sm text-muted-foreground ml-2">{plan.period}</span>
+                            </div>
+                            <p className="text-sm text-accent font-medium">{plan.trial}</p>
+                            <p className="text-xs text-muted-foreground">{plan.cancel}</p>
                           </div>
-                          <p className="text-sm text-accent font-medium">{plan.trial}</p>
-                          <p className="text-xs text-muted-foreground">{plan.cancel}</p>
+                          {plan.description && (
+                            <p className="text-muted-foreground mb-4">{plan.description}</p>
+                          )}
                         </div>
-                        {plan.description && (
-                          <p className="text-muted-foreground mb-4">{plan.description}</p>
-                        )}
+                        <div className="flex-shrink-0 ml-4">
+                          <div
+                            className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${
+                              selectedPlan === plan.id
+                                ? "border-primary bg-primary"
+                                : "border-muted-foreground"
+                            }`}
+                          >
+                            {selectedPlan === plan.id && (
+                              <div className="w-3 h-3 rounded-full bg-white"></div>
+                            )}
+                          </div>
+                        </div>
                       </div>
                       <ul className="space-y-3">
                         {plan.features.map((feature, featureIndex) => (
@@ -135,24 +168,44 @@ const PreCheckout = () => {
 
               <TabsContent value="check-in" className="space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                  {plans.map((plan, index) => (
+                  {plans.map((plan) => (
                     <Card
-                      key={index}
-                      className="p-8 bg-card border-border hover:shadow-elegant transition-smooth"
+                      key={plan.id}
+                      className={`p-8 bg-card border-2 transition-all cursor-pointer ${
+                        selectedPlan === plan.id
+                          ? "border-primary bg-primary/5"
+                          : "border-border hover:border-primary/50"
+                      }`}
+                      onClick={() => setSelectedPlan(plan.id)}
                     >
-                      <div className="mb-6">
-                        <h3 className="text-2xl font-bold mb-3">{plan.name}</h3>
-                        <div className="mb-4">
-                          <div className="flex items-baseline mb-1">
-                            <span className="text-3xl font-bold text-primary">{formatPrice(plan.price)}</span>
-                            <span className="text-sm text-muted-foreground ml-2">{plan.period}</span>
+                      <div className="flex items-start justify-between mb-6">
+                        <div className="flex-1">
+                          <h3 className="text-2xl font-bold mb-3">{plan.name}</h3>
+                          <div className="mb-4">
+                            <div className="flex items-baseline mb-1">
+                              <span className="text-3xl font-bold text-primary">{formatPrice(plan.price)}</span>
+                              <span className="text-sm text-muted-foreground ml-2">{plan.period}</span>
+                            </div>
+                            <p className="text-sm text-accent font-medium">{plan.trial}</p>
+                            <p className="text-xs text-muted-foreground">{plan.cancel}</p>
                           </div>
-                          <p className="text-sm text-accent font-medium">{plan.trial}</p>
-                          <p className="text-xs text-muted-foreground">{plan.cancel}</p>
+                          {plan.description && (
+                            <p className="text-muted-foreground mb-4">{plan.description}</p>
+                          )}
                         </div>
-                        {plan.description && (
-                          <p className="text-muted-foreground mb-4">{plan.description}</p>
-                        )}
+                        <div className="flex-shrink-0 ml-4">
+                          <div
+                            className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${
+                              selectedPlan === plan.id
+                                ? "border-primary bg-primary"
+                                : "border-muted-foreground"
+                            }`}
+                          >
+                            {selectedPlan === plan.id && (
+                              <div className="w-3 h-3 rounded-full bg-white"></div>
+                            )}
+                          </div>
+                        </div>
                       </div>
                       <ul className="space-y-3">
                         {plan.features.map((feature, featureIndex) => (

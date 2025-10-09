@@ -48,6 +48,7 @@ const Services = () => {
 
   const plans = [
     {
+      id: "premium",
       name: "Premium",
       price: 79,
       period: "Every 3 months",
@@ -60,6 +61,7 @@ const Services = () => {
       highlighted: true,
     },
     {
+      id: "medium",
       name: "Medium",
       price: 49,
       period: "Every 3 months",
@@ -391,7 +393,7 @@ const Services = () => {
                         : "bg-secondary hover:bg-secondary/80 text-secondary-foreground"
                     }`}
                     size="lg"
-                    onClick={() => window.location.href = '/pre-checkout'}
+                    onClick={() => window.location.href = `/pre-checkout?plan=${plan.id}`}
                   >
                     Try Now
                   </Button>
