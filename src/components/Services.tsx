@@ -70,14 +70,7 @@ export const Services = () => {
             </Card>)}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-elegant">
-            <img src={premiumLoungeInterior} alt="Elegant premium lounge interior with comfortable seating" className="w-full h-full object-cover" />
-          </div>
-          <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-elegant">
-            <img src={museumInterior} alt="Museum interior with skip-the-line access" className="w-full h-full object-cover" />
-          </div>
-        </div>
+        
       </div>
     </section>;
 };
