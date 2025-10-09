@@ -4,6 +4,9 @@ import travelFamily from "@/assets/travel-family.jpg";
 import airportInterior from "@/assets/airport-interior.jpg";
 import museumInterior from "@/assets/museum-interior.jpg";
 import mobileCheckin from "@/assets/mobile-checkin.jpg";
+import fastTrack from "@/assets/fast-track.jpg";
+import premiumLoungeInterior from "@/assets/premium-lounge-interior.jpg";
+import conciergeDesk from "@/assets/concierge-desk.jpg";
 const services = [{
   icon: Sparkles,
   title: "Personal Concierge",
@@ -48,7 +51,14 @@ export const Services = () => {
             </Card>)}
         </div>
 
-        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-elegant">
+            <img src={fastTrack} alt="Modern airport fast track security with elegant design" className="w-full h-full object-cover" />
+          </div>
+          <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-elegant">
+            <img src={conciergeDesk} alt="Professional concierge assisting traveler at airport desk" className="w-full h-full object-cover" />
+          </div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
           {services.slice(3).map((service, index) => <Card key={index + 3} className="p-6 md:p-8 bg-card border-border hover:shadow-elegant transition-smooth group">
@@ -60,8 +70,13 @@ export const Services = () => {
             </Card>)}
         </div>
 
-        <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-elegant max-w-5xl mx-auto">
-          <img src={museumInterior} alt="Museum interior with skip-the-line access" className="w-full h-full object-cover" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-elegant">
+            <img src={premiumLoungeInterior} alt="Elegant premium lounge interior with comfortable seating" className="w-full h-full object-cover" />
+          </div>
+          <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-elegant">
+            <img src={museumInterior} alt="Museum interior with skip-the-line access" className="w-full h-full object-cover" />
+          </div>
         </div>
       </div>
     </section>;
