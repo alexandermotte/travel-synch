@@ -10,6 +10,7 @@ import Auth from "./pages/Auth";
 import Admin from "./pages/Admin";
 import PreCheckout from "./pages/PreCheckout";
 import Services from "./pages/Services";
+import FastTrack from "./pages/FastTrack";
 import Contact from "./pages/Contact";
 import Unsubscribe from "./pages/Unsubscribe";
 import Terms from "./pages/Terms";
@@ -36,6 +37,7 @@ const App = () => (
               <Route path="/admin" element={<Admin />} />
               <Route path="/pre-checkout" element={<PreCheckout />} />
               <Route path="/services" element={<Services />} />
+              <Route path="/fast-track" element={<FastTrack />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/unsubscribe" element={<Unsubscribe />} />
               <Route path="/terms" element={<Terms />} />
