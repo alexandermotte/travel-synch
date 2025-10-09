@@ -517,7 +517,7 @@ const Services = () => {
               </h2>
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg shadow-elegant transition-smooth"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg shadow-elegant transition-smooth"
                 onClick={() => window.location.href = '/pre-checkout'}
               >
                 Start Now
