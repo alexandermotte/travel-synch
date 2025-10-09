@@ -60,13 +60,13 @@ const FastTrackForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Create customer
+      // Create customer (public submission, no user_id required)
       const { data: customerData, error: customerError } = await supabase
         .from("customers")
         .insert({
-          user_id: crypto.randomUUID(), // Temporary user_id for non-authenticated users
+          user_id: null, // NULL for public form submissions
           company_name: `${formData.firstName} ${formData.lastName}`,
-          notes: `Airport: ${formData.airport}, Flight Date: ${flightDate ? format(flightDate, "PP") : "Not specified"}`,
+          notes: `Airport: ${formData.airport}, Flight Date: ${flightDate ? format(flightDate, "PP") : "Not specified"}, Email: ${formData.email}, Phone: ${formData.phone}`,
         })
         .select()
         .single();
