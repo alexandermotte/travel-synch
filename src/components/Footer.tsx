@@ -7,6 +7,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useCurrency, currencies } from "@/contexts/CurrencyContext";
+import logo from "@/assets/header-logo.svg";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -115,7 +116,7 @@ export const Footer = () => {
             <p className="text-sm text-muted-foreground">
               © 2025 My Trip Online. All rights reserved.
             </p>
-            <div className="text-xl font-bold text-primary">My Trip Online</div>
+            <img src={logo} alt="My Trip Online" className="h-8" />
           </div>
         </div>
       </div>
