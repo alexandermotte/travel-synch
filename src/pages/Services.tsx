@@ -411,11 +411,7 @@ const Services = () => {
               {plans.map((plan, index) => (
                 <Card
                   key={index}
-                  className={`p-8 md:p-10 ${
-                    plan.highlighted
-                      ? "border-2 border-primary bg-primary/5 shadow-elegant"
-                      : "bg-card border-border"
-                  }`}
+                  className="p-8 md:p-10 bg-card border-border shadow-elegant"
                 >
                   <div className="text-center mb-6">
                     <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground mb-2">
@@ -437,11 +433,7 @@ const Services = () => {
                   </ul>
 
                   <Button
-                    className={`w-full ${
-                      plan.highlighted
-                        ? "bg-accent hover:bg-accent/90 text-accent-foreground"
-                        : "bg-secondary hover:bg-secondary/80 text-secondary-foreground"
-                    }`}
+                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
                     size="lg"
                     onClick={() => window.location.href = `/pre-checkout?plan=${plan.id}`}
                   >
