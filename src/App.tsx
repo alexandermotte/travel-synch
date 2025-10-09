@@ -9,6 +9,10 @@ import PreCheckout from "./pages/PreCheckout";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Unsubscribe from "./pages/Unsubscribe";
+import Terms from "./pages/Terms";
+import SubscriptionTerms from "./pages/SubscriptionTerms";
+import Privacy from "./pages/Privacy";
+import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +31,10 @@ const App = () => (
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/unsubscribe" element={<Unsubscribe />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/subscription-terms" element={<SubscriptionTerms />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/faq" element={<FAQ />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

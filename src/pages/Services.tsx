@@ -7,11 +7,22 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Check, Sparkles, Zap, Ticket, BookOpen, Heart, Clock, Plane, Shield, Users, Map, RefreshCw, Star, CheckCircle, Calendar, TrendingUp } from "lucide-react";
 import { useCurrency } from "@/contexts/CurrencyContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const Services = () => {
   const { formatPrice } = useCurrency();
+  const [searchParams] = useSearchParams();
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [activeTab, setActiveTab] = useState("subscription");
+
+  useEffect(() => {
+    // Handle hash navigation from footer
+    const hash = window.location.hash.replace("#", "");
+    if (hash && ["subscription", "fast-track", "ticketline", "ebooks", "concierge", "checkin"].includes(hash)) {
+      setActiveTab(hash);
+    }
+  }, []);
 
   const benefits = [
     {
@@ -109,7 +120,7 @@ const Services = () => {
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What we can do for you</h2>
             
-            <Tabs defaultValue="subscription" className="max-w-6xl mx-auto">
+            <Tabs value={activeTab} onValueChange={setActiveTab} className="max-w-6xl mx-auto">
               <TabsList className="grid w-full grid-cols-3 lg:grid-cols-6 mb-8">
                 <TabsTrigger value="subscription">Subscription</TabsTrigger>
                 <TabsTrigger value="fast-track">Fast Track</TabsTrigger>

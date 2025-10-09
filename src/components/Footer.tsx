@@ -20,11 +20,11 @@ const quickLinks = [
 ];
 
 const moreLinks = [
-  { label: "Travel Assistance", href: "/travel-assistance" },
-  { label: "Airport Fast Track", href: "/fast-track" },
-  { label: "Automated Check-In", href: "/check-in" },
-  { label: "Airport Lounges", href: "/lounges" },
-  { label: "Concierge Services", href: "/concierge" },
+  { label: "Travel Assistance", href: "/services#subscription" },
+  { label: "Airport Fast Track", href: "/services#fast-track" },
+  { label: "Automated Check-In", href: "/services#checkin" },
+  { label: "Airport Lounges", href: "/services" },
+  { label: "Concierge Services", href: "/services#concierge" },
 ];
 
 export const Footer = () => {
