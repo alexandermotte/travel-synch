@@ -47,11 +47,7 @@ export const Pricing = () => {
           {plans.map((plan, index) => (
             <Card
               key={index}
-              className={`p-8 md:p-10 ${
-                plan.highlighted
-                  ? "border-2 border-primary bg-primary/5 shadow-elegant"
-                  : "bg-card border-border"
-              }`}
+              className="p-8 md:p-10 border-2 border-primary bg-primary/5 shadow-elegant"
             >
               <div className="text-center mb-6">
                 <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground mb-2">
@@ -76,11 +72,7 @@ export const Pricing = () => {
               </ul>
 
               <Button
-                className={`w-full ${
-                  plan.highlighted
-                    ? "bg-primary hover:bg-primary/90 text-primary-foreground"
-                    : "bg-secondary hover:bg-secondary/80 text-secondary-foreground"
-                }`}
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
                 size="lg"
                 onClick={() => window.location.href = `/pre-checkout?plan=${plan.id}`}
               >
