@@ -27,9 +27,9 @@ const SubscriptionTerms = () => {
               </ul>
 
               <p className="text-muted-foreground leading-relaxed mb-6">
-                The subscription gives you access to the member area for 3 days free trial. At the end of this trial period, 
-                the subscription at {formatPrice(49)} or {formatPrice(79)} every 3 months will apply. 
-                Payment will be made by automatic debit on your credit card on the anniversary date.
+                The subscription gives you access to the member area for 3 days for free. At the end of this trial period, 
+                the monthly subscription at a price of {formatPrice(49)} per month or at {formatPrice(79)} every 3 months will apply. 
+                The payment for the latter will be made by automatic debit on your credit card every month on the anniversary date.
               </p>
 
               <p className="text-muted-foreground leading-relaxed mb-6">
@@ -43,7 +43,7 @@ const SubscriptionTerms = () => {
               <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-8">
                 <li>Phone: +44 203 936 0018</li>
                 <li>Email: contact@my-trip-online.com</li>
-                <li>Contact form: <a href="/contact" className="text-primary hover:underline">Contact page</a></li>
+                <li>Contact form: <a href="https://my-trip-online.com/contacts" className="text-primary hover:underline">https://my-trip-online.com/contacts</a></li>
               </ul>
 
               <p className="text-muted-foreground leading-relaxed mb-6">
