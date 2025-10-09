@@ -1,14 +1,20 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
+import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2, Users, ShoppingCart, TrendingUp, Settings } from 'lucide-react';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { toast } from 'sonner';
 
 export default function Admin() {
   const navigate = useNavigate();
   const { user, isAdmin, loading, signOut } = useAuth();
   const [initializing, setInitializing] = useState(true);
+  const [customers, setCustomers] = useState<any[]>([]);
+  const [orders, setOrders] = useState<any[]>([]);
+  const [loadingData, setLoadingData] = useState(true);
 
   useEffect(() => {
     if (!loading) {
@@ -21,6 +27,46 @@ export default function Admin() {
       }
     }
   }, [user, isAdmin, loading, navigate]);
+
+  useEffect(() => {
+    if (isAdmin && !initializing) {
+      fetchData();
+    }
+  }, [isAdmin, initializing]);
+
+  const fetchData = async () => {
+    try {
+      setLoadingData(true);
+      
+      // Récupérer tous les clients
+      const { data: customersData, error: customersError } = await supabase
+        .from('customers')
+        .select('*')
+        .order('created_at', { ascending: false });
+      
+      if (customersError) throw customersError;
+      
+      // Récupérer toutes les commandes avec les infos client
+      const { data: ordersData, error: ordersError } = await supabase
+        .from('orders')
+        .select('*, customers(*)')
+        .order('created_at', { ascending: false });
+      
+      if (ordersError) throw ordersError;
+      
+      setCustomers(customersData || []);
+      setOrders(ordersData || []);
+    } catch (error: any) {
+      console.error('Error fetching data:', error);
+      toast.error('Erreur lors du chargement des données');
+    } finally {
+      setLoadingData(false);
+    }
+  };
+
+  const totalRevenue = orders
+    .filter(o => o.status === 'paid' || o.status === 'completed')
+    .reduce((sum, order) => sum + Number(order.amount || 0), 0);
 
   if (loading || initializing) {
     return (
@@ -55,8 +101,10 @@ export default function Admin() {
               <Users className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">0</div>
-              <p className="text-xs text-muted-foreground">Base de données prête</p>
+              <div className="text-2xl font-bold">{loadingData ? '...' : customers.length}</div>
+              <p className="text-xs text-muted-foreground">
+                {customers.length === 0 ? 'Base de données prête' : 'Clients enregistrés'}
+              </p>
             </CardContent>
           </Card>
 
@@ -66,8 +114,10 @@ export default function Admin() {
               <ShoppingCart className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">0</div>
-              <p className="text-xs text-muted-foreground">Aucune commande pour le moment</p>
+              <div className="text-2xl font-bold">{loadingData ? '...' : orders.length}</div>
+              <p className="text-xs text-muted-foreground">
+                {orders.length === 0 ? 'Aucune commande' : 'Commandes totales'}
+              </p>
             </CardContent>
           </Card>
 
@@ -77,8 +127,12 @@ export default function Admin() {
               <TrendingUp className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">0 €</div>
-              <p className="text-xs text-muted-foreground">Prêt à démarrer</p>
+              <div className="text-2xl font-bold">
+                {loadingData ? '...' : `${totalRevenue.toFixed(2)} €`}
+              </div>
+              <p className="text-xs text-muted-foreground">
+                {totalRevenue === 0 ? 'Prêt à démarrer' : 'Revenus confirmés'}
+              </p>
             </CardContent>
           </Card>
 
@@ -151,6 +205,68 @@ export default function Admin() {
             </CardContent>
           </Card>
         </div>
+
+        {/* Liste des commandes récentes */}
+        <Card className="shadow-elegant">
+          <CardHeader>
+            <CardTitle>Commandes récentes</CardTitle>
+            <CardDescription>
+              {orders.length === 0 ? 'Aucune commande pour le moment' : `${orders.length} commande(s) enregistrée(s)`}
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            {loadingData ? (
+              <div className="flex justify-center py-8">
+                <Loader2 className="h-6 w-6 animate-spin text-primary" />
+              </div>
+            ) : orders.length === 0 ? (
+              <p className="text-center text-muted-foreground py-8">
+                Aucune commande pour le moment
+              </p>
+            ) : (
+              <div className="overflow-x-auto">
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>N° Commande</TableHead>
+                      <TableHead>Client</TableHead>
+                      <TableHead>Service</TableHead>
+                      <TableHead>Montant</TableHead>
+                      <TableHead>Statut</TableHead>
+                      <TableHead>Date</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {orders.map((order) => (
+                      <TableRow key={order.id}>
+                        <TableCell className="font-medium">{order.order_number}</TableCell>
+                        <TableCell>
+                          {order.customers?.company_name || 'Client public'}
+                        </TableCell>
+                        <TableCell>{order.service_type}</TableCell>
+                        <TableCell>
+                          {Number(order.amount).toFixed(2)} {order.currency}
+                        </TableCell>
+                        <TableCell>
+                          <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                            order.status === 'paid' || order.status === 'completed'
+                              ? 'bg-green-100 text-green-800'
+                              : 'bg-yellow-100 text-yellow-800'
+                          }`}>
+                            {order.status}
+                          </span>
+                        </TableCell>
+                        <TableCell>
+                          {new Date(order.created_at).toLocaleDateString('fr-FR')}
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div>
+            )}
+          </CardContent>
+        </Card>
       </main>
     </div>
   );
