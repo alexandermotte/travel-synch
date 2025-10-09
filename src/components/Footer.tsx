@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -7,7 +6,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useCurrency, currencies } from "@/contexts/CurrencyContext";
-import logo from "@/assets/header-logo.png";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -116,7 +114,7 @@ export const Footer = () => {
             <p className="text-sm text-muted-foreground">
               © 2025 Travel Synch. All rights reserved.
             </p>
-            <img src={logo} alt="Travel Synch" className="h-8" />
+            <span className="text-xl font-display font-bold text-primary">Travel Synch</span>
           </div>
         </div>
       </div>
