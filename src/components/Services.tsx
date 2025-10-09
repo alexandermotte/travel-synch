@@ -49,14 +49,7 @@ export const Services = () => {
             </Card>)}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-5xl mx-auto">
-          <div className="relative h-[300px] rounded-xl overflow-hidden shadow-elegant">
-            
-          </div>
-          <div className="relative h-[300px] rounded-xl overflow-hidden shadow-elegant">
-            
-          </div>
-        </div>
+        
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
           {services.slice(3).map((service, index) => <Card key={index + 3} className="p-6 md:p-8 bg-card border-border hover:shadow-elegant transition-smooth group">
