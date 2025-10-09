@@ -56,6 +56,7 @@ export type Database = {
       orders: {
         Row: {
           amount: number
+          business: string | null
           created_at: string
           currency: string
           customer_id: string
@@ -64,11 +65,13 @@ export type Database = {
           payment_gateway_id: string | null
           payment_method: string | null
           service_type: string
+          site: string | null
           status: string
           updated_at: string
         }
         Insert: {
           amount: number
+          business?: string | null
           created_at?: string
           currency?: string
           customer_id: string
@@ -77,11 +80,13 @@ export type Database = {
           payment_gateway_id?: string | null
           payment_method?: string | null
           service_type: string
+          site?: string | null
           status?: string
           updated_at?: string
         }
         Update: {
           amount?: number
+          business?: string | null
           created_at?: string
           currency?: string
           customer_id?: string
@@ -90,6 +95,7 @@ export type Database = {
           payment_gateway_id?: string | null
           payment_method?: string | null
           service_type?: string
+          site?: string | null
           status?: string
           updated_at?: string
         }

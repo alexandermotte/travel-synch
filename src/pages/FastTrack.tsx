@@ -84,7 +84,7 @@ const FastTrack = () => {
               <Button 
                 size="lg" 
                 className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg shadow-elegant transition-smooth"
-                onClick={() => window.location.href = '/pre-checkout?plan=fast-track'}
+                onClick={() => window.location.href = '/fast-track-form'}
               >
                 Book Now
               </Button>
@@ -178,7 +178,7 @@ const FastTrack = () => {
             <Button 
               size="lg" 
               className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg shadow-elegant transition-smooth"
-              onClick={() => window.location.href = '/pre-checkout?plan=fast-track'}
+              onClick={() => window.location.href = '/fast-track-form'}
             >
               Book Now
             </Button>
