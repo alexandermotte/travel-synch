@@ -6,14 +6,19 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useCurrency, currencies } from "@/contexts/CurrencyContext";
-import { Globe } from "lucide-react";
 
 interface CurrencyPickerProps {
   variant?: "light" | "dark";
 }
 
 export const CurrencyPicker = ({ variant = "light" }: CurrencyPickerProps) => {
-  const { currency, setCurrency } = useCurrency();
+  const { currency, setCurrency, formatPrice } = useCurrency();
+  
+  const currencySymbols: Record<string, string> = {
+    USD: "$",
+    EUR: "€",
+    GBP: "£"
+  };
 
   return (
     <DropdownMenu>
@@ -22,7 +27,7 @@ export const CurrencyPicker = ({ variant = "light" }: CurrencyPickerProps) => {
           variant={variant === "dark" ? "ghost" : "outline"} 
           className={`gap-2 hover:text-white ${variant === "dark" ? "text-background hover:bg-background/10 border border-background/20 hover:border-background/40" : ""}`}
         >
-          <Globe className="h-4 w-4" />
+          <span className="text-lg font-semibold">{currencySymbols[currency]}</span>
           <span>{currency}</span>
         </Button>
       </DropdownMenuTrigger>
