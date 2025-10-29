@@ -20,10 +20,10 @@ export const CurrencyPicker = ({ variant = "light" }: CurrencyPickerProps) => {
       <DropdownMenuTrigger asChild>
         <Button 
           variant={variant === "dark" ? "ghost" : "outline"} 
-          className={`gap-2 hover:text-white ${variant === "dark" ? "text-background hover:bg-background/10 border-background/20 hover:border-background/40" : ""}`}
+          className={`gap-2 hover:text-white ${variant === "dark" ? "text-background hover:bg-background/10 border border-background/20 hover:border-background/40" : ""}`}
         >
           <Globe className="h-4 w-4" />
-          {currency}
+          <span>{currency}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" className="w-64 bg-popover z-50">
@@ -33,9 +33,11 @@ export const CurrencyPicker = ({ variant = "light" }: CurrencyPickerProps) => {
             onClick={() => setCurrency(curr.code)}
             className={`cursor-pointer group ${currency === curr.code ? "bg-accent text-white" : ""}`}
           >
-            <div>
+            <div className="flex flex-col">
               <div className="font-medium group-hover:text-white">{curr.code}</div>
-              <div className={`text-xs group-hover:text-white/90 ${currency === curr.code ? "text-white/80" : "text-muted-foreground"}`}>{curr.label}</div>
+              <div className={`text-xs group-hover:text-white/90 ${currency === curr.code ? "text-white/80" : "text-muted-foreground"}`}>
+                {curr.label}
+              </div>
             </div>
           </DropdownMenuItem>
         ))}
