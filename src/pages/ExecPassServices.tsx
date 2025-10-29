@@ -2,6 +2,7 @@ import { ExecPassHeader } from "@/components/ExecPassHeader";
 import { ExecPassFooter } from "@/components/ExecPassFooter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useCurrency } from "@/contexts/CurrencyContext";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -73,80 +74,158 @@ const ExecPassServices = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-5 gap-4 mb-12 text-center">
-            <div className="font-semibold">Subscription</div>
-            <div className="font-semibold">Flight Check-In</div>
-            <div className="font-semibold">Airport Fast Track</div>
-            <div className="font-semibold">Concierge Services</div>
-            <div className="font-semibold">Ticketline to Attractions</div>
-          </div>
+          <Tabs defaultValue="subscription" className="w-full">
+            <TabsList className="grid grid-cols-2 md:grid-cols-5 gap-2 bg-transparent h-auto mb-8">
+              <TabsTrigger 
+                value="subscription" 
+                className="bg-background data-[state=active]:bg-accent data-[state=active]:text-white px-4 py-3 rounded font-semibold"
+              >
+                Subscription
+              </TabsTrigger>
+              <TabsTrigger 
+                value="checkin" 
+                className="bg-background data-[state=active]:bg-accent data-[state=active]:text-white px-4 py-3 rounded font-semibold"
+              >
+                Flight Check-In
+              </TabsTrigger>
+              <TabsTrigger 
+                value="fasttrack" 
+                className="bg-background data-[state=active]:bg-accent data-[state=active]:text-white px-4 py-3 rounded font-semibold"
+              >
+                Airport Fast Track
+              </TabsTrigger>
+              <TabsTrigger 
+                value="concierge" 
+                className="bg-background data-[state=active]:bg-accent data-[state=active]:text-white px-4 py-3 rounded font-semibold"
+              >
+                Concierge Services
+              </TabsTrigger>
+              <TabsTrigger 
+                value="attractions" 
+                className="bg-background data-[state=active]:bg-accent data-[state=active]:text-white px-4 py-3 rounded font-semibold"
+              >
+                Ticketline to Attractions
+              </TabsTrigger>
+            </TabsList>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <Card className="p-6">
-              <h3 className="text-xl font-bold mb-3">Travel Support</h3>
-              <p className="text-muted-foreground">
-                Planning a trip can be time-consuming—our team helps you enjoy a smooth, stress-free journey from airport to destination.
-              </p>
-            </Card>
-            
-            <Card className="p-6">
-              <h3 className="text-xl font-bold mb-3">Experts in Travel</h3>
-              <p className="text-muted-foreground">
-                From fast track to flight check-in, lounges, and concierge, our experts are here to assist every step of the way.
-              </p>
-            </Card>
-            
-            <Card className="p-6">
-              <h3 className="text-xl font-bold mb-3">Spend less</h3>
-              <p className="text-muted-foreground">
-                Get exclusive access to top landmarks at reduced prices. Your subscription unlocks real value at must-see destinations.
-              </p>
-            </Card>
-          </div>
-
-          {/* Services Details Grid */}
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="p-6">
-              <h3 className="text-xl font-bold mb-3">Automated Flight Check-in</h3>
-              <p className="text-muted-foreground mb-4">
-                Skip the stress of check-ins. We handle it for you—so you can focus on your journey, not the bureaucracy.
-              </p>
-              <div className="space-y-2 text-sm">
-                <p><strong>Seamless Travel:</strong> Enjoy a smoother airport experience with automated check-in and boarding pass delivery straight to your inbox.</p>
-                <p><strong>Reliable Support:</strong> Questions about your check-in or flight status? Our team is here to help, whenever you need us.</p>
+            <TabsContent value="subscription" className="mt-8">
+              <div className="grid md:grid-cols-3 gap-8">
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-3">Travel Support</h3>
+                  <p className="text-muted-foreground">
+                    Planning a trip can be time-consuming—our team helps you enjoy a smooth, stress-free journey from airport to destination.
+                  </p>
+                </Card>
+                
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-3">Experts in Travel</h3>
+                  <p className="text-muted-foreground">
+                    From fast track to flight check-in, lounges, and concierge, our experts are here to assist every step of the way.
+                  </p>
+                </Card>
+                
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-3">Spend less</h3>
+                  <p className="text-muted-foreground">
+                    Get exclusive access to top landmarks at reduced prices. Your subscription unlocks real value at must-see destinations.
+                  </p>
+                </Card>
               </div>
-            </Card>
+            </TabsContent>
 
-            <Card className="p-6">
-              <h3 className="text-xl font-bold mb-3">Fast-track access</h3>
-              <p className="text-muted-foreground mb-4">
-                Skip long airport queues with priority security and passport control. Save time and start your journey stress-free.
-              </p>
-              <div className="space-y-2 text-sm">
-                <p><strong>Effortless experience:</strong> Get through the airport faster with VIP-style access—no waiting, no hassle.</p>
-                <p><strong>Flexible options:</strong> Available at major airports, whenever you fly. Ideal for both last-minute trips and planned vacations.</p>
+            <TabsContent value="checkin" className="mt-8">
+              <div className="grid md:grid-cols-3 gap-8">
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-3">Automated Flight Check-in</h3>
+                  <p className="text-muted-foreground">
+                    Skip the stress of check-ins. We handle it for you—so you can focus on your journey, not the bureaucracy.
+                  </p>
+                </Card>
+                
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-3">Seamless Travel</h3>
+                  <p className="text-muted-foreground">
+                    Enjoy a smoother airport experience with automated check-in and boarding pass delivery straight to your inbox.
+                  </p>
+                </Card>
+                
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-3">Reliable Support</h3>
+                  <p className="text-muted-foreground">
+                    Questions about your check-in or flight status? Our team is here to help, whenever you need us.
+                  </p>
+                </Card>
               </div>
-            </Card>
+            </TabsContent>
 
-            <Card className="p-6">
-              <h3 className="text-xl font-bold mb-3">Concierge Services</h3>
-              <div className="space-y-2 text-sm">
-                <p><strong>Great Network:</strong> Our partners ensure we can handle any concierge request in any location.</p>
-                <p><strong>Flexibility:</strong> You are able to change your reservation at any time.</p>
-                <p><strong>Travel Experts:</strong> We work in this field for many years and build an expertise you can rely on.</p>
+            <TabsContent value="fasttrack" className="mt-8">
+              <div className="grid md:grid-cols-3 gap-8">
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-3">Fast-track access</h3>
+                  <p className="text-muted-foreground">
+                    Skip long airport queues with priority security and passport control. Save time and start your journey stress-free.
+                  </p>
+                </Card>
+                
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-3">Effortless experience</h3>
+                  <p className="text-muted-foreground">
+                    Get through the airport faster with VIP-style access—no waiting, no hassle.
+                  </p>
+                </Card>
+                
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-3">Flexible options</h3>
+                  <p className="text-muted-foreground">
+                    Available at major airports, whenever you fly. Ideal for both last-minute trips and planned vacations.
+                  </p>
+                </Card>
               </div>
-            </Card>
+            </TabsContent>
 
-            <Card className="p-6">
-              <h3 className="text-xl font-bold mb-3">Attraction Discounts</h3>
-              <p className="text-muted-foreground mb-4">
-                Get special prices on must-see landmarks and popular activities to make the most of every destination.
-              </p>
-              <p className="text-sm">
-                <strong>Booking Support:</strong> Our team takes care of your attraction bookings and offers assistance whenever you need it—so you can just enjoy the journey.
-              </p>
-            </Card>
-          </div>
+            <TabsContent value="concierge" className="mt-8">
+              <div className="grid md:grid-cols-3 gap-8">
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-3">Great Network</h3>
+                  <p className="text-muted-foreground">
+                    Our partners ensure we can handle any concierge request in any location.
+                  </p>
+                </Card>
+                
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-3">Flexibility</h3>
+                  <p className="text-muted-foreground">
+                    You are able to change your reservation at any time.
+                  </p>
+                </Card>
+                
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-3">Travel Experts</h3>
+                  <p className="text-muted-foreground">
+                    We work in this field for many years and build an expertise you can rely on.
+                  </p>
+                </Card>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="attractions" className="mt-8">
+              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-3">Attraction Discounts</h3>
+                  <p className="text-muted-foreground">
+                    Get special prices on must-see landmarks and popular activities to make the most of every destination.
+                  </p>
+                </Card>
+                
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-3">Booking Support</h3>
+                  <p className="text-muted-foreground">
+                    Our team takes care of your attraction bookings and offers assistance whenever you need it—so you can just enjoy the journey.
+                  </p>
+                </Card>
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </section>
 
