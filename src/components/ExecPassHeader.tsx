@@ -2,17 +2,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useCurrency } from "@/contexts/CurrencyContext";
+import { CurrencyPicker } from "@/components/CurrencyPicker";
 
 export const ExecPassHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { currency, setCurrency } = useCurrency();
+  // Currency selection handled by shared CurrencyPicker component
 
-  const currencies = [
-    { code: "USD", name: "United States Dollars" },
-    { code: "EUR", name: "Euros" },
-    { code: "GBP", name: "Great Britain Pounds" },
-  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -50,18 +45,7 @@ export const ExecPassHeader = () => {
             </a>
             
             {/* Currency Selector */}
-            <select
-              value={currency}
-              onChange={(e) => setCurrency(e.target.value as "USD" | "EUR" | "GBP")}
-              className="text-sm border rounded px-3 py-1.5 bg-background hover:bg-accent/10 transition-colors cursor-pointer min-w-[65px] font-medium"
-              title={currencies.find(c => c.code === currency)?.name}
-            >
-              {currencies.map((curr) => (
-                <option key={curr.code} value={curr.code} title={curr.name}>
-                  {curr.code}
-                </option>
-              ))}
-            </select>
+            <CurrencyPicker />
 
             <Button
               variant="outline"
@@ -88,18 +72,7 @@ export const ExecPassHeader = () => {
         {isMenuOpen && (
           <nav className="md:hidden py-4 border-t">
             <div className="flex flex-col gap-4">
-              <select
-                value={currency}
-                onChange={(e) => setCurrency(e.target.value as "USD" | "EUR" | "GBP")}
-                className="text-sm border rounded-md px-2 py-2 bg-background"
-                title={currencies.find(c => c.code === currency)?.name}
-              >
-                {currencies.map((curr) => (
-                  <option key={curr.code} value={curr.code} title={curr.name}>
-                    {curr.code}
-                  </option>
-                ))}
-              </select>
+              <CurrencyPicker />
               
               <Link
                 to="/"
