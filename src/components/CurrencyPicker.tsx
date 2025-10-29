@@ -31,11 +31,11 @@ export const CurrencyPicker = ({ variant = "light" }: CurrencyPickerProps) => {
           <DropdownMenuItem
             key={curr.code}
             onClick={() => setCurrency(curr.code)}
-            className={`cursor-pointer hover:text-white ${currency === curr.code ? "bg-accent text-white" : ""}`}
+            className={`cursor-pointer group ${currency === curr.code ? "bg-accent text-white" : ""}`}
           >
             <div>
-              <div className="font-medium">{curr.code}</div>
-              <div className={`text-xs ${currency === curr.code ? "text-white/80" : "text-muted-foreground"}`}>{curr.label}</div>
+              <div className="font-medium group-hover:text-white">{curr.code}</div>
+              <div className={`text-xs group-hover:text-white/90 ${currency === curr.code ? "text-white/80" : "text-muted-foreground"}`}>{curr.label}</div>
             </div>
           </DropdownMenuItem>
         ))}
