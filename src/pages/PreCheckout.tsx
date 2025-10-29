@@ -1,5 +1,5 @@
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import { ExecPassHeader } from "@/components/ExecPassHeader";
+import { ExecPassFooter } from "@/components/ExecPassFooter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, Zap, CheckCircle, Clock, Globe, TrendingUp } from "lucide-react";
@@ -63,7 +63,7 @@ const PreCheckout = () => {
     features: ["Up to 5 free Fast-Track accesses per month", "Unlimited automated check-ins", "Exclusive discounts on airport lounges"]
   }];
   return <div className="min-h-screen">
-      <Header />
+      <ExecPassHeader />
 
       <main>
         {/* What we can do for you */}
@@ -220,7 +220,7 @@ const PreCheckout = () => {
         </section>
       </main>
 
-      <Footer />
+      <ExecPassFooter />
     </div>;
 };
 export default PreCheckout;
