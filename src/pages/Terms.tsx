@@ -243,6 +243,27 @@ export default function Terms() {
               </ul>
             </section>
 
+            <section className="mt-8">
+              <p className="font-semibold mb-2">Last updated: 21 March 2025</p>
+              
+              <h3 className="text-xl font-semibold mt-6 mb-4">Cancellation Form</h3>
+              <p className="italic mb-4">(Complete and return this form only if you wish to withdraw from the contract)</p>
+              
+              <div className="space-y-4 pl-6">
+                <p>To: www.exec-pass.com, contact@exec-pass.com</p>
+                
+                <p>I hereby give notice that I cancel my contract for the Services ordered on the following date…………</p>
+                
+                <p>Name of consumer(s):………………………………………………………………………………………………………..</p>
+                
+                <p>Address of consumer(s):………………………………………………………………………………………………..</p>
+                
+                <p>Signature of consumer(s) (only if this form is notified on paper),</p>
+                
+                <p>Date…………………</p>
+              </div>
+            </section>
+
             <div className="mt-8 pt-8 border-t">
               <p className="text-sm text-muted-foreground">
                 For the complete terms and conditions, please contact us at contact@exec-pass.com
