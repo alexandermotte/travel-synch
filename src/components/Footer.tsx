@@ -1,11 +1,4 @@
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { useCurrency, currencies } from "@/contexts/CurrencyContext";
+import { CurrencyPicker } from "@/components/CurrencyPicker";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -26,8 +19,6 @@ const moreLinks = [
 ];
 
 export const Footer = () => {
-  const { currency, setCurrency } = useCurrency();
-
   return (
     <footer className="bg-secondary/50 border-t">
       <div className="container mx-auto px-4 py-12 md:py-16">
@@ -35,27 +26,7 @@ export const Footer = () => {
           {/* Currency Selector */}
           <div>
             <h3 className="font-semibold mb-4">Currency</h3>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" className="w-full justify-start">
-                  {currency}
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-64 bg-popover">
-                {currencies.map((curr) => (
-                  <DropdownMenuItem
-                    key={curr.code}
-                    onClick={() => setCurrency(curr.code)}
-                    className="cursor-pointer"
-                  >
-                    <div>
-                      <div className="font-medium">{curr.code}</div>
-                      <div className="text-xs text-muted-foreground">{curr.label}</div>
-                    </div>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <CurrencyPicker />
           </div>
 
           {/* Quick Links */}

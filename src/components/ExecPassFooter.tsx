@@ -1,14 +1,7 @@
 import { Link } from "react-router-dom";
-import { useCurrency } from "@/contexts/CurrencyContext";
+import { CurrencyPicker } from "@/components/CurrencyPicker";
 
 export const ExecPassFooter = () => {
-  const { currency, setCurrency } = useCurrency();
-
-  const currencies = [
-    { code: "USD", name: "United States Dollars" },
-    { code: "EUR", name: "Euros" },
-    { code: "GBP", name: "Great Britain Pounds" },
-  ];
 
   return (
     <footer className="bg-foreground text-background py-12">
@@ -29,18 +22,7 @@ export const ExecPassFooter = () => {
             
             {/* Currency Selector */}
             <div className="mt-4">
-              <select
-                value={currency}
-                onChange={(e) => setCurrency(e.target.value as "USD" | "EUR" | "GBP")}
-                className="text-sm border rounded px-3 py-1.5 bg-foreground text-background border-background/20 hover:border-background/40 transition-colors cursor-pointer min-w-[65px] font-medium"
-                title={currencies.find(c => c.code === currency)?.name}
-              >
-                {currencies.map((curr) => (
-                  <option key={curr.code} value={curr.code} title={curr.name}>
-                    {curr.code}
-                  </option>
-                ))}
-              </select>
+              <CurrencyPicker variant="dark" />
             </div>
           </div>
 
