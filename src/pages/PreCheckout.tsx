@@ -88,7 +88,7 @@ const PreCheckout = () => {
 
               <TabsContent value="fast-track" className="space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                  {plans.map(plan => <Card key={plan.id} className={`p-8 bg-card border-2 transition-all cursor-pointer ${selectedPlan === plan.id ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"}`} onClick={() => setSelectedPlan(plan.id)}>
+                  {plans.map(plan => <Card key={plan.id} className={`p-8 bg-card border-2 transition-all cursor-pointer ${selectedPlan === plan.id ? "border-accent bg-accent/10 shadow-lg" : "border-border hover:border-primary/50"}`} onClick={() => setSelectedPlan(plan.id)}>
                       <div className="flex items-start justify-between mb-6">
                         <div className="flex-1">
                           <h3 className="text-2xl font-bold mb-3">{plan.name}</h3>
@@ -103,7 +103,7 @@ const PreCheckout = () => {
                           {plan.description && <p className="text-muted-foreground mb-4">{plan.description}</p>}
                         </div>
                         <div className="flex-shrink-0 ml-4">
-                          <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${selectedPlan === plan.id ? "border-primary bg-primary" : "border-muted-foreground"}`}>
+                          <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${selectedPlan === plan.id ? "border-accent bg-accent" : "border-muted-foreground"}`}>
                             {selectedPlan === plan.id && <div className="w-3 h-3 rounded-full bg-white"></div>}
                           </div>
                         </div>
@@ -139,7 +139,7 @@ const PreCheckout = () => {
 
               <TabsContent value="check-in" className="space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                  {plans.map(plan => <Card key={plan.id} className={`p-8 bg-card border-2 transition-all cursor-pointer ${selectedPlan === plan.id ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"}`} onClick={() => setSelectedPlan(plan.id)}>
+                  {plans.map(plan => <Card key={plan.id} className={`p-8 bg-card border-2 transition-all cursor-pointer ${selectedPlan === plan.id ? "border-accent bg-accent/10 shadow-lg" : "border-border hover:border-primary/50"}`} onClick={() => setSelectedPlan(plan.id)}>
                       <div className="flex items-start justify-between mb-6">
                         <div className="flex-1">
                           <h3 className="text-2xl font-bold mb-3">{plan.name}</h3>
@@ -154,7 +154,7 @@ const PreCheckout = () => {
                           {plan.description && <p className="text-muted-foreground mb-4">{plan.description}</p>}
                         </div>
                         <div className="flex-shrink-0 ml-4">
-                          <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${selectedPlan === plan.id ? "border-primary bg-primary" : "border-muted-foreground"}`}>
+                          <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${selectedPlan === plan.id ? "border-accent bg-accent" : "border-muted-foreground"}`}>
                             {selectedPlan === plan.id && <div className="w-3 h-3 rounded-full bg-white"></div>}
                           </div>
                         </div>
