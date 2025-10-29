@@ -29,7 +29,7 @@ const ExecPassHome = () => {
                 className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg"
                 asChild
               >
-                <Link to="/services-pricing">Start ExecPass</Link>
+                <Link to="/pre-checkout">Start ExecPass</Link>
               </Button>
             </div>
             <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden">
@@ -113,7 +113,7 @@ const ExecPassHome = () => {
               </ul>
               
               <Button className="w-full bg-accent hover:bg-accent/90" asChild>
-                <Link to="/services-pricing">Try Now</Link>
+                <Link to="/pre-checkout">Try Now</Link>
               </Button>
             </Card>
 
@@ -147,7 +147,7 @@ const ExecPassHome = () => {
               </ul>
               
               <Button className="w-full" variant="outline" asChild>
-                <Link to="/services-pricing">Try Now</Link>
+                <Link to="/pre-checkout">Try Now</Link>
               </Button>
             </Card>
           </div>
@@ -221,7 +221,7 @@ const ExecPassHome = () => {
             
             <div>
               <Button size="lg" className="bg-accent hover:bg-accent/90 px-8 py-6 text-lg" asChild>
-                <Link to="/services-pricing">Start Trial</Link>
+                <Link to="/pre-checkout">Start Trial</Link>
               </Button>
             </div>
           </div>
@@ -240,7 +240,7 @@ const ExecPassHome = () => {
                 Enhance every trip with priority airport access, corporate perks, and dedicated 24/7 support—all streamlined through your personalized business travel dashboard.
               </p>
               <Button size="lg" className="bg-accent hover:bg-accent/90 px-8 py-6 text-lg" asChild>
-                <Link to="/services-pricing">Start Trial</Link>
+                <Link to="/pre-checkout">Start Trial</Link>
               </Button>
             </div>
             <div className="relative h-[350px] md:h-[450px] rounded-lg overflow-hidden">

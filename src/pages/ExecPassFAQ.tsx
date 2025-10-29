@@ -57,7 +57,7 @@ const ExecPassFAQ = () => {
               Enhance every trip with priority airport access, corporate perks, and dedicated 24/7 support—all streamlined through your personalized business travel dashboard.
             </p>
             <Button size="lg" className="bg-accent hover:bg-accent/90" asChild>
-              <Link to="/services-pricing">Start Trial</Link>
+              <Link to="/pre-checkout">Start Trial</Link>
             </Button>
           </div>
         </div>

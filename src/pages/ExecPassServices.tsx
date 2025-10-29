@@ -48,7 +48,7 @@ const ExecPassServices = () => {
                 Try us, you won't regret it!
               </p>
               <Button size="lg" className="bg-accent hover:bg-accent/90 px-8 py-6 text-lg" asChild>
-                <Link to="/services-pricing">Start ExecPass</Link>
+                <Link to="/pre-checkout">Start ExecPass</Link>
               </Button>
             </div>
             <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden">
@@ -294,7 +294,7 @@ const ExecPassServices = () => {
                 Our team keeps you informed about airport processes, lounge access, and available perks. We also handle attraction bookings and provide concierge support to ensure a smooth and enjoyable trip.
               </p>
               <Button size="lg" className="bg-accent hover:bg-accent/90 px-8 py-6 text-lg" asChild>
-                <Link to="/services-pricing">Start Trial</Link>
+                <Link to="/pre-checkout">Start Trial</Link>
               </Button>
             </div>
             <div className="relative h-[350px] md:h-[450px] rounded-lg overflow-hidden">
@@ -342,7 +342,9 @@ const ExecPassServices = () => {
                 </li>
               </ul>
               
-              <Button className="w-full bg-accent hover:bg-accent/90">Try Now</Button>
+              <Button className="w-full bg-accent hover:bg-accent/90" asChild>
+                <Link to="/pre-checkout">Try Now</Link>
+              </Button>
             </Card>
 
             <Card className="p-8 min-h-[420px]">
@@ -373,7 +375,9 @@ const ExecPassServices = () => {
                 </li>
               </ul>
               
-              <Button className="w-full" variant="outline">Try Now</Button>
+              <Button className="w-full" variant="outline" asChild>
+                <Link to="/pre-checkout">Try Now</Link>
+              </Button>
             </Card>
           </div>
         </div>
@@ -451,7 +455,7 @@ const ExecPassServices = () => {
             Enhance every trip with priority airport access, corporate perks, and dedicated 24/7 support—all streamlined through your personalized business travel dashboard.
           </p>
           <Button size="lg" className="bg-accent hover:bg-accent/90 px-8 py-6 text-lg" asChild>
-            <Link to="/services-pricing">Start Trial</Link>
+            <Link to="/pre-checkout">Start Trial</Link>
           </Button>
         </div>
       </section>
