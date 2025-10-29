@@ -35,7 +35,7 @@ const PreCheckout = () => {
     }
   }, [searchParams]);
   const handleStartTrial = () => {
-    const baseUrl = activeTab === "fast-track" ? "https://fast-track.travel-synch.com" : "https://checkin.travel-synch.com";
+    const baseUrl = activeTab === "fast-track" ? "https://fasttrack.exec-pass.com" : "https://checkin.exec-pass.com";
     const params = new URLSearchParams();
     params.append("currency", currency);
     if (selectedPlan === "medium") {
@@ -126,7 +126,7 @@ const PreCheckout = () => {
                 </div>
 
                 <div className="text-center mt-12">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg shadow-elegant transition-smooth" onClick={handleStartTrial}>
+                  <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg shadow-elegant transition-smooth" onClick={handleStartTrial}>
                     Start Free Trial
                   </Button>
                 </div>
@@ -195,7 +195,7 @@ const PreCheckout = () => {
                 </div>
 
                 <div className="text-center mt-12">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg shadow-elegant transition-smooth" onClick={handleStartTrial}>
+                  <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg shadow-elegant transition-smooth" onClick={handleStartTrial}>
                     Start Free Trial
                   </Button>
                 </div>
