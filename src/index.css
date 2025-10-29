@@ -9,52 +9,49 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 215 25% 15%;
+    --foreground: 0 0% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card-foreground: 0 0% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover-foreground: 0 0% 13%;
 
-    --primary: 220 70% 25%;
+    --primary: 0 0% 13%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 96%;
-    --secondary-foreground: 220 25% 15%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 13%;
 
-    --muted: 220 15% 96%;
-    --muted-foreground: 220 15% 50%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 0 90% 60%;
+    --accent: 0 55% 65%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 20% 88%;
-    --input: 214 20% 88%;
-    --ring: 205 85% 45%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 55% 65%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
     
-    /* Travel-themed colors */
-    --ocean: 220 70% 25%;
-    --ocean-light: 220 60% 45%;
-    --ocean-dark: 220 80% 20%;
-    --sky: 210 40% 98%;
-    --gold: 0 85% 55%;
-    --sand: 35 25% 94%;
+    /* ExecPass brand colors */
+    --rose: 0 55% 65%;
+    --rose-light: 0 55% 75%;
+    --rose-dark: 0 55% 55%;
     
     /* Shadows & Effects */
-    --shadow-sm: 0 2px 8px -2px hsl(215 25% 15% / 0.08);
-    --shadow-md: 0 4px 16px -4px hsl(215 25% 15% / 0.12);
-    --shadow-lg: 0 8px 32px -8px hsl(215 25% 15% / 0.16);
+    --shadow-sm: 0 2px 8px -2px hsl(0 0% 13% / 0.08);
+    --shadow-md: 0 4px 16px -4px hsl(0 0% 13% / 0.12);
+    --shadow-lg: 0 8px 32px -8px hsl(0 0% 13% / 0.16);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -74,40 +71,37 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 215 30% 8%;
-    --foreground: 210 15% 96%;
+    --background: 0 0% 13%;
+    --foreground: 0 0% 96%;
 
-    --card: 215 25% 12%;
-    --card-foreground: 210 15% 96%;
+    --card: 0 0% 18%;
+    --card-foreground: 0 0% 96%;
 
-    --popover: 215 25% 12%;
-    --popover-foreground: 210 15% 96%;
+    --popover: 0 0% 18%;
+    --popover-foreground: 0 0% 96%;
 
-    --primary: 220 60% 45%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 96%;
+    --primary-foreground: 0 0% 13%;
 
-    --secondary: 220 20% 18%;
-    --secondary-foreground: 220 15% 96%;
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 96%;
 
-    --muted: 220 20% 18%;
-    --muted-foreground: 220 10% 60%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 0 85% 62%;
+    --accent: 0 55% 65%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72.8% 50.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 20% 20%;
-    --input: 215 20% 20%;
-    --ring: 205 75% 55%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 0 55% 65%;
     
-    --ocean: 220 60% 45%;
-    --ocean-light: 220 50% 60%;
-    --ocean-dark: 220 70% 30%;
-    --sky: 210 30% 20%;
-    --gold: 0 80% 60%;
-    --sand: 35 20% 18%;
+    --rose: 0 55% 65%;
+    --rose-light: 0 55% 75%;
+    --rose-dark: 0 55% 55%;
   }
 }
 

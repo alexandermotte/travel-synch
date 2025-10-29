@@ -6,6 +6,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CurrencyProvider } from "@/contexts/CurrencyContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import Index from "./pages/Index";
+import ExecPassHome from "./pages/ExecPassHome";
+import ExecPassServices from "./pages/ExecPassServices";
+import ExecPassFAQ from "./pages/ExecPassFAQ";
+import ExecPassContact from "./pages/ExecPassContact";
+import ExecPassUnsubscribe from "./pages/ExecPassUnsubscribe";
 import Auth from "./pages/Auth";
 import Admin from "./pages/Admin";
 import PreCheckout from "./pages/PreCheckout";
@@ -33,8 +38,16 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Index />} />
+          <Routes>
+            <Route path="/" element={<ExecPassHome />} />
+            <Route path="/services-pricing" element={<ExecPassServices />} />
+            <Route path="/faq" element={<ExecPassFAQ />} />
+            <Route path="/contacts" element={<ExecPassContact />} />
+            <Route path="/unsubscribe" element={<ExecPassUnsubscribe />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/subscription-terms" element={<SubscriptionTerms />} />
+            <Route path="/travel-synch" element={<Index />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/pre-checkout" element={<PreCheckout />} />
