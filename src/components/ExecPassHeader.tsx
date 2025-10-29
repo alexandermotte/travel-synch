@@ -9,9 +9,9 @@ export const ExecPassHeader = () => {
   const { currency, setCurrency } = useCurrency();
 
   const currencies = [
-    { code: "USD", name: "United States Dollars", flag: "🇺🇸" },
-    { code: "EUR", name: "Euros", flag: "🇪🇺" },
-    { code: "GBP", name: "Great Britain Pounds", flag: "🇬🇧" },
+    { code: "USD", name: "United States Dollars" },
+    { code: "EUR", name: "Euros" },
+    { code: "GBP", name: "Great Britain Pounds" },
   ];
 
   return (
@@ -54,10 +54,11 @@ export const ExecPassHeader = () => {
               value={currency}
               onChange={(e) => setCurrency(e.target.value as "USD" | "EUR" | "GBP")}
               className="text-sm border rounded-md px-2 py-1 bg-background"
+              title={currencies.find(c => c.code === currency)?.name}
             >
               {currencies.map((curr) => (
-                <option key={curr.code} value={curr.code}>
-                  {curr.flag} {curr.code}
+                <option key={curr.code} value={curr.code} title={curr.name}>
+                  {curr.code}
                 </option>
               ))}
             </select>
@@ -91,10 +92,11 @@ export const ExecPassHeader = () => {
                 value={currency}
                 onChange={(e) => setCurrency(e.target.value as "USD" | "EUR" | "GBP")}
                 className="text-sm border rounded-md px-2 py-2 bg-background"
+                title={currencies.find(c => c.code === currency)?.name}
               >
                 {currencies.map((curr) => (
-                  <option key={curr.code} value={curr.code}>
-                    {curr.flag} {curr.name}
+                  <option key={curr.code} value={curr.code} title={curr.name}>
+                    {curr.code}
                   </option>
                 ))}
               </select>

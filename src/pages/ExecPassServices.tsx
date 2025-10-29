@@ -235,13 +235,13 @@ const ExecPassServices = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Pricing</h2>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="p-8 border-2 border-accent">
+            <Card className="p-8 border-2 border-accent min-h-[420px]">
               <div className="text-center mb-6">
-                <p className="text-sm uppercase tracking-wide text-accent font-semibold mb-2">premium</p>
-                <div className="mb-4">
-                  <span className="text-4xl font-bold">{formatPrice(79)}</span>
-                  <span className="text-muted-foreground">Every 3 months</span>
+                <p className="text-sm uppercase tracking-wide text-accent font-semibold mb-4">premium</p>
+                <div className="mb-2">
+                  <span className="text-5xl font-bold block">{formatPrice(79)}</span>
                 </div>
+                <p className="text-sm text-muted-foreground">Every 3 months</p>
               </div>
               
               <ul className="space-y-3 mb-6">
@@ -266,13 +266,13 @@ const ExecPassServices = () => {
               <Button className="w-full bg-accent hover:bg-accent/90">Try Now</Button>
             </Card>
 
-            <Card className="p-8">
+            <Card className="p-8 min-h-[420px]">
               <div className="text-center mb-6">
-                <p className="text-sm uppercase tracking-wide text-muted-foreground font-semibold mb-2">medium</p>
-                <div className="mb-4">
-                  <span className="text-4xl font-bold">{formatPrice(49)}</span>
-                  <span className="text-muted-foreground">Every 3 months</span>
+                <p className="text-sm uppercase tracking-wide text-muted-foreground font-semibold mb-4">medium</p>
+                <div className="mb-2">
+                  <span className="text-5xl font-bold block">{formatPrice(49)}</span>
                 </div>
+                <p className="text-sm text-muted-foreground">Every 3 months</p>
               </div>
               
               <ul className="space-y-3 mb-6">

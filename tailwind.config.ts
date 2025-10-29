@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Poppins', 'system-ui', 'sans-serif'],
+        sans: ['Commissioner', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['Commissioner', 'Poppins', 'system-ui', 'sans-serif'],
       },
       colors: {
         ocean: 'hsl(var(--ocean))',

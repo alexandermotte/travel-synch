@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useCurrency } from "@/contexts/CurrencyContext";
 import { Link } from "react-router-dom";
+import { Plane, FileCheck, Ticket, Headphones, BookOpen, Coffee } from "lucide-react";
 
 const ExecPassHome = () => {
   const { formatPrice } = useCurrency();
@@ -56,16 +57,19 @@ const ExecPassHome = () => {
           
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "Airport Fast Track", link: "/services-pricing" },
-              { name: "Flight Check-In", link: "/services-pricing" },
-              { name: "Ticketline to Attractions", link: "/services-pricing" },
-              { name: "Concierge Services", link: "/services-pricing" },
-              { name: "Travel E-Books", link: "/services-pricing" },
-              { name: "Airport Lounges", link: "/services-pricing" },
+              { name: "Airport Fast Track", link: "/services-pricing", icon: Plane },
+              { name: "Flight Check-In", link: "/services-pricing", icon: FileCheck },
+              { name: "Ticketline to Attractions", link: "/services-pricing", icon: Ticket },
+              { name: "Concierge Services", link: "/services-pricing", icon: Headphones },
+              { name: "Travel E-Books", link: "/services-pricing", icon: BookOpen },
+              { name: "Airport Lounges", link: "/services-pricing", icon: Coffee },
             ].map((service) => (
-              <Card key={service.name} className="p-6 hover:shadow-lg transition-shadow">
+              <Card key={service.name} className="p-8 hover:shadow-lg transition-shadow text-center">
                 <Link to={service.link} className="block">
-                  <h3 className="text-xl font-semibold mb-2">{service.name}</h3>
+                  <div className="flex justify-center mb-4">
+                    <service.icon className="w-12 h-12 text-accent" />
+                  </div>
+                  <h3 className="text-xl font-semibold">{service.name}</h3>
                 </Link>
               </Card>
             ))}
@@ -80,13 +84,13 @@ const ExecPassHome = () => {
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Premium Plan */}
-            <Card className="p-8 border-2 border-accent">
+            <Card className="p-8 border-2 border-accent min-h-[420px]">
               <div className="text-center mb-6">
-                <p className="text-sm uppercase tracking-wide text-accent font-semibold mb-2">premium</p>
-                <div className="mb-4">
-                  <span className="text-4xl font-bold">{formatPrice(79)}</span>
-                  <span className="text-muted-foreground">Every 3 months</span>
+                <p className="text-sm uppercase tracking-wide text-accent font-semibold mb-4">premium</p>
+                <div className="mb-2">
+                  <span className="text-5xl font-bold block">{formatPrice(79)}</span>
                 </div>
+                <p className="text-sm text-muted-foreground">Every 3 months</p>
               </div>
               
               <ul className="space-y-3 mb-6">
@@ -114,13 +118,13 @@ const ExecPassHome = () => {
             </Card>
 
             {/* Medium Plan */}
-            <Card className="p-8">
+            <Card className="p-8 min-h-[420px]">
               <div className="text-center mb-6">
-                <p className="text-sm uppercase tracking-wide text-muted-foreground font-semibold mb-2">medium</p>
-                <div className="mb-4">
-                  <span className="text-4xl font-bold">{formatPrice(49)}</span>
-                  <span className="text-muted-foreground">Every 3 months</span>
+                <p className="text-sm uppercase tracking-wide text-muted-foreground font-semibold mb-4">medium</p>
+                <div className="mb-2">
+                  <span className="text-5xl font-bold block">{formatPrice(49)}</span>
                 </div>
+                <p className="text-sm text-muted-foreground">Every 3 months</p>
               </div>
               
               <ul className="space-y-3 mb-6">
@@ -196,28 +200,30 @@ const ExecPassHome = () => {
       {/* Business Travel Benefits */}
       <section className="py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Upgrade your business travel with ExecPass
-          </h2>
-          
-          <div className="max-w-4xl mx-auto space-y-6 mb-8">
-            <p className="text-lg text-muted-foreground">
-              Avoid wasted hours at the airport with fast-track access, enjoy priority check-ins, and benefit from corporate partnerships worldwide. Whether it's a quick day trip or an international business mission, we make every step smoother, faster, and stress-free—so your team can focus on business, not logistics.
-            </p>
+          <div className="max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12">
+              Upgrade your business travel with ExecPass
+            </h2>
             
-            <p className="text-lg text-muted-foreground">
-              From hotel bookings and executive transfers to meeting arrangements and client dinners, our concierge team handles the details that matter. No impersonal booking engines, no wasted time—just real experts providing tailored support for your business
-            </p>
+            <div className="space-y-6 mb-8">
+              <p className="text-lg text-muted-foreground">
+                Avoid wasted hours at the airport with fast-track access, enjoy priority check-ins, and benefit from corporate partnerships worldwide. Whether it's a quick day trip or an international business mission, we make every step smoother, faster, and stress-free—so your team can focus on business, not logistics.
+              </p>
+              
+              <p className="text-lg text-muted-foreground">
+                From hotel bookings and executive transfers to meeting arrangements and client dinners, our concierge team handles the details that matter. No impersonal booking engines, no wasted time—just real experts providing tailored support for your business
+              </p>
+              
+              <p className="text-lg text-muted-foreground">
+                With 24/7 dedicated support, our specialists ensure seamless travel for executives and teams. From last-minute flight changes to ground logistics, we proactively manage challenges so your business keeps moving.
+              </p>
+            </div>
             
-            <p className="text-lg text-muted-foreground">
-              With 24/7 dedicated support, our specialists ensure seamless travel for executives and teams. From last-minute flight changes to ground logistics, we proactively manage challenges so your business keeps moving.
-            </p>
-          </div>
-          
-          <div className="text-center">
-            <Button size="lg" className="bg-accent hover:bg-accent/90 px-8 py-6 text-lg" asChild>
-              <Link to="/services-pricing">Start Trial</Link>
-            </Button>
+            <div>
+              <Button size="lg" className="bg-accent hover:bg-accent/90 px-8 py-6 text-lg" asChild>
+                <Link to="/services-pricing">Start Trial</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

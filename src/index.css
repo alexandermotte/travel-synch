@@ -26,7 +26,7 @@ All colors MUST be HSL.
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 0 55% 65%;
+    --accent: 353 40% 58%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,14 +34,14 @@ All colors MUST be HSL.
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 0 55% 65%;
+    --ring: 353 40% 58%;
 
     --radius: 0.5rem;
     
     /* ExecPass brand colors */
-    --rose: 0 55% 65%;
-    --rose-light: 0 55% 75%;
-    --rose-dark: 0 55% 55%;
+    --rose: 353 40% 58%;
+    --rose-light: 353 40% 68%;
+    --rose-dark: 353 40% 48%;
     
     /* Shadows & Effects */
     --shadow-sm: 0 2px 8px -2px hsl(0 0% 13% / 0.08);
@@ -89,7 +89,7 @@ All colors MUST be HSL.
     --muted: 0 0% 20%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 0 55% 65%;
+    --accent: 353 40% 58%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72.8% 50.6%;
@@ -97,11 +97,11 @@ All colors MUST be HSL.
 
     --border: 0 0% 25%;
     --input: 0 0% 25%;
-    --ring: 0 55% 65%;
+    --ring: 353 40% 58%;
     
-    --rose: 0 55% 65%;
-    --rose-light: 0 55% 75%;
-    --rose-dark: 0 55% 55%;
+    --rose: 353 40% 58%;
+    --rose-light: 353 40% 68%;
+    --rose-dark: 353 40% 48%;
   }
 }
 

@@ -48,23 +48,18 @@ const App = () => (
             <Route path="/terms" element={<Terms />} />
             <Route path="/subscription-terms" element={<SubscriptionTerms />} />
             <Route path="/travel-synch" element={<Index />} />
-              <Route path="/auth" element={<Auth />} />
-              <Route path="/admin" element={<Admin />} />
-              <Route path="/pre-checkout" element={<PreCheckout />} />
-              <Route path="/services" element={<Services />} />
-          <Route path="/fast-track" element={<FastTrack />} />
-          <Route path="/fast-track-form" element={<FastTrackForm />} />
-          <Route path="/fast-track-payment/:orderId" element={<FastTrackPayment />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/unsubscribe" element={<Unsubscribe />} />
-              <Route path="/terms" element={<Terms />} />
-              <Route path="/subscription-terms" element={<SubscriptionTerms />} />
-              <Route path="/privacy" element={<Privacy />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/config-generator" element={<ConfigGenerator />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/pre-checkout" element={<PreCheckout />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/fast-track" element={<FastTrack />} />
+            <Route path="/fast-track-form" element={<FastTrackForm />} />
+            <Route path="/fast-track-payment/:orderId" element={<FastTrackPayment />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/config-generator" element={<ConfigGenerator />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
           </BrowserRouter>
         </TooltipProvider>
       </CurrencyProvider>
