@@ -41,7 +41,7 @@ const PreCheckout = () => {
     if (selectedPlan === "medium") {
       params.append("product", "_3m_49");
     }
-    window.location.href = `${baseUrl}/?${params.toString()}`;
+    window.open(`${baseUrl}/?${params.toString()}`, '_blank');
   };
   const plans = [{
     id: "medium",
