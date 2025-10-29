@@ -20,7 +20,7 @@ const ExecPassServices = () => {
   });
 
   useEffect(() => {
-    // Scroll to top when component mounts
+    document.title = "ExecPass - Our Services";
     window.scrollTo(0, 0);
     
     // Check for tab parameter

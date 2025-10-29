@@ -30,7 +30,7 @@ const PreCheckout = () => {
   const [activeTab, setActiveTab] = useState<string>("fast-track");
   
   useEffect(() => {
-    // Scroll to top when component mounts
+    document.title = "ExecPass - Checkout";
     window.scrollTo(0, 0);
     
     // Set plan from URL parameter

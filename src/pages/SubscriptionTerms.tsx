@@ -2,8 +2,13 @@ import { ExecPassHeader } from "@/components/ExecPassHeader";
 import { ExecPassFooter } from "@/components/ExecPassFooter";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function SubscriptionTerms() {
+  useEffect(() => {
+    document.title = "ExecPass - Subscription Terms";
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <ExecPassHeader />

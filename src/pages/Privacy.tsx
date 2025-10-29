@@ -1,7 +1,12 @@
 import { ExecPassHeader } from "@/components/ExecPassHeader";
 import { ExecPassFooter } from "@/components/ExecPassFooter";
+import { useEffect } from "react";
 
 export default function Privacy() {
+  useEffect(() => {
+    document.title = "ExecPass - Privacy Policy";
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <ExecPassHeader />

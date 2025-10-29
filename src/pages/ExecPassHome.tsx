@@ -11,7 +11,7 @@ const ExecPassHome = () => {
   const { formatPrice } = useCurrency();
 
   useEffect(() => {
-    // Scroll to top when component mounts
+    document.title = "ExecPass - Home";
     window.scrollTo(0, 0);
   }, []);
 

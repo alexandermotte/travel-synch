@@ -3,8 +3,13 @@ import { ExecPassFooter } from "@/components/ExecPassFooter";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const ExecPassFAQ = () => {
+  useEffect(() => {
+    document.title = "ExecPass - FAQ";
+  }, []);
+
   const faqs = [
     {
       question: "How does ExecPass work?",

@@ -2,12 +2,16 @@ import { ExecPassHeader } from "@/components/ExecPassHeader";
 import { ExecPassFooter } from "@/components/ExecPassFooter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const ExecPassContact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({ fullName: "", email: "", message: "" });
+
+  useEffect(() => {
+    document.title = "ExecPass - Contact";
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
