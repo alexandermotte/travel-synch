@@ -20,7 +20,7 @@ export const CurrencyPicker = ({ variant = "light" }: CurrencyPickerProps) => {
       <DropdownMenuTrigger asChild>
         <Button 
           variant={variant === "dark" ? "ghost" : "outline"} 
-          className={`gap-2 ${variant === "dark" ? "text-background hover:bg-background/10 border-background/20 hover:border-background/40" : ""}`}
+          className={`gap-2 hover:text-white ${variant === "dark" ? "text-background hover:bg-background/10 border-background/20 hover:border-background/40" : ""}`}
         >
           <Globe className="h-4 w-4" />
           {currency}
@@ -31,11 +31,11 @@ export const CurrencyPicker = ({ variant = "light" }: CurrencyPickerProps) => {
           <DropdownMenuItem
             key={curr.code}
             onClick={() => setCurrency(curr.code)}
-            className={`cursor-pointer ${currency === curr.code ? "bg-accent" : ""}`}
+            className={`cursor-pointer hover:text-white ${currency === curr.code ? "bg-accent text-white" : ""}`}
           >
             <div>
               <div className="font-medium">{curr.code}</div>
-              <div className="text-xs text-muted-foreground">{curr.label}</div>
+              <div className={`text-xs ${currency === curr.code ? "text-white/80" : "text-muted-foreground"}`}>{curr.label}</div>
             </div>
           </DropdownMenuItem>
         ))}
