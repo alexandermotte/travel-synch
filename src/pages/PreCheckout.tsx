@@ -28,7 +28,12 @@ const PreCheckout = () => {
   const [searchParams] = useSearchParams();
   const [selectedPlan, setSelectedPlan] = useState<string>("premium");
   const [activeTab, setActiveTab] = useState<string>("fast-track");
+  
   useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+    
+    // Set plan from URL parameter
     const planParam = searchParams.get("plan");
     if (planParam === "medium" || planParam === "premium") {
       setSelectedPlan(planParam);

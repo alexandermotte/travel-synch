@@ -53,7 +53,7 @@ export const ExecPassHeader = () => {
             <select
               value={currency}
               onChange={(e) => setCurrency(e.target.value as "USD" | "EUR" | "GBP")}
-              className="text-sm border rounded-md px-2 py-1 bg-background"
+              className="text-sm border rounded px-3 py-1.5 bg-background hover:bg-accent/10 transition-colors cursor-pointer min-w-[65px] font-medium"
               title={currencies.find(c => c.code === currency)?.name}
             >
               {currencies.map((curr) => (

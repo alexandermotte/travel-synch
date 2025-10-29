@@ -5,9 +5,15 @@ import { Card } from "@/components/ui/card";
 import { useCurrency } from "@/contexts/CurrencyContext";
 import { Link } from "react-router-dom";
 import { Plane, FileCheck, Ticket, Headphones, BookOpen, Coffee } from "lucide-react";
+import { useEffect } from "react";
 
 const ExecPassHome = () => {
   const { formatPrice } = useCurrency();
+
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="min-h-screen">

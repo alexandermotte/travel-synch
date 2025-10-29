@@ -32,7 +32,7 @@ export const ExecPassFooter = () => {
               <select
                 value={currency}
                 onChange={(e) => setCurrency(e.target.value as "USD" | "EUR" | "GBP")}
-                className="text-sm border rounded-md px-2 py-2 bg-foreground text-background border-background/20"
+                className="text-sm border rounded px-3 py-1.5 bg-foreground text-background border-background/20 hover:border-background/40 transition-colors cursor-pointer min-w-[65px] font-medium"
                 title={currencies.find(c => c.code === currency)?.name}
               >
                 {currencies.map((curr) => (
@@ -62,10 +62,10 @@ export const ExecPassFooter = () => {
           <div>
             <h3 className="font-semibold mb-4">More</h3>
             <ul className="space-y-2 text-sm opacity-90">
-              <li><Link to="/services-pricing#fast-track" className="hover:opacity-100 transition-opacity">Fast Track</Link></li>
-              <li><Link to="/services-pricing#check-in" className="hover:opacity-100 transition-opacity">Check-in</Link></li>
-              <li><Link to="/services-pricing#attractions" className="hover:opacity-100 transition-opacity">Ticketline to Attractions</Link></li>
-              <li><Link to="/services-pricing#concierge" className="hover:opacity-100 transition-opacity">Concierge Service</Link></li>
+              <li><Link to="/services-pricing?tab=fasttrack" className="hover:opacity-100 transition-opacity">Fast Track</Link></li>
+              <li><Link to="/services-pricing?tab=checkin" className="hover:opacity-100 transition-opacity">Check-in</Link></li>
+              <li><Link to="/services-pricing?tab=attractions" className="hover:opacity-100 transition-opacity">Ticketline to Attractions</Link></li>
+              <li><Link to="/services-pricing?tab=concierge" className="hover:opacity-100 transition-opacity">Concierge Service</Link></li>
             </ul>
           </div>
 

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check } from "lucide-react";
 import { useCurrency } from "@/contexts/CurrencyContext";
+import { Link } from "react-router-dom";
 
 const plans = [
   {
@@ -75,9 +76,9 @@ export const Pricing = () => {
               <Button
                 className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
                 size="lg"
-                onClick={() => window.location.href = `/pre-checkout?plan=${plan.id}`}
+                asChild
               >
-                Start Your Journey
+                <Link to={`/pre-checkout?plan=${plan.id}`}>Start Your Journey</Link>
               </Button>
             </Card>
           ))}

@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Check, Sparkles, Zap, Ticket, BookOpen, Heart, Clock, Plane, Shield, Users, Map, RefreshCw, Star, CheckCircle, Calendar, TrendingUp } from "lucide-react";
 import { useCurrency } from "@/contexts/CurrencyContext";
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import mobileCheckinImage from "@/assets/mobile-checkin.jpg";
 import museumImage from "@/assets/museum-interior.jpg";
 import serviceConciergeImage from "@/assets/service-concierge.jpg";
@@ -21,6 +21,9 @@ const Services = () => {
   const [activeTab, setActiveTab] = useState("subscription");
 
   useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+    
     // Handle hash navigation from footer
     const hash = window.location.hash.replace("#", "");
     if (hash && ["subscription", "fast-track", "ticketline", "ebooks", "concierge", "checkin"].includes(hash)) {
@@ -435,9 +438,9 @@ const Services = () => {
                   <Button
                     className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
                     size="lg"
-                    onClick={() => window.location.href = `/pre-checkout?plan=${plan.id}`}
+                    asChild
                   >
-                    Try Now
+                    <Link to={`/pre-checkout?plan=${plan.id}`}>Try Now</Link>
                   </Button>
                 </Card>
               ))}
