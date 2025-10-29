@@ -119,7 +119,7 @@ const ExecPassHome = () => {
               </ul>
               
               <Button className="w-full bg-accent hover:bg-accent/90" asChild>
-                <Link to="/pre-checkout">Try Now</Link>
+                <Link to="/pre-checkout?plan=premium">Try Now</Link>
               </Button>
             </Card>
 
@@ -153,7 +153,7 @@ const ExecPassHome = () => {
               </ul>
               
               <Button className="w-full" variant="outline" asChild>
-                <Link to="/pre-checkout">Try Now</Link>
+                <Link to="/pre-checkout?plan=medium">Try Now</Link>
               </Button>
             </Card>
           </div>
