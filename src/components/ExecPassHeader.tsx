@@ -23,7 +23,7 @@ export const ExecPassHeader = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-6">
             <Link to="/" className="text-sm font-medium hover:text-accent transition-colors">
               Home
             </Link>
@@ -39,7 +39,7 @@ export const ExecPassHeader = () => {
           </nav>
 
           {/* Desktop Right Section */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4">
             <a href="tel:+442038567769" className="text-sm font-medium hover:text-accent transition-colors">
               +4420 3856 7769
             </a>
@@ -61,7 +61,7 @@ export const ExecPassHeader = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="lg:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -70,7 +70,7 @@ export const ExecPassHeader = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t">
+          <nav className="lg:hidden py-4 border-t">
             <div className="flex flex-col gap-4">
               <Link
                 to="/"
