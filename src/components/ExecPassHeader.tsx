@@ -72,8 +72,6 @@ export const ExecPassHeader = () => {
         {isMenuOpen && (
           <nav className="md:hidden py-4 border-t">
             <div className="flex flex-col gap-4">
-              <CurrencyPicker />
-              
               <Link
                 to="/"
                 className="text-sm font-medium hover:text-accent transition-colors py-2"
@@ -102,6 +100,9 @@ export const ExecPassHeader = () => {
               >
                 Unsubscribe
               </Link>
+              
+              <CurrencyPicker />
+              
               <Button
                 variant="outline"
                 size="sm"
