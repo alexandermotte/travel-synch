@@ -116,6 +116,12 @@ const PreCheckout = () => {
                       </ul>
                     </Card>)}
                 </div>
+                
+                <div className="mt-6 text-center max-w-3xl mx-auto">
+                  <p className="text-sm text-muted-foreground italic border-t border-border pt-6">
+                    Fast Track and Smart Check-In are available only to active members (members that have at least one successful subscription payment).
+                  </p>
+                </div>
 
                 {/* Fast Track Features */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12">
@@ -166,6 +172,12 @@ const PreCheckout = () => {
                           </li>)}
                       </ul>
                     </Card>)}
+                </div>
+                
+                <div className="mt-6 text-center max-w-3xl mx-auto">
+                  <p className="text-sm text-muted-foreground italic border-t border-border pt-6">
+                    Fast Track and Smart Check-In are available only to active members (members that have at least one successful subscription payment).
+                  </p>
                 </div>
 
                 {/* Automated Check-In Features */}

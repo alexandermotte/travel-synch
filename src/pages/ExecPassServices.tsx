@@ -393,6 +393,12 @@ const ExecPassServices = () => {
               </Button>
             </Card>
           </div>
+          
+          <div className="mt-8 text-center max-w-3xl mx-auto">
+            <p className="text-sm text-muted-foreground italic border-t border-border pt-6">
+              Fast Track and Smart Check-In are available only to active members (members that have at least one successful subscription payment).
+            </p>
+          </div>
         </div>
       </section>
 
