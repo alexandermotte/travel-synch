@@ -243,7 +243,7 @@ const ExecPassServices = () => {
       </section>
 
       {/* Online Support Section */}
-      <section className="py-16 md:py-20 bg-background">
+      <section className="py-16 md:py-20 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative h-[350px] md:h-[450px] rounded-lg overflow-hidden">
@@ -254,34 +254,30 @@ const ExecPassServices = () => {
               />
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">Great Online Support</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Great Online Support
+              </h2>
               
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-semibold mb-3">Team of experts</h3>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>• Around the clock support</li>
-                    <li>• +15 years of experience</li>
-                    <li>• Focus on your needs</li>
-                  </ul>
+                  <h3 className="text-xl font-semibold mb-2">Dedicated Business Support</h3>
+                  <p className="text-muted-foreground">
+                    Our travel specialists are available 24/7 to assist with any request or last-minute change. No chatbots – only real experts ensuring your team's journeys stay on track.
+                  </p>
                 </div>
                 
                 <div>
-                  <h3 className="text-lg font-semibold mb-3">Member Zone</h3>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>• Fast track & flight check-in</li>
-                    <li>• Lounge access & concierge support</li>
-                    <li>• Discounted tickets & travel eBooks</li>
-                  </ul>
+                  <h3 className="text-xl font-semibold mb-2">Smart Value for Companies</h3>
+                  <p className="text-muted-foreground">
+                    By working with carefully selected partners, we deliver competitive corporate rates without compromising on quality. Transparent pricing, no hidden fees – just efficient cost control.
+                  </p>
                 </div>
                 
                 <div>
-                  <h3 className="text-lg font-semibold mb-3">Customer Assistance</h3>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>• Available in less than an hour</li>
-                    <li>• Phone, Email or chat</li>
-                    <li>• Here for you all the way</li>
-                  </ul>
+                  <h3 className="text-xl font-semibold mb-2">Seamless Platform</h3>
+                  <p className="text-muted-foreground">
+                    Your personalized business travel dashboard centralizes bookings, itineraries, and communications in one place. Intuitive and secure, it simplifies travel management for both your team and administrators.
+                  </p>
                 </div>
               </div>
             </div>
