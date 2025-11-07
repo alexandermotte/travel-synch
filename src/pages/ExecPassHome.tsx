@@ -97,6 +97,7 @@ const ExecPassHome = () => {
                   <span className="text-5xl font-bold block">{formatPrice(79)}</span>
                 </div>
                 <p className="text-sm text-muted-foreground">Every 3 months</p>
+                <p className="text-xs text-muted-foreground mt-1">3 days free trial. Cancel anytime</p>
               </div>
               
               <ul className="space-y-3 mb-6">
@@ -131,6 +132,7 @@ const ExecPassHome = () => {
                   <span className="text-5xl font-bold block">{formatPrice(49)}</span>
                 </div>
                 <p className="text-sm text-muted-foreground">Every 3 months</p>
+                <p className="text-xs text-muted-foreground mt-1">3 days free trial. Cancel anytime</p>
               </div>
               
               <ul className="space-y-3 mb-6">
