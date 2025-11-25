@@ -1,6 +1,5 @@
 import { Card } from "@/components/ui/card";
 import { Headphones, DollarSign, Shield, Smartphone } from "lucide-react";
-import loungePremium from "@/assets/lounge-premium.jpg";
 
 const features = [
   {
@@ -34,28 +33,26 @@ export const WhyChooseUs = () => {
           <p className="text-lg text-muted-foreground">Exceptional offers with world-class service</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {features.map((feature, index) => (
-            <Card key={index} className="p-6 md:p-8 bg-card border-border">
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 p-3 rounded-xl bg-accent/10 text-accent">
-                  <feature.icon className="h-6 w-6" />
+            <Card key={index} className="relative p-8 bg-card border-2 border-border hover:border-accent transition-smooth group overflow-hidden">
+              {/* Decorative corner element */}
+              <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full group-hover:scale-150 transition-transform duration-500"></div>
+              
+              <div className="relative">
+                <div className="mb-6 inline-flex p-4 rounded-2xl bg-accent/10 text-accent group-hover:scale-110 transition-transform">
+                  <feature.icon className="h-8 w-8" />
                 </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-                </div>
+                <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+              </div>
+              
+              {/* Number badge */}
+              <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-2xl font-bold text-primary/50">
+                {index + 1}
               </div>
             </Card>
           ))}
-        </div>
-
-        <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-elegant max-w-5xl mx-auto">
-          <img 
-            src={loungePremium} 
-            alt="Salon d'aéroport premium" 
-            className="w-full h-full object-cover"
-          />
         </div>
       </div>
     </section>

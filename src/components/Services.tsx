@@ -1,12 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Sparkles, Zap, CheckCircle, Coffee, Ticket, BookOpen } from "lucide-react";
-import travelFamily from "@/assets/travel-family.jpg";
-import airportInterior from "@/assets/airport-interior.jpg";
-import museumInterior from "@/assets/museum-interior.jpg";
-import mobileCheckin from "@/assets/mobile-checkin.jpg";
-import fastTrack from "@/assets/fast-track.jpg";
-import premiumLoungeInterior from "@/assets/premium-lounge-interior.jpg";
-import conciergeDesk from "@/assets/concierge-desk.jpg";
+
 const services = [{
   icon: Sparkles,
   title: "Personal Concierge",
@@ -32,45 +26,78 @@ const services = [{
   title: "Digital Travel Guides",
   description: "Unlock curated guides packed with insider knowledge, detailed itineraries, and local secrets. Perfect for both planning and on-the-go exploration."
 }];
+
 export const Services = () => {
-  return <section className="py-16 md:py-24 bg-gradient-to-b from-background to-sand/30">
+  const ServiceIcon0 = services[0].icon;
+  const ServiceIcon1 = services[1].icon;
+  const ServiceIcon2 = services[2].icon;
+  const ServiceIcon3 = services[3].icon;
+  const ServiceIcon4 = services[4].icon;
+  const ServiceIcon5 = services[5].icon;
+
+  return (
+    <section className="py-16 md:py-24 bg-gradient-to-b from-background to-sand/30">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Premium Services</h2>
         
-        <div className="mb-12 relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-elegant max-w-5xl mx-auto">
-          <img src={travelFamily} alt="Happy travelers at the airport" className="w-full h-full object-cover" />
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
-          {services.slice(0, 3).map((service, index) => <Card key={index} className="p-6 md:p-8 bg-card border-border hover:shadow-elegant transition-smooth group">
-              <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-accent group-hover:text-accent-foreground transition-smooth">
-                <service.icon className="h-6 w-6" />
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-6 max-w-6xl mx-auto">
+          {/* Large featured cards */}
+          <Card className="md:col-span-3 p-8 bg-gradient-to-br from-primary/10 to-accent/5 border-2 border-primary/20 hover:shadow-elegant transition-smooth group">
+            <div className="mb-6 inline-flex p-4 rounded-2xl bg-primary/20 text-primary group-hover:scale-110 transition-transform">
+              <ServiceIcon0 className="h-10 w-10" />
+            </div>
+            <h3 className="text-2xl font-bold mb-3">{services[0].title}</h3>
+            <p className="text-muted-foreground leading-relaxed">{services[0].description}</p>
+          </Card>
+          
+          <Card className="md:col-span-3 p-8 bg-gradient-to-br from-accent/10 to-primary/5 border-2 border-accent/20 hover:shadow-elegant transition-smooth group">
+            <div className="mb-6 inline-flex p-4 rounded-2xl bg-accent/20 text-accent group-hover:scale-110 transition-transform">
+              <ServiceIcon1 className="h-10 w-10" />
+            </div>
+            <h3 className="text-2xl font-bold mb-3">{services[1].title}</h3>
+            <p className="text-muted-foreground leading-relaxed">{services[1].description}</p>
+          </Card>
+          
+          {/* Medium cards */}
+          <Card className="md:col-span-2 p-6 bg-card border-border hover:shadow-elegant transition-smooth group">
+            <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-accent group-hover:text-accent-foreground transition-smooth">
+              <ServiceIcon2 className="h-6 w-6" />
+            </div>
+            <h3 className="text-lg font-semibold mb-2">{services[2].title}</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">{services[2].description}</p>
+          </Card>
+          
+          <Card className="md:col-span-2 p-6 bg-card border-border hover:shadow-elegant transition-smooth group">
+            <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-accent group-hover:text-accent-foreground transition-smooth">
+              <ServiceIcon3 className="h-6 w-6" />
+            </div>
+            <h3 className="text-lg font-semibold mb-2">{services[3].title}</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">{services[3].description}</p>
+          </Card>
+          
+          <Card className="md:col-span-2 p-6 bg-card border-border hover:shadow-elegant transition-smooth group">
+            <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-accent group-hover:text-accent-foreground transition-smooth">
+              <ServiceIcon4 className="h-6 w-6" />
+            </div>
+            <h3 className="text-lg font-semibold mb-2">{services[4].title}</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">{services[4].description}</p>
+          </Card>
+          
+          {/* Full width card */}
+          <Card className="md:col-span-6 p-8 bg-gradient-to-r from-secondary/30 to-sand/30 border-border hover:shadow-elegant transition-smooth group">
+            <div className="flex items-start gap-6">
+              <div className="flex-shrink-0 p-4 rounded-2xl bg-accent/20 text-accent group-hover:scale-110 transition-transform">
+                <ServiceIcon5 className="h-8 w-8" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{service.description}</p>
-            </Card>)}
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-elegant">
-            <img src={fastTrack} alt="Modern airport fast track security with elegant design" className="w-full h-full object-cover" />
-          </div>
-          <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-elegant">
-            <img src={conciergeDesk} alt="Professional concierge assisting traveler at airport desk" className="w-full h-full object-cover" />
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
-          {services.slice(3).map((service, index) => <Card key={index + 3} className="p-6 md:p-8 bg-card border-border hover:shadow-elegant transition-smooth group">
-              <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-accent group-hover:text-accent-foreground transition-smooth">
-                <service.icon className="h-6 w-6" />
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold mb-3">{services[5].title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{services[5].description}</p>
               </div>
-              <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{service.description}</p>
-            </Card>)}
+            </div>
+          </Card>
         </div>
-
-        
       </div>
-    </section>;
+    </section>
+  );
 };
