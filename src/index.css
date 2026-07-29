@@ -11,27 +11,27 @@
 @layer base {
   :root {
     /* --- Airside brand tokens --- */
-    --ep-void: 220 10% 6%;           /* #0E0F11 */
-    --ep-graphite: 216 9% 12%;       /* #1A1C1F */
-    --ep-graphite-2: 216 8% 17%;     /* #262A2E */
-    --ep-line-dark: 218 7% 24%;
-    --ep-steel: 215 8% 55%;
+    --ep-void: 219 60% 12%;          /* deep navy #0C1E3E */
+    --ep-graphite: 219 55% 17%;      /* #14294B */
+    --ep-graphite-2: 219 50% 24%;    /* #1E355F */
+    --ep-line-dark: 219 35% 32%;
+    --ep-steel: 215 25% 65%;
 
-    --ep-paper: 210 20% 98%;
-    --ep-concrete: 210 18% 93%;
-    --ep-line: 210 16% 85%;
-    --ep-ink: 220 14% 8%;
-    --ep-ink-muted: 215 10% 40%;
+    --ep-paper: 219 25% 94%;         /* light blue-gray #E5EAF2 */
+    --ep-concrete: 0 0% 100%;        /* white cards */
+    --ep-line: 219 20% 86%;
+    --ep-ink: 219 60% 12%;           /* navy text */
+    --ep-ink-muted: 219 20% 42%;
     --ep-bright: 0 0% 100%;
 
-    /* Logo-only brand blue */
-    --ep-cerulean: 196 100% 33%;     /* #007BA7 */
+    /* Brand cerulean — logo + CTA */
+    --ep-cerulean: 207 76% 52%;      /* #2A8FE0 */
 
-    --ep-flare: 43 98% 48%;          /* amber #F5B301 — CTA accent */
-    --ep-flare-fill: 40 95% 45%;
-    --ep-flare-fill-hover: 36 95% 40%;
-    --ep-flare-ink: 30 90% 30%;
-    --ep-flare-bright: 46 98% 58%;
+    --ep-flare: 207 76% 52%;         /* cerulean CTA */
+    --ep-flare-fill: 210 70% 42%;    /* muted mid-blue press */
+    --ep-flare-fill-hover: 210 72% 36%;
+    --ep-flare-ink: 210 76% 40%;
+    --ep-flare-bright: 205 88% 62%;
 
     --ep-ok: 158 58% 38%;
     --ep-warn: 36 92% 48%;
