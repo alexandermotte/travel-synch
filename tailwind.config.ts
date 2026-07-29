@@ -12,9 +12,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['IBM Plex Sans', 'system-ui', 'sans-serif'],
-        display: ['Archivo', 'system-ui', 'sans-serif'],
-        mono: ['IBM Plex Mono', 'ui-monospace', 'monospace'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif'],
+        mono: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
         // Airside brand
@@ -67,9 +67,9 @@ export default {
         },
       },
       borderRadius: {
-        lg: "4px",
-        md: "2px",
-        sm: "2px",
+        lg: "16px",
+        md: "12px",
+        sm: "8px",
       },
       maxWidth: {
         container: "1240px",

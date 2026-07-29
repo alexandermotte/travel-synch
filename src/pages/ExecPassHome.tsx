@@ -48,7 +48,7 @@ const Hero = () => (
           <a
             href={BOOK_URL}
             className="ep-btn-type text-[14px] uppercase tracking-wider bg-flare-fill hover:bg-flare-fill-hover text-white px-8 py-4 inline-flex items-center gap-3 ep-ease ep-press"
-            style={{ borderRadius: 2 }}
+            style={{ borderRadius: 12 }}
           >
             Start free trial <ArrowRight size={16} />
           </a>
@@ -118,7 +118,7 @@ const BoardingPassStrip = () => (
         <a
           href={BOOK_URL}
           className="mt-6 ep-btn-type text-[13px] uppercase tracking-wider bg-flare-fill hover:bg-flare-fill-hover text-white px-5 py-3 inline-flex items-center justify-center gap-2 ep-ease ep-press"
-          style={{ borderRadius: 2 }}
+          style={{ borderRadius: 12 }}
         >
           Book fast track <ArrowRight size={14} />
         </a>
@@ -194,7 +194,7 @@ const Services = () => (
             className={`p-8 ep-bg-paper ep-ease hover:bg-concrete relative ${
               s.featured ? "ep-cut-corner-tr" : ""
             }`}
-            style={{ borderRadius: 4 }}
+            style={{ borderRadius: 20 }}
           >
             <div className="ep-icon-plate mb-6">
               <s.icon size={20} strokeWidth={2} />
@@ -273,7 +273,7 @@ const Membership = () => (
 
       <div className="grid gap-6 md:grid-cols-2">
         {/* Essential */}
-        <article className="border border-line bg-paper p-10 flex flex-col" style={{ borderRadius: 4 }}>
+        <article className="border border-line bg-paper p-10 flex flex-col" style={{ borderRadius: 20 }}>
           <div className="ep-mono text-ink-muted">ESSENTIAL</div>
           <div className="mt-6 flex items-baseline gap-2">
             <span className="ep-display text-[64px] text-ink leading-none">£49</span>
@@ -289,7 +289,7 @@ const Membership = () => (
           <a
             href={BOOK_URL}
             className="mt-10 ep-btn-type text-[13px] uppercase tracking-wider border border-ink text-ink hover:bg-ink hover:text-bright px-6 py-3 inline-flex items-center justify-center gap-2 ep-ease ep-press self-start"
-            style={{ borderRadius: 2 }}
+            style={{ borderRadius: 12 }}
           >
             Start free trial
           </a>
@@ -298,7 +298,7 @@ const Membership = () => (
         {/* Executive — featured, cut corner, panel shadow */}
         <article
           className="ep-cut-corner-tr border border-ink bg-graphite text-bright p-10 flex flex-col shadow-[0_30px_80px_-40px_rgba(0,0,0,0.6)]"
-          style={{ borderRadius: 4 }}
+          style={{ borderRadius: 20 }}
         >
           <div className="flex items-center justify-between">
             <div className="ep-mono text-flare-bright">EXECUTIVE</div>
@@ -318,7 +318,7 @@ const Membership = () => (
           <a
             href={BOOK_URL}
             className="mt-10 ep-btn-type text-[13px] uppercase tracking-wider bg-flare-fill hover:bg-flare-fill-hover text-white px-6 py-3 inline-flex items-center justify-center gap-2 ep-ease ep-press self-start"
-            style={{ borderRadius: 2 }}
+            style={{ borderRadius: 12 }}
           >
             Start free trial <ArrowRight size={14} />
           </a>
@@ -407,7 +407,7 @@ const ClosingCTA = () => (
         <a
           href={BOOK_URL}
           className="ep-btn-type text-[14px] uppercase tracking-wider bg-flare-fill hover:bg-flare-fill-hover text-white px-8 py-4 inline-flex items-center gap-3 ep-ease ep-press"
-          style={{ borderRadius: 2 }}
+          style={{ borderRadius: 12 }}
         >
           Start free trial <ArrowRight size={16} />
         </a>
@@ -425,7 +425,7 @@ const MobileStickyCTA = () => (
     <a
       href={BOOK_URL}
       className="block ep-btn-type text-[13px] uppercase tracking-wider bg-flare-fill text-white px-5 py-3 text-center"
-      style={{ borderRadius: 2 }}
+      style={{ borderRadius: 12 }}
     >
       Start free trial
     </a>
