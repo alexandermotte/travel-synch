@@ -11,9 +11,9 @@
 @layer base {
   :root {
     /* --- Airside brand tokens --- */
-    --ep-void: 220 11% 6%;
-    --ep-graphite: 220 9% 11%;
-    --ep-graphite-2: 219 8% 16%;
+    --ep-void: 220 10% 6%;          /* #0E0F11 */
+    --ep-graphite: 216 9% 12%;       /* #1A1C1F */
+    --ep-graphite-2: 216 8% 17%;     /* #262A2E */
     --ep-line-dark: 218 7% 24%;
     --ep-steel: 215 8% 55%;
 
@@ -24,11 +24,11 @@
     --ep-ink-muted: 215 10% 40%;
     --ep-bright: 210 20% 98%;
 
-    --ep-flare: 10 88% 52%;
-    --ep-flare-fill: 10 82% 42%;
-    --ep-flare-fill-hover: 10 84% 36%;
-    --ep-flare-ink: 10 84% 40%;
-    --ep-flare-bright: 12 92% 60%;
+    --ep-flare: 12 89% 52%;          /* #F03D19 */
+    --ep-flare-fill: 12 89% 46%;
+    --ep-flare-fill-hover: 12 89% 40%;
+    --ep-flare-ink: 12 89% 44%;
+    --ep-flare-bright: 14 92% 60%;
 
     --ep-ok: 158 58% 38%;
     --ep-warn: 36 92% 48%;
