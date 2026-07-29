@@ -67,7 +67,7 @@ export const ExecPassHeader = () => {
           <a
             href="https://fasttrack.exec-pass.com"
             className="ep-btn-type text-[13px] uppercase tracking-wider bg-flare-fill hover:bg-flare-fill-hover text-white px-5 py-2.5 ep-ease ep-press"
-            style={{ borderRadius: 2 }}
+            style={{ borderRadius: 12 }}
           >
             Start free trial
           </a>
@@ -119,7 +119,7 @@ export const ExecPassHeader = () => {
             <a
               href="https://fasttrack.exec-pass.com"
               className="ep-btn-type text-[13px] uppercase tracking-wider bg-flare-fill text-white px-5 py-3 text-center mt-2"
-              style={{ borderRadius: 2 }}
+              style={{ borderRadius: 12 }}
             >
               Start free trial
             </a>

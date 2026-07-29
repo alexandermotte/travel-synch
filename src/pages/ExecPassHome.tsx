@@ -48,7 +48,7 @@ const Hero = () => (
           <a
             href={BOOK_URL}
             className="ep-btn-type text-[14px] uppercase tracking-wider bg-flare-fill hover:bg-flare-fill-hover text-white px-8 py-4 inline-flex items-center gap-3 ep-ease ep-press"
-            style={{ borderRadius: 2 }}
+            style={{ borderRadius: 12 }}
           >
             Start free trial <ArrowRight size={16} />
           </a>
@@ -118,7 +118,7 @@ const BoardingPassStrip = () => (
         <a
           href={BOOK_URL}
           className="mt-6 ep-btn-type text-[13px] uppercase tracking-wider bg-flare-fill hover:bg-flare-fill-hover text-white px-5 py-3 inline-flex items-center justify-center gap-2 ep-ease ep-press"
-          style={{ borderRadius: 2 }}
+          style={{ borderRadius: 12 }}
         >
           Book fast track <ArrowRight size={14} />
         </a>
@@ -289,7 +289,7 @@ const Membership = () => (
           <a
             href={BOOK_URL}
             className="mt-10 ep-btn-type text-[13px] uppercase tracking-wider border border-ink text-ink hover:bg-ink hover:text-bright px-6 py-3 inline-flex items-center justify-center gap-2 ep-ease ep-press self-start"
-            style={{ borderRadius: 2 }}
+            style={{ borderRadius: 12 }}
           >
             Start free trial
           </a>
@@ -318,7 +318,7 @@ const Membership = () => (
           <a
             href={BOOK_URL}
             className="mt-10 ep-btn-type text-[13px] uppercase tracking-wider bg-flare-fill hover:bg-flare-fill-hover text-white px-6 py-3 inline-flex items-center justify-center gap-2 ep-ease ep-press self-start"
-            style={{ borderRadius: 2 }}
+            style={{ borderRadius: 12 }}
           >
             Start free trial <ArrowRight size={14} />
           </a>
@@ -407,7 +407,7 @@ const ClosingCTA = () => (
         <a
           href={BOOK_URL}
           className="ep-btn-type text-[14px] uppercase tracking-wider bg-flare-fill hover:bg-flare-fill-hover text-white px-8 py-4 inline-flex items-center gap-3 ep-ease ep-press"
-          style={{ borderRadius: 2 }}
+          style={{ borderRadius: 12 }}
         >
           Start free trial <ArrowRight size={16} />
         </a>
@@ -425,7 +425,7 @@ const MobileStickyCTA = () => (
     <a
       href={BOOK_URL}
       className="block ep-btn-type text-[13px] uppercase tracking-wider bg-flare-fill text-white px-5 py-3 text-center"
-      style={{ borderRadius: 2 }}
+      style={{ borderRadius: 12 }}
     >
       Start free trial
     </a>
