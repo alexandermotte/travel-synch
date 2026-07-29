@@ -62,10 +62,12 @@ const Hero = () => (
       </div>
     </div>
 
-    {/* Boarding-pass strip booking widget straddling the diagonal cut */}
-    <BoardingPassStrip />
   </section>
+  {/* Boarding-pass strip booking widget straddling the diagonal cut */}
+  <BoardingPassStrip />
+  </>
 );
+
 
 const BoardingPassStrip = () => (
   <div className="relative z-10 -mt-24 md:-mt-32 mx-auto max-w-container px-6">
