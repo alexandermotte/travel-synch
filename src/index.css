@@ -2,133 +2,183 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* =========================================================================
+   Airside design system — Exec Pass
+   Dark is the default ground. Marketing pages run dark → light → dark.
+   All colors HSL. Flare is the single accent, used sparingly.
+   ========================================================================= */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 13%;
+    /* --- Airside brand tokens --- */
+    --ep-void: 220 11% 6%;
+    --ep-graphite: 220 9% 11%;
+    --ep-graphite-2: 219 8% 16%;
+    --ep-line-dark: 218 7% 24%;
+    --ep-steel: 215 8% 55%;
 
+    --ep-paper: 210 20% 97%;
+    --ep-concrete: 212 16% 92%;
+    --ep-line: 212 14% 84%;
+    --ep-ink: 220 14% 10%;
+    --ep-ink-muted: 215 10% 40%;
+    --ep-bright: 210 20% 98%;
+
+    --ep-flare: 10 88% 52%;
+    --ep-flare-fill: 10 82% 42%;
+    --ep-flare-fill-hover: 10 84% 36%;
+    --ep-flare-ink: 10 84% 40%;
+    --ep-flare-bright: 12 92% 60%;
+
+    --ep-ok: 158 58% 38%;
+    --ep-warn: 36 92% 48%;
+    --ep-alert: 350 72% 48%;
+
+    /* --- shadcn mapping (light band defaults) --- */
+    --background: var(--ep-paper);
+    --foreground: var(--ep-ink);
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 13%;
-
+    --card-foreground: var(--ep-ink);
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 13%;
-
-    --primary: 0 0% 13%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 13%;
-
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-
-    --accent: 353 40% 58%;
+    --popover-foreground: var(--ep-ink);
+    --primary: var(--ep-ink);
+    --primary-foreground: var(--ep-bright);
+    --secondary: var(--ep-concrete);
+    --secondary-foreground: var(--ep-ink);
+    --muted: var(--ep-concrete);
+    --muted-foreground: var(--ep-ink-muted);
+    --accent: var(--ep-flare-fill);
     --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84.2% 60.2%;
+    --destructive: var(--ep-alert);
     --destructive-foreground: 0 0% 100%;
+    --border: var(--ep-line);
+    --input: var(--ep-line);
+    --ring: var(--ep-flare);
+    --radius: 0.25rem;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 353 40% 58%;
+    /* legacy vars kept so untouched pages still render */
+    --rose: var(--ep-flare-fill);
+    --rose-light: var(--ep-flare);
+    --rose-dark: var(--ep-flare-fill-hover);
+    --ocean: var(--ep-void);
+    --ocean-light: var(--ep-graphite);
+    --ocean-dark: var(--ep-void);
+    --sky: var(--ep-concrete);
+    --gold: var(--ep-flare);
+    --sand: var(--ep-paper);
 
-    --radius: 0.5rem;
-    
-    /* ExecPass brand colors */
-    --rose: 353 40% 58%;
-    --rose-light: 353 40% 68%;
-    --rose-dark: 353 40% 48%;
-    
-    /* Shadows & Effects */
-    --shadow-sm: 0 2px 8px -2px hsl(0 0% 13% / 0.08);
-    --shadow-md: 0 4px 16px -4px hsl(0 0% 13% / 0.12);
-    --shadow-lg: 0 8px 32px -8px hsl(0 0% 13% / 0.16);
-    
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: var(--ep-paper);
+    --sidebar-foreground: var(--ep-ink);
+    --sidebar-primary: var(--ep-ink);
+    --sidebar-primary-foreground: var(--ep-bright);
+    --sidebar-accent: var(--ep-concrete);
+    --sidebar-accent-foreground: var(--ep-ink);
+    --sidebar-border: var(--ep-line);
+    --sidebar-ring: var(--ep-flare);
   }
 
   .dark {
-    --background: 0 0% 13%;
-    --foreground: 0 0% 96%;
-
-    --card: 0 0% 18%;
-    --card-foreground: 0 0% 96%;
-
-    --popover: 0 0% 18%;
-    --popover-foreground: 0 0% 96%;
-
-    --primary: 0 0% 96%;
-    --primary-foreground: 0 0% 13%;
-
-    --secondary: 0 0% 20%;
-    --secondary-foreground: 0 0% 96%;
-
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 60%;
-
-    --accent: 353 40% 58%;
+    --background: var(--ep-void);
+    --foreground: var(--ep-bright);
+    --card: var(--ep-graphite);
+    --card-foreground: var(--ep-bright);
+    --popover: var(--ep-graphite);
+    --popover-foreground: var(--ep-bright);
+    --primary: var(--ep-bright);
+    --primary-foreground: var(--ep-ink);
+    --secondary: var(--ep-graphite-2);
+    --secondary-foreground: var(--ep-bright);
+    --muted: var(--ep-graphite-2);
+    --muted-foreground: var(--ep-steel);
+    --accent: var(--ep-flare-fill);
     --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 72.8% 50.6%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 25%;
-    --input: 0 0% 25%;
-    --ring: 353 40% 58%;
-    
-    --rose: 353 40% 58%;
-    --rose-light: 353 40% 68%;
-    --rose-dark: 353 40% 48%;
+    --border: var(--ep-line-dark);
+    --input: var(--ep-line-dark);
+    --ring: var(--ep-flare);
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
+  * { @apply border-border; }
+  html, body { background: hsl(var(--ep-void)); }
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply text-foreground antialiased;
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    font-feature-settings: "ss01", "cv11";
   }
-  
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight text-primary;
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-weight: 700;
+    font-stretch: 118%;
+    letter-spacing: -0.025em;
+    line-height: 1.02;
   }
+  ::selection { background: hsl(var(--ep-flare) / 0.85); color: #fff; }
 }
 
 @layer utilities {
-  .shadow-elegant {
-    box-shadow: var(--shadow-md);
+  /* Type — the mono rail is the most-used signature treatment */
+  .ep-mono {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    font-size: 12px;
+    font-weight: 500;
   }
-  
-  .shadow-soft {
-    box-shadow: var(--shadow-sm);
+  .ep-display {
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-weight: 700;
+    font-stretch: 118%;
+    letter-spacing: -0.035em;
+    line-height: 0.98;
   }
-  
-  .transition-smooth {
-    transition: var(--transition-smooth);
+  .ep-wordmark {
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-weight: 700;
+    font-stretch: 112%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
   }
+  .ep-btn-type {
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-weight: 700;
+    font-stretch: 105%;
+    letter-spacing: 0.01em;
+  }
+
+  /* Grounds */
+  .ep-bg-void { background-color: hsl(var(--ep-void)); color: hsl(var(--ep-bright)); }
+  .ep-bg-graphite { background-color: hsl(var(--ep-graphite)); color: hsl(var(--ep-bright)); }
+  .ep-bg-paper { background-color: hsl(var(--ep-paper)); color: hsl(var(--ep-ink)); }
+  .ep-bg-concrete { background-color: hsl(var(--ep-concrete)); color: hsl(var(--ep-ink)); }
+
+  /* The Cut — 18° shear language. Section cuts bleed full width; corner cut = 26px. */
+  .ep-cut-bottom { clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4.5vw), 0 100%); }
+  .ep-cut-top    { clip-path: polygon(0 4.5vw, 100% 0, 100% 100%, 0 100%); }
+  .ep-cut-corner-tr {
+    clip-path: polygon(0 0, calc(100% - 26px) 0, 100% 26px, 100% 100%, 0 100%);
+  }
+
+  /* Sheared icon plate: plate skewed −18°, glyph counter-skewed to stay upright */
+  .ep-icon-plate {
+    width: 44px; height: 40px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background-color: hsl(var(--ep-flare) / 0.14);
+    color: hsl(var(--ep-flare-bright));
+    transform: skewX(-18deg);
+  }
+  .ep-icon-plate > * { transform: skewX(18deg); }
+  .ep-bg-paper .ep-icon-plate { color: hsl(var(--ep-flare-ink)); background-color: hsl(var(--ep-flare) / 0.12); }
+
+  /* Almost-imperceptible void→graphite wash for very large slabs only */
+  .ep-wash-void {
+    background-image: linear-gradient(180deg, hsl(var(--ep-void)) 0%, hsl(var(--ep-graphite) / 0.65) 100%);
+  }
+
+  /* Transitions */
+  .ep-ease { transition: all 180ms cubic-bezier(.2,.7,.3,1); }
+  .ep-press { transition: transform 120ms cubic-bezier(.2,.7,.3,1); }
+  .ep-press:active { transform: translateY(1px); }
 }
