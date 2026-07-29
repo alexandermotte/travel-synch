@@ -19,7 +19,9 @@ const BOOK_URL = "https://fasttrack.exec-pass.com";
 
 /* --------------------------------- Hero --------------------------------- */
 const Hero = () => (
-  <section className="relative ep-bg-void ep-wash-void ep-cut-bottom overflow-hidden">
+  <>
+  <section className="relative ep-bg-void ep-wash-void ep-cut-bottom">
+
     <div className="mx-auto max-w-container px-6 pt-20 pb-40 md:pt-28 md:pb-52 relative">
       {/* Vertical mono data-rail, pinned left */}
       <div
