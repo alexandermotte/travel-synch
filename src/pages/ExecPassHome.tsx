@@ -1,274 +1,458 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  Plane,
+  ScanLine,
+  Armchair,
+  Ticket,
+  Headphones,
+  Wifi,
+  Check,
+  Plus,
+  Minus,
+} from "lucide-react";
 import { ExecPassHeader } from "@/components/ExecPassHeader";
 import { ExecPassFooter } from "@/components/ExecPassFooter";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { useCurrency } from "@/contexts/CurrencyContext";
-import { Link } from "react-router-dom";
-import { Plane, FileCheck, Ticket, Headphones, BookOpen, Coffee } from "lucide-react";
-import { useEffect } from "react";
 
+const BOOK_URL = "https://fasttrack.exec-pass.com";
+
+/* --------------------------------- Hero --------------------------------- */
+const Hero = () => (
+  <>
+  <section className="relative ep-bg-void ep-wash-void ep-cut-bottom">
+
+    <div className="mx-auto max-w-container px-6 pt-20 pb-40 md:pt-28 md:pb-52 relative">
+      {/* Vertical mono data-rail, pinned left */}
+      <div
+        aria-hidden
+        className="absolute left-6 top-24 hidden md:flex flex-col gap-4 ep-mono text-steel"
+        style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
+      >
+        <span>GATE · 22B</span>
+        <span className="text-flare-bright">DEP 06:40 — BOARDING</span>
+        <span>LHR / T5 · AIRSIDE</span>
+      </div>
+
+      <div className="md:pl-16 max-w-4xl">
+        <div className="ep-mono text-flare-bright mb-8">EXEC PASS / MEMBERSHIP · EST. 2019</div>
+        <h1 className="ep-display text-bright text-[64px] leading-[0.95] md:text-[112px] lg:text-[136px]">
+          Straight to<br />airside.
+        </h1>
+        <p className="mt-8 text-[19px] md:text-[21px] text-steel max-w-prose">
+          Priority lanes, automated check-in and lounge access on one membership.
+          Book the lane once; we handle the rest.
+        </p>
+
+        <div className="mt-10 flex flex-wrap items-center gap-6">
+          <a
+            href={BOOK_URL}
+            className="ep-btn-type text-[14px] uppercase tracking-wider bg-flare-fill hover:bg-flare-fill-hover text-white px-8 py-4 inline-flex items-center gap-3 ep-ease ep-press"
+            style={{ borderRadius: 2 }}
+          >
+            Start free trial <ArrowRight size={16} />
+          </a>
+          <Link
+            to="/services-pricing"
+            className="ep-mono text-bright hover:text-flare-bright ep-ease"
+          >
+            See what&apos;s included →
+          </Link>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  {/* Boarding-pass strip booking widget straddling the diagonal cut */}
+  <BoardingPassStrip />
+  </>
+);
+
+
+const BoardingPassStrip = () => (
+  <div className="relative z-10 -mt-24 md:-mt-32 mx-auto max-w-container px-6">
+    <div className="grid grid-cols-12 gap-0 border border-line-dark bg-graphite text-bright shadow-[0_20px_60px_-30px_rgba(0,0,0,0.9)]">
+      <div className="col-span-12 md:col-span-8 p-6 md:p-8 grid grid-cols-4 gap-6">
+        <div>
+          <div className="ep-mono text-steel">FROM</div>
+          <div className="ep-display text-[28px] mt-1">LHR</div>
+          <div className="text-[13px] text-steel mt-1">London Heathrow</div>
+        </div>
+        <div>
+          <div className="ep-mono text-steel">TO</div>
+          <div className="ep-display text-[28px] mt-1">FRA</div>
+          <div className="text-[13px] text-steel mt-1">Frankfurt Main</div>
+        </div>
+        <div>
+          <div className="ep-mono text-steel">LANE</div>
+          <div className="ep-display text-[28px] mt-1">FAST</div>
+          <div className="text-[13px] text-steel mt-1">Priority security</div>
+        </div>
+        <div>
+          <div className="ep-mono text-steel">PAX</div>
+          <div className="ep-display text-[28px] mt-1">01</div>
+          <div className="text-[13px] text-steel mt-1">Adult</div>
+        </div>
+      </div>
+
+      {/* Perforated stub */}
+      <div
+        aria-hidden
+        className="hidden md:block col-span-0 w-0 relative"
+        style={{
+          borderLeft: "2px dashed hsl(var(--ep-line-dark))",
+          position: "absolute",
+          right: "33.333%",
+          top: 12,
+          bottom: 12,
+        }}
+      />
+
+      <div className="col-span-12 md:col-span-4 ep-bg-paper p-6 md:p-8 flex flex-col justify-between">
+        <div>
+          <div className="ep-mono text-flare-ink">BOOK THE LANE</div>
+          <div className="ep-display text-[22px] text-ink mt-2 leading-tight">
+            From £10 per pass. Members go free up to five times a month.
+          </div>
+        </div>
+        <a
+          href={BOOK_URL}
+          className="mt-6 ep-btn-type text-[13px] uppercase tracking-wider bg-flare-fill hover:bg-flare-fill-hover text-white px-5 py-3 inline-flex items-center justify-center gap-2 ep-ease ep-press"
+          style={{ borderRadius: 2 }}
+        >
+          Book fast track <ArrowRight size={14} />
+        </a>
+      </div>
+    </div>
+  </div>
+);
+
+/* ------------------------------ Trust strip ----------------------------- */
+const TrustStrip = () => (
+  <section className="ep-bg-paper border-b border-line pt-20">
+    <div className="mx-auto max-w-container px-6">
+      <div className="flex flex-wrap items-center justify-between gap-6 py-6 border-y border-line">
+        <div className="ep-mono text-ink-muted">300+ AIRPORTS · PRIORITY LANES</div>
+        <div className="ep-mono text-ink-muted">CHECK-IN AUTOMATED · GATE TO GATE</div>
+        <div className="ep-mono text-ink-muted">EN · DE · FR · ES · IT · PL · PT · TR · EL</div>
+        <div className="ep-mono text-flare-ink">STRAIGHT TO AIRSIDE.</div>
+      </div>
+    </div>
+  </section>
+);
+
+/* -------------------------------- Services ------------------------------ */
+const services = [
+  {
+    icon: Plane,
+    name: "Priority lane access",
+    body: "Walk past the security queue through the express lane, at more than 300 major airports.",
+    featured: true,
+  },
+  {
+    icon: ScanLine,
+    name: "Automated check-in",
+    body: "We check you in the moment the window opens, secure the seat, and send the boarding pass to your phone.",
+  },
+  {
+    icon: Armchair,
+    name: "Lounge access",
+    body: "Book any Priority Pass-partner lounge from the same dashboard. Members get a lower operator rate.",
+  },
+  {
+    icon: Ticket,
+    name: "Skip-the-line attractions",
+    body: "Priority entry tickets to museums and landmarks in the cities you land in.",
+  },
+  {
+    icon: Headphones,
+    name: "Concierge, 24/7",
+    body: "A specialist on the line for last-minute changes, rebookings, and ground logistics. Not a chatbot.",
+  },
+  {
+    icon: Wifi,
+    name: "Travel hub &amp; e-SIM",
+    body: "One dashboard for trips, receipts and data. Add an e-SIM before you land in a new country.",
+  },
+];
+
+const Services = () => (
+  <section className="ep-bg-paper">
+    <div className="mx-auto max-w-container px-6 py-24 md:py-32">
+      <div className="ep-mono text-flare-ink mb-6">01 / SERVICES</div>
+      <h2 className="ep-display text-ink text-[44px] md:text-[64px] max-w-3xl">
+        Everything handled, gate to gate.
+      </h2>
+      <p className="mt-6 max-w-prose text-[17px] text-ink-muted">
+        Six services on one membership. Book once, then let the operator run the rest of the trip.
+      </p>
+
+      <div className="mt-14 grid gap-px bg-line md:grid-cols-3 border border-line">
+        {services.map((s) => (
+          <div
+            key={s.name}
+            className={`p-8 ep-bg-paper ep-ease hover:bg-concrete relative ${
+              s.featured ? "ep-cut-corner-tr" : ""
+            }`}
+            style={{ borderRadius: 4 }}
+          >
+            <div className="ep-icon-plate mb-6">
+              <s.icon size={20} strokeWidth={2} />
+            </div>
+            <div className="ep-mono text-ink-muted mb-2">0{services.indexOf(s) + 1}</div>
+            <h3 className="ep-display text-[22px] text-ink" dangerouslySetInnerHTML={{ __html: s.name }} />
+            <p className="mt-3 text-[15px] text-ink-muted" dangerouslySetInnerHTML={{ __html: s.body }} />
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-6 flex justify-end">
+        <Link to="/services-pricing" className="ep-mono text-flare-ink hover:text-ink ep-ease">
+          Full service list →
+        </Link>
+      </div>
+    </div>
+  </section>
+);
+
+/* -------------------------- Difference / comparison --------------------- */
+const Difference = () => (
+  <section className="ep-bg-concrete border-y border-line">
+    <div className="mx-auto max-w-container px-6 py-24">
+      <div className="grid md:grid-cols-12 gap-12 items-start">
+        <div className="md:col-span-4">
+          <div className="ep-mono text-flare-ink mb-6">02 / DIFFERENCE</div>
+          <h2 className="ep-display text-ink text-[38px] md:text-[48px]">
+            Built for the frequent flyer.
+          </h2>
+          <p className="mt-6 text-[16px] text-ink-muted max-w-prose">
+            Airport days are a solved problem. Book the lane once, arrive later, board first.
+          </p>
+        </div>
+        <div className="md:col-span-8">
+          <div className="grid grid-cols-3 border border-line bg-paper">
+            <div className="p-5 ep-mono text-ink-muted border-b border-line">METRIC</div>
+            <div className="p-5 ep-mono text-ink-muted border-b border-l border-line">STANDARD QUEUE</div>
+            <div className="p-5 ep-mono text-flare-ink border-b border-l border-line">EXEC PASS</div>
+
+            {[
+              ["Security lane", "General", "Priority"],
+              ["Check-in", "You, at the desk", "Automated, on your phone"],
+              ["Lounge booking", "Third-party site", "Same membership"],
+              ["Change of plans", "Airline hold music", "Operator, 24/7"],
+              ["Airports covered", "One, at a time", "300+"],
+            ].map(([label, a, b], i, arr) => (
+              <div key={label} className="contents">
+                <div className={`p-5 text-[15px] text-ink ${i < arr.length - 1 ? "border-b border-line" : ""}`}>{label}</div>
+                <div className={`p-5 text-[15px] text-ink-muted border-l border-line ${i < arr.length - 1 ? "border-b" : ""}`}>{a}</div>
+                <div className={`p-5 text-[15px] text-ink border-l border-line ${i < arr.length - 1 ? "border-b" : ""}`}>
+                  <span className="inline-flex items-center gap-2">
+                    <Check size={14} className="text-flare-ink" /> {b}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+/* ------------------------------ Membership ------------------------------ */
+const Membership = () => (
+  <section id="membership" className="ep-bg-paper">
+    <div className="mx-auto max-w-container px-6 py-24 md:py-32">
+      <div className="ep-mono text-flare-ink mb-6">03 / MEMBERSHIP</div>
+      <div className="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <h2 className="ep-display text-ink text-[44px] md:text-[64px] max-w-2xl">
+          Two tiers. Both include the trial.
+        </h2>
+        <p className="ep-mono text-ink-muted">3-DAY FREE TRIAL · CANCEL ANYTIME</p>
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-2">
+        {/* Essential */}
+        <article className="border border-line bg-paper p-10 flex flex-col" style={{ borderRadius: 4 }}>
+          <div className="ep-mono text-ink-muted">ESSENTIAL</div>
+          <div className="mt-6 flex items-baseline gap-2">
+            <span className="ep-display text-[64px] text-ink leading-none">£49</span>
+            <span className="ep-mono text-ink-muted">/ QUARTER</span>
+          </div>
+          <p className="mt-4 text-[15px] text-ink-muted">The frequent flyer's baseline. Priority lane and automated check-in, on demand.</p>
+          <ul className="mt-8 space-y-3 text-[15px] text-ink">
+            <li className="flex gap-3"><Check size={16} className="text-flare-ink mt-1 shrink-0" /> Up to 2 free Fast Track passes per month</li>
+            <li className="flex gap-3"><Check size={16} className="text-flare-ink mt-1 shrink-0" /> Automated check-in on every flight</li>
+            <li className="flex gap-3"><Check size={16} className="text-flare-ink mt-1 shrink-0" /> Priority entry to selected attractions</li>
+            <li className="flex gap-3"><Check size={16} className="text-flare-ink mt-1 shrink-0" /> 24/7 operator support</li>
+          </ul>
+          <a
+            href={BOOK_URL}
+            className="mt-10 ep-btn-type text-[13px] uppercase tracking-wider border border-ink text-ink hover:bg-ink hover:text-bright px-6 py-3 inline-flex items-center justify-center gap-2 ep-ease ep-press self-start"
+            style={{ borderRadius: 2 }}
+          >
+            Start free trial
+          </a>
+        </article>
+
+        {/* Executive — featured, cut corner, panel shadow */}
+        <article
+          className="ep-cut-corner-tr border border-ink bg-graphite text-bright p-10 flex flex-col shadow-[0_30px_80px_-40px_rgba(0,0,0,0.6)]"
+          style={{ borderRadius: 4 }}
+        >
+          <div className="flex items-center justify-between">
+            <div className="ep-mono text-flare-bright">EXECUTIVE</div>
+            <div className="ep-mono text-steel">MOST BOOKED</div>
+          </div>
+          <div className="mt-6 flex items-baseline gap-2">
+            <span className="ep-display text-[64px] text-bright leading-none">£79</span>
+            <span className="ep-mono text-steel">/ QUARTER</span>
+          </div>
+          <p className="mt-4 text-[15px] text-steel">Everything in Essential, with more passes and unlimited automation.</p>
+          <ul className="mt-8 space-y-3 text-[15px] text-bright">
+            <li className="flex gap-3"><Check size={16} className="text-flare-bright mt-1 shrink-0" /> Up to 5 free Fast Track passes per month</li>
+            <li className="flex gap-3"><Check size={16} className="text-flare-bright mt-1 shrink-0" /> Unlimited automated check-ins</li>
+            <li className="flex gap-3"><Check size={16} className="text-flare-bright mt-1 shrink-0" /> Unlimited skip-the-line attraction entries</li>
+            <li className="flex gap-3"><Check size={16} className="text-flare-bright mt-1 shrink-0" /> Operator rate on lounge access</li>
+          </ul>
+          <a
+            href={BOOK_URL}
+            className="mt-10 ep-btn-type text-[13px] uppercase tracking-wider bg-flare-fill hover:bg-flare-fill-hover text-white px-6 py-3 inline-flex items-center justify-center gap-2 ep-ease ep-press self-start"
+            style={{ borderRadius: 2 }}
+          >
+            Start free trial <ArrowRight size={14} />
+          </a>
+        </article>
+      </div>
+
+      <p className="mt-8 max-w-prose text-[13px] text-ink-muted">
+        Fast Track passes are charged per use: £10 adult, £10 child, infants free. Passes above your monthly allowance are billed at the same rate.
+      </p>
+    </div>
+  </section>
+);
+
+/* --------------------------------- FAQ ---------------------------------- */
+const faqs = [
+  {
+    q: "What is airside?",
+    a: "Airside is the operator's word for everything past security — the gates, lounges and jet bridges. Straight to airside means through security first, without the queue.",
+  },
+  {
+    q: "How does the free trial work?",
+    a: "Start the trial and use the membership for three days. Cancel any time in that window and you are not charged. If you keep it, the quarterly membership begins.",
+  },
+  {
+    q: "Are the Fast Track passes included?",
+    a: "Essential includes up to two free passes a month, Executive up to five. Extra passes are £10 each (adult or child, infants free).",
+  },
+  {
+    q: "Which airports are covered?",
+    a: "More than 300 airports operate a priority lane we can book. If the airport does not have one, the dashboard tells you before you pay.",
+  },
+  {
+    q: "Is Exec Pass an airport?",
+    a: "No. Exec Pass is not affiliated with any airport. We are an independent operator that books priority services on your behalf.",
+  },
+];
+
+const FAQ = () => {
+  const [open, setOpen] = useState(0);
+  return (
+    <section className="ep-bg-paper border-t border-line">
+      <div className="mx-auto max-w-container px-6 py-24 md:py-32">
+        <div className="ep-mono text-flare-ink mb-6">04 / QUESTIONS</div>
+        <h2 className="ep-display text-ink text-[44px] md:text-[56px] max-w-3xl">
+          Answers, before you ask.
+        </h2>
+
+        <div className="mt-14 max-w-3xl border-t border-line">
+          {faqs.map((f, i) => {
+            const isOpen = open === i;
+            return (
+              <div key={f.q} className="border-b border-line">
+                <button
+                  onClick={() => setOpen(isOpen ? -1 : i)}
+                  className="w-full flex items-start justify-between gap-6 py-6 text-left ep-ease"
+                >
+                  <span className="ep-display text-ink text-[22px] md:text-[24px]">{f.q}</span>
+                  <span className="ep-icon-plate shrink-0 mt-1">
+                    {isOpen ? <Minus size={18} /> : <Plus size={18} />}
+                  </span>
+                </button>
+                {isOpen && (
+                  <p className="pb-6 pr-16 text-[16px] text-ink-muted max-w-prose animate-ep-fade-up">{f.a}</p>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* --------------------------- Closing CTA band --------------------------- */
+const ClosingCTA = () => (
+  <section className="ep-bg-void ep-wash-void ep-cut-top">
+    <div className="mx-auto max-w-container px-6 pt-40 pb-32">
+      <div className="ep-mono text-flare-bright mb-8">READY WHEN YOU ARE</div>
+      <h2 className="ep-display text-bright text-[56px] md:text-[96px] max-w-4xl leading-[0.98]">
+        Book the lane.<br />Walk through.
+      </h2>
+      <p className="mt-8 max-w-prose text-[19px] text-steel">
+        Three days free. Cancel any time. Every service on one membership.
+      </p>
+      <div className="mt-10 flex flex-wrap items-center gap-6">
+        <a
+          href={BOOK_URL}
+          className="ep-btn-type text-[14px] uppercase tracking-wider bg-flare-fill hover:bg-flare-fill-hover text-white px-8 py-4 inline-flex items-center gap-3 ep-ease ep-press"
+          style={{ borderRadius: 2 }}
+        >
+          Start free trial <ArrowRight size={16} />
+        </a>
+        <Link to="/services-pricing" className="ep-mono text-bright hover:text-flare-bright ep-ease">
+          See what&apos;s included →
+        </Link>
+      </div>
+    </div>
+  </section>
+);
+
+/* ---------------------------- Mobile sticky CTA -------------------------- */
+const MobileStickyCTA = () => (
+  <div className="lg:hidden fixed bottom-0 inset-x-0 z-40 ep-bg-void border-t border-line-dark px-4 py-3">
+    <a
+      href={BOOK_URL}
+      className="block ep-btn-type text-[13px] uppercase tracking-wider bg-flare-fill text-white px-5 py-3 text-center"
+      style={{ borderRadius: 2 }}
+    >
+      Start free trial
+    </a>
+  </div>
+);
+
+/* ---------------------------------- Page --------------------------------- */
 const ExecPassHome = () => {
-  const { formatPrice } = useCurrency();
-
   useEffect(() => {
-    document.title = "ExecPass - Home";
+    document.title = "Exec Pass — Straight to airside.";
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen ep-bg-void">
       <ExecPassHeader />
-      
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-32 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Business Travel Simplified.
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8">
-                Smart tools and exclusive services to streamline your company's travel — from fast-track airport access to automated check-ins and lounge solutions.
-              </p>
-              <Button 
-                size="lg" 
-                className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg"
-                asChild
-              >
-                <Link to="/pre-checkout">Start ExecPass</Link>
-              </Button>
-            </div>
-            <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden">
-              <img 
-                src="/images/hero.jpg" 
-                alt="Beautiful beach cove" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-16 md:py-20 bg-secondary/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready for your next Business trip
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Check below all the services we offer to make your business trip as smooth as possible.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { name: "Airport Fast Track", link: "/services-pricing", icon: Plane },
-              { name: "Flight Check-In", link: "/services-pricing", icon: FileCheck },
-              { name: "Ticketline to Attractions", link: "/services-pricing", icon: Ticket },
-              { name: "Concierge Services", link: "/services-pricing", icon: Headphones },
-              { name: "Travel E-Books", link: "/services-pricing", icon: BookOpen },
-              { name: "Airport Lounges", link: "/services-pricing", icon: Coffee },
-            ].map((service) => (
-              <Card key={service.name} className="p-8 hover:shadow-lg transition-shadow text-center">
-                <Link to={service.link} className="block">
-                  <div className="flex justify-center mb-4">
-                    <service.icon className="w-12 h-12 text-accent" />
-                  </div>
-                  <h3 className="text-xl font-semibold">{service.name}</h3>
-                </Link>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="py-16 md:py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Pricing</h2>
-          
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Premium Plan */}
-            <Card className="p-8 border-2 border-accent min-h-[420px]">
-              <div className="text-center mb-6">
-                <p className="text-sm uppercase tracking-wide text-accent font-semibold mb-4">premium</p>
-                <div className="mb-2">
-                  <span className="text-5xl font-bold block">{formatPrice(79)}</span>
-                </div>
-                <p className="text-sm text-muted-foreground">Every 3 months</p>
-                <p className="text-xs text-muted-foreground mt-1">3 days free trial. Cancel anytime</p>
-              </div>
-              
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>Up to 5 free Fast-Track accesses per month</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>Unlimited automated check-ins</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>Unlimited skip-the-line museum entries</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>Exclusive discounts on airport lounges</span>
-                </li>
-              </ul>
-              
-              <Button className="w-full bg-accent hover:bg-accent/90" asChild>
-                <Link to="/pre-checkout?plan=premium">Try Now</Link>
-              </Button>
-            </Card>
-
-            {/* Medium Plan */}
-            <Card className="p-8 min-h-[420px]">
-              <div className="text-center mb-6">
-                <p className="text-sm uppercase tracking-wide text-muted-foreground font-semibold mb-4">medium</p>
-                <div className="mb-2">
-                  <span className="text-5xl font-bold block">{formatPrice(49)}</span>
-                </div>
-                <p className="text-sm text-muted-foreground">Every 3 months</p>
-                <p className="text-xs text-muted-foreground mt-1">3 days free trial. Cancel anytime</p>
-              </div>
-              
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>Smart travel, frequent and hassle-free</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>Up to 2 free Fast-Track accesses per month</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>Automated check-in included</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>Priority entry to selected museums</span>
-                </li>
-              </ul>
-              
-              <Button className="w-full" variant="outline" asChild>
-                <Link to="/pre-checkout?plan=medium">Try Now</Link>
-              </Button>
-            </Card>
-          </div>
-          
-          <div className="mt-8 text-center max-w-3xl mx-auto">
-            <p className="text-sm text-muted-foreground italic border-t border-border pt-6">
-              Fast Track and Smart Check-In are available only to active members (members that have at least one successful subscription payment).
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Support Section */}
-      <section className="py-16 md:py-20 bg-secondary/30">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[350px] md:h-[450px] rounded-lg overflow-hidden">
-              <img 
-                src="/images/aboutus.jpg" 
-                alt="About us" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Great Online Support
-              </h2>
-              
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Dedicated Business Support</h3>
-                  <p className="text-muted-foreground">
-                    Our travel specialists are available 24/7 to assist with any request or last-minute change. No chatbots – only real experts ensuring your team's journeys stay on track.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Smart Value for Companies</h3>
-                  <p className="text-muted-foreground">
-                    By working with carefully selected partners, we deliver competitive corporate rates without compromising on quality. Transparent pricing, no hidden fees – just efficient cost control.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Seamless Platform</h3>
-                  <p className="text-muted-foreground">
-                    Your personalized business travel dashboard centralizes bookings, itineraries, and communications in one place. Intuitive and secure, it simplifies travel management for both your team and administrators.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Business Travel Benefits */}
-      <section className="py-16 md:py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12">
-              Upgrade your business travel with ExecPass
-            </h2>
-            
-            <div className="space-y-6 mb-8">
-              <p className="text-lg text-muted-foreground">
-                Avoid wasted hours at the airport with fast-track access, enjoy priority check-ins, and benefit from corporate partnerships worldwide. Whether it's a quick day trip or an international business mission, we make every step smoother, faster, and stress-free—so your team can focus on business, not logistics.
-              </p>
-              
-              <p className="text-lg text-muted-foreground">
-                From hotel bookings and executive transfers to meeting arrangements and client dinners, our concierge team handles the details that matter. No impersonal booking engines, no wasted time—just real experts providing tailored support for your business
-              </p>
-              
-              <p className="text-lg text-muted-foreground">
-                With 24/7 dedicated support, our specialists ensure seamless travel for executives and teams. From last-minute flight changes to ground logistics, we proactively manage challenges so your business keeps moving.
-              </p>
-            </div>
-            
-            <div>
-              <Button size="lg" className="bg-accent hover:bg-accent/90 px-8 py-6 text-lg" asChild>
-                <Link to="/pre-checkout">Start Trial</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Booking Platform */}
-      <section className="py-16 md:py-20 bg-secondary/30">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Discover premium business travel with ExecPass
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Enhance every trip with priority airport access, corporate perks, and dedicated 24/7 support—all streamlined through your personalized business travel dashboard.
-              </p>
-              <Button size="lg" className="bg-accent hover:bg-accent/90 px-8 py-6 text-lg" asChild>
-                <Link to="/pre-checkout">Start Trial</Link>
-              </Button>
-            </div>
-            <div className="relative h-[350px] md:h-[450px] rounded-lg overflow-hidden">
-              <img 
-                src="/images/booking.png" 
-                alt="Booking platform" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <main>
+        <Hero />
+        <TrustStrip />
+        <Services />
+        <Difference />
+        <Membership />
+        <FAQ />
+        <ClosingCTA />
+      </main>
       <ExecPassFooter />
+      <MobileStickyCTA />
     </div>
   );
 };
