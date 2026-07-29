@@ -194,7 +194,7 @@ const Services = () => (
             className={`p-8 ep-bg-paper ep-ease hover:bg-concrete relative ${
               s.featured ? "ep-cut-corner-tr" : ""
             }`}
-            style={{ borderRadius: 4 }}
+            style={{ borderRadius: 20 }}
           >
             <div className="ep-icon-plate mb-6">
               <s.icon size={20} strokeWidth={2} />
@@ -273,7 +273,7 @@ const Membership = () => (
 
       <div className="grid gap-6 md:grid-cols-2">
         {/* Essential */}
-        <article className="border border-line bg-paper p-10 flex flex-col" style={{ borderRadius: 4 }}>
+        <article className="border border-line bg-paper p-10 flex flex-col" style={{ borderRadius: 20 }}>
           <div className="ep-mono text-ink-muted">ESSENTIAL</div>
           <div className="mt-6 flex items-baseline gap-2">
             <span className="ep-display text-[64px] text-ink leading-none">£49</span>
@@ -298,7 +298,7 @@ const Membership = () => (
         {/* Executive — featured, cut corner, panel shadow */}
         <article
           className="ep-cut-corner-tr border border-ink bg-graphite text-bright p-10 flex flex-col shadow-[0_30px_80px_-40px_rgba(0,0,0,0.6)]"
-          style={{ borderRadius: 4 }}
+          style={{ borderRadius: 20 }}
         >
           <div className="flex items-center justify-between">
             <div className="ep-mono text-flare-bright">EXECUTIVE</div>
