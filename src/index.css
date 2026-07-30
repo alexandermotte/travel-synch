@@ -10,28 +10,29 @@
 
 @layer base {
   :root {
-    /* --- Airside brand tokens --- */
-    --ep-void: 219 60% 12%;          /* deep navy #0C1E3E */
-    --ep-graphite: 219 55% 17%;      /* #14294B */
-    --ep-graphite-2: 219 50% 24%;    /* #1E355F */
-    --ep-line-dark: 219 35% 32%;
-    --ep-steel: 215 25% 65%;
+    /* --- Meridian brand tokens (source: fasttrack.exec-pass.com) --- */
+    --ep-void: 217 62% 12%;          /* deep ground #0C1B33 */
+    --ep-graphite: 215 63% 22%;      /* deep sapphire #15325C */
+    --ep-graphite-2: 215 55% 30%;
+    --ep-line-dark: 215 40% 32%;
+    --ep-steel: 212 30% 78%;
 
-    --ep-paper: 219 25% 94%;         /* light blue-gray #E5EAF2 */
-    --ep-concrete: 0 0% 100%;        /* white cards */
-    --ep-line: 219 20% 86%;
-    --ep-ink: 219 60% 12%;           /* navy text */
-    --ep-ink-muted: 219 20% 42%;
+    --ep-paper: 212 40% 92%;         /* cool paper #E1E9F2 */
+    --ep-concrete: 0 0% 100%;        /* off-white cards #FFFFFF */
+    --ep-line: 212 30% 84%;
+    --ep-ink: 213 33% 12%;           /* ink #141D28 */
+    --ep-ink-muted: 214 14% 36%;     /* muted ink #4F5A68 */
     --ep-bright: 0 0% 100%;
 
-    /* Brand cerulean — logo + CTA */
-    --ep-cerulean: 207 76% 52%;      /* #2A8FE0 */
+    /* Brand cerulean — accent */
+    --ep-cerulean: 201 68% 53%;      /* #35A0D8 */
 
-    --ep-flare: 207 76% 52%;         /* cerulean CTA */
-    --ep-flare-fill: 210 70% 42%;    /* muted mid-blue press */
-    --ep-flare-fill-hover: 210 72% 36%;
-    --ep-flare-ink: 210 76% 40%;
-    --ep-flare-bright: 205 88% 62%;
+    --ep-flare: 201 68% 53%;         /* cerulean accent */
+    --ep-flare-fill: 215 63% 22%;    /* sapphire CTA fill */
+    --ep-flare-fill-hover: 217 62% 12%;
+    --ep-flare-ink: 215 63% 22%;     /* accessible on light bg */
+    --ep-flare-bright: 201 68% 63%;
+
 
     --ep-ok: 158 58% 38%;
     --ep-warn: 36 92% 48%;
