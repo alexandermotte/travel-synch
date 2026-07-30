@@ -19,35 +19,76 @@ import { bookingUrl } from "@/lib/booking";
 const Hero = () => {
   const { search } = useLocation();
   return (
-  <section className="relative ep-bg-void ep-wash-void">
-    <div className="mx-auto max-w-container px-6 pt-20 pb-28 md:pt-28 md:pb-36">
-      <div className="max-w-4xl">
-        <div className="ep-mono text-flare-bright mb-8">EXEC PASS · AIRPORT PRIORITY</div>
-        <h1 className="ep-display text-[56px] leading-[1.0] md:text-[96px] lg:text-[112px]">
-          <span className="text-bright">Fast Track.</span>
-          <br />
-          <span className="text-flare">Fly clever.</span>
-        </h1>
-        <p className="mt-8 text-[19px] md:text-[21px] text-steel max-w-prose">
-          One pass, five hundred lounges, every hub you&apos;ll touch this quarter — priority at
-          security, automated check-in, and expert support.
-        </p>
-
-        <div className="mt-10 flex flex-wrap items-center gap-6">
-          <a
-            href={bookingUrl("", search)}
-            className="ep-btn-type text-[14px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-8 py-4 inline-flex items-center gap-3 ep-ease ep-press"
-            style={{ borderRadius: 12 }}
+    <section className="ep-bg-paper">
+      <div className="mx-auto max-w-container px-6 pt-8 pb-16">
+        <div
+          className="grid lg:grid-cols-2 overflow-hidden ep-shadow-soft"
+          style={{ borderRadius: 24 }}
+        >
+          {/* Brand panel */}
+          <div
+            className="relative p-10 md:p-14 flex flex-col justify-between min-h-[420px] lg:min-h-[600px]"
+            style={{
+              background:
+                "linear-gradient(135deg, hsl(var(--ep-void)) 0%, hsl(var(--ep-graphite)) 60%, hsl(var(--ep-graphite-2)) 100%)",
+            }}
           >
-            Book Fast Track <ArrowRight size={16} />
-          </a>
-          <Link to="/services-pricing" className="ep-mono text-bright hover:text-flare-bright ep-ease">
-            See what&apos;s included →
-          </Link>
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 opacity-[0.16]"
+              style={{
+                backgroundImage:
+                  "repeating-linear-gradient(115deg, transparent 0 58px, hsl(var(--ep-bright)) 58px 59px)",
+              }}
+            />
+            <div className="relative">
+              <span className="ep-chip inline-flex items-center rounded-full border border-line-dark px-4 py-1.5 text-bright/85 uppercase tracking-[0.16em]">
+                Airport priority · Worldwide
+              </span>
+            </div>
+            <div className="relative mt-16">
+              <div className="ep-mono text-flare-bright mb-6">200+ AIRPORTS · WORLDWIDE</div>
+              <div className="ep-display text-bright text-[64px] md:text-[88px] leading-[0.95]">
+                Exec
+                <br />
+                Pass<span className="text-flare">.</span>
+              </div>
+              <p className="mt-5 text-[17px] text-steel italic" style={{ fontFamily: "Fraunces, Georgia, serif" }}>
+                One pass. Every terminal.
+              </p>
+            </div>
+          </div>
+
+          {/* Action panel */}
+          <div className="ep-bg-void p-10 md:p-14 flex flex-col justify-center">
+            <div className="ep-mono text-flare-bright mb-6">◆ NOW BOARDING</div>
+            <h1 className="ep-display text-[44px] md:text-[56px] leading-[1.0]">
+              <span className="text-bright">Fast Track.</span>{" "}
+              <span className="text-flare">Fly clever.</span>
+            </h1>
+            <p className="mt-6 text-[17px] text-steel max-w-prose">
+              One pass, five hundred lounges, every hub you&apos;ll touch this quarter — priority at
+              security, automated check-in, and expert support.
+            </p>
+
+            <a
+              href={bookingUrl("", search)}
+              className="mt-10 ep-btn-type text-[14px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-8 py-4 inline-flex items-center justify-center gap-3 ep-ease ep-press rounded-full"
+            >
+              Book Fast Track <ArrowRight size={16} />
+            </a>
+            <p className="mt-4 text-[13px] text-steel text-center">
+              Secure · Instant confirmation · 24/7 human support
+            </p>
+            <div className="mt-6 text-center">
+              <Link to="/how-it-works" className="ep-mono text-bright hover:text-flare-bright ep-ease">
+                See how it works →
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   );
 };
 
@@ -61,7 +102,8 @@ const STATS = [
 
 const StatsStrip = () => (
   <section className="ep-bg-paper">
-    <div className="mx-auto max-w-container px-6 py-16">
+    <div className="mx-auto max-w-container px-6 pb-16">
+      <div className="ep-mono text-flare-ink text-center mb-8">§ THE PASS, IN NUMBERS</div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {STATS.map(([value, label]) => (
           <div
@@ -70,7 +112,7 @@ const StatsStrip = () => (
             style={{ borderRadius: 20 }}
           >
             <div className="ep-display text-[40px] text-flare-ink leading-none">{value}</div>
-            <div className="mt-3 text-[15px] text-ink-muted">{label}</div>
+            <div className="mt-3 ep-mono text-ink-muted">{label}</div>
           </div>
         ))}
       </div>
