@@ -19,6 +19,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import SubscriptionTermsPage from "./pages/SubscriptionTermsPage";
 import LegalNotice from "./pages/LegalNotice";
 import CookiePolicy from "./pages/CookiePolicy";
+import ExecPassUnsubscribePage from "./pages/ExecPassUnsubscribePage";
 
 
 const queryClient = new QueryClient();
@@ -62,7 +63,7 @@ const App = () => (
               <Route path="/subscription-terms" element={<SubscriptionTermsPage />} />
               <Route path="/legal-notice" element={<LegalNotice />} />
               <Route path="/cookie-policy" element={<CookiePolicy />} />
-              <Route path="/unsubscribe" element={<HandOff path="unsubscribe" />} />
+              <Route path="/unsubscribe" element={<ExecPassUnsubscribePage />} />
               <Route path="/pre-checkout" element={<PreCheckout />} />
               <Route path="/fast-track" element={<HandOff path="" />} />
               <Route path="/fast-track-form" element={<HandOff path="" />} />

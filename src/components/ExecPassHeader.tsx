@@ -5,9 +5,9 @@ import { AirsideMark } from "@/components/AirsideMark";
 import { preCheckoutPath } from "@/lib/booking";
 
 const NAV = [
+  { label: "About", href: "/about" },
   { label: "How it works", href: "/how-it-works" },
   { label: "FAQ", href: "/faq" },
-  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
