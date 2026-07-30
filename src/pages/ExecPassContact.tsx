@@ -177,14 +177,29 @@ const ExecPassContact = () => {
               )}
 
               {/* Disclaimer */}
-              <div className="mt-6 text-[13px] text-ink-muted/80 leading-relaxed">
+              <div className="mt-6 text-[13px] text-ink-muted/80 leading-relaxed space-y-3">
                 <p>
-                  The information collected through this form is processed by Marvelliant B.V., acting as data
-                  controller, for the purpose of handling your request.
+                  The information collected through this form is processed by Marvelliant B.V., acting as
+                  data controller, for the purpose of handling your request. Fields marked with an asterisk
+                  (*) are mandatory; failure to provide this information may prevent us from processing your
+                  request. This processing is based on our legitimate interest in responding to your
+                  enquiries. The data collected includes your identification and contact details, as well as
+                  any information you choose to provide in your message.
                 </p>
-                <p className="mt-2">
-                  You may exercise your rights by writing to: contact@exec-pass.com. To learn more about how your data
-                  is managed and to exercise your rights, please refer to our{" "}
+                <p>
+                  You have the right to access, rectify, erase, and restrict the processing of your data, the
+                  right to object to such processing, and the right to data portability. Where processing is
+                  based on your consent, you may withdraw it at any time without affecting the lawfulness of
+                  processing carried out before such withdrawal. You may exercise these rights by writing to{" "}
+                  <a href="mailto:contact@exec-pass.com" className="text-flare-ink underline underline-offset-2">
+                    contact@exec-pass.com
+                  </a>
+                  . You also have the right to lodge a complaint with the competent supervisory authority, in
+                  particular the data protection authority of your country of residence within the European
+                  Union.
+                </p>
+                <p>
+                  To learn more about how your data is managed, please refer to our{" "}
                   <Link to="/privacy" className="text-flare-ink underline underline-offset-2">
                     Privacy Policy
                   </Link>
