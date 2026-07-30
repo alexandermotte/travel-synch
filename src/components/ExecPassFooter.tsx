@@ -47,27 +47,16 @@ export const ExecPassFooter = () => {
           <div className="md:col-span-2">
             <div className="ep-mono text-flare-bright mb-4">Legal</div>
             <ul className="space-y-3 text-[15px]">
-              {LEGAL_LINKS.map((l) =>
-                l.path === "unsubscribe" ? (
-                  <li key={l.path}>
-                    <a
-                      href={bookingUrl(l.path, search)}
-                      className="text-bright hover:text-flare-bright ep-ease"
-                    >
-                      {l.label}
-                    </a>
-                  </li>
-                ) : (
-                  <li key={l.path}>
-                    <Link
-                      to={`/${l.path}`}
-                      className="text-bright hover:text-flare-bright ep-ease"
-                    >
-                      {l.label}
-                    </Link>
-                  </li>
-                )
-              )}
+              {LEGAL_LINKS.map((l) => (
+                <li key={l.path}>
+                  <Link
+                    to={`/${l.path}`}
+                    className="text-bright hover:text-flare-bright ep-ease"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
