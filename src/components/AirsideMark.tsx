@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
-import markSrc from "@/assets/exec-pass-mark.png";
 
 /**
- * Exec Pass wordmark lockup.
- * Mark = flare-orange geometric glyph. Wordmark = "Exec Pass" in Fraunces.
+ * Exec Pass wordmark — text only, deliberately. No icon or monogram.
+ * "Exec Pass" in Fraunces with a cerulean period.
  */
 export const AirsideMark = ({
   variant = "light",
-  showMarkOnly = false,
   className = "",
 }: {
   variant?: "light" | "dark";
@@ -16,13 +14,10 @@ export const AirsideMark = ({
 }) => {
   const inkClass = variant === "light" ? "text-bright" : "text-ink";
   return (
-    <Link to="/" className={`inline-flex items-center gap-2.5 ${className}`} aria-label="Exec Pass — home">
-      <img src={markSrc} alt="" width={28} height={28} className="h-7 w-7" />
-      {!showMarkOnly && (
-        <span className={`ep-wordmark text-[20px] leading-none ${inkClass}`}>
-          Exec Pass
-        </span>
-      )}
+    <Link to="/" className={`inline-flex items-center ${className}`} aria-label="Exec Pass — home">
+      <span className={`ep-wordmark text-[22px] leading-none ${inkClass}`}>
+        Exec Pass<span className="text-flare">.</span>
+      </span>
     </Link>
   );
 };

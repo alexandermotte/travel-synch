@@ -9,10 +9,10 @@ export const ExecPassFooter = () => {
           {/* Brand + disclaimer */}
           <div className="md:col-span-5">
             <AirsideMark variant="light" />
-            <p className="ep-mono text-steel mt-6">Straight to airside.</p>
+            <p className="ep-mono text-steel mt-6">Fast Track. Fly clever.</p>
             <p className="mt-6 max-w-prose text-[15px] text-steel">
-              Exec Pass is not affiliated with any airport. We are an independent travel service that
-              books priority lanes, check-in and lounge access on your behalf.
+              For the frequent business traveller. Priority security, automated check-in, and access
+              to five hundred lounges — worldwide. Exec Pass is not affiliated with any airport.
             </p>
           </div>
 
@@ -20,11 +20,9 @@ export const ExecPassFooter = () => {
           <div className="md:col-span-3">
             <div className="ep-mono text-flare-bright mb-4">Product</div>
             <ul className="space-y-3 text-[15px]">
-              <li><Link to="/services-pricing" className="text-bright hover:text-flare-bright ep-ease">Services</Link></li>
-              <li><Link to="/#membership" className="text-bright hover:text-flare-bright ep-ease">Membership</Link></li>
+              <li><Link to="/services-pricing" className="text-bright hover:text-flare-bright ep-ease">About</Link></li>
               <li><Link to="/faq" className="text-bright hover:text-flare-bright ep-ease">Questions</Link></li>
               <li><Link to="/contacts" className="text-bright hover:text-flare-bright ep-ease">Contact</Link></li>
-              <li><Link to="/unsubscribe" className="text-bright hover:text-flare-bright ep-ease">Unsubscribe</Link></li>
             </ul>
           </div>
 
@@ -33,7 +31,6 @@ export const ExecPassFooter = () => {
             <div className="ep-mono text-flare-bright mb-4">Legal</div>
             <ul className="space-y-3 text-[15px]">
               <li><Link to="/terms" className="text-bright hover:text-flare-bright ep-ease">Terms &amp; Conditions</Link></li>
-              <li><Link to="/subscription-terms" className="text-bright hover:text-flare-bright ep-ease">Subscription Terms</Link></li>
               <li><Link to="/privacy" className="text-bright hover:text-flare-bright ep-ease">Privacy Policy</Link></li>
               <li><Link to="/privacy" className="text-bright hover:text-flare-bright ep-ease">Cookie Policy</Link></li>
               <li><Link to="/terms" className="text-bright hover:text-flare-bright ep-ease">Legal Notice</Link></li>
@@ -59,7 +56,7 @@ export const ExecPassFooter = () => {
 
         <div className="mt-14 pt-6 border-t border-line-dark flex flex-col md:flex-row justify-between gap-4">
           <div className="ep-mono text-steel">© {new Date().getFullYear()} Marvelliant B.V. All rights reserved.</div>
-          <div className="ep-mono text-steel">Amsterdam · Operating globally · 300+ airports</div>
+          <div className="ep-mono text-steel">Amsterdam · Operating globally · 200+ airports</div>
         </div>
       </div>
     </footer>
