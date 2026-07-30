@@ -305,8 +305,7 @@ const ClosingCTA = () => {
       <div className="mt-10 flex flex-wrap items-center gap-6">
         <a
           href={bookingUrl("", search)}
-          className="ep-btn-type text-[14px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-8 py-4 inline-flex items-center gap-3 ep-ease ep-press"
-          style={{ borderRadius: 12 }}
+          className="ep-btn-type text-[14px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-8 py-4 inline-flex items-center gap-3 ep-ease ep-press rounded-full"
         >
           Book Fast Track <ArrowRight size={16} />
         </a>
