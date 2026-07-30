@@ -1,8 +1,20 @@
-import { useEffect } from "react";
-import { MessageCircle, Mail, Phone } from "lucide-react";
+import { useEffect, useState } from "react";
+import { MessageCircle, Mail, Phone, Loader2, CheckCircle, ArrowRight } from "lucide-react";
+import { z } from "zod";
+import { toast } from "sonner";
+import { Link } from "react-router-dom";
 import { ExecPassHeader } from "@/components/ExecPassHeader";
 import { ExecPassFooter } from "@/components/ExecPassFooter";
 import { Seo } from "@/components/Seo";
+
+const contactSchema = z.object({
+  firstName: z.string().trim().min(1, { message: "First name is required" }).max(100),
+  lastName: z.string().trim().max(100),
+  email: z.string().trim().email({ message: "Enter a valid email address" }).max(255),
+  phone: z.string().trim().min(1, { message: "Phone number is required" }).max(30),
+  message: z.string().trim().min(1, { message: "Please write a message" }).max(1000),
+});
+
 
 const ROUTES = [
   {
@@ -29,10 +41,41 @@ const ROUTES = [
 ];
 
 const ExecPassContact = () => {
+  const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
   useEffect(() => {
     document.title = "ExecPass - Contact";
     window.scrollTo(0, 0);
   }, []);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: name === "phone" ? value.replace(/[a-zA-Z]/g, "") : value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const result = contactSchema.safeParse(formData);
+    if (!result.success) {
+      toast.error(result.error.issues[0].message);
+      return;
+    }
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubmitted(true);
+      setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+    }, 800);
+  };
+
+  const inputClass =
+    "w-full rounded-xl border border-line bg-white px-4 py-3 text-[16px] text-ink placeholder:text-ink-muted/60 outline-none focus:border-flare focus:ring-2 focus:ring-flare/20 ep-ease";
+
 
   return (
     <div className="min-h-screen ep-bg-void">
@@ -69,11 +112,87 @@ const ExecPassContact = () => {
                     <r.icon size={20} strokeWidth={2} />
                   </div>
                   <div className="ep-mono text-ink-muted mb-2">{r.label}</div>
-                  <div className="ep-display text-[22px] text-ink break-words">{r.value}</div>
+                  <div className="ep-heading text-[20px] text-ink break-words">{r.value}</div>
                   <p className="mt-3 text-[15px] text-ink-muted">{r.note}</p>
                 </a>
               ))}
             </div>
+
+            {/* Contact form */}
+            <div className="mt-16 max-w-2xl">
+              <div className="ep-mono text-flare-ink mb-4">SEND A MESSAGE</div>
+              <h2 className="ep-heading text-[30px] md:text-[36px] text-ink">Write to us directly</h2>
+              <p className="mt-3 text-[16px] text-ink-muted">
+                Fill in the form and the concierge team will get back to you shortly.
+              </p>
+
+              {submitted ? (
+                <div className="mt-8 p-10 ep-bg-concrete ep-shadow-soft text-center" style={{ borderRadius: 20 }}>
+                  <CheckCircle className="h-12 w-12 text-flare mx-auto mb-5" />
+                  <h3 className="ep-heading text-[22px] text-ink mb-2">Message sent</h3>
+                  <p className="text-[15px] text-ink-muted mb-5">We'll get back to you as soon as possible.</p>
+                  <button
+                    onClick={() => setSubmitted(false)}
+                    className="text-[14px] text-flare-ink underline underline-offset-2"
+                  >
+                    Send another message
+                  </button>
+                </div>
+              ) : (
+                <form
+                  onSubmit={handleSubmit}
+                  className="mt-8 p-8 ep-bg-concrete ep-shadow-soft space-y-5"
+                  style={{ borderRadius: 20 }}
+                >
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <div>
+                      <label htmlFor="firstName" className="block text-[14px] font-medium text-ink-muted mb-2">First name*</label>
+                      <input id="firstName" name="firstName" type="text" value={formData.firstName} onChange={handleChange} maxLength={100} className={inputClass} placeholder="John" />
+                    </div>
+                    <div>
+                      <label htmlFor="lastName" className="block text-[14px] font-medium text-ink-muted mb-2">Last name</label>
+                      <input id="lastName" name="lastName" type="text" value={formData.lastName} onChange={handleChange} maxLength={100} className={inputClass} placeholder="Doe" />
+                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-[14px] font-medium text-ink-muted mb-2">Email address*</label>
+                    <input id="email" name="email" type="email" value={formData.email} onChange={handleChange} maxLength={255} className={inputClass} placeholder="john@example.com" />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-[14px] font-medium text-ink-muted mb-2">Phone number*</label>
+                    <input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} maxLength={30} className={inputClass} placeholder="+44 20 3936 2491" />
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-[14px] font-medium text-ink-muted mb-2">How can we help you?*</label>
+                    <textarea id="message" name="message" rows={5} value={formData.message} onChange={handleChange} maxLength={1000} className={`${inputClass} resize-none`} placeholder="Tell us what you need…" />
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="ep-btn-type w-full inline-flex items-center justify-center gap-2 rounded-xl bg-flare-fill px-6 py-4 text-bright hover:bg-flare-fill-hover disabled:opacity-60 ep-ease ep-press"
+                  >
+                    {isSubmitting ? (<><Loader2 className="h-4 w-4 animate-spin" />Sending…</>) : (<>Submit now<ArrowRight className="h-4 w-4" /></>)}
+                  </button>
+                </form>
+              )}
+
+              {/* Disclaimer */}
+              <div className="mt-6 text-[13px] text-ink-muted/80 leading-relaxed">
+                <p>
+                  The information collected through this form is processed by Marvelliant B.V., acting as data
+                  controller, for the purpose of handling your request.
+                </p>
+                <p className="mt-2">
+                  You may exercise your rights by writing to: contact@exec-pass.com. To learn more about how your data
+                  is managed and to exercise your rights, please refer to our{" "}
+                  <Link to="/privacy" className="text-flare-ink underline underline-offset-2">
+                    Privacy Policy
+                  </Link>
+                  .
+                </p>
+              </div>
+            </div>
+
 
             <div className="mt-16 p-8 ep-bg-concrete ep-shadow-soft max-w-2xl" style={{ borderRadius: 20 }}>
               <div className="ep-mono text-flare-ink mb-4">REGISTERED OFFICE</div>
