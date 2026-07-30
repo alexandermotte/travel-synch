@@ -326,8 +326,7 @@ const MobileStickyCTA = () => {
   <div className="lg:hidden fixed bottom-0 inset-x-0 z-40 ep-bg-void border-t border-line-dark px-4 py-3">
     <a
       href={bookingUrl("", search)}
-      className="block ep-btn-type text-[13px] uppercase tracking-wider bg-flare text-white px-5 py-3 text-center"
-      style={{ borderRadius: 12 }}
+      className="block ep-btn-type text-[13px] uppercase tracking-wider bg-flare text-white px-5 py-3 text-center rounded-full"
     >
       Book Fast Track
     </a>
