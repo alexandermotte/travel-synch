@@ -20,7 +20,7 @@ import {
 import { ExecPassHeader } from "@/components/ExecPassHeader";
 import { ExecPassFooter } from "@/components/ExecPassFooter";
 import { Seo } from "@/components/Seo";
-import { bookingUrl } from "@/lib/booking";
+import { preCheckoutPath } from "@/lib/booking";
 
 /* --------------------------------- Hero --------------------------------- */
 const Hero = () => {
@@ -80,7 +80,7 @@ const Hero = () => {
             </p>
 
             <a
-              href={bookingUrl("", search)}
+              to={preCheckoutPath(undefined, search)}
               className="mt-10 ep-btn-type text-[14px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-8 py-4 inline-flex items-center justify-center gap-3 ep-ease ep-press rounded-full"
             >
               Join Exec Pass <ArrowRight size={16} />
@@ -311,7 +311,7 @@ const Plans = () => {
               </ul>
 
               <a
-                href={bookingUrl("", search)}
+                to={preCheckoutPath(undefined, search)}
                 className={`mt-10 ep-btn-type text-[13px] uppercase tracking-wider px-6 py-4 inline-flex items-center justify-center gap-3 ep-ease ep-press rounded-full ${
                   p.highlight
                     ? "bg-flare hover:bg-flare-bright text-white"
@@ -458,7 +458,7 @@ const ClosingCTA = () => {
       </p>
       <div className="mt-10 flex flex-wrap items-center gap-6">
         <a
-          href={bookingUrl("", search)}
+          to={preCheckoutPath(undefined, search)}
           className="ep-btn-type text-[14px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-8 py-4 inline-flex items-center gap-3 ep-ease ep-press rounded-full"
         >
           Join Exec Pass <ArrowRight size={16} />
@@ -478,7 +478,7 @@ const MobileStickyCTA = () => {
   return (
   <div className="lg:hidden fixed bottom-0 inset-x-0 z-40 ep-bg-void border-t border-line-dark px-4 py-3">
     <a
-      href={bookingUrl("", search)}
+      to={preCheckoutPath(undefined, search)}
       className="block ep-btn-type text-[13px] uppercase tracking-wider bg-flare text-white px-5 py-3 text-center rounded-full"
     >
       Join Exec Pass
