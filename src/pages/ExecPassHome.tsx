@@ -260,6 +260,7 @@ const plans = [
 
 const Plans = () => {
   const { search } = useLocation();
+  const { formatPrice } = useCurrency();
   return (
     <section className="ep-bg-paper border-y border-line">
       <div className="mx-auto max-w-container px-6 py-24">
