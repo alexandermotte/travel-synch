@@ -12,17 +12,19 @@ export const ExecPassFooter = () => {
           {/* Brand + disclaimer */}
           <div className="md:col-span-5">
             <AirsideMark variant="light" />
-            <p className="ep-mono text-steel mt-6">Fast Track. Fly clever.</p>
+            <p className="ep-mono text-steel mt-6">Fly clever.</p>
             <p className="mt-6 max-w-prose text-[15px] text-steel">
-              For the frequent business traveller. Priority security, automated check-in, and access
-              to five hundred lounges — worldwide. Exec Pass is not affiliated with any airport.
+              Exec Pass is a travel membership: Fast Track security, automatic check-in, lounges,
+              flight compensation, luggage recovery, eSIM data and a 24/7 concierge — in two plans.
+              Exec Pass is not affiliated with any airport or airline.
             </p>
             <a
               href={bookingUrl("", search)}
               className="ep-btn-type text-[13px] uppercase tracking-wider inline-block bg-flare hover:bg-flare-bright text-white px-5 py-3 mt-8 ep-ease ep-press rounded-full"
             >
-              Book Fast Track
+              Join Exec Pass
             </a>
+
           </div>
 
           {/* Nav */}
