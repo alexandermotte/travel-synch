@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   ArrowRight,
   Plane,
@@ -12,11 +12,13 @@ import {
 } from "lucide-react";
 import { ExecPassHeader } from "@/components/ExecPassHeader";
 import { ExecPassFooter } from "@/components/ExecPassFooter";
-
-const BOOK_URL = "https://fasttrack.exec-pass.com/en";
+import { Seo } from "@/components/Seo";
+import { bookingUrl } from "@/lib/booking";
 
 /* --------------------------------- Hero --------------------------------- */
-const Hero = () => (
+const Hero = () => {
+  const { search } = useLocation();
+  return (
   <section className="relative ep-bg-void ep-wash-void">
     <div className="mx-auto max-w-container px-6 pt-20 pb-28 md:pt-28 md:pb-36">
       <div className="max-w-4xl">
@@ -33,7 +35,7 @@ const Hero = () => (
 
         <div className="mt-10 flex flex-wrap items-center gap-6">
           <a
-            href={BOOK_URL}
+            href={bookingUrl("", search)}
             className="ep-btn-type text-[14px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-8 py-4 inline-flex items-center gap-3 ep-ease ep-press"
             style={{ borderRadius: 12 }}
           >
@@ -46,7 +48,8 @@ const Hero = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 /* ------------------------------ Stats strip ----------------------------- */
 const STATS = [
@@ -244,7 +247,9 @@ const FAQ = () => {
 };
 
 /* --------------------------- Closing CTA band --------------------------- */
-const ClosingCTA = () => (
+const ClosingCTA = () => {
+  const { search } = useLocation();
+  return (
   <section className="ep-bg-void ep-wash-void">
     <div className="mx-auto max-w-container px-6 py-28 md:py-32">
       <div className="ep-mono text-flare-bright mb-8">READY WHEN YOU ARE</div>
@@ -257,7 +262,7 @@ const ClosingCTA = () => (
       </p>
       <div className="mt-10 flex flex-wrap items-center gap-6">
         <a
-          href={BOOK_URL}
+          href={bookingUrl("", search)}
           className="ep-btn-type text-[14px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-8 py-4 inline-flex items-center gap-3 ep-ease ep-press"
           style={{ borderRadius: 12 }}
         >
@@ -269,20 +274,24 @@ const ClosingCTA = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 /* ---------------------------- Mobile sticky CTA -------------------------- */
-const MobileStickyCTA = () => (
+const MobileStickyCTA = () => {
+  const { search } = useLocation();
+  return (
   <div className="lg:hidden fixed bottom-0 inset-x-0 z-40 ep-bg-void border-t border-line-dark px-4 py-3">
     <a
-      href={BOOK_URL}
+      href={bookingUrl("", search)}
       className="block ep-btn-type text-[13px] uppercase tracking-wider bg-flare text-white px-5 py-3 text-center"
       style={{ borderRadius: 12 }}
     >
       Book Fast Track
     </a>
   </div>
-);
+  );
+};
 
 /* ---------------------------------- Page --------------------------------- */
 const ExecPassHome = () => {
@@ -293,6 +302,19 @@ const ExecPassHome = () => {
 
   return (
     <div className="min-h-screen ep-bg-void">
+      <Seo
+        title="Exec Pass — Fast Track security, lounges and automatic check-in"
+        description="Priority Fast Track security at 200+ airports, 500+ lounges worldwide, automatic check-in and a 24/7 human concierge for the frequent business traveller."
+        path="/"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Exec Pass",
+            url: "https://exec-pass.com",
+          },
+        ]}
+      />
       <ExecPassHeader />
       <main>
         <Hero />

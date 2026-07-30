@@ -1,17 +1,20 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { AirsideMark } from "@/components/AirsideMark";
+import { bookingUrl } from "@/lib/booking";
 
 const NAV = [
-  { label: "About", href: "/services-pricing" },
-  { label: "Contact", href: "/contacts" },
+  { label: "How it works", href: "/how-it-works" },
+  { label: "FAQ", href: "/faq" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
-
-const BOOK_URL = "https://fasttrack.exec-pass.com/en";
 
 export const ExecPassHeader = () => {
   const [open, setOpen] = useState(false);
+  const { search } = useLocation();
+  const bookUrl = bookingUrl("", search);
 
   return (
     <header
@@ -41,7 +44,7 @@ export const ExecPassHeader = () => {
 
         <div className="hidden lg:flex items-center gap-6">
           <a
-            href={BOOK_URL}
+            href={bookUrl}
             className="ep-btn-type text-[13px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-5 py-2.5 ep-ease ep-press"
             style={{ borderRadius: 12 }}
           >
@@ -72,7 +75,7 @@ export const ExecPassHeader = () => {
               </Link>
             ))}
             <a
-              href={BOOK_URL}
+              href={bookUrl}
               className="ep-btn-type text-[13px] uppercase tracking-wider bg-flare text-white px-5 py-3 text-center mt-2"
               style={{ borderRadius: 12 }}
             >
