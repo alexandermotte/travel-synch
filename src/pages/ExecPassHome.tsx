@@ -103,7 +103,7 @@ const STATS = [
 const StatsStrip = () => (
   <section className="ep-bg-paper">
     <div className="mx-auto max-w-container px-6 pb-16">
-      <div className="ep-mono text-flare-ink text-center mb-8">§ THE PASS, IN NUMBERS</div>
+      <div className="ep-mono text-flare-ink text-center mb-8">FAST TRACK, IN NUMBERS</div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {STATS.map(([value, label]) => (
           <div
@@ -111,7 +111,7 @@ const StatsStrip = () => (
             className="ep-bg-concrete ep-shadow-soft p-8"
             style={{ borderRadius: 20 }}
           >
-            <div className="ep-display text-[40px] text-flare-ink leading-none">{value}</div>
+            <div className="ep-heading text-[34px] text-ink leading-none">{value}</div>
             <div className="mt-3 ep-mono text-ink-muted">{label}</div>
           </div>
         ))}
@@ -148,7 +148,7 @@ const Services = () => (
   <section className="ep-bg-paper">
     <div className="mx-auto max-w-container px-6 pb-24 md:pb-32">
       <div className="ep-mono text-flare-ink mb-6">01 / WHAT YOU GET</div>
-      <h2 className="ep-display text-ink text-[44px] md:text-[64px] max-w-3xl">
+      <h2 className="ep-heading text-ink text-[44px] md:text-[64px] max-w-3xl">
         Everything handled, gate to gate.
       </h2>
       <p className="mt-6 max-w-prose text-[17px] text-ink-muted">
@@ -166,7 +166,7 @@ const Services = () => (
               <s.icon size={20} strokeWidth={2} />
             </div>
             <div className="ep-mono text-ink-muted mb-2">0{i + 1}</div>
-            <h3 className="ep-display text-[24px] text-ink">{s.name}</h3>
+            <h3 className="ep-heading text-[24px] text-ink">{s.name}</h3>
             <p className="mt-3 text-[15px] text-ink-muted">{s.body}</p>
           </div>
         ))}
@@ -188,7 +188,7 @@ const Difference = () => (
       <div className="grid md:grid-cols-12 gap-12 items-start">
         <div className="md:col-span-4">
           <div className="ep-mono text-flare-ink mb-6">02 / DIFFERENCE</div>
-          <h2 className="ep-display text-ink text-[38px] md:text-[48px]">
+          <h2 className="ep-heading text-ink text-[38px] md:text-[48px]">
             Built for the frequent flyer.
           </h2>
           <p className="mt-6 text-[16px] text-ink-muted max-w-prose">
@@ -258,7 +258,7 @@ const FAQ = () => {
     <section className="ep-bg-paper">
       <div className="mx-auto max-w-container px-6 py-24 md:py-32">
         <div className="ep-mono text-flare-ink mb-6">03 / QUESTIONS</div>
-        <h2 className="ep-display text-ink text-[44px] md:text-[56px] max-w-3xl">
+        <h2 className="ep-heading text-ink text-[44px] md:text-[56px] max-w-3xl">
           Answers, before you ask.
         </h2>
 
@@ -271,7 +271,7 @@ const FAQ = () => {
                   onClick={() => setOpen(isOpen ? -1 : i)}
                   className="w-full flex items-start justify-between gap-6 py-6 text-left ep-ease"
                 >
-                  <span className="ep-display text-ink text-[22px] md:text-[24px]">{f.q}</span>
+                  <span className="ep-heading text-ink text-[22px] md:text-[24px]">{f.q}</span>
                   <span className="ep-icon-plate shrink-0 mt-1">
                     {isOpen ? <Minus size={18} /> : <Plus size={18} />}
                   </span>
@@ -295,7 +295,7 @@ const ClosingCTA = () => {
   <section className="ep-bg-void ep-wash-void">
     <div className="mx-auto max-w-container px-6 py-28 md:py-32">
       <div className="ep-mono text-flare-bright mb-8">READY WHEN YOU ARE</div>
-      <h2 className="ep-display text-bright text-[48px] md:text-[88px] max-w-4xl leading-[1.0]">
+      <h2 className="ep-heading text-bright text-[48px] md:text-[88px] max-w-4xl leading-[1.0]">
         Book the lane.<br />Walk through.
       </h2>
       <p className="mt-8 max-w-prose text-[19px] text-steel">
