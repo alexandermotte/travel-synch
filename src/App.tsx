@@ -14,6 +14,11 @@ import ExecPassFAQ from "./pages/ExecPassFAQ";
 import ExecPassContact from "./pages/ExecPassContact";
 import PreCheckout from "./pages/PreCheckout";
 import NotFound from "./pages/NotFound";
+import TermsConditions from "./pages/TermsConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import SubscriptionTermsPage from "./pages/SubscriptionTermsPage";
+import LegalNotice from "./pages/LegalNotice";
+import CookiePolicy from "./pages/CookiePolicy";
 
 
 const queryClient = new QueryClient();
@@ -51,12 +56,12 @@ const App = () => (
               <Route path="/services-pricing" element={<Navigate to="/about" replace />} />
               <Route path="/services" element={<Navigate to="/how-it-works" replace />} />
 
-              {/* Handed off to the booking app (single source of truth) */}
-              <Route path="/terms" element={<HandOff path="terms" />} />
-              <Route path="/privacy" element={<HandOff path="privacy" />} />
-              <Route path="/subscription-terms" element={<HandOff path="subscription-terms" />} />
-              <Route path="/legal-notice" element={<HandOff path="legal-notice" />} />
-              <Route path="/cookie-policy" element={<HandOff path="cookie-policy" />} />
+              {/* Legal pages hosted on exec-pass.com */}
+              <Route path="/terms" element={<TermsConditions />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/subscription-terms" element={<SubscriptionTermsPage />} />
+              <Route path="/legal-notice" element={<LegalNotice />} />
+              <Route path="/cookie-policy" element={<CookiePolicy />} />
               <Route path="/unsubscribe" element={<HandOff path="unsubscribe" />} />
               <Route path="/pre-checkout" element={<PreCheckout />} />
               <Route path="/fast-track" element={<HandOff path="" />} />

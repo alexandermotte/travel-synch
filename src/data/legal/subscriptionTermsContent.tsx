@@ -1,0 +1,158 @@
+import { ReactNode } from "react";
+
+export type LegalLang = "en" | "fr" | "de" | "pt" | "es" | "it" | "el";
+
+interface SubscriptionTermsContent {
+  badge: string;
+  title: string;
+  intro: string;
+  services: string[];
+  trialText: (formatPrice: (n: number) => string) => ReactNode;
+  cancelAnytime: string;
+  cancelHow: (unsubLink: ReactNode) => ReactNode;
+  noSell: string;
+  pci: string;
+}
+
+export const subscriptionTermsTranslations: Record<LegalLang, SubscriptionTermsContent> = {
+  en: {
+    badge: "Legal",
+    title: "Subscription Terms",
+    intro: "The subscription to Marvelliant B.V.'s services provides access to the following benefits:",
+    services: [
+      "Airport Fast Tracks",
+      "Automated Check-ins",
+      "Concierge Service",
+      "Travel eBooks",
+      "Airport Lounges",
+      "Flight Compensation",
+      "Lost Luggage Recovery",
+      "E-SIM",
+    ],
+    trialText: (fp) => <>The subscription gives you access to the member area for 3 days for free. At the end of this trial period, the subscription at a price of {fp(49)} per quarter or at {fp(79)} every 3 months will apply. All subscription perks activate after your first payment — simply purchase a Fast Track (price varies by airport) or Check-In (for {fp(0.79)}) to become an active member. The payment will be made by automatic debit on your credit card on the anniversary date.</>,
+    cancelAnytime: "You can cancel the subscription at any time and without any conditions.",
+    cancelHow: (link) => <>To cancel your subscription, please contact our customer support by phone at +4420 3936 2491, by email at contact@exec-pass.com or through our contact form by following {link}</>,
+    noSell: "Marvelliant B.V. does not sell its customers' information, and personal data is only used for the purpose of communicating with customers and providing them with the desired level of service.",
+    pci: "Marvelliant B.V. uses Payment Service Providers that adhere to the required PCI DSS security standards.",
+  },
+  fr: {
+    badge: "Juridique",
+    title: "Conditions d'abonnement",
+    intro: "L'abonnement aux services de Marvelliant B.V. donne accès aux avantages suivants :",
+    services: [
+      "Fast Tracks Aéroport",
+      "Check-ins automatisés",
+      "Service Conciergerie",
+      "eBooks de voyage",
+      "Salons d'aéroport",
+      "Compensation de vol",
+      "Récupération de bagages perdus",
+      "E-SIM",
+    ],
+    trialText: (fp) => <>L'abonnement vous donne accès à l'espace membre pendant 3 jours gratuitement. À la fin de cette période d'essai, l'abonnement au prix de {fp(49)} par trimestre ou à {fp(79)} tous les 3 mois s'appliquera. Tous les avantages de l'abonnement sont activés après votre premier paiement — il suffit d'acheter un Fast Track (le prix varie selon l'aéroport) ou un Check-In (pour {fp(0.79)}) pour devenir membre actif. Le paiement sera effectué par prélèvement automatique sur votre carte de crédit à la date anniversaire.</>,
+    cancelAnytime: "Vous pouvez résilier l'abonnement à tout moment et sans condition.",
+    cancelHow: (link) => <>Pour résilier votre abonnement, veuillez contacter notre service client par téléphone au +4420 3936 2491, par email à contact@exec-pass.com ou via notre formulaire de contact en suivant {link}</>,
+    noSell: "Marvelliant B.V. ne vend pas les informations de ses clients, et les données personnelles ne sont utilisées que dans le but de communiquer avec les clients et de leur fournir le niveau de service souhaité.",
+    pci: "Marvelliant B.V. utilise des prestataires de services de paiement conformes aux normes de sécurité PCI DSS requises.",
+  },
+  de: {
+    badge: "Rechtliches",
+    title: "Abonnementbedingungen",
+    intro: "Das Abonnement der Dienste von Marvelliant B.V. bietet Zugang zu folgenden Vorteilen:",
+    services: [
+      "Airport Fast Tracks",
+      "Automatische Check-ins",
+      "Concierge-Service",
+      "Reise-eBooks",
+      "Flughafen-Lounges",
+      "Flugentschädigung",
+      "Gepäck-Wiederbeschaffung",
+      "E-SIM",
+    ],
+    trialText: (fp) => <>Das Abonnement gibt Ihnen 3 Tage lang kostenlosen Zugang zum Mitgliederbereich. Nach Ablauf dieser Testphase gilt das Abonnement zum Preis von {fp(49)} pro Quartal oder {fp(79)} alle 3 Monate. Alle Abonnementvorteile werden nach Ihrer ersten Zahlung aktiviert — kaufen Sie einfach einen Fast Track (Preis je nach Flughafen unterschiedlich) oder einen Check-In (für {fp(0.79)}), um aktives Mitglied zu werden. Die Zahlung erfolgt per automatischer Abbuchung von Ihrer Kreditkarte am Jahrestag.</>,
+    cancelAnytime: "Sie können das Abonnement jederzeit und ohne Bedingungen kündigen.",
+    cancelHow: (link) => <>Um Ihr Abonnement zu kündigen, kontaktieren Sie bitte unseren Kundendienst telefonisch unter +4420 3936 2491, per E-Mail an contact@exec-pass.com oder über unser Kontaktformular unter {link}</>,
+    noSell: "Marvelliant B.V. verkauft keine Kundeninformationen. Personenbezogene Daten werden ausschließlich zur Kommunikation mit Kunden und zur Bereitstellung des gewünschten Serviceniveaus verwendet.",
+    pci: "Marvelliant B.V. nutzt Zahlungsdienstleister, die den erforderlichen PCI-DSS-Sicherheitsstandards entsprechen.",
+  },
+  pt: {
+    badge: "Jurídico",
+    title: "Termos de Subscrição",
+    intro: "A subscrição dos serviços da Marvelliant B.V. dá acesso aos seguintes benefícios:",
+    services: [
+      "Fast Tracks no Aeroporto",
+      "Check-ins Automáticos",
+      "Serviço de Concierge",
+      "eBooks de Viagem",
+      "Salas VIP de Aeroporto",
+      "Compensação de Voo",
+      "Recuperação de Bagagem Perdida",
+      "E-SIM",
+    ],
+    trialText: (fp) => <>A subscrição dá-lhe acesso à área de membro durante 3 dias gratuitamente. No final deste período de teste, aplica-se a subscrição ao preço de {fp(49)} por trimestre ou {fp(79)} a cada 3 meses. Todos os benefícios da subscrição são ativados após o seu primeiro pagamento — basta adquirir um Fast Track (o preço varia consoante o aeroporto) ou um Check-In (por {fp(0.79)}) para se tornar membro ativo. O pagamento será feito por débito automático no seu cartão de crédito na data de aniversário.</>,
+    cancelAnytime: "Pode cancelar a subscrição a qualquer momento e sem quaisquer condições.",
+    cancelHow: (link) => <>Para cancelar a sua subscrição, contacte o nosso apoio ao cliente por telefone para +4420 3936 2491, por email para contact@exec-pass.com ou através do nosso formulário de contacto em {link}</>,
+    noSell: "A Marvelliant B.V. não vende as informações dos seus clientes, e os dados pessoais são utilizados apenas para comunicar com os clientes e fornecer-lhes o nível de serviço desejado.",
+    pci: "A Marvelliant B.V. utiliza Prestadores de Serviços de Pagamento que cumprem os padrões de segurança PCI DSS exigidos.",
+  },
+  es: {
+    badge: "Legal",
+    title: "Términos de Suscripción",
+    intro: "La suscripción a los servicios de Marvelliant B.V. proporciona acceso a los siguientes beneficios:",
+    services: [
+      "Fast Tracks en el Aeropuerto",
+      "Check-ins Automatizados",
+      "Servicio de Conserjería",
+      "eBooks de Viaje",
+      "Salas VIP del Aeropuerto",
+      "Compensación de Vuelo",
+      "Recuperación de Equipaje Perdido",
+      "E-SIM",
+    ],
+    trialText: (fp) => <>La suscripción le da acceso al área de miembros durante 3 días de forma gratuita. Al final de este período de prueba, se aplicará la suscripción a un precio de {fp(49)} al trimestre o {fp(79)} cada 3 meses. Todos los beneficios de la suscripción se activan tras su primer pago — basta con adquirir un Fast Track (el precio varía según el aeropuerto) o un Check-In (por {fp(0.79)}) para convertirse en miembro activo. El pago se realizará mediante débito automático en su tarjeta de crédito en la fecha de aniversario.</>,
+    cancelAnytime: "Puede cancelar la suscripción en cualquier momento y sin condiciones.",
+    cancelHow: (link) => <>Para cancelar su suscripción, contacte con nuestro servicio de atención al cliente por teléfono al +4420 3936 2491, por email a contact@exec-pass.com o a través de nuestro formulario de contacto en {link}</>,
+    noSell: "Marvelliant B.V. no vende la información de sus clientes, y los datos personales solo se utilizan con el fin de comunicarse con los clientes y proporcionarles el nivel de servicio deseado.",
+    pci: "Marvelliant B.V. utiliza Proveedores de Servicios de Pago que cumplen con los estándares de seguridad PCI DSS requeridos.",
+  },
+  it: {
+    badge: "Legale",
+    title: "Termini di Abbonamento",
+    intro: "L'abbonamento ai servizi di Marvelliant B.V. fornisce accesso ai seguenti vantaggi:",
+    services: [
+      "Fast Track Aeroportuali",
+      "Check-in Automatizzati",
+      "Servizio Concierge",
+      "eBook di Viaggio",
+      "Lounge Aeroportuali",
+      "Compensazione Volo",
+      "Recupero Bagagli Smarriti",
+      "E-SIM",
+    ],
+    trialText: (fp) => <>L'abbonamento ti dà accesso all'area membri per 3 giorni gratuitamente. Al termine di questo periodo di prova, si applicherà l'abbonamento al prezzo di {fp(49)} al trimestre o {fp(79)} ogni 3 mesi. Tutti i vantaggi dell'abbonamento si attivano dopo il primo pagamento — basta acquistare un Fast Track (il prezzo varia in base all'aeroporto) o un Check-In (per {fp(0.79)}) per diventare membro attivo. Il pagamento verrà effettuato tramite addebito automatico sulla tua carta di credito alla data di anniversario.</>,
+    cancelAnytime: "Puoi cancellare l'abbonamento in qualsiasi momento e senza alcuna condizione.",
+    cancelHow: (link) => <>Per cancellare il tuo abbonamento, contatta il nostro servizio clienti telefonicamente al +4420 3936 2491, via email a contact@exec-pass.com o tramite il nostro modulo di contatto su {link}</>,
+    noSell: "Marvelliant B.V. non vende le informazioni dei propri clienti e i dati personali vengono utilizzati esclusivamente per comunicare con i clienti e fornire loro il livello di servizio desiderato.",
+    pci: "Marvelliant B.V. utilizza Fornitori di Servizi di Pagamento conformi agli standard di sicurezza PCI DSS richiesti.",
+  },
+  el: {
+    badge: "Νομικά",
+    title: "Όροι Συνδρομής",
+    intro: "Η συνδρομή στις υπηρεσίες της Marvelliant B.V. παρέχει πρόσβαση στα ακόλουθα πλεονεκτήματα:",
+    services: [
+      "Airport Fast Tracks",
+      "Αυτοματοποιημένα Check-ins",
+      "Υπηρεσία Concierge",
+      "Ταξιδιωτικά eBooks",
+      "Αίθουσες Αεροδρομίου",
+      "Αποζημίωση Πτήσης",
+      "Ανάκτηση Χαμένων Αποσκευών",
+      "E-SIM",
+    ],
+    trialText: (fp) => <>Η συνδρομή σας δίνει πρόσβαση στην περιοχή μελών για 3 ημέρες δωρεάν. Στο τέλος αυτής της δοκιμαστικής περιόδου, θα ισχύσει η συνδρομή στην τιμή των {fp(49)} ανά τρίμηνο ή {fp(79)} κάθε 3 μήνες. Όλα τα προνόμια της συνδρομής ενεργοποιούνται μετά την πρώτη σας πληρωμή — απλώς αγοράστε ένα Fast Track (η τιμή ποικίλλει ανάλογα με το αεροδρόμιο) ή ένα Check-In (για {fp(0.79)}) για να γίνετε ενεργό μέλος. Η πληρωμή θα γίνεται με αυτόματη χρέωση στην πιστωτική σας κάρτα στην ημερομηνία επετείου.</>,
+    cancelAnytime: "Μπορείτε να ακυρώσετε τη συνδρομή ανά πάσα στιγμή και χωρίς όρους.",
+    cancelHow: (link) => <>Για να ακυρώσετε τη συνδρομή σας, επικοινωνήστε με την υποστήριξη πελατών μας τηλεφωνικά στο +4420 3936 2491, μέσω email στο contact@exec-pass.com ή μέσω της φόρμας επικοινωνίας στο {link}</>,
+    noSell: "Η Marvelliant B.V. δεν πωλεί τις πληροφορίες των πελατών της και τα προσωπικά δεδομένα χρησιμοποιούνται μόνο για την επικοινωνία με τους πελάτες και την παροχή του επιθυμητού επιπέδου υπηρεσιών.",
+    pci: "Η Marvelliant B.V. χρησιμοποιεί Παρόχους Υπηρεσιών Πληρωμών που συμμορφώνονται με τα απαιτούμενα πρότυπα ασφαλείας PCI DSS.",
+  },
+};
