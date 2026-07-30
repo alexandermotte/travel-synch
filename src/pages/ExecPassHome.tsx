@@ -472,21 +472,6 @@ const ClosingCTA = () => {
   );
 };
 
-/* ---------------------------- Mobile sticky CTA -------------------------- */
-const MobileStickyCTA = () => {
-  const { search } = useLocation();
-  return (
-  <div className="lg:hidden fixed bottom-0 inset-x-0 z-40 ep-bg-void border-t border-line-dark px-4 py-3">
-    <Link
-      to={preCheckoutPath(undefined, search)}
-      className="block ep-btn-type text-[13px] uppercase tracking-wider bg-flare text-white px-5 py-3 text-center rounded-full"
-    >
-      Join Exec Pass
-    </Link>
-  </div>
-  );
-};
-
 /* ---------------------------------- Page --------------------------------- */
 const ExecPassHome = () => {
   useEffect(() => {
@@ -520,7 +505,6 @@ const ExecPassHome = () => {
         <ClosingCTA />
       </main>
       <ExecPassFooter />
-      <MobileStickyCTA />
     </div>
   );
 };
