@@ -173,8 +173,8 @@ const Services = () => (
       </div>
 
       <div className="mt-8 flex justify-end">
-        <Link to="/services-pricing" className="ep-mono text-flare-ink hover:text-ink ep-ease">
-          Full service list →
+        <Link to="/how-it-works" className="ep-mono text-flare-ink hover:text-ink ep-ease">
+          How it works →
         </Link>
       </div>
     </div>
@@ -309,8 +309,8 @@ const ClosingCTA = () => {
         >
           Book Fast Track <ArrowRight size={16} />
         </a>
-        <Link to="/services-pricing" className="ep-mono text-bright hover:text-flare-bright ep-ease">
-          See what&apos;s included →
+        <Link to="/how-it-works" className="ep-mono text-bright hover:text-flare-bright ep-ease">
+          See how it works →
         </Link>
       </div>
     </div>
