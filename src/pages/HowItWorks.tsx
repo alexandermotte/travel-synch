@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { ArrowRight, UserPlus, CalendarCheck, DoorOpen } from "lucide-react";
 import { ExecPassHeader } from "@/components/ExecPassHeader";
 import { ExecPassFooter } from "@/components/ExecPassFooter";
 import { Seo } from "@/components/Seo";
-import { bookingUrl } from "@/lib/booking";
+import { bookingUrl, preCheckoutPath } from "@/lib/booking";
 
 const STEPS = [
   {
@@ -82,13 +82,13 @@ const HowItWorks = () => {
             </div>
 
             <div className="mt-16">
-              <a
-                href={bookingUrl("", search)}
+              <Link
+                to={preCheckoutPath(undefined, search)}
                 className="ep-btn-type text-[14px] uppercase tracking-wider inline-flex items-center gap-3 bg-flare hover:bg-flare-bright text-white px-8 py-4 ep-ease ep-press"
                 style={{ borderRadius: 12 }}
               >
-                Book Fast Track <ArrowRight size={16} />
-              </a>
+                Join Exec Pass <ArrowRight size={16} />
+              </Link>
             </div>
           </div>
         </section>

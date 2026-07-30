@@ -1,243 +1,274 @@
+import { useEffect, useMemo, useState } from "react";
+import { useLocation, useSearchParams } from "react-router-dom";
+import { ArrowRight, Check, Zap, Crown, CheckSquare, Clock, Globe, TrendingUp, ScanLine, Sparkles } from "lucide-react";
 import { ExecPassHeader } from "@/components/ExecPassHeader";
 import { ExecPassFooter } from "@/components/ExecPassFooter";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Check, Zap, CheckCircle, Clock, Globe, TrendingUp } from "lucide-react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Seo } from "@/components/Seo";
+import { BOOKING_ORIGIN, BOOKING_LOCALE, forwardedParams } from "@/lib/booking";
 import { useCurrency } from "@/contexts/CurrencyContext";
-import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
-const fastTrackFeatures = [{
-  icon: TrendingUp,
-  title: "Convenience",
-  description: "Access dedicated lane straight to the security checkpoint."
-}, {
-  icon: Globe,
-  title: "Available Around The World",
-  description: "Our Fast Track service is available in over 300 airports worldwide."
-}, {
-  icon: Clock,
-  title: "Time - Saving",
-  description: "Tired of waiting? Access to the boarding gate quicker and without rushing."
-}];
-const PreCheckout = () => {
-  const {
-    formatPrice,
-    currency
-  } = useCurrency();
-  const [searchParams] = useSearchParams();
-  const [selectedPlan, setSelectedPlan] = useState<string>("premium");
-  const [activeTab, setActiveTab] = useState<string>("fast-track");
-  
-  useEffect(() => {
-    document.title = "ExecPass - Checkout";
-    window.scrollTo(0, 0);
-    
-    // Set plan from URL parameter
-    const planParam = searchParams.get("plan");
-    if (planParam === "medium" || planParam === "premium") {
-      setSelectedPlan(planParam);
-    }
-  }, [searchParams]);
-  const handleStartTrial = () => {
-    const baseUrl = activeTab === "fast-track" ? "https://fasttrack.exec-pass.com" : "https://checkin.exec-pass.com";
-    const params = new URLSearchParams();
-    params.append("currency", currency);
-    if (selectedPlan === "medium") {
-      params.append("product", "_3m_49");
-    }
-    window.open(`${baseUrl}/?${params.toString()}`, '_blank');
-  };
-  const plans = [{
-    id: "medium",
+
+type PlanId = "medium" | "premium";
+type ServiceId = "fast-track" | "check-in";
+
+const CHECKIN_ORIGIN = "https://checkin.exec-pass.com";
+
+const plans = [
+  {
+    id: "medium" as PlanId,
     name: "Medium",
+    icon: Zap,
     price: 49,
     period: "every 3 months",
     trial: "3 days free trial",
-    cancel: "Cancel anytime",
-    description: "Smart travel, frequent and hassle-free",
-    features: ["Up to 2 free Fast-Track accesses per month", "Automated check-in included"]
-  }, {
-    id: "premium",
+    tagline: "Smart travel, frequent and hassle-free.",
+    features: [
+      "Up to 2 Fast Track accesses per month",
+      "Automatic check-in included",
+      "Member rates on 500+ lounges",
+      "2 flight compensation claims per quarter",
+      "2 luggage recovery claims per quarter",
+      "1 eSIM for data abroad",
+    ],
+  },
+  {
+    id: "premium" as PlanId,
     name: "Premium",
+    icon: Crown,
     price: 79,
     period: "every 3 months",
-    trial: "3 free days",
-    cancel: "Cancel anytime",
-    description: "",
-    features: ["Up to 5 free Fast-Track accesses per month", "Unlimited automated check-ins", "Exclusive discounts on airport lounges"]
-  }];
-  return <div className="min-h-screen">
+    trial: "3 days free trial",
+    badge: "Recommended",
+    tagline: "For the frequent flyer who lives out of a terminal.",
+    features: [
+      "Up to 5 Fast Track accesses per month",
+      "Unlimited automatic check-ins",
+      "Best member rates on 500+ lounges",
+      "Unlimited flight compensation claims",
+      "Unlimited luggage recovery claims",
+      "2 eSIMs plus virtual number",
+      "Discounted attraction & museum tickets",
+    ],
+  },
+];
+
+const serviceDetails: Record<ServiceId, { icon: typeof Zap; label: string; items: { icon: typeof Zap; title: string; body: string }[] }> = {
+  "fast-track": {
+    icon: Zap,
+    label: "Fast Track",
+    items: [
+      { icon: TrendingUp, title: "Convenience", body: "A dedicated lane straight to the security checkpoint, past the general queue." },
+      { icon: Globe, title: "Available worldwide", body: "Fast Track is available at more than 200 airports in the Exec Pass network." },
+      { icon: Clock, title: "Time saving", body: "Reach the boarding gate faster and without rushing, even on a tight connection." },
+    ],
+  },
+  "check-in": {
+    icon: CheckSquare,
+    label: "Automatic Check-In",
+    items: [
+      { icon: ScanLine, title: "Automated", body: "We watch the airline window and check you in the moment it opens — no desk, no app." },
+      { icon: Clock, title: "Time efficient", body: "Your boarding pass lands on your phone while you're still on the way to the airport." },
+      { icon: Sparkles, title: "Seamless", body: "One membership handles the formalities from booking through to boarding." },
+    ],
+  },
+};
+
+const PreCheckout = () => {
+  const { search } = useLocation();
+  const [searchParams] = useSearchParams();
+  const { formatPrice, currency } = useCurrency();
+  const [selectedPlan, setSelectedPlan] = useState<PlanId>("premium");
+  const [service, setService] = useState<ServiceId>("fast-track");
+
+  useEffect(() => {
+    document.title = "ExecPass - Choose your plan";
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    const p = searchParams.get("plan");
+    if (p === "medium" || p === "premium") setSelectedPlan(p);
+    const s = searchParams.get("service");
+    if (s === "check-in" || s === "fast-track") setService(s);
+  }, [searchParams]);
+
+  const checkoutUrl = useMemo(() => {
+    const origin = service === "fast-track" ? BOOKING_ORIGIN : CHECKIN_ORIGIN;
+    const params = forwardedParams(search);
+    params.set("currency", currency);
+    if (selectedPlan === "medium") params.set("product", "_3m_49");
+    return `${origin}/${BOOKING_LOCALE}?${params.toString()}`;
+  }, [service, selectedPlan, currency, search]);
+
+  return (
+    <div className="min-h-screen ep-bg-void">
+      <Seo
+        title="Choose your Exec Pass plan — Medium or Premium"
+        description="Compare the two Exec Pass travel memberships, pick Fast Track or automatic check-in, and continue to secure checkout."
+        path="/pre-checkout"
+      />
       <ExecPassHeader />
 
       <main>
-        {/* What we can do for you */}
-        <section className="py-16 md:py-24 bg-gradient-to-br from-sky via-background to-sand">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12 md:mb-16">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                What we can do for you
-              </h1>
-            </div>
-
-            <Tabs defaultValue="fast-track" className="max-w-5xl mx-auto" onValueChange={setActiveTab}>
-              <TabsList className="grid w-full grid-cols-2 mb-8">
-                <TabsTrigger value="fast-track" className="text-base">Fast Track</TabsTrigger>
-                <TabsTrigger value="check-in" className="text-base">Automated Check-In</TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="fast-track" className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                  {plans.map(plan => <Card key={plan.id} className={`p-8 bg-card border-2 transition-all cursor-pointer ${selectedPlan === plan.id ? "border-accent bg-accent/10 shadow-lg" : "border-border hover:border-primary/50"}`} onClick={() => setSelectedPlan(plan.id)}>
-                      <div className="flex items-start justify-between mb-6">
-                        <div className="flex-1">
-                          <h3 className="text-2xl font-bold mb-3">{plan.name}</h3>
-                          <div className="mb-4">
-                            <div className="flex items-baseline mb-1">
-                              <span className="text-3xl font-bold text-primary">{formatPrice(plan.price)}</span>
-                              <span className="text-sm text-muted-foreground ml-2">{plan.period}</span>
-                            </div>
-                            <p className="text-sm text-accent font-medium">{plan.trial}</p>
-                            <p className="text-xs text-muted-foreground">{plan.cancel}</p>
-                          </div>
-                          {plan.description && <p className="text-muted-foreground mb-4">{plan.description}</p>}
-                        </div>
-                        <div className="flex-shrink-0 ml-4">
-                          <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${selectedPlan === plan.id ? "border-accent bg-accent" : "border-muted-foreground"}`}>
-                            {selectedPlan === plan.id && <div className="w-3 h-3 rounded-full bg-white"></div>}
-                          </div>
-                        </div>
-                      </div>
-                      <ul className="space-y-3">
-                        {plan.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-start">
-                            <Check className="h-5 w-5 text-primary flex-shrink-0 mr-3 mt-0.5" />
-                            <span className="text-sm leading-relaxed">{feature}</span>
-                          </li>)}
-                      </ul>
-                    </Card>)}
-                </div>
-                
-                <div className="mt-6 text-center max-w-3xl mx-auto">
-                  <p className="text-sm text-muted-foreground italic border-t border-border pt-6">
-                    Fast Track and Smart Check-In are available only to active members (members that have at least one successful subscription payment).
-                  </p>
-                </div>
-
-                {/* Fast Track Features */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12">
-                  {fastTrackFeatures.map((feature, index) => <Card key={index} className="p-6 bg-card border-border text-center">
-                      <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
-                        <feature.icon className="h-6 w-6" />
-                      </div>
-                      <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {feature.description}
-                      </p>
-                    </Card>)}
-                </div>
-
-                <div className="text-center mt-12">
-                  <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg shadow-elegant transition-smooth" onClick={handleStartTrial}>
-                    Start Free Trial
-                  </Button>
-                </div>
-              </TabsContent>
-
-              <TabsContent value="check-in" className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                  {plans.map(plan => <Card key={plan.id} className={`p-8 bg-card border-2 transition-all cursor-pointer ${selectedPlan === plan.id ? "border-accent bg-accent/10 shadow-lg" : "border-border hover:border-primary/50"}`} onClick={() => setSelectedPlan(plan.id)}>
-                      <div className="flex items-start justify-between mb-6">
-                        <div className="flex-1">
-                          <h3 className="text-2xl font-bold mb-3">{plan.name}</h3>
-                          <div className="mb-4">
-                            <div className="flex items-baseline mb-1">
-                              <span className="text-3xl font-bold text-primary">{formatPrice(plan.price)}</span>
-                              <span className="text-sm text-muted-foreground ml-2">{plan.period}</span>
-                            </div>
-                            <p className="text-sm text-accent font-medium">{plan.trial}</p>
-                            <p className="text-xs text-muted-foreground">{plan.cancel}</p>
-                          </div>
-                          {plan.description && <p className="text-muted-foreground mb-4">{plan.description}</p>}
-                        </div>
-                        <div className="flex-shrink-0 ml-4">
-                          <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${selectedPlan === plan.id ? "border-accent bg-accent" : "border-muted-foreground"}`}>
-                            {selectedPlan === plan.id && <div className="w-3 h-3 rounded-full bg-white"></div>}
-                          </div>
-                        </div>
-                      </div>
-                      <ul className="space-y-3">
-                        {plan.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-start">
-                            <Check className="h-5 w-5 text-primary flex-shrink-0 mr-3 mt-0.5" />
-                            <span className="text-sm leading-relaxed">{feature}</span>
-                          </li>)}
-                      </ul>
-                    </Card>)}
-                </div>
-                
-                <div className="mt-6 text-center max-w-3xl mx-auto">
-                  <p className="text-sm text-muted-foreground italic border-t border-border pt-6">
-                    Fast Track and Smart Check-In are available only to active members (members that have at least one successful subscription payment).
-                  </p>
-                </div>
-
-                {/* Automated Check-In Features */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12">
-                  <Card className="p-6 bg-card border-border text-center">
-                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
-                      <CheckCircle className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-lg font-semibold mb-2">Automated</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Forget the hassle of manual check-ins with our fully automated system.
-                    </p>
-                  </Card>
-                  <Card className="p-6 bg-card border-border text-center">
-                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
-                      <Clock className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-lg font-semibold mb-2">Time Efficient</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Check in quickly and efficiently, giving you more time to relax.
-                    </p>
-                  </Card>
-                  <Card className="p-6 bg-card border-border text-center">
-                    <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary">
-                      <Zap className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-lg font-semibold mb-2">Seamless Experience</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Enjoy a smooth journey from start to finish with zero stress.
-                    </p>
-                  </Card>
-                </div>
-
-                <div className="text-center mt-12">
-                  <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg shadow-elegant transition-smooth" onClick={handleStartTrial}>
-                    Start Free Trial
-                  </Button>
-                </div>
-              </TabsContent>
-            </Tabs>
+        {/* Hero */}
+        <section className="ep-bg-paper">
+          <div className="mx-auto max-w-container px-6 pt-14 pb-10">
+            <div className="ep-mono text-flare-ink mb-6">MEMBERSHIP · STEP 1 OF 2</div>
+            <h1 className="ep-heading text-ink text-[40px] md:text-[60px] max-w-3xl leading-[1.02]">
+              Choose your plan, then fly clever.
+            </h1>
+            <p className="mt-6 max-w-prose text-[17px] text-ink-muted">
+              Both Exec Pass memberships include Fast Track security, automatic check-in, lounge
+              rates, claims handling, eSIM data and a 24/7 concierge. Pick the volume that matches
+              how often you fly — you can cancel at any time.
+            </p>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 md:py-20 bg-secondary/30">
-          <div className="container mx-auto px-4">
-            <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Ready to save on your travel?
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                We make special travel arrangements with round the clock support by our travel specialists. Lowest price guaranteed.
-              </p>
-              
+        {/* Plans */}
+        <section className="ep-bg-paper">
+          <div className="mx-auto max-w-container px-6 pb-6">
+            <div className="grid gap-6 md:grid-cols-2 max-w-4xl">
+              {plans.map((plan) => {
+                const active = selectedPlan === plan.id;
+                return (
+                  <button
+                    key={plan.id}
+                    type="button"
+                    onClick={() => setSelectedPlan(plan.id)}
+                    aria-pressed={active}
+                    className={`relative text-left p-8 md:p-10 ep-shadow-soft ep-ease border-2 ${
+                      active ? "ep-bg-concrete border-flare" : "ep-bg-concrete border-transparent"
+                    }`}
+                    style={{ borderRadius: 24 }}
+                  >
+                    {plan.badge && (
+                      <span className="ep-chip absolute top-6 right-6 rounded-full bg-flare text-white px-3 py-1 uppercase tracking-[0.14em]">
+                        {plan.badge}
+                      </span>
+                    )}
+
+                    <div className="flex items-center gap-3 mb-6">
+                      <span
+                        className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
+                          active ? "border-flare bg-flare" : "border-line"
+                        }`}
+                      >
+                        {active && <span className="w-2 h-2 rounded-full bg-white" />}
+                      </span>
+                      <span className="ep-mono text-ink-muted">{plan.name.toUpperCase()}</span>
+                      <span className="ep-icon-plate ml-auto md:ml-2">
+                        <plan.icon size={18} strokeWidth={2} />
+                      </span>
+                    </div>
+
+                    <div className="flex items-baseline gap-2">
+                      <span className="ep-heading text-[44px] text-ink leading-none">
+                        {formatPrice(plan.price)}
+                      </span>
+                      <span className="text-[14px] text-ink-muted">{plan.period}</span>
+                    </div>
+                    <p className="mt-2 text-[14px] text-flare-ink">{plan.trial}</p>
+                    <p className="text-[13px] text-ink-muted">Cancel anytime</p>
+                    <p className="mt-4 text-[15px] text-ink-muted">{plan.tagline}</p>
+
+                    <div className="my-6 h-px bg-line" />
+
+                    <ul className="space-y-3">
+                      {plan.features.map((f) => (
+                        <li key={f} className="flex items-start gap-3">
+                          <Check size={16} className="mt-1 shrink-0 text-flare-ink" />
+                          <span className="text-[15px] text-ink-muted">{f}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </button>
+                );
+              })}
             </div>
+
+            <p className="mt-6 max-w-4xl text-[13px] text-ink-muted italic border-t border-line pt-6">
+              Fast Track and Smart Check-In are available only to active members (members that have
+              at least one successful subscription payment).
+            </p>
+          </div>
+        </section>
+
+        {/* Service selection */}
+        <section className="ep-bg-paper">
+          <div className="mx-auto max-w-container px-6 py-16">
+            <div className="ep-mono text-flare-ink mb-6">WHAT WOULD YOU LIKE TO START WITH?</div>
+            <div className="flex flex-wrap gap-3">
+              {(Object.keys(serviceDetails) as ServiceId[]).map((id) => {
+                const s = serviceDetails[id];
+                const active = service === id;
+                return (
+                  <button
+                    key={id}
+                    type="button"
+                    onClick={() => setService(id)}
+                    aria-pressed={active}
+                    className={`inline-flex items-center gap-2 px-6 py-3 rounded-full text-[14px] ep-ease border ${
+                      active
+                        ? "bg-flare text-white border-flare"
+                        : "ep-bg-concrete text-ink-muted border-line hover:text-ink"
+                    }`}
+                  >
+                    <s.icon size={16} /> {s.label}
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {serviceDetails[service].items.map((item, i) => (
+                <div key={item.title} className="ep-bg-concrete ep-shadow-soft p-8" style={{ borderRadius: 20 }}>
+                  <div className="ep-icon-plate mb-6">
+                    <item.icon size={20} strokeWidth={2} />
+                  </div>
+                  <div className="ep-mono text-ink-muted mb-2">0{i + 1}</div>
+                  <h3 className="ep-heading text-[22px] text-ink">{item.title}</h3>
+                  <p className="mt-3 text-[15px] text-ink-muted">{item.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Confirm */}
+        <section className="ep-bg-void ep-wash-void">
+          <div className="mx-auto max-w-container px-6 py-20 md:py-24">
+            <div className="ep-mono text-flare-bright mb-6">STEP 2 · SECURE CHECKOUT</div>
+            <h2 className="ep-heading text-bright text-[36px] md:text-[52px] max-w-3xl leading-[1.05]">
+              {plans.find((p) => p.id === selectedPlan)?.name} membership ·{" "}
+              {serviceDetails[service].label}
+            </h2>
+            <p className="mt-6 max-w-prose text-[17px] text-steel">
+              You'll finish signing up on our secure booking app, with your selection already
+              applied. Payment details, terms and confirmation happen there.
+            </p>
+
+            <a
+              href={checkoutUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-10 ep-btn-type text-[14px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-8 py-4 inline-flex items-center gap-3 ep-ease ep-press rounded-full"
+            >
+              Continue to checkout <ArrowRight size={16} />
+            </a>
+
+            <p className="mt-6 max-w-2xl text-[13px] text-steel">
+              Your subscription starts with a 3-day free trial. After the trial you will be charged{" "}
+              {formatPrice(49)} every 3 months (Medium) or {formatPrice(79)} every 3 months
+              (Premium), automatically debited from the card on file. Membership benefits activate
+              after your first payment.
+            </p>
           </div>
         </section>
       </main>
 
       <ExecPassFooter />
-    </div>;
+    </div>
+  );
 };
+
 export default PreCheckout;

@@ -12,7 +12,9 @@ import About from "./pages/About";
 import HowItWorks from "./pages/HowItWorks";
 import ExecPassFAQ from "./pages/ExecPassFAQ";
 import ExecPassContact from "./pages/ExecPassContact";
+import PreCheckout from "./pages/PreCheckout";
 import NotFound from "./pages/NotFound";
+
 
 const queryClient = new QueryClient();
 
@@ -56,7 +58,7 @@ const App = () => (
               <Route path="/legal-notice" element={<HandOff path="legal-notice" />} />
               <Route path="/cookie-policy" element={<HandOff path="cookie-policy" />} />
               <Route path="/unsubscribe" element={<HandOff path="unsubscribe" />} />
-              <Route path="/pre-checkout" element={<HandOff path="" />} />
+              <Route path="/pre-checkout" element={<PreCheckout />} />
               <Route path="/fast-track" element={<HandOff path="" />} />
               <Route path="/fast-track-form" element={<HandOff path="" />} />
 
