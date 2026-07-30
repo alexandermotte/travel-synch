@@ -240,6 +240,8 @@ const plans = [
     id: "premium",
     name: "Premium",
     icon: Crown,
+    price: 79,
+    period: "every 3 months",
     tagline: "For the frequent flyer who lives out of a terminal.",
     highlight: true,
     features: [
