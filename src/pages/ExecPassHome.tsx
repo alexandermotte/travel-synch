@@ -79,12 +79,12 @@ const Hero = () => {
               global data — with a human concierge behind all of it. Two plans, one goal: fly clever.
             </p>
 
-            <a
+            <Link
               to={preCheckoutPath(undefined, search)}
               className="mt-10 ep-btn-type text-[14px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-8 py-4 inline-flex items-center justify-center gap-3 ep-ease ep-press rounded-full"
             >
               Join Exec Pass <ArrowRight size={16} />
-            </a>
+            </Link>
             <p className="mt-4 text-[13px] text-steel text-center">
               Secure · Instant confirmation · 24/7 human support
             </p>
@@ -310,8 +310,8 @@ const Plans = () => {
                 ))}
               </ul>
 
-              <a
-                to={preCheckoutPath(undefined, search)}
+              <Link
+                to={preCheckoutPath(p.id as "medium" | "premium", search)}
                 className={`mt-10 ep-btn-type text-[13px] uppercase tracking-wider px-6 py-4 inline-flex items-center justify-center gap-3 ep-ease ep-press rounded-full ${
                   p.highlight
                     ? "bg-flare hover:bg-flare-bright text-white"
@@ -319,7 +319,7 @@ const Plans = () => {
                 }`}
               >
                 Choose {p.name} <ArrowRight size={15} />
-              </a>
+              </Link>
             </div>
           ))}
         </div>
@@ -457,12 +457,12 @@ const ClosingCTA = () => {
         and connectivity — everywhere they land.
       </p>
       <div className="mt-10 flex flex-wrap items-center gap-6">
-        <a
+        <Link
           to={preCheckoutPath(undefined, search)}
           className="ep-btn-type text-[14px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-8 py-4 inline-flex items-center gap-3 ep-ease ep-press rounded-full"
         >
           Join Exec Pass <ArrowRight size={16} />
-        </a>
+        </Link>
         <Link to="/how-it-works" className="ep-mono text-bright hover:text-flare-bright ep-ease">
           See how it works →
         </Link>
@@ -477,12 +477,12 @@ const MobileStickyCTA = () => {
   const { search } = useLocation();
   return (
   <div className="lg:hidden fixed bottom-0 inset-x-0 z-40 ep-bg-void border-t border-line-dark px-4 py-3">
-    <a
+    <Link
       to={preCheckoutPath(undefined, search)}
       className="block ep-btn-type text-[13px] uppercase tracking-wider bg-flare text-white px-5 py-3 text-center rounded-full"
     >
       Join Exec Pass
-    </a>
+    </Link>
   </div>
   );
 };

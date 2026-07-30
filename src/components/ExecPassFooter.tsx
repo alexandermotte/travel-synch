@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { AirsideMark } from "@/components/AirsideMark";
-import { bookingUrl, LEGAL_LINKS, MEMBER_URL } from "@/lib/booking";
+import { bookingUrl, preCheckoutPath, LEGAL_LINKS, MEMBER_URL } from "@/lib/booking";
 
 export const ExecPassFooter = () => {
   const { search } = useLocation();
@@ -18,12 +18,12 @@ export const ExecPassFooter = () => {
               flight compensation, luggage recovery, eSIM data and a 24/7 concierge — in two plans.
               Exec Pass is not affiliated with any airport or airline.
             </p>
-            <a
-              href={bookingUrl("", search)}
+            <Link
+              to={preCheckoutPath(undefined, search)}
               className="ep-btn-type text-[13px] uppercase tracking-wider inline-block bg-flare hover:bg-flare-bright text-white px-5 py-3 mt-8 ep-ease ep-press rounded-full"
             >
               Join Exec Pass
-            </a>
+            </Link>
 
           </div>
 

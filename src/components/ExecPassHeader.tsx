@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { AirsideMark } from "@/components/AirsideMark";
-import { bookingUrl } from "@/lib/booking";
+import { preCheckoutPath } from "@/lib/booking";
 
 const NAV = [
   { label: "How it works", href: "/how-it-works" },
@@ -14,7 +14,7 @@ const NAV = [
 export const ExecPassHeader = () => {
   const [open, setOpen] = useState(false);
   const { search } = useLocation();
-  const bookUrl = bookingUrl("", search);
+  const bookUrl = preCheckoutPath(undefined, search);
 
   return (
     <header
@@ -38,12 +38,12 @@ export const ExecPassHeader = () => {
         </div>
 
         <div className="hidden lg:flex items-center gap-6">
-          <a
-            href={bookUrl}
+          <Link
+            to={bookUrl}
             className="ep-btn-type text-[13px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-6 py-2.5 ep-ease ep-press rounded-full"
           >
             Join Exec Pass
-          </a>
+          </Link>
         </div>
 
         <button
@@ -68,12 +68,13 @@ export const ExecPassHeader = () => {
                 {n.label}
               </Link>
             ))}
-            <a
-              href={bookUrl}
+            <Link
+              to={bookUrl}
+              onClick={() => setOpen(false)}
               className="ep-btn-type text-[13px] uppercase tracking-wider bg-flare text-white px-5 py-3 text-center mt-2 rounded-full"
             >
               Join Exec Pass
-            </a>
+            </Link>
           </nav>
         </div>
       )}
