@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { ExecPassHeader } from "@/components/ExecPassHeader";
 import { ExecPassFooter } from "@/components/ExecPassFooter";
 import { Seo } from "@/components/Seo";
-import { bookingUrl } from "@/lib/booking";
+import { bookingUrl, preCheckoutPath } from "@/lib/booking";
 
 const VALUES = [
   ["Independent operator", "We are not an airport, an airline or a franchise. We buy priority services and pass them to travellers who value the hour back."],
@@ -84,13 +84,13 @@ const About = () => {
                 1055RW Amsterdam, Netherlands
               </address>
               <p className="ep-chip text-ink-muted mt-4">KVK 96513519 · RSIN 867643298</p>
-              <a
-                href={bookingUrl("", search)}
+              <Link
+                to={preCheckoutPath(undefined, search)}
                 className="ep-btn-type text-[13px] uppercase tracking-wider inline-flex items-center gap-3 bg-flare hover:bg-flare-bright text-white px-6 py-3 mt-8 ep-ease ep-press"
                 style={{ borderRadius: 12 }}
               >
-                Book Fast Track <ArrowRight size={16} />
-              </a>
+                Join Exec Pass <ArrowRight size={16} />
+              </Link>
             </div>
           </div>
         </section>
