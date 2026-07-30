@@ -119,7 +119,7 @@ const ExecPassContact = () => {
             </div>
 
             {/* Contact form */}
-            <div className="mt-16 max-w-2xl">
+            <div className="mt-16">
               <div className="ep-mono text-flare-ink mb-4">SEND A MESSAGE</div>
               <h2 className="ep-heading text-[30px] md:text-[36px] text-ink">Write to us directly</h2>
               <p className="mt-3 text-[16px] text-ink-muted">
@@ -209,7 +209,7 @@ const ExecPassContact = () => {
             </div>
 
 
-            <div className="mt-16 p-8 ep-bg-concrete ep-shadow-soft max-w-2xl" style={{ borderRadius: 20 }}>
+            <div className="mt-16 p-8 ep-bg-concrete ep-shadow-soft" style={{ borderRadius: 20 }}>
               <div className="ep-mono text-flare-ink mb-4">REGISTERED OFFICE</div>
               <address className="not-italic text-[16px] text-ink leading-relaxed">
                 MARVELLIANT B.V.<br />
