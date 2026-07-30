@@ -450,7 +450,7 @@ const ClosingCTA = () => {
     <div className="mx-auto max-w-container px-6 py-28 md:py-32">
       <div className="ep-mono text-flare-bright mb-8">READY WHEN YOU ARE</div>
       <h2 className="ep-heading text-bright text-[48px] md:text-[88px] max-w-4xl leading-[1.0]">
-        Travel less.<br />Fly clever.
+        Travel smarter.<br />Fly clever.
       </h2>
       <p className="mt-8 max-w-prose text-[19px] text-steel">
         Join the travellers who let a single membership handle security, check-in, lounges, claims
