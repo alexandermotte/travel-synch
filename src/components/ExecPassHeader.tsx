@@ -18,23 +18,18 @@ export const ExecPassHeader = () => {
 
   return (
     <header
-      className="sticky top-0 z-50 w-full border-b border-line-dark"
-      style={{
-        height: 72,
-        backgroundColor: "hsl(var(--ep-void) / 0.82)",
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
-      }}
+      className="sticky top-0 z-50 w-full border-b border-line ep-bg-paper"
+      style={{ height: 72, backgroundColor: "hsl(var(--ep-paper) / 0.88)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
     >
       <div className="mx-auto flex h-full max-w-container items-center justify-between px-6">
         <div className="flex items-center gap-10">
-          <AirsideMark variant="light" />
+          <AirsideMark variant="dark" />
           <nav className="hidden lg:flex items-center gap-8">
             {NAV.map((n) => (
               <Link
                 key={n.href}
                 to={n.href}
-                className="ep-mono text-steel hover:text-bright ep-ease"
+                className="ep-mono text-ink-muted hover:text-ink ep-ease"
               >
                 {n.label}
               </Link>
@@ -45,15 +40,14 @@ export const ExecPassHeader = () => {
         <div className="hidden lg:flex items-center gap-6">
           <a
             href={bookUrl}
-            className="ep-btn-type text-[13px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-5 py-2.5 ep-ease ep-press"
-            style={{ borderRadius: 12 }}
+            className="ep-btn-type text-[13px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-6 py-2.5 ep-ease ep-press rounded-full"
           >
             Book Fast Track
           </a>
         </div>
 
         <button
-          className="lg:hidden text-bright p-2"
+          className="lg:hidden text-ink p-2"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -62,22 +56,21 @@ export const ExecPassHeader = () => {
       </div>
 
       {open && (
-        <div className="lg:hidden ep-bg-void border-t border-line-dark">
+        <div className="lg:hidden ep-bg-paper border-t border-line">
           <nav className="mx-auto max-w-container px-6 py-6 flex flex-col gap-4">
             {NAV.map((n) => (
               <Link
                 key={n.href}
                 to={n.href}
                 onClick={() => setOpen(false)}
-                className="ep-mono text-bright"
+                className="ep-mono text-ink"
               >
                 {n.label}
               </Link>
             ))}
             <a
               href={bookUrl}
-              className="ep-btn-type text-[13px] uppercase tracking-wider bg-flare text-white px-5 py-3 text-center mt-2"
-              style={{ borderRadius: 12 }}
+              className="ep-btn-type text-[13px] uppercase tracking-wider bg-flare text-white px-5 py-3 text-center mt-2 rounded-full"
             >
               Book Fast Track
             </a>

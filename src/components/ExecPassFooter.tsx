@@ -19,8 +19,7 @@ export const ExecPassFooter = () => {
             </p>
             <a
               href={bookingUrl("", search)}
-              className="ep-btn-type text-[13px] uppercase tracking-wider inline-block bg-flare hover:bg-flare-bright text-white px-5 py-3 mt-8 ep-ease ep-press"
-              style={{ borderRadius: 12 }}
+              className="ep-btn-type text-[13px] uppercase tracking-wider inline-block bg-flare hover:bg-flare-bright text-white px-5 py-3 mt-8 ep-ease ep-press rounded-full"
             >
               Book Fast Track
             </a>
