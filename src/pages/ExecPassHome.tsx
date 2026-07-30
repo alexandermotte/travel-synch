@@ -344,10 +344,7 @@ const Plans = () => {
           ))}
         </div>
 
-        <p className="mt-8 max-w-4xl mx-auto text-[13px] text-ink-muted italic border-t border-line pt-6">
-          Fast Track and Smart Check-In are available only to active members (members that have
-          at least one successful subscription payment).
-        </p>
+        <PricingDisclaimer className="mt-8 mx-auto" />
       </div>
     </section>
   );
