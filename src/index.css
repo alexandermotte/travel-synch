@@ -137,6 +137,14 @@
     line-height: 1.02;
     font-variation-settings: "opsz" 144, "SOFT" 50;
   }
+  /* Sans display — stats + section headlines below the hero */
+  .ep-heading {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+
   .ep-wordmark {
     font-family: 'Fraunces', Georgia, serif;
     font-weight: 600;
