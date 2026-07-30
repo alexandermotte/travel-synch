@@ -9,6 +9,7 @@ const NAV = [
   { label: "How it works", href: "/how-it-works" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
+  { label: "Unsubscribe", href: "/unsubscribe" },
 ];
 
 export const ExecPassHeader = () => {
