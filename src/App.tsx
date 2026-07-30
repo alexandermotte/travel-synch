@@ -12,7 +12,9 @@ import About from "./pages/About";
 import HowItWorks from "./pages/HowItWorks";
 import ExecPassFAQ from "./pages/ExecPassFAQ";
 import ExecPassContact from "./pages/ExecPassContact";
+import PreCheckout from "./pages/PreCheckout";
 import NotFound from "./pages/NotFound";
+
 
 const queryClient = new QueryClient();
 
