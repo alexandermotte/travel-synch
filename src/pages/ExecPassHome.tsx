@@ -222,6 +222,8 @@ const plans = [
     id: "medium",
     name: "Medium",
     icon: Zap,
+    price: 49,
+    period: "every 3 months",
     tagline: "For the traveller who flies a few times a quarter.",
     highlight: false,
     features: [
