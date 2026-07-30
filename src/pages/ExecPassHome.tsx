@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useCurrency } from "@/contexts/CurrencyContext";
 import {
   ArrowRight,
   Plane,
@@ -221,6 +222,8 @@ const plans = [
     id: "medium",
     name: "Medium",
     icon: Zap,
+    price: 49,
+    period: "every 3 months",
     tagline: "For the traveller who flies a few times a quarter.",
     highlight: false,
     features: [
@@ -237,6 +240,8 @@ const plans = [
     id: "premium",
     name: "Premium",
     icon: Crown,
+    price: 79,
+    period: "every 3 months",
     tagline: "For the frequent flyer who lives out of a terminal.",
     highlight: true,
     features: [
@@ -255,6 +260,7 @@ const plans = [
 
 const Plans = () => {
   const { search } = useLocation();
+  const { formatPrice } = useCurrency();
   return (
     <section className="ep-bg-paper border-y border-line">
       <div className="mx-auto max-w-container px-6 py-24">
@@ -296,6 +302,20 @@ const Plans = () => {
                 {p.tagline}
               </h3>
 
+              <div className="mt-6 flex items-baseline gap-2">
+                <span
+                  className={`ep-heading text-[40px] leading-none ${p.highlight ? "text-bright" : "text-ink"}`}
+                >
+                  {formatPrice(p.price)}
+                </span>
+                <span className={`text-[14px] ${p.highlight ? "text-steel" : "text-ink-muted"}`}>
+                  {p.period}
+                </span>
+              </div>
+              <p className={`mt-2 text-[13px] ${p.highlight ? "text-steel" : "text-flare-ink"}`}>
+                3-day free trial · Cancel anytime
+              </p>
+
               <ul className="mt-8 space-y-3.5 flex-grow">
                 {p.features.map((f) => (
                   <li key={f} className="flex items-start gap-3">
@@ -323,6 +343,11 @@ const Plans = () => {
             </div>
           ))}
         </div>
+
+        <p className="mt-8 max-w-4xl mx-auto text-[13px] text-ink-muted italic border-t border-line pt-6">
+          Fast Track and Smart Check-In are available only to active members (members that have
+          at least one successful subscription payment).
+        </p>
       </div>
     </section>
   );
