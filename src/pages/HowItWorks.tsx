@@ -1,3 +1,4 @@
+import PricingDisclaimer from "@/components/PricingDisclaimer";
 import { useEffect, useRef, useState } from "react";
 import { useLocation, useSearchParams, Link } from "react-router-dom";
 import {
@@ -508,12 +509,7 @@ const HowItWorks = () => {
               ))}
             </div>
 
-            <p className="mt-8 max-w-4xl text-[13px] text-ink-muted italic border-t border-line pt-6">
-              Fast Track and Smart Check-In are available only to active members (members that have
-              at least one successful subscription payment). After the 3-day trial you will be
-              charged {formatPrice(49)} every 3 months (Medium) or {formatPrice(79)} every 3 months
-              (Premium), automatically debited from the card on file.
-            </p>
+            <PricingDisclaimer className="mt-8" />
           </div>
         </section>
 
