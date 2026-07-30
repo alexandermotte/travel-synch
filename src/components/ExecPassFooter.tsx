@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { AirsideMark } from "@/components/AirsideMark";
-import { bookingUrl, preCheckoutPath, LEGAL_LINKS, MEMBER_URL } from "@/lib/booking";
+import { preCheckoutPath, LEGAL_LINKS, MEMBER_URL } from "@/lib/booking";
 
 export const ExecPassFooter = () => {
   const { search } = useLocation();
