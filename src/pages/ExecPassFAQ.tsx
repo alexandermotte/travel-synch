@@ -62,6 +62,8 @@ const buildFaqs = (price: (n: number) => string) => [
 
 const ExecPassFAQ = () => {
   const { search } = useLocation();
+  const { formatPrice } = useCurrency();
+  const faqs = buildFaqs(formatPrice);
   const [open, setOpen] = useState(0);
 
   useEffect(() => {
