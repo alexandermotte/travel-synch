@@ -74,6 +74,13 @@ export const ExecPassFooter = () => {
               <a href="mailto:contact@exec-pass.com" className="block text-bright hover:text-flare-bright ep-ease">contact@exec-pass.com</a>
               <a href="tel:+442039362491" className="block text-bright hover:text-flare-bright ep-ease">+44 20 3936 2491</a>
             </div>
+            <div className="mt-5 pt-4 border-t border-line-dark">
+              <img
+                src="/images/payment-card.svg"
+                alt="Accepted payment methods — Visa, Mastercard, American Express"
+                className="h-8 opacity-70"
+              />
+            </div>
           </div>
         </div>
 
