@@ -302,6 +302,20 @@ const Plans = () => {
                 {p.tagline}
               </h3>
 
+              <div className="mt-6 flex items-baseline gap-2">
+                <span
+                  className={`ep-heading text-[40px] leading-none ${p.highlight ? "text-bright" : "text-ink"}`}
+                >
+                  {formatPrice(p.price)}
+                </span>
+                <span className={`text-[14px] ${p.highlight ? "text-steel" : "text-ink-muted"}`}>
+                  {p.period}
+                </span>
+              </div>
+              <p className={`mt-2 text-[13px] ${p.highlight ? "text-steel" : "text-flare-ink"}`}>
+                3-day free trial · Cancel anytime
+              </p>
+
               <ul className="mt-8 space-y-3.5 flex-grow">
                 {p.features.map((f) => (
                   <li key={f} className="flex items-start gap-3">
