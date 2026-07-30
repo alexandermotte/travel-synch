@@ -36,6 +36,18 @@ export function bookingUrl(path = "", search?: string) {
   return params ? `${base}?${params}` : base;
 }
 
+/**
+ * Internal pre-checkout route (plan selection) — keeps inbound attribution params
+ * so they can be forwarded onward to the booking app on the final hop.
+ */
+export function preCheckoutPath(plan?: "medium" | "premium", search?: string) {
+  const params = forwardedParams(search);
+  if (plan) params.set("plan", plan);
+  const qs = params.toString();
+  return qs ? `/pre-checkout?${qs}` : "/pre-checkout";
+}
+
+
 /** Legal routes live in the booking app only — one source of truth for compliance copy. */
 export const LEGAL_LINKS = [
   { label: "Terms & Conditions", path: "terms" },
