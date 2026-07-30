@@ -193,11 +193,13 @@ const PreCheckout = () => {
           </div>
         </section>
 
-        {/* Service selection */}
-        <section className="ep-bg-paper">
-          <div className="mx-auto max-w-container px-6 py-16">
-            <div className="ep-mono text-flare-ink mb-6">WHAT WOULD YOU LIKE TO START WITH?</div>
-            <div className="flex flex-wrap gap-3">
+        {/* Merged service selection + checkout */}
+        <section className="ep-bg-void ep-wash-void">
+          <div className="mx-auto max-w-container px-6 py-20 md:py-24">
+            <div className="ep-mono text-flare-bright mb-8">STEP 2 · CHOOSE & CHECKOUT</div>
+
+            {/* Business tabs */}
+            <div className="flex flex-wrap gap-3 mb-10">
               {(Object.keys(serviceDetails) as ServiceId[]).map((id) => {
                 const s = serviceDetails[id];
                 const active = service === id;
@@ -210,7 +212,7 @@ const PreCheckout = () => {
                     className={`inline-flex items-center gap-2 px-6 py-3 rounded-full text-[14px] ep-ease border ${
                       active
                         ? "bg-flare text-white border-flare"
-                        : "ep-bg-concrete text-ink-muted border-line hover:text-ink"
+                        : "text-steel border-[hsl(var(--ep-line-dark))] hover:text-bright hover:border-flare"
                     }`}
                   >
                     <s.icon size={16} /> {s.label}
@@ -219,30 +221,30 @@ const PreCheckout = () => {
               })}
             </div>
 
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
-              {serviceDetails[service].items.map((item, i) => (
-                <div key={item.title} className="ep-bg-concrete ep-shadow-soft p-8" style={{ borderRadius: 20 }}>
-                  <div className="ep-icon-plate mb-6">
-                    <item.icon size={20} strokeWidth={2} />
-                  </div>
-                  <div className="ep-mono text-ink-muted mb-2">0{i + 1}</div>
-                  <h3 className="ep-heading text-[22px] text-ink">{item.title}</h3>
-                  <p className="mt-3 text-[15px] text-ink-muted">{item.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Confirm */}
-        <section className="ep-bg-void ep-wash-void">
-          <div className="mx-auto max-w-container px-6 py-20 md:py-24">
-            <div className="ep-mono text-flare-bright mb-6">STEP 2 · SECURE CHECKOUT</div>
             <h2 className="ep-heading text-bright text-[36px] md:text-[52px] max-w-3xl leading-[1.05]">
               {plans.find((p) => p.id === selectedPlan)?.name} membership ·{" "}
               {serviceDetails[service].label}
             </h2>
-            <p className="mt-6 max-w-prose text-[17px] text-steel">
+
+            {/* Service highlights */}
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {serviceDetails[service].items.map((item, i) => (
+                <div
+                  key={item.title}
+                  className="ep-bg-graphite border border-[hsl(var(--ep-line-dark))] p-8"
+                  style={{ borderRadius: 20 }}
+                >
+                  <div className="ep-icon-plate mb-6">
+                    <item.icon size={20} strokeWidth={2} />
+                  </div>
+                  <div className="ep-mono text-steel mb-2">0{i + 1}</div>
+                  <h3 className="ep-heading text-[22px] text-bright">{item.title}</h3>
+                  <p className="mt-3 text-[15px] text-steel">{item.body}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-10 max-w-prose text-[17px] text-steel">
               You'll finish signing up on our secure booking app, with your selection already
               applied. Payment details, terms and confirmation happen there.
             </p>
