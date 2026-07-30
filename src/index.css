@@ -148,6 +148,14 @@
     font-weight: 600;
     letter-spacing: 0.01em;
   }
+  /* Micro-type only: chips, badges, small tabular captions. Never body copy. */
+  .ep-chip {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
 
   /* Grounds */
   .ep-bg-void { background-color: hsl(var(--ep-void)); color: hsl(var(--ep-bright)); }
