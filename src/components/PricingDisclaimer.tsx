@@ -1,4 +1,4 @@
-import { useCurrency } from "@/hooks/useCurrency";
+import { useCurrency } from "@/contexts/CurrencyContext";
 
 /**
  * Full-length pricing / membership disclaimer used under every pricing box.
