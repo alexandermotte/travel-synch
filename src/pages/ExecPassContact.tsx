@@ -112,7 +112,7 @@ const ExecPassContact = () => {
                     <r.icon size={20} strokeWidth={2} />
                   </div>
                   <div className="ep-mono text-ink-muted mb-2">{r.label}</div>
-                  <div className="ep-display text-[22px] text-ink break-words">{r.value}</div>
+                  <div className="ep-heading text-[20px] text-ink break-words">{r.value}</div>
                   <p className="mt-3 text-[15px] text-ink-muted">{r.note}</p>
                 </a>
               ))}
