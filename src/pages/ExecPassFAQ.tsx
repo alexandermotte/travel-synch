@@ -74,8 +74,8 @@ const ExecPassFAQ = () => {
   return (
     <div className="min-h-screen ep-bg-void">
       <Seo
-        title="Exec Pass FAQ — coverage, what's included, cancellation"
-        description="Answers before you book: what Fast Track is, which airports are covered, what's included, how automatic check-in works and how to cancel."
+        title="Exec Pass FAQ — membership, plans, billing and cancellation"
+        description="Everything about the Exec Pass travel membership: what Medium and Premium include, how billing and renewal work, when benefits activate and how to cancel."
         path="/faq"
         schema={[
           {
@@ -117,7 +117,7 @@ const ExecPassFAQ = () => {
                       </span>
                     </button>
                     {isOpen && (
-                      <p className="pb-6 pr-16 text-[16px] text-ink-muted max-w-prose animate-ep-fade-up">
+                      <p className="pb-6 pr-16 text-[16px] text-ink-muted max-w-prose whitespace-pre-line leading-relaxed animate-ep-fade-up">
                         {f.a}
                       </p>
                     )}
