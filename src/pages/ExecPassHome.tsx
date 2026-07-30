@@ -291,7 +291,7 @@ const Plans = () => {
                 </span>
               )}
               <div className="flex items-center gap-3 mb-6">
-                <div className="ep-icon-plate">
+                <div className={`ep-icon-plate ${p.highlight ? "text-white bg-white/10" : ""}`}>
                   <p.icon size={20} strokeWidth={2} />
                 </div>
                 <div className={`ep-mono ${p.highlight ? "text-flare-bright" : "text-ink-muted"}`}>
