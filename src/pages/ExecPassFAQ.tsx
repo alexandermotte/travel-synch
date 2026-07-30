@@ -4,46 +4,66 @@ import { ArrowRight, Plus, Minus } from "lucide-react";
 import { ExecPassHeader } from "@/components/ExecPassHeader";
 import { ExecPassFooter } from "@/components/ExecPassFooter";
 import { Seo } from "@/components/Seo";
-import { bookingUrl, preCheckoutPath } from "@/lib/booking";
+import { useCurrency } from "@/contexts/CurrencyContext";
+import { preCheckoutPath } from "@/lib/booking";
 
-/** Pre-purchase questions only. Product and account questions live in the booking app. */
-const FAQS = [
+/** Pre-purchase questions about the Exec Pass membership. Account questions live in the booking app. */
+const buildFaqs = (price: (n: number) => string) => [
   {
-    q: "What is Fast Track?",
-    a: "A dedicated priority lane at airport security. You walk past the general queue and go straight through to airside.",
+    q: "How does Exec Pass work?",
+    a: `Exec Pass is a travel membership. One subscription gives you access to Fast Track security, Smart Check-In, airport lounges, attraction ticket discounts, flight compensation and lost luggage claims, travel e-books and e-SIM connectivity.\n\nThere are no hidden fees and no inflated prices — you pay a flat membership fee of ${price(
+      49,
+    )} or ${price(79)} every 3 months and use the benefits whenever you travel.`,
   },
   {
-    q: "Which airports are covered?",
-    a: "More than 200 airports in our network operate a Fast Track lane we can book. The booking app confirms availability for your terminal before you commit.",
+    q: "What is the difference between Medium and Premium?",
+    a: `Medium (${price(
+      49,
+    )} every 3 months) includes 2 Fast Track accesses per month, Smart Check-In, limited attraction discounts, 2 flight compensation and 2 lost luggage claims per quarter, and 1 e-SIM.\n\nPremium (${price(
+      79,
+    )} every 3 months) includes 5 Fast Track accesses per month, Smart Check-In, exclusive attraction and lounge discounts, unlimited compensation and lost luggage claims, travel e-books, and 2 e-SIMs plus a virtual phone number.`,
   },
   {
-    q: "What is included?",
-    a: "Priority Fast Track security, access to 500+ airport lounges worldwide, automatic check-in with the boarding pass sent to your phone, and a 24/7 human concierge on WhatsApp.",
+    q: "When can I start using my benefits?",
+    a: "Straight away. Your membership starts with a 3-day free trial, and benefits activate after your first successful payment — simply book a Fast Track or a Smart Check-In to become an active member and everything else unlocks with it.",
   },
   {
-    q: "How does automatic check-in work?",
-    a: "We watch the airline's check-in window and check you in the moment it opens, then send the boarding pass to your phone.",
+    q: "Is this a one-time payment?",
+    a: `No — Exec Pass is a membership, not a one-off purchase. After the 3-day free trial your plan renews automatically every 3 months at ${price(
+      49,
+    )} (Medium) or ${price(79)} (Premium), charged to the card you signed up with, so your benefits never lapse.`,
+  },
+  {
+    q: "Will my membership renew automatically?",
+    a: "Yes, so you don't have to think about it. At the end of each trial or billing period we charge the same card you subscribed with. You can cancel at any moment before the renewal date, with no cancellation fee.",
+  },
+  {
+    q: "Can I cancel at any time?",
+    a: "You are free to cancel whenever you like. Use the cancellation page or contact our support team, available seven days a week. To avoid automatic renewal, make sure your cancellation is completed before the end of the current trial or billing period.",
   },
   {
     q: "Do I need to change how I book flights?",
-    a: "No. Book flights however you already do, then add the flight details in the booking app and we handle the airport side.",
+    a: "No. Keep booking flights however you already do. Add the flight details to your member area and we handle the airport side — security, check-in, lounge access and claims.",
   },
   {
-    q: "Can I cancel?",
-    a: "Yes. Cancellation is handled in the booking app, and the full cancellation terms are set out in the Terms & Conditions and Subscription Terms there.",
+    q: "Which airports are covered?",
+    a: "Fast Track is available at more than 200 airports and lounge access at 500+ locations worldwide. Availability for your specific terminal is confirmed before you complete any booking.",
   },
   {
     q: "How do I reach support?",
-    a: "A human concierge is available 24/7 on WhatsApp, in nine languages, for changes, rebookings and ground logistics.",
+    a: "A human concierge is available seven days a week for changes, rebookings and ground logistics, and you can always write to contact@exec-pass.com.",
   },
   {
-    q: "Is Exec Pass an airport?",
-    a: "No. Exec Pass is not affiliated with any airport. We are an independent operator that books priority services on your behalf.",
+    q: "Is Exec Pass an airline or an airport?",
+    a: "No. Exec Pass is an independent travel membership operated by Marvelliant B.V. and is not affiliated with any airline or airport authority. We book priority travel services on your behalf.",
   },
 ];
 
+
 const ExecPassFAQ = () => {
   const { search } = useLocation();
+  const { formatPrice } = useCurrency();
+  const faqs = buildFaqs(formatPrice);
   const [open, setOpen] = useState(0);
 
   useEffect(() => {
@@ -54,14 +74,14 @@ const ExecPassFAQ = () => {
   return (
     <div className="min-h-screen ep-bg-void">
       <Seo
-        title="Exec Pass FAQ — coverage, what's included, cancellation"
-        description="Answers before you book: what Fast Track is, which airports are covered, what's included, how automatic check-in works and how to cancel."
+        title="Exec Pass FAQ — membership, plans, billing and cancellation"
+        description="Everything about the Exec Pass travel membership: what Medium and Premium include, how billing and renewal work, when benefits activate and how to cancel."
         path="/faq"
         schema={[
           {
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: FAQS.map((f) => ({
+            mainEntity: faqs.map((f) => ({
               "@type": "Question",
               name: f.q,
               acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -83,7 +103,7 @@ const ExecPassFAQ = () => {
         <section className="ep-bg-paper">
           <div className="mx-auto max-w-container px-6 py-24">
             <div className="max-w-3xl border-t border-line">
-              {FAQS.map((f, i) => {
+              {faqs.map((f, i) => {
                 const isOpen = open === i;
                 return (
                   <div key={f.q} className="border-b border-line">
@@ -97,7 +117,7 @@ const ExecPassFAQ = () => {
                       </span>
                     </button>
                     {isOpen && (
-                      <p className="pb-6 pr-16 text-[16px] text-ink-muted max-w-prose animate-ep-fade-up">
+                      <p className="pb-6 pr-16 text-[16px] text-ink-muted max-w-prose whitespace-pre-line leading-relaxed animate-ep-fade-up">
                         {f.a}
                       </p>
                     )}
