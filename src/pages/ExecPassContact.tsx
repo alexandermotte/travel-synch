@@ -185,7 +185,7 @@ const ExecPassContact = () => {
                 <p className="mt-2">
                   You may exercise your rights by writing to: contact@exec-pass.com. To learn more about how your data
                   is managed and to exercise your rights, please refer to our{" "}
-                  <Link to="/privacy-policy" className="text-flare-ink underline underline-offset-2">
+                  <Link to="/privacy" className="text-flare-ink underline underline-offset-2">
                     Privacy Policy
                   </Link>
                   .
