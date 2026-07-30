@@ -1,8 +1,20 @@
-import { useEffect } from "react";
-import { MessageCircle, Mail, Phone } from "lucide-react";
+import { useEffect, useState } from "react";
+import { MessageCircle, Mail, Phone, Loader2, CheckCircle, ArrowRight } from "lucide-react";
+import { z } from "zod";
+import { toast } from "sonner";
+import { Link } from "react-router-dom";
 import { ExecPassHeader } from "@/components/ExecPassHeader";
 import { ExecPassFooter } from "@/components/ExecPassFooter";
 import { Seo } from "@/components/Seo";
+
+const contactSchema = z.object({
+  firstName: z.string().trim().min(1, { message: "First name is required" }).max(100),
+  lastName: z.string().trim().max(100),
+  email: z.string().trim().email({ message: "Enter a valid email address" }).max(255),
+  phone: z.string().trim().min(1, { message: "Phone number is required" }).max(30),
+  message: z.string().trim().min(1, { message: "Please write a message" }).max(1000),
+});
+
 
 const ROUTES = [
   {
