@@ -79,7 +79,7 @@ const ExecPassFAQ = () => {
           {
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: FAQS.map((f) => ({
+            mainEntity: faqs.map((f) => ({
               "@type": "Question",
               name: f.q,
               acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -101,7 +101,7 @@ const ExecPassFAQ = () => {
         <section className="ep-bg-paper">
           <div className="mx-auto max-w-container px-6 py-24">
             <div className="max-w-3xl border-t border-line">
-              {FAQS.map((f, i) => {
+              {faqs.map((f, i) => {
                 const isOpen = open === i;
                 return (
                   <div key={f.q} className="border-b border-line">
