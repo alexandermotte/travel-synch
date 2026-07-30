@@ -209,7 +209,7 @@ const ExecPassContact = () => {
             </div>
 
 
-            <div className="mt-16 p-8 ep-bg-concrete ep-shadow-soft max-w-2xl" style={{ borderRadius: 20 }}>
+            <div className="mt-16 p-8 ep-bg-concrete ep-shadow-soft" style={{ borderRadius: 20 }}>
               <div className="ep-mono text-flare-ink mb-4">REGISTERED OFFICE</div>
               <address className="not-italic text-[16px] text-ink leading-relaxed">
                 MARVELLIANT B.V.<br />
