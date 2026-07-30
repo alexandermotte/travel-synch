@@ -5,7 +5,7 @@ export const en: CookieContent = {
   title: 'Cookie Policy',
   lastUpdated: 'Last updated: 9 June 2026',
   intro: [
-    'This Cookie Policy explains how Marvelliant B.V. uses cookies and similar technologies when you visit the website trip-sorted.com (hereinafter, the "Website").',
+    'This Cookie Policy explains how Marvelliant B.V. uses cookies and similar technologies when you visit the website exec-pass.com (hereinafter, the "Website").',
     'In accordance with the GDPR and the recommendations of the relevant supervisory authorities, cookies that are not strictly necessary are placed on your device only after prior consent that is freely given, specific, informed, and unambiguous has been obtained through our cookie consent management banner.',
     'Refusing cookies is made as simple as accepting them.',
   ],
@@ -116,5 +116,5 @@ export const en: CookieContent = {
   art9Intro: 'For any questions regarding this Cookie Policy or our use of cookies, you may contact us:',
   art9Postal: 'Postal: Marvelliant B.V. – Bos en Lommerplein 280, 1055RW Amsterdam, Netherlands',
   art9Phone: 'Phone: +4420 3936 2491',
-  art9Website: 'Website: trip-sorted.com',
+  art9Website: 'Website: exec-pass.com',
 };

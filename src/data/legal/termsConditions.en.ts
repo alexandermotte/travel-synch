@@ -1,10 +1,10 @@
 import type { TermsContent } from './termsConditions.types';
 
-const EMAIL = '<a href="mailto:contact@trip-sorted.com">contact@trip-sorted.com</a>';
+const EMAIL = '<a href="mailto:contact@exec-pass.com">contact@exec-pass.com</a>';
 const DPO = '<a href="mailto:dpo@marvelliantbv.com">dpo@marvelliantbv.com</a>';
-const PRIVACY = '<a href="https://trip-sorted.com/en/privacy" target="_blank" rel="noopener noreferrer">https://trip-sorted.com/en/privacy</a>';
-const SITE = '<a href="https://trip-sorted.com" target="_blank" rel="noopener noreferrer">https://trip-sorted.com</a>';
-const CONTACT_FORM = '<a href="https://trip-sorted.com/en/contacts" target="_blank" rel="noopener noreferrer">https://trip-sorted.com/en/contacts</a>';
+const PRIVACY = '<a href="https://exec-pass.com/privacy" target="_blank" rel="noopener noreferrer">https://exec-pass.com/privacy</a>';
+const SITE = '<a href="https://exec-pass.com" target="_blank" rel="noopener noreferrer">https://exec-pass.com</a>';
+const CONTACT_FORM = '<a href="https://exec-pass.com/contact" target="_blank" rel="noopener noreferrer">https://exec-pass.com/contact</a>';
 const ODR = '<a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr</a>';
 
 export const en: TermsContent = {
@@ -16,7 +16,7 @@ export const en: TermsContent = {
       id: 'preamble',
       title: 'PREAMBLE',
       blocks: [
-        { type: 'p', html: `These General Terms and Conditions of Sale determine the terms and conditions under which Marvelliant B.V., a company incorporated under Dutch law and registered under number 96513519 (RSIN 867643298), whose registered office is located at Bos en Lommerplein 280, 1055RW Amsterdam, Netherlands (hereinafter, "<strong>Marvelliant B.V.</strong>", "<strong>We</strong>" or "<strong>Us</strong>"), provides the Trip Sorted services via the website ${SITE} (hereinafter, the "<strong>Website</strong>").` },
+        { type: 'p', html: `These General Terms and Conditions of Sale determine the terms and conditions under which Marvelliant B.V., a company incorporated under Dutch law and registered under number 96513519 (RSIN 867643298), whose registered office is located at Bos en Lommerplein 280, 1055RW Amsterdam, Netherlands (hereinafter, "<strong>Marvelliant B.V.</strong>", "<strong>We</strong>" or "<strong>Us</strong>"), provides the Exec Pass services via the website ${SITE} (hereinafter, the "<strong>Website</strong>").` },
         { type: 'p', html: 'These General Terms and Conditions of Sale apply to the services offered by Marvelliant B.V., namely digital and concierge services in the field of travel. We do not act as an organizer of package travel services, nor as a seller of travel services, within the meaning of the applicable regulations. We offer assistance services and ancillary services related to travel. These services are provided independently and are not intended to constitute a single travel service or a travel package.' },
         { type: 'p', html: 'These General Terms and Conditions of Sale are made available to you prior to any subscription to a service, in order to enable you to review, in a clear and comprehensible manner, the applicable terms and conditions.' },
         { type: 'p', html: 'The Website and the services provided by Marvelliant B.V. are intended for users located in the European Union and the United Kingdom only. By continuing to use the Website, you confirm that you are located in the European Union or the United Kingdom.' },
