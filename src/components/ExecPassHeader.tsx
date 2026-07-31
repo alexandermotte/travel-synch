@@ -83,6 +83,13 @@ export const ExecPassHeader = () => {
                 {t(`nav.${n.key}`)}
               </LangLink>
             ))}
+            <a
+              href={MEMBER_URL}
+              onClick={() => setOpen(false)}
+              className="ep-mono text-ink ep-ease"
+            >
+              {t("cta.login")}
+            </a>
             <LangLink
               to={bookUrl}
               onClick={() => setOpen(false)}
