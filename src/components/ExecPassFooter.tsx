@@ -17,12 +17,6 @@ export const ExecPassFooter = () => {
             <AirsideMark variant="light" />
             <p className="ep-mono text-steel mt-6">{t("footer.tagline")}</p>
             <p className="mt-6 max-w-prose text-[15px] text-steel">{t("footer.blurb")}</p>
-            <LangLink
-              to={preCheckoutPath(undefined, search)}
-              className="ep-btn-type text-[13px] uppercase tracking-wider inline-block bg-flare hover:bg-flare-bright text-white px-5 py-3 mt-8 ep-ease ep-press rounded-full"
-            >
-              {t("cta.join")}
-            </LangLink>
 
           </div>
 
