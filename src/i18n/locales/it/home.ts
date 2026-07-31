@@ -1,0 +1,181 @@
+export default {
+  seo: {
+    title: "Exec Pass — l'abbonamento di viaggio che ti fa volare furbo",
+    description:
+      "Un solo abbonamento di viaggio: Fast Track alla sicurezza in oltre 200 aeroporti, check-in automatico, oltre 500 lounge, rimborsi per i voli, recupero bagagli, dati eSIM e un concierge 24/7. Due piani.",
+  },
+  hero: {
+    badge: "L'abbonamento di viaggio · In tutto il mondo",
+    kicker: "UN ABBONAMENTO · OGNI VIAGGIO",
+    brandLine1: "Exec",
+    brandLine2: "Pass",
+    tagline: "Vola furbo.",
+    panelKicker: "◆ VIAGGIARE, STILE ABBONAMENTO",
+    titleA: "Ogni vantaggio di viaggio.",
+    titleB: "Un solo abbonamento.",
+    body: "Exec Pass è l'abbonamento di viaggio che si occupa delle parti noiose del volare — Fast Track alla sicurezza, check-in automatico, lounge, gestione dei reclami, recupero bagagli e connettività globale — con un concierge umano dietro a tutto. Due piani, un solo obiettivo: volare furbo.",
+    join: "Unisciti a Exec Pass",
+    trust: "Sicuro · Conferma immediata · Assistenza umana 24/7",
+    howItWorks: "Scopri come funziona →",
+  },
+  stats: {
+    kicker: "EXEC PASS, IN NUMERI",
+    items: [
+      { value: "100.000+", label: "Viaggiatori serviti nella nostra rete" },
+      { value: "200+", label: "Aeroporti nella nostra rete" },
+      { value: "500+", label: "Lounge disponibili nel mondo" },
+      { value: "24/7", label: "Assistenza concierge umana" },
+    ],
+  },
+  services: {
+    kicker: "01 / COSA INCLUDE L'ABBONAMENTO",
+    title: "Tutto ciò che ti serve, in un solo abbonamento.",
+    body: "Nove servizi di viaggio che normalmente significherebbero nove account, nove fatture e nove code di assistenza. Con Exec Pass stanno dietro un unico abbonamento.",
+    howItWorks: "Come funziona →",
+    items: [
+      {
+        id: "fast-track",
+        name: "Fast Track alla sicurezza",
+        body: "Una corsia prioritaria dedicata in ogni terminal incluso — oltre la coda generale, dritto avanti.",
+      },
+      {
+        id: "checkin",
+        name: "Check-in automatico",
+        body: "Ti registriamo nel momento in cui la compagnia aerea apre il check-in, e inviamo la carta d'imbarco sul tuo telefono.",
+      },
+      {
+        id: "lounges",
+        name: "Oltre 500 lounge aeroportuali",
+        body: "Tariffe riservate su oltre cinquecento lounge nel mondo, prenotabili dallo stesso posto della tua corsia prioritaria.",
+      },
+      {
+        id: "compensation",
+        name: "Rimborsi per i voli",
+        body: "Volo in ritardo, cancellato o negato imbarco? Presentiamo il reclamo e sollecitiamo la compagnia per quanto ti spetta.",
+      },
+      {
+        id: "luggage",
+        name: "Recupero bagagli",
+        body: "Bagagli smarriti? Ci occupiamo noi del tracciamento e delle pratiche di reclamo finché non tornano da te.",
+      },
+      {
+        id: "esim",
+        name: "Dati eSIM all'estero",
+        body: "Dati mobili immediati all'atterraggio — niente cambio SIM, niente costi di roaming, attivati prima che tu scenda dall'aereo.",
+      },
+      {
+        id: "attractions",
+        name: "Attrazioni e musei",
+        body: "Prezzi riservati e ingresso senza coda a monumenti, musei ed esperienze nelle città in cui atterri.",
+      },
+      {
+        id: "guides",
+        name: "Guide di viaggio ed e-book",
+        body: "Guide di destinazione curate con percorsi, orari e dettagli locali per i posti in cui atterri.",
+      },
+      {
+        id: "concierge",
+        name: "Concierge umano 24/7",
+        body: "Uno specialista su WhatsApp a qualsiasi ora per modifiche, riprenotazioni e logistica a terra. Non un chatbot.",
+      },
+    ],
+  },
+  membership: {
+    kicker: "02 / DUE MODI PER VOLARE FURBO",
+    title: "Scegli il tuo abbonamento.",
+    body: "Entrambi i piani vengono fatturati come un semplice abbonamento di viaggio e possono essere cancellati in qualsiasi momento. Il prezzo e i termini attuali vengono mostrati prima della conferma.",
+    mostChosen: "Il più scelto",
+    trial: "3 giorni di prova gratuita · Cancella quando vuoi",
+    choose: "Scegli",
+    plans: [
+      {
+        id: "medium",
+        name: "Medium",
+        period: "ogni 3 mesi",
+        tagline: "Per chi vola qualche volta a trimestre.",
+        features: [
+          "2 accessi Fast Track al mese",
+          "Check-in automatico incluso",
+          "Tariffe riservate su oltre 500 lounge",
+          "2 rimborsi per i voli a trimestre",
+          "2 richieste per bagagli smarriti a trimestre",
+          "1 eSIM per i dati all'estero",
+          "Concierge 24/7 su WhatsApp",
+        ],
+      },
+      {
+        id: "premium",
+        name: "Premium",
+        period: "ogni 3 mesi",
+        tagline: "Per chi vola spesso e vive tra un terminal e l'altro.",
+        features: [
+          "5 accessi Fast Track al mese",
+          "Check-in automatico incluso",
+          "Le migliori tariffe riservate su oltre 500 lounge",
+          "Rimborsi per i voli illimitati",
+          "Recupero bagagli illimitato",
+          "2 eSIM più numero virtuale",
+          "Sconti su biglietti per attrazioni e musei",
+          "E-book e guide di viaggio curate",
+          "Concierge 24/7 prioritario",
+        ],
+      },
+    ],
+  },
+  difference: {
+    kicker: "03 / DIFFERENZA",
+    title: "Un solo brand per tutto il viaggio.",
+    body: "Viaggiare bene di solito significa una serie di servizi separati. Exec Pass sostituisce tutto con un abbonamento.",
+    colTask: "ATTIVITÀ DI VIAGGIO",
+    colOwn: "DA SOLO",
+    colExec: "CON EXEC PASS",
+    rows: [
+      ["Corsia sicurezza", "Coda generale", "Priorità Fast Track"],
+      ["Check-in", "Tu, al banco", "Automatico, sul telefono"],
+      ["Lounge", "Siti di terze parti", "Oltre 500 a tariffe riservate"],
+      ["Volo in ritardo", "Moduli reclamo della compagnia", "Presentiamo e solleciamo noi"],
+      ["Bagaglio smarrito", "Solleciti infiniti", "Gestiamo noi il reclamo"],
+      ["Dati all'estero", "Costi di roaming", "eSIM inclusa"],
+      ["Cambio di programma", "Musica d'attesa", "Concierge su WhatsApp"],
+    ],
+  },
+  faq: {
+    kicker: "04 / DOMANDE",
+    title: "Le risposte, prima che tu chieda.",
+    items: [
+      {
+        q: "Cos'è Exec Pass?",
+        a: "Un abbonamento di viaggio. Un solo abbonamento copre Fast Track alla sicurezza, check-in automatico, accesso alle lounge, rimborsi e reclami bagagli, dati eSIM, biglietti per attrazioni e un concierge umano 24/7.",
+      },
+      {
+        q: "Qual è la differenza tra i due piani?",
+        a: "Medium è adatto a chi vola qualche volta a trimestre: 2 accessi Fast Track al mese, check-in, tariffe lounge, un eSIM e un numero limitato di reclami. Premium è pensato per chi vola spesso: 5 accessi Fast Track al mese, rimborsi e reclami bagagli illimitati, due eSIM, sconti sui biglietti e concierge prioritario.",
+      },
+      {
+        q: "Posso cancellare?",
+        a: "Sì. Exec Pass è un abbonamento di viaggio a rinnovo continuo che puoi cancellare in qualsiasi momento dalla tua area membri. I termini completi sono mostrati prima della conferma.",
+      },
+      {
+        q: "Quali aeroporti sono coperti?",
+        a: "Oltre 200 aeroporti nella nostra rete hanno una corsia Fast Track prenotabile, e oltre 500 lounge sono disponibili per i membri. La copertura per il tuo terminal viene mostrata prima di ogni prenotazione.",
+      },
+      {
+        q: "Come contatto l'assistenza?",
+        a: "Un concierge umano è disponibile 24/7 su WhatsApp, in nove lingue, per modifiche, riprenotazioni, reclami e logistica a terra.",
+      },
+      {
+        q: "Exec Pass è un aeroporto o una compagnia aerea?",
+        a: "No. Exec Pass non è affiliato a nessun aeroporto o compagnia aerea. Siamo un brand di viaggio indipendente che organizza servizi prioritari per tuo conto.",
+      },
+    ],
+  },
+  cta: {
+    kicker: "PRONTI QUANDO LO SEI TU",
+    titleLine1: "L'aeroporto, gestito.",
+    titleLine2: "Vola furbo.",
+    body: "Un abbonamento si occupa di sicurezza, check-in, lounge, reclami e connettività — così arrivi all'ultimo minuto e prendi comunque il volo.",
+    join: "Unisciti a Exec Pass",
+    howItWorks: "Scopri come funziona →",
+  },
+  documentTitle: "ExecPass - Vola furbo.",
+} as const;

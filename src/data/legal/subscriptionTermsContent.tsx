@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export type LegalLang = "en" | "fr" | "de" | "pt" | "es" | "it" | "el";
+export type LegalLang = "en" | "fr" | "de" | "pt" | "es" | "it" | "el" | "tr" | "pl";
 
 interface SubscriptionTermsContent {
   badge: string;
@@ -154,5 +154,45 @@ export const subscriptionTermsTranslations: Record<LegalLang, SubscriptionTermsC
     cancelHow: (link) => <>Για να ακυρώσετε τη συνδρομή σας, επικοινωνήστε με την υποστήριξη πελατών μας τηλεφωνικά στο +4420 3936 2491, μέσω email στο contact@exec-pass.com ή μέσω της φόρμας επικοινωνίας στο {link}</>,
     noSell: "Η Marvelliant B.V. δεν πωλεί τις πληροφορίες των πελατών της και τα προσωπικά δεδομένα χρησιμοποιούνται μόνο για την επικοινωνία με τους πελάτες και την παροχή του επιθυμητού επιπέδου υπηρεσιών.",
     pci: "Η Marvelliant B.V. χρησιμοποιεί Παρόχους Υπηρεσιών Πληρωμών που συμμορφώνονται με τα απαιτούμενα πρότυπα ασφαλείας PCI DSS.",
+  },
+  tr: {
+    badge: "Hukuki",
+    title: "Abonelik Koşulları",
+    intro: "Marvelliant B.V. hizmetlerine abonelik, aşağıdaki avantajlara erişim sağlar:",
+    services: [
+      "Havalimanı Hızlı Geçiş",
+      "Otomatik Check-in",
+      "Konsiyerj Hizmeti",
+      "Seyahat E-Kitapları",
+      "Havalimanı Lounge'ları",
+      "Uçuş Tazminatı",
+      "Kayıp Bagaj Kurtarma",
+      "E-SIM",
+    ],
+    trialText: (fp) => <>Abonelik, size üye alanına 3 gün boyunca ücretsiz erişim sağlar. Bu deneme süresinin sonunda, çeyrek başına {fp(49)} veya her 3 ayda bir {fp(79)} fiyatla abonelik uygulanacaktır. Tüm abonelik ayrıcalıkları ilk ödemenizden sonra etkinleşir — aktif üye olmak için sadece bir Fast Track (fiyat havalimanına göre değişir) veya Check-In ({fp(0.79)} karşılığında) satın almanız yeterlidir. Ödeme, yıl dönümü tarihinde kredi kartınızdan otomatik olarak tahsil edilecektir.</>,
+    cancelAnytime: "Aboneliğinizi herhangi bir koşul olmaksızın istediğiniz zaman iptal edebilirsiniz.",
+    cancelHow: (link) => <>Aboneliğinizi iptal etmek için lütfen müşteri destek ekibimizle +4420 3936 2491 numaralı telefondan, contact@exec-pass.com adresinden e-posta yoluyla veya iletişim formumuz üzerinden {link} bağlantısını takip ederek iletişime geçin</>,
+    noSell: "Marvelliant B.V. müşterilerinin bilgilerini satmaz ve kişisel veriler yalnızca müşterilerle iletişim kurmak ve onlara istenen düzeyde hizmet sunmak amacıyla kullanılır.",
+    pci: "Marvelliant B.V., gerekli PCI DSS güvenlik standartlarına uyan Ödeme Hizmet Sağlayıcıları kullanır.",
+  },
+  pl: {
+    badge: "Prawne",
+    title: "Warunki Subskrypcji",
+    intro: "Subskrypcja usług Marvelliant B.V. zapewnia dostęp do następujących korzyści:",
+    services: [
+      "Szybka ścieżka na lotnisku",
+      "Automatyczne odprawy",
+      "Usługa concierge",
+      "E-booki podróżnicze",
+      "Salonik lotniskowy",
+      "Odszkodowanie za lot",
+      "Odzyskiwanie zagubionego bagażu",
+      "E-SIM",
+    ],
+    trialText: (fp) => <>Subskrypcja daje Ci dostęp do strefy członkowskiej przez 3 dni za darmo. Po zakończeniu tego okresu próbnego zastosowanie będzie miała subskrypcja w cenie {fp(49)} za kwartał lub {fp(79)} co 3 miesiące. Wszystkie korzyści z subskrypcji aktywują się po pierwszej płatności — wystarczy zakupić Fast Track (cena zależy od lotniska) lub Check-In (za {fp(0.79)}), aby stać się aktywnym członkiem. Płatność będzie realizowana poprzez automatyczne obciążenie karty kredytowej w dniu rocznicy.</>,
+    cancelAnytime: "Możesz anulować subskrypcję w dowolnym momencie i bez żadnych warunków.",
+    cancelHow: (link) => <>Aby anulować subskrypcję, skontaktuj się z naszym działem obsługi klienta telefonicznie pod numerem +4420 3936 2491, e-mailem na adres contact@exec-pass.com lub za pośrednictwem naszego formularza kontaktowego, klikając {link}</>,
+    noSell: "Marvelliant B.V. nie sprzedaje informacji o swoich klientach, a dane osobowe są wykorzystywane wyłącznie w celu komunikacji z klientami i zapewnienia im pożądanego poziomu usług.",
+    pci: "Marvelliant B.V. korzysta z Dostawców Usług Płatniczych, którzy przestrzegają wymaganych standardów bezpieczeństwa PCI DSS.",
   },
 };

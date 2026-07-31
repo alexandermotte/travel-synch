@@ -7,83 +7,70 @@ import { ExecPassFooter } from "@/components/ExecPassFooter";
 import { Seo } from "@/components/Seo";
 import { BOOKING_ORIGIN, BOOKING_LOCALE, forwardedParams } from "@/lib/booking";
 import { useCurrency } from "@/contexts/CurrencyContext";
+import { useT } from "@/i18n/LanguageContext";
 
 type PlanId = "medium" | "premium";
 type ServiceId = "fast-track" | "check-in";
 
 const CHECKIN_ORIGIN = "https://checkin.exec-pass.com";
 
-const plans = [
-  {
-    id: "medium" as PlanId,
-    name: "Medium",
-    icon: Zap,
-    price: 49,
-    period: "every 3 months",
-    trial: "3 days free trial",
-    tagline: "Smart travel, frequent and hassle-free.",
-    features: [
-      "Up to 2 Fast Track accesses per month",
-      "Automatic check-in included",
-      "Member rates on 500+ lounges",
-      "2 flight compensation claims per quarter",
-      "2 luggage recovery claims per quarter",
-      "1 eSIM for data abroad",
-    ],
-  },
-  {
-    id: "premium" as PlanId,
-    name: "Premium",
-    icon: Crown,
-    price: 79,
-    period: "every 3 months",
-    trial: "3 days free trial",
-    badge: "Recommended",
-    tagline: "For the frequent flyer who lives out of a terminal.",
-    features: [
-      "Up to 5 Fast Track accesses per month",
-      "Unlimited automatic check-ins",
-      "Best member rates on 500+ lounges",
-      "Unlimited flight compensation claims",
-      "Unlimited luggage recovery claims",
-      "2 eSIMs plus virtual number",
-      "Discounted attraction & museum tickets",
-    ],
-  },
-];
+const planMeta: Record<PlanId, { icon: typeof Zap; price: number }> = {
+  medium: { icon: Zap, price: 49 },
+  premium: { icon: Crown, price: 79 },
+};
 
-const serviceDetails: Record<ServiceId, { icon: typeof Zap; label: string; items: { icon: typeof Zap; title: string; body: string }[] }> = {
-  "fast-track": {
-    icon: Zap,
-    label: "Fast Track",
-    items: [
-      { icon: TrendingUp, title: "Convenience", body: "A dedicated lane straight to the security checkpoint, past the general queue." },
-      { icon: Globe, title: "Available worldwide", body: "Fast Track is available at more than 200 airports in the Exec Pass network." },
-      { icon: Clock, title: "Time saving", body: "Reach the boarding gate faster and without rushing, even on a tight connection." },
-    ],
-  },
-  "check-in": {
-    icon: CheckSquare,
-    label: "Automatic Check-In",
-    items: [
-      { icon: ScanLine, title: "Automated", body: "We watch the airline window and check you in the moment it opens — no desk, no app." },
-      { icon: Clock, title: "Time efficient", body: "Your boarding pass lands on your phone while you're still on the way to the airport." },
-      { icon: Sparkles, title: "Seamless", body: "One membership handles the formalities from booking through to boarding." },
-    ],
-  },
+const serviceMeta: Record<ServiceId, { icon: typeof Zap; itemIcons: (typeof Zap)[] }> = {
+  "fast-track": { icon: Zap, itemIcons: [TrendingUp, Globe, Clock] },
+  "check-in": { icon: CheckSquare, itemIcons: [ScanLine, Clock, Sparkles] },
 };
 
 const PreCheckout = () => {
   const { search } = useLocation();
   const [searchParams] = useSearchParams();
   const { formatPrice, currency } = useCurrency();
+  const t = useT("preCheckout");
   const [selectedPlan, setSelectedPlan] = useState<PlanId>("premium");
   const [service, setService] = useState<ServiceId>("fast-track");
 
+  const plans = useMemo(
+    () =>
+      (["medium", "premium"] as PlanId[]).map((id) => ({
+        id,
+        name: t<string>(`plans.${id}.name`),
+        icon: planMeta[id].icon,
+        price: planMeta[id].price,
+        period: t<string>(`plans.${id}.period`),
+        trial: t<string>(`plans.${id}.trial`),
+        badge: id === "premium" ? t<string>("plans.premium.badge") : undefined,
+        tagline: t<string>(`plans.${id}.tagline`),
+        features: t<string[]>(`plans.${id}.features`),
+      })),
+    [t]
+  );
+
+  const serviceDetails = useMemo(() => {
+    const build = (id: ServiceId) => {
+      const titles = t<{ title: string; body: string }[]>(`services.${id}.items`);
+      return {
+        icon: serviceMeta[id].icon,
+        label: t<string>(`services.${id}.label`),
+        items: titles.map((item, i) => ({
+          icon: serviceMeta[id].itemIcons[i],
+          title: item.title,
+          body: item.body,
+        })),
+      };
+    };
+    return {
+      "fast-track": build("fast-track"),
+      "check-in": build("check-in"),
+    } as Record<ServiceId, { icon: typeof Zap; label: string; items: { icon: typeof Zap; title: string; body: string }[] }>;
+  }, [t]);
+
   useEffect(() => {
-    document.title = "ExecPass - Choose your plan";
+    document.title = t<string>("documentTitle");
     window.scrollTo(0, 0);
-  }, []);
+  }, [t]);
 
   useEffect(() => {
     const p = searchParams.get("plan");
@@ -100,11 +87,19 @@ const PreCheckout = () => {
     return `${origin}/${BOOKING_LOCALE}?${params.toString()}`;
   }, [service, selectedPlan, currency, search]);
 
+  const membershipHeading = t<string>("checkout.membershipHeading")
+    .replace("{plan}", plans.find((p) => p.id === selectedPlan)?.name ?? "")
+    .replace("{service}", serviceDetails[service].label);
+
+  const billingNotice = t<string>("checkout.billingNotice")
+    .replace("{medium}", formatPrice(49))
+    .replace("{premium}", formatPrice(79));
+
   return (
     <div className="min-h-screen ep-bg-void">
       <Seo
-        title="Choose your Exec Pass plan — Medium or Premium"
-        description="Compare the two Exec Pass travel memberships, pick Fast Track or automatic check-in, and continue to secure checkout."
+        title={t<string>("seo.title")}
+        description={t<string>("seo.description")}
         path="/pre-checkout"
       />
       <ExecPassHeader />
@@ -113,14 +108,12 @@ const PreCheckout = () => {
         {/* Hero */}
         <section className="ep-bg-paper">
           <div className="mx-auto max-w-container px-6 pt-14 pb-10">
-            <div className="ep-mono text-flare-ink mb-6">MEMBERSHIP · STEP 1 OF 2</div>
+            <div className="ep-mono text-flare-ink mb-6">{t<string>("hero.step")}</div>
             <h1 className="ep-heading text-ink text-[40px] md:text-[60px] max-w-3xl leading-[1.02]">
-              Choose your plan, then fly clever.
+              {t<string>("hero.title")}
             </h1>
             <p className="mt-6 max-w-prose text-[17px] text-ink-muted">
-              Both Exec Pass memberships include Fast Track security, automatic check-in, lounge
-              rates, claims handling, eSIM data and a 24/7 concierge. Pick the volume that matches
-              how often you fly — you can cancel at any time.
+              {t<string>("hero.subtitle")}
             </p>
           </div>
         </section>
@@ -169,7 +162,7 @@ const PreCheckout = () => {
                       <span className="text-[14px] text-ink-muted">{plan.period}</span>
                     </div>
                     <p className="mt-2 text-[14px] text-flare-ink">{plan.trial}</p>
-                    <p className="text-[13px] text-ink-muted">Cancel anytime</p>
+                    <p className="text-[13px] text-ink-muted">{t<string>("plans.cancelAnytime")}</p>
                     <p className="mt-4 text-[15px] text-ink-muted">{plan.tagline}</p>
 
                     <div className="my-6 h-px bg-line" />
@@ -194,7 +187,7 @@ const PreCheckout = () => {
         {/* Merged service selection + checkout */}
         <section className="ep-bg-void ep-wash-void">
           <div className="mx-auto max-w-container px-6 py-20 md:py-24">
-            <div className="ep-mono text-flare-bright mb-8">STEP 2 · CHOOSE & CHECKOUT</div>
+            <div className="ep-mono text-flare-bright mb-8">{t<string>("checkout.step")}</div>
 
             {/* Business tabs */}
             <div className="flex flex-wrap gap-3 mb-10">
@@ -220,8 +213,7 @@ const PreCheckout = () => {
             </div>
 
             <h2 className="ep-heading text-bright text-[36px] md:text-[52px] max-w-3xl leading-[1.05]">
-              {plans.find((p) => p.id === selectedPlan)?.name} membership ·{" "}
-              {serviceDetails[service].label}
+              {membershipHeading}
             </h2>
 
             {/* Service highlights */}
@@ -243,8 +235,7 @@ const PreCheckout = () => {
             </div>
 
             <p className="mt-10 max-w-prose text-[17px] text-steel">
-              You'll finish signing up on our secure booking app, with your selection already
-              applied. Payment details, terms and confirmation happen there.
+              {t<string>("checkout.disclaimer")}
             </p>
 
             <a
@@ -253,14 +244,11 @@ const PreCheckout = () => {
               rel="noopener noreferrer"
               className="mt-10 ep-btn-type text-[14px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-8 py-4 inline-flex items-center gap-3 ep-ease ep-press rounded-full"
             >
-              Continue to checkout <ArrowRight size={16} />
+              {t<string>("checkout.cta")} <ArrowRight size={16} />
             </a>
 
             <p className="mt-6 max-w-2xl text-[13px] text-steel">
-              Your subscription starts with a 3-day free trial. After the trial you will be charged{" "}
-              {formatPrice(49)} every 3 months (Medium) or {formatPrice(79)} every 3 months
-              (Premium), automatically debited from the card on file. Membership benefits activate
-              after your first payment.
+              {billingNotice}
             </p>
           </div>
         </section>

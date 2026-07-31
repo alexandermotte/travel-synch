@@ -1,0 +1,181 @@
+export default {
+  seo: {
+    title: "Exec Pass — akıllıca uçmanızı sağlayan seyahat üyeliği",
+    description:
+      "Tek bir seyahat aboneliği: 200'den fazla havalimanında Fast Track güvenlik, otomatik check-in, 500'den fazla lounge, uçuş tazminatı, bagaj kurtarma, eSIM veri ve 7/24 concierge. İki plan.",
+  },
+  hero: {
+    badge: "Seyahat üyeliği · Dünya genelinde",
+    kicker: "TEK ABONELİK · HER YOLCULUK",
+    brandLine1: "Exec",
+    brandLine2: "Pass",
+    tagline: "Akıllıca uç.",
+    panelKicker: "◆ ÜYELİK TARZINDA SEYAHAT",
+    titleA: "Her seyahat avantajı.",
+    titleB: "Tek üyelik.",
+    body: "Exec Pass, uçuşun sıkıcı kısımlarını halleden seyahat aboneliğidir — fast track güvenlik, otomatik check-in, loungelar, tazminat talepleri, bagaj kurtarma ve küresel veri — hepsinin arkasında bir insan concierge var. İki plan, tek hedef: akıllıca uçmak.",
+    join: "Exec Pass'e Katıl",
+    trust: "Güvenli · Anında onay · 7/24 insan desteği",
+    howItWorks: "Nasıl çalıştığını gör →",
+  },
+  stats: {
+    kicker: "RAKAMLARLA EXEC PASS",
+    items: [
+      { value: "100.000+", label: "Ağımızda hizmet verilen yolcu" },
+      { value: "200+", label: "Ağımızdaki havalimanı" },
+      { value: "500+", label: "Dünya genelinde erişilebilen lounge" },
+      { value: "7/24", label: "İnsan concierge desteği" },
+    ],
+  },
+  services: {
+    kicker: "01 / ÜYELİĞE DAHİL OLANLAR",
+    title: "İhtiyacınız olan her şey, tek üyelikte.",
+    body: "Normalde dokuz hesap, dokuz fatura ve dokuz destek kuyruğu anlamına gelecek dokuz seyahat hizmeti. Exec Pass ile hepsi tek bir aboneliğin arkasında.",
+    howItWorks: "Nasıl çalışır →",
+    items: [
+      {
+        id: "fast-track",
+        name: "Fast Track güvenlik",
+        body: "Dahil olan her terminalde özel bir öncelik şeridi — genel kuyruğu geçip doğrudan içeri.",
+      },
+      {
+        id: "checkin",
+        name: "Otomatik check-in",
+        body: "Havayolu penceresi açılır açılmaz sizi check-in yapıyor ve biniş kartını telefonunuza gönderiyoruz.",
+      },
+      {
+        id: "lounges",
+        name: "500+ havalimanı lounge'u",
+        body: "Dünya genelinde beş yüzden fazla lounge'da üye fiyatları, şeridinizle aynı yerden rezerve edilir.",
+      },
+      {
+        id: "compensation",
+        name: "Uçuş tazminatı",
+        body: "Gecikti mi, iptal mi oldu ya da başka uçağa mı alındınız? Talebi biz açıyor ve hak ettiğinizi havayolundan takip ediyoruz.",
+      },
+      {
+        id: "luggage",
+        name: "Bagaj kurtarma",
+        body: "Bagajınız mı kayboldu? Takip ve talep evrak işlerini size dönene kadar biz üstleniyoruz.",
+      },
+      {
+        id: "esim",
+        name: "Yurt dışında eSIM veri",
+        body: "İniş anında anında mobil veri — SIM değişimi yok, roaming faturası yok, siz uçaktan inmeden aktif.",
+      },
+      {
+        id: "attractions",
+        name: "Geziler ve müzeler",
+        body: "Uçtuğunuz şehirlerdeki simge yapılarda, müzelerde ve deneyimlerde üye fiyatı ve kuyruğa girmeden giriş.",
+      },
+      {
+        id: "guides",
+        name: "Seyahat rehberleri ve e-kitaplar",
+        body: "İniş yaptığınız yerler için özel rotalar, zamanlamalar ve yerel detaylar içeren seçilmiş destinasyon rehberleri.",
+      },
+      {
+        id: "concierge",
+        name: "7/24 insan concierge",
+        body: "Değişiklikler, yeniden rezervasyonlar ve saha lojistiği için WhatsApp'ta günün her saati bir uzman. Chatbot değil.",
+      },
+    ],
+  },
+  membership: {
+    kicker: "02 / AKILLICA UÇMANIN İKİ YOLU",
+    title: "Üyeliğinizi seçin.",
+    body: "Her iki plan da basit bir seyahat aboneliği olarak faturalandırılır ve istediğiniz zaman iptal edilebilir. Güncel fiyatlar ve şartlar onaylamadan önce gösterilir.",
+    mostChosen: "En çok tercih edilen",
+    trial: "3 gün ücretsiz deneme · İstediğiniz zaman iptal",
+    choose: "Seç",
+    plans: [
+      {
+        id: "medium",
+        name: "Medium",
+        period: "her 3 ayda bir",
+        tagline: "Çeyrekte birkaç kez uçan yolcular için.",
+        features: [
+          "Ayda 2 Fast Track kullanımı",
+          "Otomatik check-in dahil",
+          "500+ lounge'da üye fiyatı",
+          "Çeyrekte 2 uçuş tazminatı talebi",
+          "Çeyrekte 2 bagaj kurtarma talebi",
+          "Yurt dışı veri için 1 eSIM",
+          "WhatsApp'ta 7/24 concierge",
+        ],
+      },
+      {
+        id: "premium",
+        name: "Premium",
+        period: "her 3 ayda bir",
+        tagline: "Adeta terminalde yaşayan sık uçan yolcular için.",
+        features: [
+          "Ayda 5 Fast Track kullanımı",
+          "Otomatik check-in dahil",
+          "500+ lounge'da en iyi üye fiyatları",
+          "Sınırsız uçuş tazminatı talebi",
+          "Sınırsız bagaj kurtarma talebi",
+          "2 eSIM ve sanal numara",
+          "İndirimli gezi ve müze biletleri",
+          "Seçilmiş seyahat e-kitapları ve rehberler",
+          "Öncelikli 7/24 concierge",
+        ],
+      },
+    ],
+  },
+  difference: {
+    kicker: "03 / FARK",
+    title: "Tüm yolculuk için tek marka.",
+    body: "İyi seyahat etmek genelde birbirinden ayrı hizmetler yığını gerektirir. Exec Pass bu yığının yerine bir üyelik koyar.",
+    colTask: "SEYAHAT GÖREVİ",
+    colOwn: "KENDİ BAŞINIZA",
+    colExec: "EXEC PASS İLE",
+    rows: [
+      ["Güvenlik şeridi", "Genel kuyruk", "Fast Track önceliği"],
+      ["Check-in", "Kendiniz, gişede", "Otomatik, telefonunuzda"],
+      ["Loungelar", "Üçüncü taraf siteler", "Üye fiyatlarıyla 500+"],
+      ["Gecikmiş uçuş", "Havayolu talep formları", "Talebi biz açar ve takip ederiz"],
+      ["Kayıp bagaj", "Bitmeyen takipler", "Talebi biz yönetiriz"],
+      ["Yurt dışı veri", "Roaming ücretleri", "eSIM dahil"],
+      ["Plan değişikliği", "Beklemede müzik", "WhatsApp'ta concierge"],
+    ],
+  },
+  faq: {
+    kicker: "04 / SORULAR",
+    title: "Sormadan önce yanıtlar.",
+    items: [
+      {
+        q: "Exec Pass nedir?",
+        a: "Bir seyahat üyeliğidir. Tek bir abonelik; Fast Track güvenlik, otomatik check-in, lounge erişimi, tazminat ve bagaj talepleri, eSIM veri, gezi biletleri ve 7/24 insan concierge sağlar.",
+      },
+      {
+        q: "İki plan arasındaki fark nedir?",
+        a: "Medium, çeyrekte birkaç kez uçan yolculara uygundur: ayda 2 Fast Track kullanımı, check-in, lounge fiyatları, bir eSIM ve sınırlı sayıda talep. Premium sık uçan yolcular için tasarlanmıştır: ayda 5 Fast Track kullanımı, sınırsız tazminat ve bagaj talebi, iki eSIM, bilet indirimleri ve öncelikli concierge.",
+      },
+      {
+        q: "İptal edebilir miyim?",
+        a: "Evet. Exec Pass, üye alanınızdan istediğiniz zaman iptal edebileceğiniz süregelen bir seyahat aboneliğidir. Tam şartlar onaylamadan önce gösterilir.",
+      },
+      {
+        q: "Hangi havalimanları kapsam dahilinde?",
+        a: "Ağımızda 200'den fazla havalimanında rezerve edebileceğimiz bir Fast Track şeridi bulunur ve üyeler için 500'den fazla lounge mevcuttur. Kapsam, her rezervasyonu onaylamadan önce gösterilir.",
+      },
+      {
+        q: "Destek ekibine nasıl ulaşabilirim?",
+        a: "Değişiklikler, yeniden rezervasyonlar, talepler ve saha lojistiği için WhatsApp üzerinden dokuz dilde 7/24 bir insan concierge hizmetinizdedir.",
+      },
+      {
+        q: "Exec Pass bir havalimanı ya da havayolu mu?",
+        a: "Hayır. Exec Pass hiçbir havalimanı veya havayolu ile bağlantılı değildir. Sizin adınıza öncelik hizmetleri düzenleyen bağımsız bir seyahat markasıyız.",
+      },
+    ],
+  },
+  cta: {
+    kicker: "HAZIR OLDUĞUNUZDA",
+    titleLine1: "Havalimanı, halledildi.",
+    titleLine2: "Akıllıca uç.",
+    body: "Tek bir üyelik güvenlik, check-in, loungelar, talepler ve bağlantıyı hallediyor — böylece geç varsanız bile kapıyı yakalarsınız.",
+    join: "Exec Pass'e Katıl",
+    howItWorks: "Nasıl çalıştığını gör →",
+  },
+  documentTitle: "ExecPass - Akıllıca uç.",
+} as const;

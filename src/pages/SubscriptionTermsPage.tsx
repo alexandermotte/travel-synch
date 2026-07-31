@@ -1,13 +1,15 @@
 import LegalLayout from "@/components/LegalLayout";
 import { useCurrency } from "@/contexts/CurrencyContext";
-import { subscriptionTermsTranslations } from "@/data/legal/subscriptionTermsContent";
+import { subscriptionTermsTranslations, type LegalLang } from "@/data/legal/subscriptionTermsContent";
+import { useLang } from "@/i18n/LanguageContext";
 import { bookingUrl } from "@/lib/booking";
 import { useLocation } from "react-router-dom";
 
 export default function SubscriptionTermsPage() {
   const { formatPrice } = useCurrency();
   const { search } = useLocation();
-  const t = subscriptionTermsTranslations.en;
+  const { lang } = useLang();
+  const t = subscriptionTermsTranslations[lang as LegalLang] ?? subscriptionTermsTranslations.en;
 
   const unsubLink = (
     <a href={bookingUrl("unsubscribe", search)} className="text-primary hover:underline">
@@ -19,7 +21,7 @@ export default function SubscriptionTermsPage() {
     <LegalLayout
       badge={t.badge}
       title={t.title}
-      seoTitle="ExecPass - Subscription Terms"
+      seoTitle={`ExecPass - ${t.title}`}
       seoDescription="What the Exec Pass membership includes, how billing works and how to cancel at any time."
       path="/subscription-terms"
     >

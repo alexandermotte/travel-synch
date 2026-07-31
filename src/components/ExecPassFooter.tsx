@@ -1,9 +1,12 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { AirsideMark } from "@/components/AirsideMark";
+import { LangLink } from "@/components/LangLink";
 import { preCheckoutPath, LEGAL_LINKS, MEMBER_URL } from "@/lib/booking";
+import { useT } from "@/i18n/LanguageContext";
 
 export const ExecPassFooter = () => {
   const { search } = useLocation();
+  const t = useT("common");
 
   return (
     <footer className="ep-bg-void border-t border-line-dark">
@@ -12,32 +15,28 @@ export const ExecPassFooter = () => {
           {/* Brand + disclaimer */}
           <div className="md:col-span-5">
             <AirsideMark variant="light" />
-            <p className="ep-mono text-steel mt-6">Fly clever.</p>
-            <p className="mt-6 max-w-prose text-[15px] text-steel">
-              Exec Pass is a travel membership: Fast Track security, automatic check-in, lounges,
-              flight compensation, luggage recovery, eSIM data and a 24/7 concierge — in two plans.
-              Exec Pass is not affiliated with any airport or airline.
-            </p>
-            <Link
+            <p className="ep-mono text-steel mt-6">{t("footer.tagline")}</p>
+            <p className="mt-6 max-w-prose text-[15px] text-steel">{t("footer.blurb")}</p>
+            <LangLink
               to={preCheckoutPath(undefined, search)}
               className="ep-btn-type text-[13px] uppercase tracking-wider inline-block bg-flare hover:bg-flare-bright text-white px-5 py-3 mt-8 ep-ease ep-press rounded-full"
             >
-              Join Exec Pass
-            </Link>
+              {t("cta.join")}
+            </LangLink>
 
           </div>
 
           {/* Nav */}
           <div className="md:col-span-3">
-            <div className="ep-mono text-flare-bright mb-4">Exec Pass</div>
+            <div className="ep-mono text-flare-bright mb-4">{t("footer.brandHeading")}</div>
             <ul className="space-y-3 text-[15px]">
-              <li><Link to="/how-it-works" className="text-bright hover:text-flare-bright ep-ease">How it works</Link></li>
-              <li><Link to="/faq" className="text-bright hover:text-flare-bright ep-ease">FAQ</Link></li>
-              <li><Link to="/about" className="text-bright hover:text-flare-bright ep-ease">About</Link></li>
-              <li><Link to="/contact" className="text-bright hover:text-flare-bright ep-ease">Contact</Link></li>
+              <li><LangLink to="/how-it-works" className="text-bright hover:text-flare-bright ep-ease">{t("nav.howItWorks")}</LangLink></li>
+              <li><LangLink to="/faq" className="text-bright hover:text-flare-bright ep-ease">{t("nav.faq")}</LangLink></li>
+              <li><LangLink to="/about" className="text-bright hover:text-flare-bright ep-ease">{t("nav.about")}</LangLink></li>
+              <li><LangLink to="/contact" className="text-bright hover:text-flare-bright ep-ease">{t("nav.contact")}</LangLink></li>
               <li>
                 <a href={MEMBER_URL} className="text-bright hover:text-flare-bright ep-ease">
-                  Member zone
+                  {t("footer.memberZone")}
                 </a>
               </li>
             </ul>
@@ -45,16 +44,16 @@ export const ExecPassFooter = () => {
 
           {/* Legal — hosted on exec-pass.com */}
           <div className="md:col-span-2">
-            <div className="ep-mono text-flare-bright mb-4">Legal</div>
+            <div className="ep-mono text-flare-bright mb-4">{t("footer.legalHeading")}</div>
             <ul className="space-y-3 text-[15px]">
               {LEGAL_LINKS.map((l) => (
                 <li key={l.path}>
-                  <Link
+                  <LangLink
                     to={`/${l.path}`}
                     className="text-bright hover:text-flare-bright ep-ease"
                   >
-                    {l.label}
-                  </Link>
+                    {t(`legalLinks.${l.path}`, l.label)}
+                  </LangLink>
                 </li>
               ))}
             </ul>
@@ -62,7 +61,7 @@ export const ExecPassFooter = () => {
 
           {/* Company */}
           <div className="md:col-span-2">
-            <div className="ep-mono text-flare-bright mb-4">Operator</div>
+            <div className="ep-mono text-flare-bright mb-4">{t("footer.operatorHeading")}</div>
             <address className="not-italic text-[15px] text-bright leading-relaxed">
               MARVELLIANT B.V.<br />
               Bos en Lommerplein 280<br />
@@ -77,7 +76,7 @@ export const ExecPassFooter = () => {
             <div className="mt-5 pt-4 border-t border-line-dark">
               <img
                 src="/images/payment-card.svg"
-                alt="Accepted payment methods — Visa, Mastercard, American Express"
+                alt={t("footer.paymentsAlt")}
                 className="h-8 opacity-70"
               />
             </div>
@@ -85,8 +84,8 @@ export const ExecPassFooter = () => {
         </div>
 
         <div className="mt-14 pt-6 border-t border-line-dark flex flex-col md:flex-row justify-between gap-4">
-          <div className="ep-chip text-steel">© {new Date().getFullYear()} Marvelliant B.V. All rights reserved.</div>
-          <div className="ep-chip text-steel">Amsterdam · Operating globally · 200+ airports</div>
+          <div className="ep-chip text-steel">© {new Date().getFullYear()} Marvelliant B.V. {t("footer.rights")}</div>
+          <div className="ep-chip text-steel">{t("footer.locations")}</div>
         </div>
       </div>
     </footer>

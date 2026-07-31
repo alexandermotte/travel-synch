@@ -1,15 +1,18 @@
-import { Link } from "react-router-dom";
+import { LangLink } from "@/components/LangLink";
 import LegalLayout from "@/components/LegalLayout";
 import LinkifyText from "@/components/LinkifyText";
-import { en as c } from "@/data/legal/privacyPolicy.en";
+import { getPrivacy } from "@/data/legal";
+import { useLang } from "@/i18n/LanguageContext";
 
 export default function PrivacyPolicy() {
+  const { lang } = useLang();
+  const c = getPrivacy(lang);
   return (
     <LegalLayout
       badge={c.badge}
       title={c.title}
       lastUpdated={c.lastUpdated}
-      seoTitle="ExecPass - Privacy Policy"
+      seoTitle={`ExecPass - ${c.title}`}
       seoDescription="How Exec Pass collects, uses and protects your personal data, and how to exercise your rights."
       path="/privacy"
     >
@@ -96,7 +99,7 @@ export default function PrivacyPolicy() {
       {c.art9.slice(0, -1).map((p, i) => <p key={i}><LinkifyText text={p} /></p>)}
       <p>
         <LinkifyText text={c.art9[c.art9.length - 1]} />{" "}
-        <Link to="/cookie-policy" className="text-primary hover:underline">exec-pass.com/cookie-policy</Link>.
+        <LangLink to="/cookie-policy" className="text-primary hover:underline">exec-pass.com/cookie-policy</LangLink>.
       </p>
 
       <h2>{c.art10Title}</h2>

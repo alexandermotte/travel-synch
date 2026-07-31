@@ -1,14 +1,16 @@
 import LegalLayout from "@/components/LegalLayout";
-import { legalNoticeTranslations } from "@/data/legal/legalNoticeContent";
+import { legalNoticeTranslations, type LegalLang } from "@/data/legal/legalNoticeContent";
+import { useLang } from "@/i18n/LanguageContext";
 
 export default function LegalNotice() {
-  const t = legalNoticeTranslations.en;
+  const { lang } = useLang();
+  const t = legalNoticeTranslations[lang as LegalLang] ?? legalNoticeTranslations.en;
 
   return (
     <LegalLayout
       badge={t.badge}
       title={t.title}
-      seoTitle="ExecPass - Legal Notice"
+      seoTitle={`ExecPass - ${t.title}`}
       seoDescription="Legal notice for exec-pass.com — operator, contact, publication director and hosting details."
       path="/legal-notice"
     >

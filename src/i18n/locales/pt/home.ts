@@ -1,0 +1,181 @@
+export default {
+  seo: {
+    title: "Exec Pass — a associação de viagem que o ajuda a voar com inteligência",
+    description:
+      "Uma subscrição de viagem: segurança Fast Track em mais de 200 aeroportos, check-in automático, mais de 500 salas VIP, compensação por voos, recuperação de bagagem, dados eSIM e um concierge 24/7. Dois planos.",
+  },
+  hero: {
+    badge: "A associação de viagem · Mundial",
+    kicker: "UMA SUBSCRIÇÃO · CADA VIAGEM",
+    brandLine1: "Exec",
+    brandLine2: "Pass",
+    tagline: "Voe com inteligência.",
+    panelKicker: "◆ VIAGEM, AO ESTILO DE ASSOCIAÇÃO",
+    titleA: "Todas as vantagens de viagem.",
+    titleB: "Uma única associação.",
+    body: "A Exec Pass é a subscrição de viagem que trata das partes maçadoras de voar — segurança fast track, check-in automático, salas VIP, reclamações de compensação, recuperação de bagagem e dados globais — com um concierge humano por trás de tudo isto. Dois planos, um objetivo: voar com inteligência.",
+    join: "Aderir à Exec Pass",
+    trust: "Seguro · Confirmação instantânea · Apoio humano 24/7",
+    howItWorks: "Ver como funciona →",
+  },
+  stats: {
+    kicker: "A EXEC PASS, EM NÚMEROS",
+    items: [
+      { value: "100.000+", label: "Viajantes servidos na nossa rede" },
+      { value: "200+", label: "Aeroportos na nossa rede" },
+      { value: "500+", label: "Salas VIP disponíveis em todo o mundo" },
+      { value: "24/7", label: "Apoio de concierge humano" },
+    ],
+  },
+  services: {
+    kicker: "01 / O QUE A ASSOCIAÇÃO INCLUI",
+    title: "Tudo o que precisa, numa só associação.",
+    body: "Nove serviços de viagem que normalmente significariam nove contas, nove faturas e nove filas de suporte. Com a Exec Pass, ficam todos numa única subscrição.",
+    howItWorks: "Como funciona →",
+    items: [
+      {
+        id: "fast-track",
+        name: "Segurança Fast Track",
+        body: "Uma faixa de prioridade dedicada em cada terminal incluído — ultrapasse a fila geral e passe direto.",
+      },
+      {
+        id: "checkin",
+        name: "Check-in automático",
+        body: "Fazemos o seu check-in assim que a companhia aérea abre a janela e enviamos o cartão de embarque para o seu telemóvel.",
+      },
+      {
+        id: "lounges",
+        name: "Mais de 500 salas VIP de aeroporto",
+        body: "Tarifas de membro em mais de quinhentas salas VIP em todo o mundo, reservadas no mesmo lugar que a sua faixa prioritária.",
+      },
+      {
+        id: "compensation",
+        name: "Compensação por voos",
+        body: "Voo atrasado, cancelado ou com overbooking? Apresentamos a reclamação e cobramos à companhia aérea o que lhe é devido.",
+      },
+      {
+        id: "luggage",
+        name: "Recuperação de bagagem",
+        body: "Bagagem desaparecida? Assumimos o rastreio e a documentação da reclamação até a receber de volta.",
+      },
+      {
+        id: "esim",
+        name: "Dados eSIM no estrangeiro",
+        body: "Dados móveis instantâneos assim que aterra — sem trocar de SIM, sem faturas de roaming, ativado antes de sair do avião.",
+      },
+      {
+        id: "attractions",
+        name: "Atrações e museus",
+        body: "Preços de membro e entrada sem filas em marcos, museus e experiências nas cidades para onde voa.",
+      },
+      {
+        id: "guides",
+        name: "Guias de viagem e e-books",
+        body: "Guias de destino selecionados, com rotas exclusivas, horários e detalhes locais dos lugares onde aterra.",
+      },
+      {
+        id: "concierge",
+        name: "Concierge humano 24/7",
+        body: "Um especialista no WhatsApp, a qualquer hora, para alterações, novas marcações e logística em terra. Não é um chatbot.",
+      },
+    ],
+  },
+  membership: {
+    kicker: "02 / DUAS FORMAS DE VOAR COM INTELIGÊNCIA",
+    title: "Escolha a sua associação.",
+    body: "Ambos os planos são faturados como uma simples subscrição de viagem e podem ser cancelados a qualquer momento. O preço e os termos atuais são apresentados antes de confirmar.",
+    mostChosen: "Mais escolhido",
+    trial: "Teste gratuito de 3 dias · Cancele quando quiser",
+    choose: "Escolher",
+    plans: [
+      {
+        id: "medium",
+        name: "Medium",
+        period: "a cada 3 meses",
+        tagline: "Para o viajante que voa algumas vezes por trimestre.",
+        features: [
+          "2 acessos Fast Track por mês",
+          "Check-in automático incluído",
+          "Tarifas de membro em mais de 500 salas VIP",
+          "2 reclamações de compensação por voo, por trimestre",
+          "2 pedidos de recuperação de bagagem por trimestre",
+          "1 eSIM para dados no estrangeiro",
+          "Concierge 24/7 no WhatsApp",
+        ],
+      },
+      {
+        id: "premium",
+        name: "Premium",
+        period: "a cada 3 meses",
+        tagline: "Para o viajante frequente que vive dentro de um terminal.",
+        features: [
+          "5 acessos Fast Track por mês",
+          "Check-in automático incluído",
+          "Melhores tarifas de membro em mais de 500 salas VIP",
+          "Reclamações de compensação por voo ilimitadas",
+          "Pedidos de recuperação de bagagem ilimitados",
+          "2 eSIMs mais número virtual",
+          "Bilhetes de atrações e museus com desconto",
+          "E-books e guias de viagem selecionados",
+          "Concierge 24/7 prioritário",
+        ],
+      },
+    ],
+  },
+  difference: {
+    kicker: "03 / DIFERENÇA",
+    title: "Uma marca para toda a viagem.",
+    body: "Viajar bem costuma exigir um conjunto de serviços separados. A Exec Pass substitui esse conjunto por uma única associação.",
+    colTask: "TAREFA DE VIAGEM",
+    colOwn: "POR CONTA PRÓPRIA",
+    colExec: "COM A EXEC PASS",
+    rows: [
+      ["Faixa de segurança", "Fila geral", "Prioridade Fast Track"],
+      ["Check-in", "Você, ao balcão", "Automático, no seu telemóvel"],
+      ["Salas VIP", "Sites de terceiros", "Mais de 500 a tarifas de membro"],
+      ["Voo atrasado", "Formulários de reclamação da companhia", "Nós apresentamos e cobramos"],
+      ["Bagagem perdida", "Acompanhamentos infindáveis", "Nós tratamos da reclamação"],
+      ["Dados no estrangeiro", "Custos de roaming", "eSIM incluído"],
+      ["Mudança de planos", "Música de espera", "Concierge no WhatsApp"],
+    ],
+  },
+  faq: {
+    kicker: "04 / PERGUNTAS",
+    title: "Respostas, antes de perguntar.",
+    items: [
+      {
+        q: "O que é a Exec Pass?",
+        a: "Uma associação de viagem. Uma única subscrição cobre a segurança Fast Track, o check-in automático, o acesso a salas VIP, a compensação e a recuperação de bagagem, dados eSIM, bilhetes de atrações e um concierge humano 24/7.",
+      },
+      {
+        q: "Qual é a diferença entre os dois planos?",
+        a: "O Medium é indicado para viajantes que voam algumas vezes por trimestre: 2 acessos Fast Track por mês, check-in, tarifas de salas VIP, um eSIM e um número limitado de reclamações. O Premium foi criado para viajantes frequentes: 5 acessos Fast Track por mês, compensação e reclamações de bagagem ilimitadas, dois eSIMs, descontos em bilhetes e concierge prioritário.",
+      },
+      {
+        q: "Posso cancelar?",
+        a: "Sim. A Exec Pass é uma subscrição de viagem contínua que pode cancelar a qualquer momento a partir da sua área de membro. Os termos completos são apresentados antes de confirmar.",
+      },
+      {
+        q: "Que aeroportos estão abrangidos?",
+        a: "Mais de 200 aeroportos na nossa rede têm uma faixa Fast Track que podemos reservar, e mais de 500 salas VIP estão disponíveis para os membros. A cobertura é apresentada antes de confirmar cada reserva.",
+      },
+      {
+        q: "Como posso contactar o suporte?",
+        a: "Um concierge humano está disponível 24/7 no WhatsApp, em nove idiomas, para alterações, novas marcações, reclamações e logística em terra.",
+      },
+      {
+        q: "A Exec Pass é um aeroporto ou uma companhia aérea?",
+        a: "Não. A Exec Pass não está afiliada a nenhum aeroporto ou companhia aérea. Somos uma marca de viagem independente que organiza serviços prioritários em seu nome.",
+      },
+    ],
+  },
+  cta: {
+    kicker: "PRONTOS QUANDO ESTIVER",
+    titleLine1: "O aeroporto, resolvido.",
+    titleLine2: "Voe com inteligência.",
+    body: "Uma associação cuida da segurança, do check-in, das salas VIP, das reclamações e da conetividade — para que chegue tarde e ainda assim apanhe o voo.",
+    join: "Aderir à Exec Pass",
+    howItWorks: "Ver como funciona →",
+  },
+  documentTitle: "ExecPass - Voe com inteligência.",
+} as const;

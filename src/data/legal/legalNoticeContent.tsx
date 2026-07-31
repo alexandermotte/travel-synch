@@ -1,4 +1,4 @@
-export type LegalLang = "en" | "fr" | "de" | "pt" | "es" | "it" | "el";
+export type LegalLang = "en" | "fr" | "de" | "pt" | "es" | "it" | "el" | "tr" | "pl";
 
 interface LegalNoticeContent {
   badge: string;
@@ -172,6 +172,54 @@ export const legalNoticeTranslations: Record<LegalLang, LegalNoticeContent> = {
         "Επωνυμία: Vercel Inc.",
         "Διεύθυνση: 440 N. Barranca Ave #4133, Covina, California 91723, Ηνωμένες Πολιτείες",
         "Τηλέφωνο: (951) 383-6898",
+      ] },
+    ],
+  },
+  tr: {
+    badge: "Hukuki",
+    title: "Yasal Bildirim",
+    sections: [
+      { heading: "Web Sitesi", paragraphs: ["exec-pass.com"] },
+      { heading: "Web Sitesi Operatörü", paragraphs: [
+        "Şirket adı: Marvelliant B.V.",
+        "Kayıtlı adres: Bos en Lommerplein 280, 1055RW Amsterdam",
+        "Şirket tescil numarası: 96513519 Chambre commerce RSIN 867643298",
+        "Sermaye: 1.000,00 EUR",
+      ] },
+      { heading: "İletişim", paragraphs: [
+        "Telefon numarası: +4420 3936 2491",
+        "E-posta adresi: contact@exec-pass.com",
+        "Posta iletişim adresi mevcuttur: Bos en Lommerplein 280, 1055RW Amsterdam",
+      ] },
+      { heading: "Yayın Direktörü", paragraphs: ["Frank Christiaan STORCK"] },
+      { heading: "Barındırma Sağlayıcısı", paragraphs: [
+        "Şirket adı: Vercel Inc.",
+        "Adres: 440 N. Barranca Ave #4133, Covina, California 91723, Amerika Birleşik Devletleri",
+        "Telefon numarası: (951) 383-6898",
+      ] },
+    ],
+  },
+  pl: {
+    badge: "Prawne",
+    title: "Nota Prawna",
+    sections: [
+      { heading: "Strona internetowa", paragraphs: ["exec-pass.com"] },
+      { heading: "Operator strony internetowej", paragraphs: [
+        "Nazwa firmy: Marvelliant B.V.",
+        "Adres rejestrowy: Bos en Lommerplein 280, 1055RW Amsterdam",
+        "Numer rejestracyjny firmy: 96513519 Chambre commerce RSIN 867643298",
+        "Kapitał zakładowy: 1000,00 EUR",
+      ] },
+      { heading: "Kontakt", paragraphs: [
+        "Numer telefonu: +4420 3936 2491",
+        "Adres e-mail: contact@exec-pass.com",
+        "Dostępny adres korespondencyjny: Bos en Lommerplein 280, 1055RW Amsterdam",
+      ] },
+      { heading: "Dyrektor Publikacji", paragraphs: ["Frank Christiaan STORCK"] },
+      { heading: "Dostawca Hostingu", paragraphs: [
+        "Nazwa firmy: Vercel Inc.",
+        "Adres: 440 N. Barranca Ave #4133, Covina, California 91723, Stany Zjednoczone",
+        "Numer telefonu: (951) 383-6898",
       ] },
     ],
   },

@@ -1,0 +1,181 @@
+export default {
+  seo: {
+    title: "Exec Pass — die Reise-Mitgliedschaft, mit der Sie clever fliegen",
+    description:
+      "Ein Reiseabonnement: Fast Track an über 200 Flughäfen, automatisches Check-In, 500+ Lounges, Flugentschädigung, Gepäcksuche, eSIM-Daten und ein 24/7-Concierge. Zwei Tarife.",
+  },
+  hero: {
+    badge: "Die Reise-Mitgliedschaft · Weltweit",
+    kicker: "EIN ABONNEMENT · JEDE REISE",
+    brandLine1: "Exec",
+    brandLine2: "Pass",
+    tagline: "Fly clever.",
+    panelKicker: "◆ REISEN, ALS MITGLIEDSCHAFT",
+    titleA: "Jeder Reisevorteil.",
+    titleB: "Eine Mitgliedschaft.",
+    body: "Exec Pass ist das Reiseabonnement, das die lästigen Teile des Fliegens übernimmt — Fast Track an der Sicherheitskontrolle, automatisches Check-In, Lounges, Entschädigungsansprüche, Gepäcksuche und globale Daten — mit einem menschlichen Concierge im Hintergrund. Zwei Tarife, ein Ziel: clever fliegen.",
+    join: "Exec Pass beitreten",
+    trust: "Sicher · Sofortige Bestätigung · 24/7 menschlicher Support",
+    howItWorks: "So funktioniert's →",
+  },
+  stats: {
+    kicker: "EXEC PASS, IN ZAHLEN",
+    items: [
+      { value: "100.000+", label: "Reisende in unserem Netzwerk betreut" },
+      { value: "200+", label: "Flughäfen in unserem Netzwerk" },
+      { value: "500+", label: "Lounges weltweit verfügbar" },
+      { value: "24/7", label: "Menschlicher Concierge-Support" },
+    ],
+  },
+  services: {
+    kicker: "01 / WAS DIE MITGLIEDSCHAFT UMFASST",
+    title: "Alles, was Sie brauchen, in einer Mitgliedschaft.",
+    body: "Neun Reiseservices, die normalerweise neun Konten, neun Rechnungen und neun Support-Warteschlangen bedeuten würden. Mit Exec Pass stecken sie hinter einem einzigen Abonnement.",
+    howItWorks: "So funktioniert's →",
+    items: [
+      {
+        id: "fast-track",
+        name: "Fast Track Sicherheitskontrolle",
+        body: "Eine eigene Priority-Spur an jedem enthaltenen Terminal — vorbei an der allgemeinen Schlange, direkt durch.",
+      },
+      {
+        id: "checkin",
+        name: "Automatisches Check-In",
+        body: "Wir checken Sie ein, sobald die Airline das Zeitfenster öffnet, und senden die Bordkarte an Ihr Telefon.",
+      },
+      {
+        id: "lounges",
+        name: "500+ Flughafen-Lounges",
+        body: "Mitgliederpreise auf mehr als fünfhundert Lounges weltweit, gebucht an derselben Stelle wie Ihre Priority-Spur.",
+      },
+      {
+        id: "compensation",
+        name: "Flugentschädigung",
+        body: "Verspätet, gestrichen oder überbucht? Wir stellen den Anspruch und verfolgen bei der Airline, was Ihnen zusteht.",
+      },
+      {
+        id: "luggage",
+        name: "Gepäcksuche",
+        body: "Gepäck verloren gegangen? Wir übernehmen Tracking und Anspruchsformalitäten, bis es wieder bei Ihnen ist.",
+      },
+      {
+        id: "esim",
+        name: "eSIM-Daten im Ausland",
+        body: "Sofort mobile Daten nach der Landung — kein SIM-Tausch, keine Roaminggebühren, aktiviert bevor Sie ausrollen.",
+      },
+      {
+        id: "attractions",
+        name: "Attraktionen & Museen",
+        body: "Mitgliederpreise und Warteschlangen-Skip an Sehenswürdigkeiten, Museen und Erlebnissen in den Städten, in die Sie fliegen.",
+      },
+      {
+        id: "guides",
+        name: "Reiseführer & E-Books",
+        body: "Kuratierte Reiseführer mit Insider-Routen, Timings und lokalen Details für die Orte, an denen Sie landen.",
+      },
+      {
+        id: "concierge",
+        name: "24/7 menschlicher Concierge",
+        body: "Ein Spezialist auf WhatsApp rund um die Uhr für Änderungen, Umbuchungen und Logistik vor Ort. Kein Chatbot.",
+      },
+    ],
+  },
+  membership: {
+    kicker: "02 / ZWEI WEGE, CLEVER ZU FLIEGEN",
+    title: "Wählen Sie Ihre Mitgliedschaft.",
+    body: "Beide Tarife werden als einfaches Reiseabonnement abgerechnet und können jederzeit gekündigt werden. Aktuelle Preise und Bedingungen werden vor der Bestätigung angezeigt.",
+    mostChosen: "Am häufigsten gewählt",
+    trial: "3-tägige kostenlose Testphase · Jederzeit kündbar",
+    choose: "Wählen",
+    plans: [
+      {
+        id: "medium",
+        name: "Medium",
+        period: "alle 3 Monate",
+        tagline: "Für Reisende, die ein paar Mal pro Quartal fliegen.",
+        features: [
+          "2 Fast-Track-Zugänge pro Monat",
+          "Automatisches Check-In inklusive",
+          "Mitgliederpreise auf 500+ Lounges",
+          "2 Flugentschädigungsansprüche pro Quartal",
+          "2 Gepäcksuche-Ansprüche pro Quartal",
+          "1 eSIM für Daten im Ausland",
+          "24/7-Concierge auf WhatsApp",
+        ],
+      },
+      {
+        id: "premium",
+        name: "Premium",
+        period: "alle 3 Monate",
+        tagline: "Für Vielflieger, die im Terminal zuhause sind.",
+        features: [
+          "5 Fast-Track-Zugänge pro Monat",
+          "Automatisches Check-In inklusive",
+          "Beste Mitgliederpreise auf 500+ Lounges",
+          "Unbegrenzte Flugentschädigungsansprüche",
+          "Unbegrenzte Gepäcksuche-Ansprüche",
+          "2 eSIMs plus virtuelle Nummer",
+          "Rabattierte Attraktions- & Museumstickets",
+          "Kuratierte Reise-E-Books & Guides",
+          "Priority 24/7-Concierge",
+        ],
+      },
+    ],
+  },
+  difference: {
+    kicker: "03 / DER UNTERSCHIED",
+    title: "Eine Marke für die gesamte Reise.",
+    body: "Gut zu reisen bedeutet normalerweise eine Ansammlung separater Services. Exec Pass ersetzt diese Ansammlung durch eine Mitgliedschaft.",
+    colTask: "REISEAUFGABE",
+    colOwn: "AUF EIGENE FAUST",
+    colExec: "MIT EXEC PASS",
+    rows: [
+      ["Sicherheitsspur", "Allgemeine Schlange", "Fast-Track-Priority"],
+      ["Check-In", "Sie, am Schalter", "Automatisch, auf Ihrem Telefon"],
+      ["Lounges", "Drittanbieter-Seiten", "500+ zu Mitgliederpreisen"],
+      ["Verspäteter Flug", "Airline-Anspruchsformulare", "Wir stellen und verfolgen ihn"],
+      ["Verlorenes Gepäck", "Endlose Nachfragen", "Wir übernehmen den Anspruch"],
+      ["Daten im Ausland", "Roaminggebühren", "eSIM inklusive"],
+      ["Planänderungen", "Warteschleife", "Concierge auf WhatsApp"],
+    ],
+  },
+  faq: {
+    kicker: "04 / FRAGEN",
+    title: "Antworten, bevor Sie fragen.",
+    items: [
+      {
+        q: "Was ist Exec Pass?",
+        a: "Eine Reise-Mitgliedschaft. Ein Abonnement deckt Fast Track an der Sicherheitskontrolle, automatisches Check-In, Lounge-Zugang, Entschädigungen und Gepäckansprüche, eSIM-Daten, Attraktionstickets und einen 24/7-menschlichen Concierge ab.",
+      },
+      {
+        q: "Was ist der Unterschied zwischen den beiden Tarifen?",
+        a: "Medium eignet sich für Reisende, die ein paar Mal pro Quartal fliegen: 2 Fast-Track-Zugänge pro Monat, Check-In, Lounge-Preise, ein eSIM und eine begrenzte Anzahl an Ansprüchen. Premium ist für Vielflieger gemacht: 5 Fast-Track-Zugänge pro Monat, unbegrenzte Entschädigung und Gepäckansprüche, zwei eSIMs, Ticketrabatte und Priority-Concierge.",
+      },
+      {
+        q: "Kann ich kündigen?",
+        a: "Ja. Exec Pass ist ein fortlaufendes Reiseabonnement, das Sie jederzeit aus Ihrem Mitgliederbereich kündigen können. Die vollständigen Bedingungen werden vor der Bestätigung angezeigt.",
+      },
+      {
+        q: "Welche Flughäfen sind abgedeckt?",
+        a: "Mehr als 200 Flughäfen in unserem Netzwerk betreiben eine Fast-Track-Spur, die wir buchen können, und über 500 Lounges stehen Mitgliedern zur Verfügung. Die Verfügbarkeit wird vor jeder Buchungsbestätigung angezeigt.",
+      },
+      {
+        q: "Wie erreiche ich den Support?",
+        a: "Ein menschlicher Concierge ist 24/7 auf WhatsApp, in neun Sprachen, für Änderungen, Umbuchungen, Ansprüche und Logistik vor Ort verfügbar.",
+      },
+      {
+        q: "Ist Exec Pass ein Flughafen oder eine Airline?",
+        a: "Nein. Exec Pass ist mit keinem Flughafen oder keiner Airline verbunden. Wir sind eine unabhängige Reisemarke, die in Ihrem Namen Priority-Services organisiert.",
+      },
+    ],
+  },
+  cta: {
+    kicker: "BEREIT, WENN SIE ES SIND",
+    titleLine1: "Der Flughafen, erledigt.",
+    titleLine2: "Fly clever.",
+    body: "Eine Mitgliedschaft kümmert sich um Sicherheit, Check-In, Lounges, Ansprüche und Konnektivität — damit Sie spät ankommen und trotzdem Ihr Gate erreichen.",
+    join: "Exec Pass beitreten",
+    howItWorks: "So funktioniert's →",
+  },
+  documentTitle: "ExecPass - Fly clever.",
+} as const;
