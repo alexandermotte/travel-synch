@@ -7,10 +7,10 @@ import { ExecPassHeader } from "@/components/ExecPassHeader";
 import { ExecPassFooter } from "@/components/ExecPassFooter";
 import { Seo } from "@/components/Seo";
 import { supabase } from "@/integrations/supabase/client";
-
-const emailSchema = z.string().trim().email({ message: "Enter a valid email address" }).max(255);
+import { useT } from "@/i18n/LanguageContext";
 
 const ExecPassUnsubscribePage = () => {
+  const t = useT("unsubscribe");
   const [searchParams] = useSearchParams();
   const token = searchParams.get("token");
   const [email, setEmail] = useState("");
@@ -20,10 +20,12 @@ const ExecPassUnsubscribePage = () => {
   );
   const [tokenMessage, setTokenMessage] = useState("");
 
+  const emailSchema = z.string().trim().email({ message: t("validation.invalidEmail") }).max(255);
+
   useEffect(() => {
-    document.title = "ExecPass - Unsubscribe";
+    document.title = t("pageTitle");
     window.scrollTo(0, 0);
-  }, []);
+  }, [t]);
 
   useEffect(() => {
     if (!token) return;
@@ -35,17 +37,17 @@ const ExecPassUnsubscribePage = () => {
         if (error) throw new Error(error.message);
         if (data?.success) {
           setTokenStatus("success");
-          setTokenMessage(data.message || "You have been unsubscribed from our emails.");
+          setTokenMessage(data.message || t("token.successDefault"));
         } else {
           setTokenStatus("error");
-          setTokenMessage(data?.message || "This unsubscribe link is invalid or has expired.");
+          setTokenMessage(data?.message || t("token.errorDefault"));
         }
       } catch (err) {
         setTokenStatus("error");
-        setTokenMessage((err as Error).message || "Something went wrong. Please try again.");
+        setTokenMessage((err as Error).message || t("token.errorGeneric"));
       }
     })();
-  }, [token]);
+  }, [token, t]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -64,14 +66,14 @@ const ExecPassUnsubscribePage = () => {
         },
       });
       if (error) throw new Error(error.message);
-      if (!data?.success) throw new Error(data?.message || "Request failed");
-      toast.success("Check your inbox", {
-        description: "We sent you a link to confirm your unsubscribe request.",
+      if (!data?.success) throw new Error(data?.message || t("toast.requestFailed"));
+      toast.success(t("toast.successTitle"), {
+        description: t("toast.successDescription"),
       });
       setEmail("");
     } catch (err) {
-      toast.error("We couldn't process that", {
-        description: (err as Error).message || "Please try again or contact our team.",
+      toast.error(t("toast.errorTitle"), {
+        description: (err as Error).message || t("toast.errorDescription"),
       });
     } finally {
       setIsSubmitting(false);
@@ -84,8 +86,8 @@ const ExecPassUnsubscribePage = () => {
   return (
     <div className="min-h-screen ep-bg-void">
       <Seo
-        title="Unsubscribe from Exec Pass emails"
-        description="Stop receiving Exec Pass emails. Enter your email address and we'll send you a confirmation link, or contact our team directly."
+        title={t("seo.title")}
+        description={t("seo.description")}
         path="/unsubscribe"
       />
       <ExecPassHeader />
@@ -93,13 +95,12 @@ const ExecPassUnsubscribePage = () => {
         <section className="ep-bg-void ep-wash-void">
           <div className="mx-auto max-w-container px-6 pt-20 pb-24 md:pt-24 md:pb-28">
             <div className="mx-auto max-w-2xl text-center">
-              <div className="ep-chip text-flare-bright">Email preferences</div>
+              <div className="ep-chip text-flare-bright">{t("hero.chip")}</div>
               <h1 className="mt-5 text-[clamp(2.2rem,5vw,3.4rem)] leading-[1.05] text-bright font-display font-semibold tracking-tight">
-                Unsubscribe
+                {t("hero.title")}
               </h1>
               <p className="mt-5 text-[17px] text-steel">
-                Enter the email address you'd like removed. We'll send a confirmation link — one
-                click and you're off the list.
+                {t("hero.subtitle")}
               </p>
             </div>
 
@@ -109,14 +110,14 @@ const ExecPassUnsubscribePage = () => {
                   {tokenStatus === "loading" && (
                     <div className="flex flex-col items-center gap-4 py-6">
                       <Loader2 className="h-7 w-7 animate-spin text-flare" />
-                      <p className="text-ink-muted">Confirming your unsubscribe request…</p>
+                      <p className="text-ink-muted">{t("token.confirming")}</p>
                     </div>
                   )}
                   {tokenStatus === "success" && (
                     <div className="flex items-start gap-3 rounded-2xl border border-flare/20 bg-flare/5 p-5">
                       <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-flare" />
                       <div>
-                        <h2 className="ep-heading text-ink text-[18px]">You're unsubscribed</h2>
+                        <h2 className="ep-heading text-ink text-[18px]">{t("token.successTitle")}</h2>
                         <p className="mt-1 text-[15px] text-ink-muted">{tokenMessage}</p>
                       </div>
                     </div>
@@ -125,7 +126,7 @@ const ExecPassUnsubscribePage = () => {
                     <div className="flex items-start gap-3 rounded-2xl border border-destructive/20 bg-destructive/5 p-5">
                       <XCircle className="mt-0.5 h-5 w-5 shrink-0 text-destructive" />
                       <div>
-                        <h2 className="ep-heading text-ink text-[18px]">We couldn't confirm that</h2>
+                        <h2 className="ep-heading text-ink text-[18px]">{t("token.errorTitle")}</h2>
                         <p className="mt-1 text-[15px] text-ink-muted">{tokenMessage}</p>
                       </div>
                     </div>
@@ -135,7 +136,7 @@ const ExecPassUnsubscribePage = () => {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
                     <label htmlFor="unsubscribe-email" className="mb-2 block text-[14px] text-ink-muted">
-                      Email address <span className="text-flare">*</span>
+                      {t("form.emailLabel")} <span className="text-flare">*</span>
                     </label>
                     <input
                       id="unsubscribe-email"
@@ -145,7 +146,7 @@ const ExecPassUnsubscribePage = () => {
                       maxLength={255}
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="you@company.com"
+                      placeholder={t("form.emailPlaceholder")}
                       className={inputClass}
                     />
                   </div>
@@ -156,15 +157,14 @@ const ExecPassUnsubscribePage = () => {
                   >
                     {isSubmitting ? (
                       <>
-                        <Loader2 className="h-4 w-4 animate-spin" /> Processing…
+                        <Loader2 className="h-4 w-4 animate-spin" /> {t("form.processing")}
                       </>
                     ) : (
-                      "Send unsubscribe link"
+                      t("form.submit")
                     )}
                   </button>
                   <p className="text-center text-[13px] leading-relaxed text-ink-muted">
-                    Unsubscribing stops marketing emails. It does not cancel an active membership —
-                    for that, contact our team below.
+                    {t("form.note")}
                   </p>
                 </form>
               )}
@@ -175,14 +175,14 @@ const ExecPassUnsubscribePage = () => {
         <section className="bg-paper">
           <div className="mx-auto max-w-container px-6 py-16 md:py-20">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="ep-heading text-[26px] text-ink">Prefer to talk to someone?</h2>
+              <h2 className="ep-heading text-[26px] text-ink">{t("contactSection.title")}</h2>
               <p className="mt-3 text-[16px] text-ink-muted">
-                Our team can remove you from the list and answer anything about your account.
+                {t("contactSection.subtitle")}
               </p>
               <div className="mt-10 grid gap-6 md:grid-cols-2">
                 <div className="rounded-2xl bg-white p-6 ep-shadow-soft">
                   <Phone className="mx-auto h-5 w-5 text-flare" />
-                  <h3 className="ep-heading mt-4 text-[16px] text-ink">Call us</h3>
+                  <h3 className="ep-heading mt-4 text-[16px] text-ink">{t("contactSection.callUs")}</h3>
                   <a
                     href="tel:+442039362491"
                     className="mt-2 block text-[15px] text-flare hover:text-flare-bright ep-ease"
@@ -192,7 +192,7 @@ const ExecPassUnsubscribePage = () => {
                 </div>
                 <div className="rounded-2xl bg-white p-6 ep-shadow-soft">
                   <Mail className="mx-auto h-5 w-5 text-flare" />
-                  <h3 className="ep-heading mt-4 text-[16px] text-ink">Email us</h3>
+                  <h3 className="ep-heading mt-4 text-[16px] text-ink">{t("contactSection.emailUs")}</h3>
                   <a
                     href="mailto:contact@exec-pass.com"
                     className="mt-2 block text-[15px] text-flare hover:text-flare-bright ep-ease"
@@ -202,7 +202,7 @@ const ExecPassUnsubscribePage = () => {
                 </div>
               </div>
               <p className="mt-8 text-[13px] text-ink-muted">
-                Customer service is available every day from 09:00 to 20:00 CET.
+                {t("contactSection.availability")}
               </p>
             </div>
           </div>

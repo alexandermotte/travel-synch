@@ -1,5 +1,6 @@
 import LegalLayout from "@/components/LegalLayout";
-import { en as c } from "@/data/legal/termsConditions.en";
+import { getTerms } from "@/data/legal";
+import { useLang } from "@/i18n/LanguageContext";
 import type { TermsBlock, TermsSection } from "@/data/legal/termsConditions.types";
 
 const renderBlock = (block: TermsBlock, idx: number) => {
@@ -39,12 +40,14 @@ const renderSection = (section: TermsSection) => (
 );
 
 export default function TermsConditions() {
+  const { lang } = useLang();
+  const c = getTerms(lang);
   return (
     <LegalLayout
       badge={c.badge}
       title={c.title}
       lastUpdated={c.lastUpdated}
-      seoTitle="ExecPass - Terms & Conditions"
+      seoTitle={`ExecPass - ${c.title}`}
       seoDescription="General Terms and Conditions of Sale for Exec Pass services operated by Marvelliant B.V."
       path="/terms"
     >

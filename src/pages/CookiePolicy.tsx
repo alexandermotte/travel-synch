@@ -1,14 +1,17 @@
 import LegalLayout from "@/components/LegalLayout";
 import LinkifyText from "@/components/LinkifyText";
-import { en as c } from "@/data/legal/cookiePolicy.en";
+import { getCookies } from "@/data/legal";
+import { useLang } from "@/i18n/LanguageContext";
 
 export default function CookiePolicy() {
+  const { lang } = useLang();
+  const c = getCookies(lang);
   return (
     <LegalLayout
       badge={c.badge}
       title={c.title}
       lastUpdated={c.lastUpdated}
-      seoTitle="ExecPass - Cookie Policy"
+      seoTitle={`ExecPass - ${c.title}`}
       seoDescription="How Exec Pass uses cookies and similar technologies, and how you can manage your preferences."
       path="/cookie-policy"
     >

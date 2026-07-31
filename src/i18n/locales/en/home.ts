@@ -1,0 +1,181 @@
+export default {
+  seo: {
+    title: "Exec Pass — the travel membership that helps you fly clever",
+    description:
+      "One travel subscription: Fast Track security at 200+ airports, automatic check-in, 500+ lounges, flight compensation, luggage recovery, eSIM data and a 24/7 concierge. Two plans.",
+  },
+  hero: {
+    badge: "The travel membership · Worldwide",
+    kicker: "ONE SUBSCRIPTION · EVERY JOURNEY",
+    brandLine1: "Exec",
+    brandLine2: "Pass",
+    tagline: "Fly clever.",
+    panelKicker: "◆ TRAVEL, MEMBERSHIP-STYLE",
+    titleA: "Every travel perk.",
+    titleB: "One membership.",
+    body: "Exec Pass is the travel subscription that handles the tedious parts of flying — fast track security, automatic check-in, lounges, compensation claims, luggage recovery and global data — with a human concierge behind all of it. Two plans, one goal: fly clever.",
+    join: "Join Exec Pass",
+    trust: "Secure · Instant confirmation · 24/7 human support",
+    howItWorks: "See how it works →",
+  },
+  stats: {
+    kicker: "EXEC PASS, IN NUMBERS",
+    items: [
+      { value: "100,000+", label: "Travellers served across our network" },
+      { value: "200+", label: "Airports in our network" },
+      { value: "500+", label: "Lounges available worldwide" },
+      { value: "24/7", label: "Human concierge support" },
+    ],
+  },
+  services: {
+    kicker: "01 / WHAT MEMBERSHIP INCLUDES",
+    title: "Everything you need, in one membership.",
+    body: "Nine travel services that would normally mean nine accounts, nine invoices and nine support queues. With Exec Pass they sit behind a single subscription.",
+    howItWorks: "How it works →",
+    items: [
+      {
+        id: "fast-track",
+        name: "Fast Track security",
+        body: "A dedicated priority lane at every included terminal — past the general queue, straight through.",
+      },
+      {
+        id: "checkin",
+        name: "Automatic check-in",
+        body: "We check you in the moment the airline opens the window, and send the boarding pass to your phone.",
+      },
+      {
+        id: "lounges",
+        name: "500+ airport lounges",
+        body: "Member rates on more than five hundred lounges worldwide, booked from the same place as your lane.",
+      },
+      {
+        id: "compensation",
+        name: "Flight compensation",
+        body: "Delayed, cancelled or bumped? We file the claim and chase the airline for what you're owed.",
+      },
+      {
+        id: "luggage",
+        name: "Luggage recovery",
+        body: "Bags gone missing? We take over tracking and the claims paperwork until they're back with you.",
+      },
+      {
+        id: "esim",
+        name: "eSIM data abroad",
+        body: "Instant mobile data on landing — no SIM swaps, no roaming bills, activated before you taxi in.",
+      },
+      {
+        id: "attractions",
+        name: "Attractions & museums",
+        body: "Member pricing and skip-the-line entry at landmarks, museums and experiences in the cities you fly to.",
+      },
+      {
+        id: "guides",
+        name: "Travel guides & e-books",
+        body: "Curated destination guides with insider routes, timings and local detail for the places you land in.",
+      },
+      {
+        id: "concierge",
+        name: "24/7 human concierge",
+        body: "A specialist on WhatsApp around the clock for changes, rebookings and ground logistics. Not a chatbot.",
+      },
+    ],
+  },
+  membership: {
+    kicker: "02 / TWO WAYS TO FLY CLEVER",
+    title: "Pick your membership.",
+    body: "Both plans are billed as a simple travel subscription and can be cancelled at any time. Current pricing and terms are shown before you confirm.",
+    mostChosen: "Most chosen",
+    trial: "3-day free trial · Cancel anytime",
+    choose: "Choose",
+    plans: [
+      {
+        id: "medium",
+        name: "Medium",
+        period: "every 3 months",
+        tagline: "For the traveller who flies a few times a quarter.",
+        features: [
+          "2 Fast Track accesses per month",
+          "Automatic check-in included",
+          "Member rates on 500+ lounges",
+          "2 flight compensation claims per quarter",
+          "2 luggage recovery claims per quarter",
+          "1 eSIM for data abroad",
+          "24/7 concierge on WhatsApp",
+        ],
+      },
+      {
+        id: "premium",
+        name: "Premium",
+        period: "every 3 months",
+        tagline: "For the frequent flyer who lives out of a terminal.",
+        features: [
+          "5 Fast Track accesses per month",
+          "Automatic check-in included",
+          "Best member rates on 500+ lounges",
+          "Unlimited flight compensation claims",
+          "Unlimited luggage recovery claims",
+          "2 eSIMs plus virtual number",
+          "Discounted attraction & museum tickets",
+          "Curated travel e-books & guides",
+          "Priority 24/7 concierge",
+        ],
+      },
+    ],
+  },
+  difference: {
+    kicker: "03 / DIFFERENCE",
+    title: "One brand for the whole journey.",
+    body: "Travelling well is usually a stack of separate services. Exec Pass replaces the stack with a membership.",
+    colTask: "TRAVEL TASK",
+    colOwn: "ON YOUR OWN",
+    colExec: "WITH EXEC PASS",
+    rows: [
+      ["Security lane", "General queue", "Fast Track priority"],
+      ["Check-in", "You, at the desk", "Automatic, on your phone"],
+      ["Lounges", "Third-party sites", "500+ at member rates"],
+      ["Delayed flight", "Airline claim forms", "We file and chase it"],
+      ["Lost luggage", "Endless follow-ups", "We handle the claim"],
+      ["Data abroad", "Roaming charges", "eSIM included"],
+      ["Change of plans", "Hold music", "Concierge on WhatsApp"],
+    ],
+  },
+  faq: {
+    kicker: "04 / QUESTIONS",
+    title: "Answers, before you ask.",
+    items: [
+      {
+        q: "What is Exec Pass?",
+        a: "A travel membership. One subscription covers Fast Track security, automatic check-in, lounge access, compensation and luggage claims, eSIM data, attraction tickets and a 24/7 human concierge.",
+      },
+      {
+        q: "What is the difference between the two plans?",
+        a: "Medium suits travellers flying a few times a quarter: 2 Fast Track accesses a month, check-in, lounge rates, one eSIM and a capped number of claims. Premium is built for frequent flyers: 5 Fast Track accesses a month, unlimited compensation and luggage claims, two eSIMs, ticket discounts and priority concierge.",
+      },
+      {
+        q: "Can I cancel?",
+        a: "Yes. Exec Pass is a rolling travel subscription you can cancel at any time from your member area. The full terms are shown before you confirm.",
+      },
+      {
+        q: "Which airports are covered?",
+        a: "More than 200 airports in our network operate a Fast Track lane we can book, and over 500 lounges are available to members. Coverage is shown before you confirm each booking.",
+      },
+      {
+        q: "How do I reach support?",
+        a: "A human concierge is available 24/7 on WhatsApp, in nine languages, for changes, rebookings, claims and ground logistics.",
+      },
+      {
+        q: "Is Exec Pass an airport or an airline?",
+        a: "No. Exec Pass is not affiliated with any airport or airline. We are an independent travel brand that arranges priority services on your behalf.",
+      },
+    ],
+  },
+  cta: {
+    kicker: "READY WHEN YOU ARE",
+    titleLine1: "The airport, handled.",
+    titleLine2: "Fly clever.",
+    body: "One membership takes care of security, check-in, lounges, claims and connectivity — so you walk in late and still make the gate.",
+    join: "Join Exec Pass",
+    howItWorks: "See how it works →",
+  },
+  documentTitle: "ExecPass - Fly clever.",
+} as const;

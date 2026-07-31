@@ -2,53 +2,54 @@ import { useEffect, useState } from "react";
 import { MessageCircle, Mail, Phone, Loader2, CheckCircle, ArrowRight } from "lucide-react";
 import { z } from "zod";
 import { toast } from "sonner";
-import { Link } from "react-router-dom";
 import { ExecPassHeader } from "@/components/ExecPassHeader";
 import { ExecPassFooter } from "@/components/ExecPassFooter";
 import { Seo } from "@/components/Seo";
-
-const contactSchema = z.object({
-  firstName: z.string().trim().min(1, { message: "First name is required" }).max(100),
-  lastName: z.string().trim().max(100),
-  email: z.string().trim().email({ message: "Enter a valid email address" }).max(255),
-  phone: z.string().trim().min(1, { message: "Phone number is required" }).max(30),
-  message: z.string().trim().min(1, { message: "Please write a message" }).max(1000),
-});
-
-
-const ROUTES = [
-  {
-    icon: MessageCircle,
-    label: "WhatsApp concierge",
-    value: "+44 20 3936 2491",
-    href: "https://wa.me/442039362491",
-    note: "24/7, nine languages. Fastest route for anything time-critical.",
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    value: "contact@exec-pass.com",
-    href: "mailto:contact@exec-pass.com",
-    note: "For account, billing and documentation requests.",
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+44 20 3936 2491",
-    href: "tel:+442039362491",
-    note: "Every day, 09:00–20:00 CET.",
-  },
-];
+import { LangLink } from "@/components/LangLink";
+import { useT } from "@/i18n/LanguageContext";
 
 const ExecPassContact = () => {
+  const t = useT("contact");
   const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", phone: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
+  const contactSchema = z.object({
+    firstName: z.string().trim().min(1, { message: t("validation.firstNameRequired") }).max(100),
+    lastName: z.string().trim().max(100),
+    email: z.string().trim().email({ message: t("validation.invalidEmail") }).max(255),
+    phone: z.string().trim().min(1, { message: t("validation.phoneRequired") }).max(30),
+    message: z.string().trim().min(1, { message: t("validation.messageRequired") }).max(1000),
+  });
+
+  const ROUTES = [
+    {
+      icon: MessageCircle,
+      label: t("routes.whatsapp.label"),
+      value: "+44 20 3936 2491",
+      href: "https://wa.me/442039362491",
+      note: t("routes.whatsapp.note"),
+    },
+    {
+      icon: Mail,
+      label: t("routes.email.label"),
+      value: "contact@exec-pass.com",
+      href: "mailto:contact@exec-pass.com",
+      note: t("routes.email.note"),
+    },
+    {
+      icon: Phone,
+      label: t("routes.phone.label"),
+      value: "+44 20 3936 2491",
+      href: "tel:+442039362491",
+      note: t("routes.phone.note"),
+    },
+  ];
+
   useEffect(() => {
-    document.title = "ExecPass - Contact";
+    document.title = t("pageTitle");
     window.scrollTo(0, 0);
-  }, []);
+  }, [t]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -80,20 +81,20 @@ const ExecPassContact = () => {
   return (
     <div className="min-h-screen ep-bg-void">
       <Seo
-        title="Contact Exec Pass — WhatsApp, email and phone support"
-        description="Reach the Exec Pass concierge 24/7 on WhatsApp, by email at contact@exec-pass.com, or by phone daily from 09:00 to 20:00 CET."
+        title={t("seo.title")}
+        description={t("seo.description")}
         path="/contact"
       />
       <ExecPassHeader />
       <main>
         <section className="ep-bg-void ep-wash-void">
           <div className="mx-auto max-w-container px-6 pt-20 pb-24 md:pt-24 md:pb-28">
-            <div className="ep-mono text-flare-bright mb-8">CONTACT</div>
+            <div className="ep-mono text-flare-bright mb-8">{t("hero.eyebrow")}</div>
             <h1 className="ep-display text-bright text-[48px] md:text-[80px] leading-[1.0] max-w-4xl">
-              A human, always.
+              {t("hero.title")}
             </h1>
             <p className="mt-8 max-w-prose text-[19px] text-steel">
-              Three ways to reach the concierge team. No ticket forms, no chatbots.
+              {t("hero.subtitle")}
             </p>
           </div>
         </section>
@@ -120,22 +121,22 @@ const ExecPassContact = () => {
 
             {/* Contact form */}
             <div className="mt-16">
-              <div className="ep-mono text-flare-ink mb-4">SEND A MESSAGE</div>
-              <h2 className="ep-heading text-[30px] md:text-[36px] text-ink">Write to us directly</h2>
+              <div className="ep-mono text-flare-ink mb-4">{t("form.eyebrow")}</div>
+              <h2 className="ep-heading text-[30px] md:text-[36px] text-ink">{t("form.title")}</h2>
               <p className="mt-3 text-[16px] text-ink-muted">
-                Fill in the form and the concierge team will get back to you shortly.
+                {t("form.subtitle")}
               </p>
 
               {submitted ? (
                 <div className="mt-8 p-10 ep-bg-concrete ep-shadow-soft text-center" style={{ borderRadius: 20 }}>
                   <CheckCircle className="h-12 w-12 text-flare mx-auto mb-5" />
-                  <h3 className="ep-heading text-[22px] text-ink mb-2">Message sent</h3>
-                  <p className="text-[15px] text-ink-muted mb-5">We'll get back to you as soon as possible.</p>
+                  <h3 className="ep-heading text-[22px] text-ink mb-2">{t("success.title")}</h3>
+                  <p className="text-[15px] text-ink-muted mb-5">{t("success.subtitle")}</p>
                   <button
                     onClick={() => setSubmitted(false)}
                     className="text-[14px] text-flare-ink underline underline-offset-2"
                   >
-                    Send another message
+                    {t("success.another")}
                   </button>
                 </div>
               ) : (
@@ -146,32 +147,32 @@ const ExecPassContact = () => {
                 >
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
-                      <label htmlFor="firstName" className="block text-[14px] font-medium text-ink-muted mb-2">First name*</label>
-                      <input id="firstName" name="firstName" type="text" value={formData.firstName} onChange={handleChange} maxLength={100} className={inputClass} placeholder="John" />
+                      <label htmlFor="firstName" className="block text-[14px] font-medium text-ink-muted mb-2">{t("form.firstName")}</label>
+                      <input id="firstName" name="firstName" type="text" value={formData.firstName} onChange={handleChange} maxLength={100} className={inputClass} placeholder={t("form.firstNamePlaceholder")} />
                     </div>
                     <div>
-                      <label htmlFor="lastName" className="block text-[14px] font-medium text-ink-muted mb-2">Last name</label>
-                      <input id="lastName" name="lastName" type="text" value={formData.lastName} onChange={handleChange} maxLength={100} className={inputClass} placeholder="Doe" />
+                      <label htmlFor="lastName" className="block text-[14px] font-medium text-ink-muted mb-2">{t("form.lastName")}</label>
+                      <input id="lastName" name="lastName" type="text" value={formData.lastName} onChange={handleChange} maxLength={100} className={inputClass} placeholder={t("form.lastNamePlaceholder")} />
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-[14px] font-medium text-ink-muted mb-2">Email address*</label>
-                    <input id="email" name="email" type="email" value={formData.email} onChange={handleChange} maxLength={255} className={inputClass} placeholder="john@example.com" />
+                    <label htmlFor="email" className="block text-[14px] font-medium text-ink-muted mb-2">{t("form.email")}</label>
+                    <input id="email" name="email" type="email" value={formData.email} onChange={handleChange} maxLength={255} className={inputClass} placeholder={t("form.emailPlaceholder")} />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-[14px] font-medium text-ink-muted mb-2">Phone number*</label>
-                    <input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} maxLength={30} className={inputClass} placeholder="+44 20 3936 2491" />
+                    <label htmlFor="phone" className="block text-[14px] font-medium text-ink-muted mb-2">{t("form.phone")}</label>
+                    <input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} maxLength={30} className={inputClass} placeholder={t("form.phonePlaceholder")} />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-[14px] font-medium text-ink-muted mb-2">How can we help you?*</label>
-                    <textarea id="message" name="message" rows={5} value={formData.message} onChange={handleChange} maxLength={1000} className={`${inputClass} resize-none`} placeholder="Tell us what you need…" />
+                    <label htmlFor="message" className="block text-[14px] font-medium text-ink-muted mb-2">{t("form.message")}</label>
+                    <textarea id="message" name="message" rows={5} value={formData.message} onChange={handleChange} maxLength={1000} className={`${inputClass} resize-none`} placeholder={t("form.messagePlaceholder")} />
                   </div>
                   <button
                     type="submit"
                     disabled={isSubmitting}
                     className="ep-btn-type w-full inline-flex items-center justify-center gap-2 rounded-xl bg-flare-fill px-6 py-4 text-bright hover:bg-flare-fill-hover disabled:opacity-60 ep-ease ep-press"
                   >
-                    {isSubmitting ? (<><Loader2 className="h-4 w-4 animate-spin" />Sending…</>) : (<>Submit now<ArrowRight className="h-4 w-4" /></>)}
+                    {isSubmitting ? (<><Loader2 className="h-4 w-4 animate-spin" />{t("form.sending")}</>) : (<>{t("form.submit")}<ArrowRight className="h-4 w-4" /></>)}
                   </button>
                 </form>
               )}
@@ -179,30 +180,20 @@ const ExecPassContact = () => {
               {/* Disclaimer */}
               <div className="mt-6 text-[13px] text-ink-muted/80 leading-relaxed space-y-3">
                 <p>
-                  The information collected through this form is processed by Marvelliant B.V., acting as
-                  data controller, for the purpose of handling your request. Fields marked with an asterisk
-                  (*) are mandatory; failure to provide this information may prevent us from processing your
-                  request. This processing is based on our legitimate interest in responding to your
-                  enquiries. The data collected includes your identification and contact details, as well as
-                  any information you choose to provide in your message.
+                  {t("disclaimer.p1")}
                 </p>
                 <p>
-                  You have the right to access, rectify, erase, and restrict the processing of your data, the
-                  right to object to such processing, and the right to data portability. Where processing is
-                  based on your consent, you may withdraw it at any time without affecting the lawfulness of
-                  processing carried out before such withdrawal. You may exercise these rights by writing to{" "}
+                  {t("disclaimer.p2Before")}{" "}
                   <a href="mailto:contact@exec-pass.com" className="text-flare-ink underline underline-offset-2">
                     contact@exec-pass.com
                   </a>
-                  . You also have the right to lodge a complaint with the competent supervisory authority, in
-                  particular the data protection authority of your country of residence within the European
-                  Union.
+                  {t("disclaimer.p2After")}
                 </p>
                 <p>
-                  To learn more about how your data is managed, please refer to our{" "}
-                  <Link to="/privacy" className="text-flare-ink underline underline-offset-2">
-                    Privacy Policy
-                  </Link>
+                  {t("disclaimer.p3Before")}{" "}
+                  <LangLink to="/privacy" className="text-flare-ink underline underline-offset-2">
+                    {t("disclaimer.p3Link")}
+                  </LangLink>
                   .
                 </p>
               </div>
@@ -210,13 +201,13 @@ const ExecPassContact = () => {
 
 
             <div className="mt-16 p-8 ep-bg-concrete ep-shadow-soft" style={{ borderRadius: 20 }}>
-              <div className="ep-mono text-flare-ink mb-4">REGISTERED OFFICE</div>
+              <div className="ep-mono text-flare-ink mb-4">{t("office.eyebrow")}</div>
               <address className="not-italic text-[16px] text-ink leading-relaxed">
-                MARVELLIANT B.V.<br />
-                Bos en Lommerplein 280<br />
-                1055RW Amsterdam, Netherlands
+                {t("office.line1")}<br />
+                {t("office.line2")}<br />
+                {t("office.line3")}
               </address>
-              <p className="ep-chip text-ink-muted mt-4">KVK 96513519 · RSIN 867643298</p>
+              <p className="ep-chip text-ink-muted mt-4">{t("office.reg")}</p>
             </div>
           </div>
         </section>

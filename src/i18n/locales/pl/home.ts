@@ -1,0 +1,181 @@
+export default {
+  seo: {
+    title: "Exec Pass — abonament podróżny, dzięki któremu podróżujesz sprytnie",
+    description:
+      "Jedna subskrypcja podróżna: Fast Track przy kontroli bezpieczeństwa w ponad 200 lotniskach, automatyczna odprawa, 500+ lounge'y, odszkodowania lotnicze, odzyskiwanie bagażu, dane eSIM i concierge 24/7. Dwa plany.",
+  },
+  hero: {
+    badge: "Abonament podróżny · Na całym świecie",
+    kicker: "JEDNA SUBSKRYPCJA · KAŻDA PODRÓŻ",
+    brandLine1: "Exec",
+    brandLine2: "Pass",
+    tagline: "Podróżuj sprytnie.",
+    panelKicker: "◆ PODRÓŻE W STYLU CZŁONKOSTWA",
+    titleA: "Każda korzyść podróżna.",
+    titleB: "Jedno członkostwo.",
+    body: "Exec Pass to subskrypcja podróżna, która zajmuje się żmudnymi elementami latania — Fast Track przy kontroli bezpieczeństwa, automatyczną odprawą, lounge'ami, roszczeniami odszkodowawczymi, odzyskiwaniem bagażu i globalnymi danymi — a za tym wszystkim stoi ludzki concierge. Dwa plany, jeden cel: podróżuj sprytnie.",
+    join: "Dołącz do Exec Pass",
+    trust: "Bezpiecznie · Natychmiastowe potwierdzenie · Wsparcie 24/7",
+    howItWorks: "Zobacz, jak to działa →",
+  },
+  stats: {
+    kicker: "EXEC PASS W LICZBACH",
+    items: [
+      { value: "100 000+", label: "Podróżnych obsłużonych w naszej sieci" },
+      { value: "200+", label: "Lotnisk w naszej sieci" },
+      { value: "500+", label: "Lounge'y dostępnych na całym świecie" },
+      { value: "24/7", label: "Wsparcie ludzkiego concierge" },
+    ],
+  },
+  services: {
+    kicker: "01 / CO OBEJMUJE CZŁONKOSTWO",
+    title: "Wszystko, czego potrzebujesz, w jednym członkostwie.",
+    body: "Dziewięć usług podróżnych, które zwykle oznaczałyby dziewięć kont, dziewięć faktur i dziewięć kolejek wsparcia. Z Exec Pass znajdują się za jedną subskrypcją.",
+    howItWorks: "Jak to działa →",
+    items: [
+      {
+        id: "fast-track",
+        name: "Fast Track przy kontroli bezpieczeństwa",
+        body: "Dedykowana priorytetowa ścieżka na każdym objętym usługą terminalu — omijając ogólną kolejkę, prosto do celu.",
+      },
+      {
+        id: "checkin",
+        name: "Automatyczna odprawa",
+        body: "Odprawiamy Cię w momencie, gdy linia lotnicza otwiera okno odprawy, i wysyłamy kartę pokładową na Twój telefon.",
+      },
+      {
+        id: "lounges",
+        name: "500+ lounge'y lotniskowych",
+        body: "Ceny członkowskie w ponad pięciuset lounge'ach na całym świecie, rezerwowane z tego samego miejsca co ścieżka priorytetowa.",
+      },
+      {
+        id: "compensation",
+        name: "Odszkodowania lotnicze",
+        body: "Opóźnienie, odwołanie lub przesiadka bez miejsca? Składamy roszczenie i egzekwujemy od linii lotniczej to, co Ci się należy.",
+      },
+      {
+        id: "luggage",
+        name: "Odzyskiwanie bagażu",
+        body: "Bagaż zaginął? Przejmujemy śledzenie i formalności związane z roszczeniem, aż wróci do Ciebie.",
+      },
+      {
+        id: "esim",
+        name: "Dane eSIM za granicą",
+        body: "Natychmiastowy internet mobilny po lądowaniu — bez wymiany kart SIM, bez opłat roamingowych, aktywowane, zanim jeszcze dojedziesz do bramki.",
+      },
+      {
+        id: "attractions",
+        name: "Atrakcje i muzea",
+        body: "Ceny członkowskie i wejście bez kolejki do zabytków, muzeów i atrakcji w miastach, do których lecisz.",
+      },
+      {
+        id: "guides",
+        name: "Przewodniki i e-booki podróżnicze",
+        body: "Starannie dobrane przewodniki po destynacjach z trasami, harmonogramami i lokalnymi wskazówkami dla miejsc, do których lecisz.",
+      },
+      {
+        id: "concierge",
+        name: "Ludzki concierge 24/7",
+        body: "Specjalista na WhatsApp przez całą dobę do zmian, ponownych rezerwacji i logistyki naziemnej. Nie chatbot.",
+      },
+    ],
+  },
+  membership: {
+    kicker: "02 / DWA SPOSOBY, BY PODRÓŻOWAĆ SPRYTNIE",
+    title: "Wybierz swoje członkostwo.",
+    body: "Oba plany są rozliczane jako prosta subskrypcja podróżna i można je anulować w dowolnym momencie. Aktualne ceny i warunki są pokazane przed potwierdzeniem.",
+    mostChosen: "Najczęściej wybierane",
+    trial: "3-dniowy bezpłatny okres próbny · Anuluj w każdej chwili",
+    choose: "Wybierz",
+    plans: [
+      {
+        id: "medium",
+        name: "Medium",
+        period: "co 3 miesiące",
+        tagline: "Dla podróżnych, którzy latają kilka razy w kwartale.",
+        features: [
+          "2 dostępy do Fast Track miesięcznie",
+          "Automatyczna odprawa w cenie",
+          "Ceny członkowskie w 500+ lounge'ach",
+          "2 roszczenia o odszkodowanie lotnicze na kwartał",
+          "2 roszczenia o odzyskanie bagażu na kwartał",
+          "1 eSIM na dane za granicą",
+          "Concierge 24/7 na WhatsApp",
+        ],
+      },
+      {
+        id: "premium",
+        name: "Premium",
+        period: "co 3 miesiące",
+        tagline: "Dla pasażerów często latających, którzy niemal mieszkają w terminalu.",
+        features: [
+          "5 dostępów do Fast Track miesięcznie",
+          "Automatyczna odprawa w cenie",
+          "Najlepsze ceny członkowskie w 500+ lounge'ach",
+          "Nieograniczone roszczenia o odszkodowanie lotnicze",
+          "Nieograniczone roszczenia o odzyskanie bagażu",
+          "2 eSIM-y i wirtualny numer",
+          "Zniżki na bilety do atrakcji i muzeów",
+          "Starannie dobrane e-booki i przewodniki podróżnicze",
+          "Priorytetowy concierge 24/7",
+        ],
+      },
+    ],
+  },
+  difference: {
+    kicker: "03 / RÓŻNICA",
+    title: "Jedna marka na całą podróż.",
+    body: "Dobre podróżowanie to zwykle stos oddzielnych usług. Exec Pass zastępuje ten stos jednym członkostwem.",
+    colTask: "ZADANIE PODRÓŻNE",
+    colOwn: "SAMODZIELNIE",
+    colExec: "Z EXEC PASS",
+    rows: [
+      ["Ścieżka bezpieczeństwa", "Ogólna kolejka", "Priorytet Fast Track"],
+      ["Odprawa", "Ty, przy stanowisku", "Automatyczna, na Twoim telefonie"],
+      ["Lounge'e", "Strony zewnętrzne", "500+ w cenach członkowskich"],
+      ["Opóźniony lot", "Formularze reklamacyjne linii lotniczej", "My składamy i egzekwujemy"],
+      ["Zagubiony bagaż", "Niekończące się interwencje", "My zajmujemy się roszczeniem"],
+      ["Dane za granicą", "Opłaty roamingowe", "eSIM w cenie"],
+      ["Zmiana planów", "Muzyka na czekanie", "Concierge na WhatsApp"],
+    ],
+  },
+  faq: {
+    kicker: "04 / PYTANIA",
+    title: "Odpowiedzi, zanim zapytasz.",
+    items: [
+      {
+        q: "Czym jest Exec Pass?",
+        a: "Abonament podróżny. Jedna subskrypcja obejmuje Fast Track przy kontroli bezpieczeństwa, automatyczną odprawę, dostęp do lounge'y, odszkodowania i roszczenia za bagaż, dane eSIM, bilety do atrakcji i ludzkiego concierge 24/7.",
+      },
+      {
+        q: "Jaka jest różnica między dwoma planami?",
+        a: "Medium pasuje podróżnym latającym kilka razy w kwartale: 2 dostępy do Fast Track miesięcznie, odprawa, ceny lounge'owe, jeden eSIM i ograniczona liczba roszczeń. Premium jest stworzony dla często latających: 5 dostępów do Fast Track miesięcznie, nieograniczone odszkodowania i roszczenia za bagaż, dwa eSIM-y, zniżki na bilety i priorytetowy concierge.",
+      },
+      {
+        q: "Czy mogę anulować?",
+        a: "Tak. Exec Pass to odnawialna subskrypcja podróżna, którą możesz anulować w dowolnym momencie ze swojej strefy członka. Pełne warunki są pokazane przed potwierdzeniem.",
+      },
+      {
+        q: "Które lotniska są objęte usługą?",
+        a: "Ponad 200 lotnisk w naszej sieci obsługuje ścieżkę Fast Track, którą możemy zarezerwować, a ponad 500 lounge'y jest dostępnych dla członków. Zasięg jest pokazywany przed potwierdzeniem każdej rezerwacji.",
+      },
+      {
+        q: "Jak mogę skontaktować się ze wsparciem?",
+        a: "Ludzki concierge jest dostępny 24/7 na WhatsApp, w dziewięciu językach, do zmian, ponownych rezerwacji, roszczeń i logistyki naziemnej.",
+      },
+      {
+        q: "Czy Exec Pass to lotnisko lub linia lotnicza?",
+        a: "Nie. Exec Pass nie jest powiązany z żadnym lotniskiem ani linią lotniczą. Jesteśmy niezależną marką podróżniczą, która organizuje usługi priorytetowe w Twoim imieniu.",
+      },
+    ],
+  },
+  cta: {
+    kicker: "GOTOWI, GDY TY BĘDZIESZ GOTOWY",
+    titleLine1: "Lotnisko pod kontrolą.",
+    titleLine2: "Podróżuj sprytnie.",
+    body: "Jedno członkostwo zajmuje się bezpieczeństwem, odprawą, lounge'ami, roszczeniami i łącznością — dzięki czemu wchodzisz na pokład na styk i zdążasz na bramkę.",
+    join: "Dołącz do Exec Pass",
+    howItWorks: "Zobacz, jak to działa →",
+  },
+  documentTitle: "ExecPass - Podróżuj sprytnie.",
+} as const;
