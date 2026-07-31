@@ -46,16 +46,10 @@ export const ExecPassHeader = () => {
           <LanguageSelector />
           <a
             href={MEMBER_URL}
-            className="ep-mono text-ink-muted hover:text-ink ep-ease text-[13px] uppercase tracking-wider"
+            className="ep-btn-type text-[13px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-6 py-2.5 ep-ease ep-press rounded-full"
           >
             {t("cta.login")}
           </a>
-          <LangLink
-            to={bookUrl}
-            className="ep-btn-type text-[13px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-6 py-2.5 ep-ease ep-press rounded-full"
-          >
-            {t("cta.join")}
-          </LangLink>
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
