@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { AirsideMark } from "@/components/AirsideMark";
 import { LangLink } from "@/components/LangLink";
 import { LanguageSelector } from "@/components/LanguageSelector";
-import { preCheckoutPath } from "@/lib/booking";
+import { preCheckoutPath, MEMBER_URL } from "@/lib/booking";
 import { useT } from "@/i18n/LanguageContext";
 
 const NAV = [
