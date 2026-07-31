@@ -1,11 +1,9 @@
-import { useLocation } from "react-router-dom";
 import { AirsideMark } from "@/components/AirsideMark";
 import { LangLink } from "@/components/LangLink";
-import { preCheckoutPath, LEGAL_LINKS, MEMBER_URL } from "@/lib/booking";
+import { LEGAL_LINKS, MEMBER_URL } from "@/lib/booking";
 import { useT } from "@/i18n/LanguageContext";
 
 export const ExecPassFooter = () => {
-  const { search } = useLocation();
   const t = useT("common");
 
   return (
