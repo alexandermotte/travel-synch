@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { AirsideMark } from "@/components/AirsideMark";
 import { LangLink } from "@/components/LangLink";
 import { LanguageSelector } from "@/components/LanguageSelector";
-import { preCheckoutPath, MEMBER_URL } from "@/lib/booking";
+import { MEMBER_URL } from "@/lib/booking";
 import { useT } from "@/i18n/LanguageContext";
 
 const NAV = [
@@ -17,9 +16,7 @@ const NAV = [
 
 export const ExecPassHeader = () => {
   const [open, setOpen] = useState(false);
-  const { search } = useLocation();
   const t = useT("common");
-  const bookUrl = preCheckoutPath(undefined, search);
 
   return (
     <header
