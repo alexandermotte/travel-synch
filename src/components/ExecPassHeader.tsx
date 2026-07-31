@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { AirsideMark } from "@/components/AirsideMark";
 import { LangLink } from "@/components/LangLink";
 import { LanguageSelector } from "@/components/LanguageSelector";
-import { preCheckoutPath, MEMBER_URL } from "@/lib/booking";
+import { MEMBER_URL } from "@/lib/booking";
 import { useT } from "@/i18n/LanguageContext";
 
 const NAV = [
@@ -17,9 +16,7 @@ const NAV = [
 
 export const ExecPassHeader = () => {
   const [open, setOpen] = useState(false);
-  const { search } = useLocation();
   const t = useT("common");
-  const bookUrl = preCheckoutPath(undefined, search);
 
   return (
     <header
@@ -46,16 +43,10 @@ export const ExecPassHeader = () => {
           <LanguageSelector />
           <a
             href={MEMBER_URL}
-            className="ep-mono text-ink-muted hover:text-ink ep-ease text-[13px] uppercase tracking-wider"
+            className="ep-btn-type text-[13px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-6 py-2.5 ep-ease ep-press rounded-full"
           >
             {t("cta.login")}
           </a>
-          <LangLink
-            to={bookUrl}
-            className="ep-btn-type text-[13px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-6 py-2.5 ep-ease ep-press rounded-full"
-          >
-            {t("cta.join")}
-          </LangLink>
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
@@ -86,17 +77,10 @@ export const ExecPassHeader = () => {
             <a
               href={MEMBER_URL}
               onClick={() => setOpen(false)}
-              className="ep-mono text-ink ep-ease"
+              className="ep-btn-type text-[13px] uppercase tracking-wider bg-flare text-white px-5 py-3 text-center mt-2 rounded-full"
             >
               {t("cta.login")}
             </a>
-            <LangLink
-              to={bookUrl}
-              onClick={() => setOpen(false)}
-              className="ep-btn-type text-[13px] uppercase tracking-wider bg-flare text-white px-5 py-3 text-center mt-2 rounded-full"
-            >
-              {t("cta.join")}
-            </LangLink>
           </nav>
         </div>
       )}

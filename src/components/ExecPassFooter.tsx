@@ -1,11 +1,9 @@
-import { useLocation } from "react-router-dom";
 import { AirsideMark } from "@/components/AirsideMark";
 import { LangLink } from "@/components/LangLink";
-import { preCheckoutPath, LEGAL_LINKS, MEMBER_URL } from "@/lib/booking";
+import { LEGAL_LINKS, MEMBER_URL } from "@/lib/booking";
 import { useT } from "@/i18n/LanguageContext";
 
 export const ExecPassFooter = () => {
-  const { search } = useLocation();
   const t = useT("common");
 
   return (
@@ -17,12 +15,6 @@ export const ExecPassFooter = () => {
             <AirsideMark variant="light" />
             <p className="ep-mono text-steel mt-6">{t("footer.tagline")}</p>
             <p className="mt-6 max-w-prose text-[15px] text-steel">{t("footer.blurb")}</p>
-            <LangLink
-              to={preCheckoutPath(undefined, search)}
-              className="ep-btn-type text-[13px] uppercase tracking-wider inline-block bg-flare hover:bg-flare-bright text-white px-5 py-3 mt-8 ep-ease ep-press rounded-full"
-            >
-              {t("cta.join")}
-            </LangLink>
 
           </div>
 
