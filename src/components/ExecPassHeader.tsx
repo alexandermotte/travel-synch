@@ -80,17 +80,10 @@ export const ExecPassHeader = () => {
             <a
               href={MEMBER_URL}
               onClick={() => setOpen(false)}
-              className="ep-mono text-ink ep-ease"
+              className="ep-btn-type text-[13px] uppercase tracking-wider bg-flare text-white px-5 py-3 text-center mt-2 rounded-full"
             >
               {t("cta.login")}
             </a>
-            <LangLink
-              to={bookUrl}
-              onClick={() => setOpen(false)}
-              className="ep-btn-type text-[13px] uppercase tracking-wider bg-flare text-white px-5 py-3 text-center mt-2 rounded-full"
-            >
-              {t("cta.join")}
-            </LangLink>
           </nav>
         </div>
       )}
