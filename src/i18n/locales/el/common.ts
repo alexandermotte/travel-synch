@@ -8,6 +8,7 @@ export default {
   },
   cta: {
     join: "Γίνε μέλος του Exec Pass",
+    login: "Σύνδεση",
   },
   footer: {
     tagline: "Ταξίδεψε έξυπνα.",

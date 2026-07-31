@@ -8,6 +8,7 @@ export default {
   },
   cta: {
     join: "Exec Pass'e Katıl",
+    login: "Giriş yap",
   },
   footer: {
     tagline: "Akıllıca uç.",

@@ -8,6 +8,7 @@ export default {
   },
   cta: {
     join: "Unisciti a Exec Pass",
+    login: "Accedi",
   },
   footer: {
     tagline: "Vola furbo.",

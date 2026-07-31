@@ -8,6 +8,7 @@ export default {
   },
   cta: {
     join: "Rejoindre Exec Pass",
+    login: "Se connecter",
   },
   footer: {
     tagline: "Fly clever.",

@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { AirsideMark } from "@/components/AirsideMark";
 import { LangLink } from "@/components/LangLink";
 import { LanguageSelector } from "@/components/LanguageSelector";
-import { preCheckoutPath } from "@/lib/booking";
+import { preCheckoutPath, MEMBER_URL } from "@/lib/booking";
 import { useT } from "@/i18n/LanguageContext";
 
 const NAV = [
@@ -44,6 +44,12 @@ export const ExecPassHeader = () => {
 
         <div className="hidden lg:flex items-center gap-4">
           <LanguageSelector />
+          <a
+            href={MEMBER_URL}
+            className="ep-mono text-ink-muted hover:text-ink ep-ease text-[13px] uppercase tracking-wider"
+          >
+            {t("cta.login")}
+          </a>
           <LangLink
             to={bookUrl}
             className="ep-btn-type text-[13px] uppercase tracking-wider bg-flare hover:bg-flare-bright text-white px-6 py-2.5 ep-ease ep-press rounded-full"
@@ -77,6 +83,13 @@ export const ExecPassHeader = () => {
                 {t(`nav.${n.key}`)}
               </LangLink>
             ))}
+            <a
+              href={MEMBER_URL}
+              onClick={() => setOpen(false)}
+              className="ep-mono text-ink ep-ease"
+            >
+              {t("cta.login")}
+            </a>
             <LangLink
               to={bookUrl}
               onClick={() => setOpen(false)}
