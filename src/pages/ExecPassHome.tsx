@@ -316,17 +316,17 @@ const Difference = () => {
               className="grid grid-cols-3 border border-line ep-bg-concrete overflow-hidden"
               style={{ borderRadius: 20 }}
             >
-              <div className="p-5 ep-mono text-ink-muted border-b border-line">{t("difference.colTask")}</div>
-              <div className="p-5 ep-mono text-ink-muted border-b border-l border-line">{t("difference.colOwn")}</div>
-              <div className="p-5 ep-mono text-flare-ink border-b border-l border-line">{t("difference.colExec")}</div>
+              <div className="p-5 ep-mono text-ink-muted border-b border-line min-w-0">{t("difference.colTask")}</div>
+              <div className="p-5 ep-mono text-ink-muted border-b border-l border-line min-w-0">{t("difference.colOwn")}</div>
+              <div className="p-5 ep-mono text-flare-ink border-b border-l border-line min-w-0">{t("difference.colExec")}</div>
 
               {rows.map(([label, a, b], i, arr) => (
                 <div key={label} className="contents">
-                  <div className={`p-5 text-[15px] text-ink ${i < arr.length - 1 ? "border-b border-line" : ""}`}>{label}</div>
-                  <div className={`p-5 text-[15px] text-ink-muted border-l border-line ${i < arr.length - 1 ? "border-b" : ""}`}>{a}</div>
-                  <div className={`p-5 text-[15px] text-ink border-l border-line ${i < arr.length - 1 ? "border-b" : ""}`}>
+                  <div className={`p-5 text-[15px] text-ink min-w-0 break-words ${i < arr.length - 1 ? "border-b border-line" : ""}`}>{label}</div>
+                  <div className={`p-5 text-[15px] text-ink-muted border-l border-line min-w-0 break-words ${i < arr.length - 1 ? "border-b" : ""}`}>{a}</div>
+                  <div className={`p-5 text-[15px] text-ink border-l border-line min-w-0 break-words ${i < arr.length - 1 ? "border-b" : ""}`}>
                     <span className="inline-flex items-center gap-2">
-                      <Check size={14} className="text-flare-ink" /> {b}
+                      <Check size={14} className="text-flare-ink shrink-0" /> {b}
                     </span>
                   </div>
                 </div>
