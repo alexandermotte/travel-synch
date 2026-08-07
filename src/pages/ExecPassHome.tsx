@@ -313,20 +313,20 @@ const Difference = () => {
           </div>
           <div className="md:col-span-8">
             <div className="overflow-x-auto rounded-[20px] border border-line ep-bg-concrete">
-              <table className="w-full table-fixed border-collapse min-w-[320px]">
+              <table className="w-full table-fixed border-collapse min-w-[300px]">
                 <thead>
                   <tr className="border-b border-line">
-                    <th className="p-5 ep-mono text-ink-muted text-left w-[30%]">{t("difference.colTask")}</th>
-                    <th className="p-5 ep-mono text-ink-muted text-left border-l border-line w-[35%]">{t("difference.colOwn")}</th>
-                    <th className="p-5 ep-mono text-flare-ink text-left border-l border-line w-[35%]">{t("difference.colExec")}</th>
+                    <th className="p-3 sm:p-5 ep-mono text-ink-muted text-left w-[30%]">{t("difference.colTask")}</th>
+                    <th className="p-3 sm:p-5 ep-mono text-ink-muted text-left border-l border-line w-[35%]">{t("difference.colOwn")}</th>
+                    <th className="p-3 sm:p-5 ep-mono text-flare-ink text-left border-l border-line w-[35%]">{t("difference.colExec")}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {rows.map(([label, a, b], i, arr) => (
                     <tr key={label} className={`${i < arr.length - 1 ? "border-b border-line" : ""}`}>
-                      <td className="p-5 text-[15px] text-ink break-words align-top">{label}</td>
-                      <td className="p-5 text-[15px] text-ink-muted break-words align-top border-l border-line">{a}</td>
-                      <td className="p-5 text-[15px] text-ink break-words align-top border-l border-line">
+                      <td className="p-3 sm:p-5 text-[14px] sm:text-[15px] text-ink break-words align-top">{label}</td>
+                      <td className="p-3 sm:p-5 text-[14px] sm:text-[15px] text-ink-muted break-words align-top border-l border-line">{a}</td>
+                      <td className="p-3 sm:p-5 text-[14px] sm:text-[15px] text-ink break-words align-top border-l border-line">
                         <span className="inline-flex items-start gap-2">
                           <Check size={14} className="text-flare-ink shrink-0 mt-1" /> {b}
                         </span>
