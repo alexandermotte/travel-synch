@@ -162,7 +162,7 @@ const HowItWorks = () => {
                 ].map((item, i) => (
                   <div
                     key={item.label}
-                    className={`flex items-center gap-4 border border-white/10 bg-white/[0.04] p-6 ${i % 2 === 1 ? "translate-y-6" : ""}`}
+                    className="flex items-center gap-4 border border-white/10 bg-white/[0.04] p-6"
                     style={{ borderRadius: 20 }}
                   >
                     <span className="ep-icon-plate">
@@ -326,7 +326,7 @@ const HowItWorks = () => {
             </h2>
             <p className="mt-6 max-w-prose text-[17px] text-ink-muted">{t("pricing.body")}</p>
 
-            <div className="mt-12 grid gap-6 md:grid-cols-2 max-w-4xl">
+            <div className="mt-12 grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
               {PLAN_META.map((meta, idx) => {
                 const plan = planData[idx];
                 return (
