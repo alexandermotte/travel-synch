@@ -312,25 +312,29 @@ const Difference = () => {
             </p>
           </div>
           <div className="md:col-span-8">
-            <div
-              className="grid grid-cols-3 border border-line ep-bg-concrete overflow-hidden"
-              style={{ borderRadius: 20 }}
-            >
-              <div className="p-5 ep-mono text-ink-muted border-b border-line min-w-0">{t("difference.colTask")}</div>
-              <div className="p-5 ep-mono text-ink-muted border-b border-l border-line min-w-0">{t("difference.colOwn")}</div>
-              <div className="p-5 ep-mono text-flare-ink border-b border-l border-line min-w-0">{t("difference.colExec")}</div>
-
-              {rows.map(([label, a, b], i, arr) => (
-                <div key={label} className="contents">
-                  <div className={`p-5 text-[15px] text-ink min-w-0 break-words ${i < arr.length - 1 ? "border-b border-line" : ""}`}>{label}</div>
-                  <div className={`p-5 text-[15px] text-ink-muted border-l border-line min-w-0 break-words ${i < arr.length - 1 ? "border-b" : ""}`}>{a}</div>
-                  <div className={`p-5 text-[15px] text-ink border-l border-line min-w-0 break-words ${i < arr.length - 1 ? "border-b" : ""}`}>
-                    <span className="inline-flex flex-wrap items-start gap-2 min-w-0">
-                      <Check size={14} className="text-flare-ink shrink-0 mt-1" /> <span className="break-words">{b}</span>
-                    </span>
-                  </div>
-                </div>
-              ))}
+            <div className="overflow-x-auto rounded-[20px] border border-line ep-bg-concrete">
+              <table className="w-full table-fixed border-collapse min-w-[320px]">
+                <thead>
+                  <tr className="border-b border-line">
+                    <th className="p-5 ep-mono text-ink-muted text-left w-[30%]">{t("difference.colTask")}</th>
+                    <th className="p-5 ep-mono text-ink-muted text-left border-l border-line w-[35%]">{t("difference.colOwn")}</th>
+                    <th className="p-5 ep-mono text-flare-ink text-left border-l border-line w-[35%]">{t("difference.colExec")}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map(([label, a, b], i, arr) => (
+                    <tr key={label} className={`${i < arr.length - 1 ? "border-b border-line" : ""}`}>
+                      <td className="p-5 text-[15px] text-ink break-words align-top">{label}</td>
+                      <td className="p-5 text-[15px] text-ink-muted break-words align-top border-l border-line">{a}</td>
+                      <td className="p-5 text-[15px] text-ink break-words align-top border-l border-line">
+                        <span className="inline-flex items-start gap-2">
+                          <Check size={14} className="text-flare-ink shrink-0 mt-1" /> {b}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
