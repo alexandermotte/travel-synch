@@ -325,8 +325,8 @@ const Difference = () => {
                   <div className={`p-5 text-[15px] text-ink min-w-0 break-words ${i < arr.length - 1 ? "border-b border-line" : ""}`}>{label}</div>
                   <div className={`p-5 text-[15px] text-ink-muted border-l border-line min-w-0 break-words ${i < arr.length - 1 ? "border-b" : ""}`}>{a}</div>
                   <div className={`p-5 text-[15px] text-ink border-l border-line min-w-0 break-words ${i < arr.length - 1 ? "border-b" : ""}`}>
-                    <span className="inline-flex items-center gap-2">
-                      <Check size={14} className="text-flare-ink shrink-0" /> {b}
+                    <span className="inline-flex flex-wrap items-start gap-2 min-w-0">
+                      <Check size={14} className="text-flare-ink shrink-0 mt-1" /> <span className="break-words">{b}</span>
                     </span>
                   </div>
                 </div>
