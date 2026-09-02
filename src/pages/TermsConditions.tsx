@@ -53,8 +53,6 @@ export default function TermsConditions() {
     >
       {c.sections.map(renderSection)}
 
-      <p className="text-muted-foreground text-sm mt-10 mb-2">{c.lastUpdated}</p>
-
       <div className="p-6 rounded-2xl bg-muted border border-border mt-8">
         <h2 className="!mt-0">{c.withdrawalForm.title}</h2>
         {c.withdrawalForm.blocks.map(renderBlock)}
